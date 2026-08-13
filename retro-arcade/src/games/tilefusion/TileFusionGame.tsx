@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View } from 'react-native';
-import { colors, pixelFont, spacing } from '../../theme';
+import { colors, spacing } from '../../theme';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useSwipe, type Dir } from '../engine/controls';
@@ -172,7 +172,7 @@ export function TileFusionGame({ api }: { api: GameApi }) {
               <PixelText
                 size={v >= 1024 ? cell * 0.28 : v >= 128 ? cell * 0.34 : cell * 0.4}
                 color={v <= 4 ? colors.text : colors.bg}
-                style={{ fontFamily: pixelFont, fontWeight: 'bold' }}>
+                style={{ fontWeight: 'bold' }}>
                 {String(v)}
               </PixelText>
             )}

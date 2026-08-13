@@ -8,7 +8,7 @@ Status legend: ✅ implemented in app · 🔧 dashboard/console task before subm
 - ✅ **Account deletion** in Settings, deletes auth user + all data (5.1.1(v))
 - ✅ **No mention of external payment** anywhere in UI or strings (3.1.1)
 - ✅ No ads, no tracking → App Tracking Transparency prompt not needed
-- 🔧 **Privacy policy URL** in App Store Connect (host a page stating: we collect email + password + game scores, nothing else; no ads; no data sale)
+- 🔧 **Privacy policy URL** in App Store Connect — page is drafted at `docs/privacy-policy.html` (+ `.md`); host it anywhere public and replace the placeholder support email before submitting
 - 🔧 Privacy "nutrition label": Data linked to you → Email address, Gameplay content (scores). No tracking.
 - 🔧 In-app purchase `retro_arcade_full` created, priced $4.99 tier with regional equivalents
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Alert, KeyboardAvoidingView, Platform, ScrollView, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
-import { colors, pixelFont, spacing, touchTarget, type } from '../theme';
+import { colors, pixelFontFallback, spacing, touchTarget, type } from '../theme';
 import { PixelText } from '../components/PixelText';
 import { NeonButton } from '../components/NeonButton';
 import { useAuth } from '../context/AuthContext';
@@ -45,8 +45,9 @@ export function AuthScreen() {
     }
   };
 
+  // System-ish mono for inputs: email/Arabic input needs full glyph coverage.
   const inputStyle = {
-    fontFamily: pixelFont,
+    fontFamily: pixelFontFallback,
     fontSize: type.body,
     color: colors.text,
     backgroundColor: colors.bgRaised,

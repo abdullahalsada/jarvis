@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
-import { colors, pixelFont, spacing } from '../../theme';
+import { colors, spacing } from '../../theme';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { playSfx } from '../../audio/sfx';
@@ -220,7 +220,7 @@ export function SolitaireGame({ api }: { api: GameApi }) {
         <PixelText
           size={Math.floor(w * 0.42)}
           color={isRed(card) ? '#c02040' : '#101020'}
-          style={{ fontFamily: pixelFont, fontWeight: 'bold', textAlign: 'center' }}>
+          style={{ fontWeight: 'bold', textAlign: 'center' }}>
           {`${RANKS[card.rank]}\n${SUITS[card.suit]}`}
         </PixelText>
       )}

@@ -29,8 +29,15 @@ export const categoryColors: Record<string, string> = {
   brain: colors.neonYellow,
 };
 
-/** Monospace stack — swap for a bundled pixel font (e.g. Press Start 2P) later. */
-export const pixelFont = Platform.select({
+/**
+ * Bundled pixel font (Press Start 2P, OFL — assets/fonts/). Loaded in App.tsx
+ * before first render. Latin/digits get the authentic 8-bit look; scripts the
+ * font doesn't cover (e.g. Arabic) fall back to the system font per glyph.
+ * `pixelFontFallback` is used until/unless the font loads.
+ */
+export const pixelFont = 'PressStart2P';
+
+export const pixelFontFallback = Platform.select({
   ios: 'Menlo',
   android: 'monospace',
   default: 'monospace',

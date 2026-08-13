@@ -35,9 +35,24 @@ The anon key ships in the client by design; every data path is guarded by RLS.
 
 ## RevenueCat setup
 
-1. Create a RevenueCat project "Retro Arcade" with iOS + Android apps.
-2. Products: `retro_arcade_full` non-consumable at **$4.99** in App Store Connect and Play Console. Use each store's regional price tiers for India/Egypt/Brazil etc. — do not hand-set one global price.
-3. Entitlement: `full_arcade`, attached to the product in both stores; single offering with one package.
-4. Put the public SDK keys in `.env`. The app identifies the RevenueCat user with the Supabase user id, so entitlements follow the account across devices, and `restorePurchases` covers store-account reinstalls.
+**Status: mostly configured (2026-08-13, via RevenueCat API).** What exists in the dashboard:
 
-Without keys (or in Expo Go) the app uses a **mock store** so the lock/unlock flow is fully testable in development.
+| Item | Value |
+|---|---|
+| Project | **Retro Arcade** (`projbceac287`) |
+| iOS app | `app0f1a18c13d`, bundle `com.goldenagegames.retroarcade` |
+| Android app | `appd76eb1bfde`, package `com.goldenagegames.retroarcade` |
+| Products | `retro_arcade_full` non-consumable, registered on both apps (`prod0ea8496783` iOS, `prod842ed1f3c3` Android) |
+| Offering | `default` ("Full Arcade", current) with package `$rc_lifetime` containing both products |
+| iOS public SDK key | `appl_OdsWeaTwVSLSGaMKwdIjOFknCZO` → `EXPO_PUBLIC_REVENUECAT_IOS_KEY` |
+| Android public SDK key | `goog_FMEubgkLBBlHTYFkzapOGzSsdgw` → `EXPO_PUBLIC_REVENUECAT_ANDROID_KEY` |
+
+(These SDK keys are RevenueCat *public* app keys — designed to ship inside the client binary; access control lives server-side.)
+
+**Remaining dashboard steps (blocked from the API by key scopes / store accounts):**
+
+1. **Create the entitlement** `full_arcade` (display name "Full Arcade — all games forever") and attach both `retro_arcade_full` products to it — Project Settings → Entitlements. The API key connected to this workspace lacks `project_configuration:entitlements:read_write`, so this must be done in the dashboard (or widen the key's scopes and ask Claude to finish it).
+2. **Create the store products**: `retro_arcade_full` non-consumable at **$4.99** in App Store Connect and Play Console once the developer accounts exist. Use each store's regional price tiers (India/Egypt/Brazil etc.) — do not hand-set one global price.
+3. **Connect store credentials** in RevenueCat (App Store Connect API key, Play service account) so receipts validate.
+
+The app identifies the RevenueCat user with the Supabase user id, so entitlements follow the account across devices, and `restorePurchases` covers store-account reinstalls. Without keys (or in Expo Go) the app uses a **mock store** so the lock/unlock flow stays fully testable in development.
