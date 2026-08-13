@@ -61,7 +61,9 @@ export async function setLanguage(lang: Language): Promise<{ needsRestart: boole
   await AsyncStorage.setItem(STORAGE_KEY, lang);
   await i18n.changeLanguage(lang);
   const wantRTL = isRTL(lang);
-  const needsRestart = I18nManager.isRTL !== wantRTL;
+  // !! guards platforms where isRTL is undefined (react-native-web),
+  // which otherwise reports a phantom "restart needed" for LTR languages.
+  const needsRestart = !!I18nManager.isRTL !== wantRTL;
   if (needsRestart) {
     I18nManager.allowRTL(wantRTL);
     I18nManager.forceRTL(wantRTL);
