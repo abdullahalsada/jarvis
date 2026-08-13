@@ -60,6 +60,7 @@ export function GameShell({ gameId, color, showLives, onQuit, children }: Props)
 
   const end = useCallback(
     ({ score: finalScore, won: didWin }: { score: number; won?: boolean }) => {
+      setScore(finalScore); // include any end-of-game bonus in the overlay
       setWon(!!didWin);
       setPhase('over');
       playSfx(didWin ? 'win' : 'gameOver');

@@ -19,11 +19,11 @@ Backend setup (Supabase project, confirmation-email template, RevenueCat product
 ## What's here (milestones 1–4 of the brief)
 
 - **App flow**: Splash → language select (first run, EN/العربية with full RTL) → register/login → catalog
-- **8 starter games** on a shared engine, each with instructions overlay, pause, per-account best scores, synth SFX + haptics:
-  - Classics: Snake 🐍, Brick Breaker 🧱, Paddle Duel 🏓
-  - Action: Space Defenders 👾, Meteor Dodge ☄️
-  - Spooky: Haunted Maze 👻
-  - Brain: Memory Match 🃏 (free), Simon Echo 🎵 — Snake is the other free demo game
+- **18 games** on a shared engine, each with instructions overlay, pause, per-account best scores, synth SFX + haptics:
+  - Classics: Snake 🐍, Brick Breaker 🧱, Paddle Duel 🏓, Neon Stack 🟦 (falling blocks), Solitaire ♠️ (Klondike, tap-to-move), Road Hopper 🐸 (road crosser)
+  - Action: Space Defenders 👾, Meteor Dodge ☄️, Astro Shards 🚀 (rock blaster), Pixel Wings 🐦 (one-touch flyer), Gem Digger ⛏️ (tunneler), Sky Shield 🛡️ (missile defense)
+  - Spooky: Haunted Maze 👻, Ghost Sweeper 🔮 (deduction), Zombie Bop 🧟 (whack-the-mole)
+  - Brain: Memory Match 🃏 (free), Simon Echo 🎵, Tile Fusion 🔢 (2048-style) — Snake is the other free demo game
 - **Demo lock/unlock**: full catalog visible; locked games route to the $4.99 purchase screen (localized store price, restore-purchases button)
 - **Settings**: language, sound, vibration, scanlines, logout, account deletion, plain-language privacy statement
 - **Offline-first scores**: local best always saved; queued sync to Supabase when online
@@ -42,6 +42,7 @@ Authenticity is the bar (the prototype's Snake was rejected until it felt right)
 
 ## Roadmap
 
-- Milestone 5: +10 games (Asteroids-style, road crosser, falling blocks, Minesweeper, Solitaire, 2048-style, whac-a-mole, flappy-style, tunneler, missile defense — mechanics only, original names/art)
+- ~~Milestone 5: +10 games~~ ✅ shipped (18 total)
 - Milestone 6: EAS builds → TestFlight / Play internal testing
+- Toward the 25–30 launch target: candidates include a lane shooter, pinball, sliding-15 puzzle, word games
 - Original pixel-art icons to replace emoji placeholders; bundled pixel font; more languages (es, fr, hi, zh)

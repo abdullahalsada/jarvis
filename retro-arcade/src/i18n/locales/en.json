@@ -139,6 +139,56 @@
       "name": "Simon Echo",
       "desc": "Repeat the pattern",
       "howto": "Watch and listen as the colors light up, then tap them back in the same order. Each round adds one more step. How long a pattern can you remember?"
+    },
+    "neonstack": {
+      "name": "Neon Stack",
+      "desc": "Stack the falling blocks",
+      "howto": "Drag left or right to move the falling piece, tap to spin it, and drag down to drop it faster. Fill a complete row to clear it — clear four at once for a huge bonus. The blocks fall faster as you go!"
+    },
+    "solitaire": {
+      "name": "Solitaire",
+      "desc": "The classic card patience",
+      "howto": "Tap a card to move it automatically to the best spot. Build the four suit piles from Ace to King. In the columns, stack cards in descending order with alternating colors. Tap the deck to draw a new card. Take all the time you need."
+    },
+    "roadhopper": {
+      "name": "Road Hopper",
+      "desc": "Cross the road and river",
+      "howto": "Swipe to hop one step at a time. Dodge the cars on the road, then cross the river by riding the logs — never touch the water! Fill all five nests at the top to advance. Watch out: everything moves faster each round."
+    },
+    "astroshards": {
+      "name": "Astro Shards",
+      "desc": "Blast the space rocks",
+      "howto": "Hold the ↺ and ↻ buttons to turn your ship and ▲ to thrust — it fires by itself. Big rocks break into smaller, faster ones. Small rocks are worth the most points. Fly off one edge and you appear on the other!"
+    },
+    "pixelwings": {
+      "name": "Pixel Wings",
+      "desc": "Flap through the towers",
+      "howto": "Tap anywhere to flap your wings and stay in the air. Glide through the gap between the towers — one point for each tower you pass. One bump and it's over. How far can you fly?"
+    },
+    "gemdigger": {
+      "name": "Gem Digger",
+      "desc": "Dig deep, grab the gems",
+      "howto": "Swipe to dig tunnels through the earth and collect every gem. Two cave creatures are hunting you — but they can only follow your tunnels, so dig wisely! Collect all the gems to win."
+    },
+    "skyshield": {
+      "name": "Sky Shield",
+      "desc": "Defend your cities",
+      "howto": "Missiles are falling toward your six cities! Tap the sky to launch an interceptor — its blast destroys everything nearby. Your ammo is limited each wave, so aim ahead of the missiles. Spare ammo and surviving cities earn big bonuses."
+    },
+    "ghostsweeper": {
+      "name": "Ghost Sweeper",
+      "desc": "Find the hidden ghosts",
+      "howto": "Tap a tile to reveal it. The numbers tell you how many ghosts hide in the neighboring tiles — use logic to work out where they are. Press and hold to place a ward on a suspected ghost. Reveal every safe tile to win. No timer, just thinking."
+    },
+    "zombiebop": {
+      "name": "Zombie Bop",
+      "desc": "Bop them back down",
+      "howto": "Zombies are popping out of the graves! Tap them before they sink back down. The golden skeleton is worth 5× points. You have 60 seconds — they get faster near the end!"
+    },
+    "tilefusion": {
+      "name": "Tile Fusion",
+      "desc": "Merge to 2048",
+      "howto": "Swipe to slide all the tiles. When two matching numbers collide they fuse into one bigger number. Reach the glowing 2048 tile! The game ends when the board is full and nothing can merge. No clock — plan every move."
     }
   }
 }
