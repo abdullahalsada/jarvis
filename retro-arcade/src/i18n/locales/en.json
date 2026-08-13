@@ -1,0 +1,144 @@
+{
+  "app": {
+    "name": "Retro Arcade",
+    "publisher": "Golden Age Games",
+    "tagline": "The games you grew up with"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "back": "Back",
+    "continue": "Continue",
+    "loading": "Loading…",
+    "error": "Something went wrong. Please try again.",
+    "offline": "You are offline. Scores will sync later."
+  },
+  "language": {
+    "title": "Choose your language",
+    "subtitle": "You can change this anytime in Settings",
+    "english": "English",
+    "arabic": "العربية"
+  },
+  "auth": {
+    "welcome": "Welcome to Retro Arcade",
+    "email": "Email address",
+    "password": "Password",
+    "login": "Log in",
+    "register": "Create account",
+    "haveAccount": "I already have an account",
+    "noAccount": "I'm new here",
+    "registerTitle": "Create your account",
+    "loginTitle": "Welcome back",
+    "passwordHint": "At least 8 characters",
+    "checkEmail": "Check your email!",
+    "confirmationSent": "We sent you a confirmation email. Open it and tap the link to start playing.",
+    "invalidEmail": "Please enter a valid email address",
+    "shortPassword": "Password must be at least 8 characters",
+    "authFailed": "Email or password is incorrect",
+    "registerFailed": "Could not create the account. Please try again.",
+    "logout": "Log out"
+  },
+  "home": {
+    "playFree": "FREE",
+    "locked": "LOCKED",
+    "unlockCard": "Unlock all games — $4.99 one time",
+    "unlockCardSub": "No ads, ever. Every future game included.",
+    "categories": {
+      "classics": "Classics",
+      "action": "Action",
+      "spooky": "Spooky",
+      "brain": "Brain"
+    }
+  },
+  "purchase": {
+    "title": "Unlock everything",
+    "price": "$4.99",
+    "bullet1": "One-time purchase — never pay again",
+    "bullet2": "No ads, ever",
+    "bullet3": "All games forever, including every future game",
+    "buy": "Unlock for {{price}}",
+    "restore": "Restore purchases",
+    "restoring": "Restoring…",
+    "restored": "Your purchase has been restored!",
+    "nothingToRestore": "No previous purchase found for this account.",
+    "thanks": "Thank you! The whole arcade is yours.",
+    "failed": "The purchase could not be completed.",
+    "unavailable": "The store is not available right now. Please try again later."
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "sound": "Sound",
+    "haptics": "Vibration",
+    "scanlines": "Scanline effect",
+    "account": "Account",
+    "deleteAccount": "Delete my account",
+    "deleteConfirmTitle": "Delete account?",
+    "deleteConfirmBody": "This permanently deletes your account, email, and high scores. This cannot be undone.",
+    "deleteConfirmYes": "Delete forever",
+    "deleted": "Your account has been deleted.",
+    "privacyTitle": "Privacy",
+    "privacyBody": "We store only your email, your password (encrypted), and your game scores. Nothing else. We never show ads and never sell data.",
+    "restartNeeded": "Restart required",
+    "restartNeededBody": "The app needs to restart to switch the layout direction. Please close and reopen the app."
+  },
+  "game": {
+    "score": "Score",
+    "best": "Best",
+    "lives": "Lives",
+    "level": "Level",
+    "moves": "Moves",
+    "pause": "Pause",
+    "resume": "Resume",
+    "quit": "Quit game",
+    "howToPlay": "How to play",
+    "start": "Start",
+    "gameOver": "GAME OVER",
+    "youWin": "YOU WIN!",
+    "newBest": "NEW BEST SCORE!",
+    "playAgain": "Play again",
+    "backToArcade": "Back to arcade"
+  },
+  "games": {
+    "snake": {
+      "name": "Snake",
+      "desc": "Eat, grow, don't crash",
+      "howto": "Swipe anywhere to steer the snake. Eat the food to grow. Don't hit the walls or yourself. The snake gets faster as it grows!"
+    },
+    "brickbreaker": {
+      "name": "Brick Breaker",
+      "desc": "Smash every brick",
+      "howto": "Slide your finger to move the paddle. Bounce the ball to smash all the bricks. Hit the ball with the paddle's edge to change its angle. You have 3 balls."
+    },
+    "paddleduel": {
+      "name": "Paddle Duel",
+      "desc": "First to 7 wins",
+      "howto": "Slide your finger to move your paddle. Return the ball past the computer's paddle to score. First to 7 points wins. The rally gets faster the longer it lasts!"
+    },
+    "spacedefenders": {
+      "name": "Space Defenders",
+      "desc": "Stop the invasion",
+      "howto": "Slide your finger to move your ship — it fires automatically. Destroy all the invaders before they reach you. They speed up as their numbers shrink!"
+    },
+    "meteordodge": {
+      "name": "Meteor Dodge",
+      "desc": "Survive the storm",
+      "howto": "Slide your finger to steer your ship left and right. Dodge the falling meteors as long as you can. They fall faster and faster — how long can you last?"
+    },
+    "hauntedmaze": {
+      "name": "Haunted Maze",
+      "desc": "Escape the ghosts",
+      "howto": "Swipe to move through the maze. Collect every glowing orb while the ghosts hunt you. Grab a power star to turn the tables and chase them instead!"
+    },
+    "memorymatch": {
+      "name": "Memory Match",
+      "desc": "Find all the pairs",
+      "howto": "Tap a card to flip it, then find its matching partner. Match every pair to win. Fewer moves means a higher score. Take your time — there's no clock."
+    },
+    "simonecho": {
+      "name": "Simon Echo",
+      "desc": "Repeat the pattern",
+      "howto": "Watch and listen as the colors light up, then tap them back in the same order. Each round adds one more step. How long a pattern can you remember?"
+    }
+  }
+}
