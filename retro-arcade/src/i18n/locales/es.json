@@ -194,6 +194,21 @@
       "desc": "Devuélvelos bajo tierra",
       "howto": "¡Los zombis salen de las tumbas! Tócalos antes de que se hundan de nuevo. El esqueleto dorado vale 5 veces más. Tienes 60 segundos — ¡se aceleran al final!"
     },
+    "alleybowl": {
+      "name": "Bolera",
+      "desc": "Busca el 300 perfecto",
+      "howto": "Arrastra a los lados para colocar la bola y lánzala hacia ARRIBA para tirar — el ángulo del lanzamiento curva el tiro. ¡Derriba los diez bolos! Plenos y semiplenos dan puntos extra, como en los bolos de verdad. Diez turnos; la partida perfecta es 300."
+    },
+    "moonbuggy": {
+      "name": "Buggy Lunar",
+      "desc": "Salta cráteres, vuela rocas",
+      "howto": "Tu buggy conduce solo, cada vez más rápido. Toca el lado DERECHO de la pantalla para saltar los cráteres y el lado IZQUIERDO para disparar a las rocas del camino. Puntos de control cada 500 m. Tres vidas — ¡suerte, piloto!"
+    },
+    "spookshoot": {
+      "name": "Tiro Fantasma",
+      "desc": "Gana el pulso firme",
+      "howto": "Los espectros se deslizan por tres filas — ¡tócalos para dispararles! Cada disparo cuesta un cartucho, aciertes o falles, y tienes 25. La fila del fondo puntúa más; el fantasma dorado vale 100. ¡Acierta 5 seguidos y ganas 3 cartuchos extra!"
+    },
     "pyramidhop": {
       "name": "Salto Piramidal",
       "desc": "Pinta cada cubo",

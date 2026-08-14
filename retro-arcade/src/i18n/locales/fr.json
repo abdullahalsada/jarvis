@@ -194,6 +194,21 @@
       "desc": "Renvoie-les sous terre",
       "howto": "Les zombies surgissent des tombes ! Touche-les avant qu'ils ne replongent. Le squelette doré vaut 5 fois plus. Tu as 60 secondes — ils accélèrent vers la fin !"
     },
+    "alleybowl": {
+      "name": "Bowling",
+      "desc": "Vise le 300 parfait",
+      "howto": "Glisse sur les côtés pour placer ta boule, puis lance-la vers le HAUT — l'angle du geste courbe le tir. Renverse les dix quilles ! Strikes et spares rapportent des bonus, comme au vrai bowling. Dix manches ; la partie parfaite vaut 300."
+    },
+    "moonbuggy": {
+      "name": "Buggy Lunaire",
+      "desc": "Saute les cratères, tire les rochers",
+      "howto": "Ton buggy roule tout seul, de plus en plus vite. Touche le côté DROIT de l'écran pour sauter les cratères, le côté GAUCHE pour tirer sur les rochers. Un point de passage tous les 500 m. Trois vies — bonne route, pilote !"
+    },
+    "spookshoot": {
+      "name": "Tir aux Spectres",
+      "desc": "La main sûre l'emporte",
+      "howto": "Les spectres glissent sur trois rangées — touche-les pour tirer ! Chaque tir coûte une cartouche, touché ou non, et tu en as 25. La rangée du fond rapporte le plus ; le fantôme doré vaut 100. Touche 5 cibles d'affilée pour gagner 3 cartouches bonus !"
+    },
     "pyramidhop": {
       "name": "Saut Pyramide",
       "desc": "Colore chaque cube",

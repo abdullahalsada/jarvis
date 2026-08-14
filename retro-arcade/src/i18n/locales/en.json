@@ -189,6 +189,21 @@
       "desc": "Bop them back down",
       "howto": "Zombies are popping out of the graves! Tap them before they sink back down. The golden skeleton is worth 5× points. You have 60 seconds — they get faster near the end!"
     },
+    "alleybowl": {
+      "name": "Alley Bowl",
+      "desc": "Roll for the perfect 300",
+      "howto": "Drag sideways to line up your ball, then flick UP to roll — the angle of your flick curves the shot. Knock down all ten pins! Strikes and spares score bonus points, just like real bowling. Ten frames; a perfect game is 300."
+    },
+    "moonbuggy": {
+      "name": "Moon Buggy",
+      "desc": "Jump craters, blast rocks",
+      "howto": "Your buggy drives itself, faster and faster. Tap the RIGHT side of the screen to jump over craters, tap the LEFT side to shoot the rocks in your path. Checkpoints every 500m. Three lives — good luck, driver!"
+    },
+    "spookshoot": {
+      "name": "Spook Shoot",
+      "desc": "A steady hand wins",
+      "howto": "Spooks glide across three rows — tap to shoot them! Every shot costs a shell, hit or miss, and you have 25. The back row scores most; the golden phantom is worth 100. Hit 5 in a row to earn 3 bonus shells!"
+    },
     "pyramidhop": {
       "name": "Pyramid Hop",
       "desc": "Paint every cube",
