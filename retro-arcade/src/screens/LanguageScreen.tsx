@@ -18,13 +18,14 @@ export function LanguageScreen({ onDone }: Props) {
 
   const choose = async (lang: Language) => {
     const { needsRestart } = await setLanguage(lang);
+    // The restart notice is informational — never gate navigation on the
+    // alert callback (Alert is a no-op on web, which would strand the user).
     if (needsRestart) {
       Alert.alert(t('settings.restartNeeded'), t('settings.restartNeededBody'), [
-        { text: t('common.ok'), onPress: onDone },
+        { text: t('common.ok') },
       ]);
-    } else {
-      onDone();
     }
+    onDone();
   };
 
   return (

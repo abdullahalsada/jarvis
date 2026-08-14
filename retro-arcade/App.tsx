@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { SettingsProvider } from './src/context/SettingsContext';
@@ -18,6 +19,10 @@ import { flushScoreQueue } from './src/services/scores';
 function Gate() {
   const { session, loading, guestMode } = useAuth();
   const [langChosen, setLangChosen] = useState<boolean | null>(null);
+  // Pixel font (OFL): the UI waits for it so type never visibly swaps.
+  const [fontsLoaded, fontError] = useFonts({
+    PressStart2P: require('./assets/fonts/PressStart2P-Regular.ttf'),
+  });
 
   useEffect(() => {
     (async () => {
@@ -28,7 +33,7 @@ function Gate() {
     })();
   }, []);
 
-  if (langChosen === null || loading) return <SplashScreen />;
+  if (langChosen === null || loading || (!fontsLoaded && !fontError)) return <SplashScreen />;
   if (!langChosen) return <LanguageScreen onDone={() => setLangChosen(true)} />;
   if (!guestMode && !session) return <AuthScreen />;
   return (

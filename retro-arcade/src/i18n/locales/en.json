@@ -189,6 +189,41 @@
       "name": "Tile Fusion",
       "desc": "Merge to 2048",
       "howto": "Swipe to slide all the tiles. When two matching numbers collide they fuse into one bigger number. Reach the glowing 2048 tile! The game ends when the board is full and nothing can merge. No clock — plan every move."
+    },
+    "slidefifteen": {
+      "name": "Slide Fifteen",
+      "desc": "Order the sliding tiles",
+      "howto": "Tap any tile in the same row or column as the empty space to slide it over. Arrange the tiles from 1 to 15. Every puzzle is solvable — fewer moves means a higher score, and there's no clock."
+    },
+    "neonlights": {
+      "name": "Neon Lights",
+      "desc": "Turn every light off",
+      "howto": "Tapping a lamp flips it and its four neighbors. Turn the whole board dark to clear the round — three rounds, each scrambled deeper. Fewer taps earn more points. Pure logic, no timer."
+    },
+    "retroracer": {
+      "name": "Retro Racer",
+      "desc": "Weave through traffic",
+      "howto": "Swipe left or right to hop between the three lanes. Slip past the oncoming cars — the road gets faster and busier the farther you drive. One crash ends the run. How far can you go?"
+    },
+    "moonlander": {
+      "name": "Moon Lander",
+      "desc": "Touch down gently",
+      "howto": "Hold ▲ to fire your engine against gravity, and ◀ ▶ to drift sideways. Land slowly on the green pad — your ship glows blue when you're slow enough to land safely. Fuel is limited! Each landing brings a smaller pad and stronger gravity."
+    },
+    "creepycrawler": {
+      "name": "Creepy Crawler",
+      "desc": "Split the crawling horror",
+      "howto": "Slide to move your hunter — it fires by itself. Shoot the crawler weaving down through the tombstones: hit its middle and it splits in two! Every piece you destroy becomes a new tombstone. Don't let it reach you."
+    },
+    "divesquadron": {
+      "name": "Dive Squadron",
+      "desc": "Survive the dive bombers",
+      "howto": "Slide to steer your ship — it fires by itself. Enemies swoop out of formation and dive straight at you. A diving enemy is worth double points — the brave shot pays! Clear the whole squadron to face a faster wave."
+    },
+    "eggcatch": {
+      "name": "Egg Catch",
+      "desc": "Catch every rolling egg",
+      "howto": "Eggs roll down four ramps. Tap a corner of the screen to hold your basket under that ramp. Catch every egg before it falls — drop three and the game is over. They roll faster as your score grows!"
     }
   }
 }
