@@ -27,6 +27,8 @@ import { MoonLanderGame } from './moonlander/MoonLanderGame';
 import { CreepyCrawlerGame } from './creepycrawler/CreepyCrawlerGame';
 import { DiveSquadronGame } from './divesquadron/DiveSquadronGame';
 import { EggCatchGame } from './eggcatch/EggCatchGame';
+import { PyramidHopGame } from './pyramidhop/PyramidHopGame';
+import { GemColumnsGame } from './gemcolumns/GemColumnsGame';
 
 export type Category = 'classics' | 'action' | 'spooky' | 'brain';
 
@@ -71,6 +73,8 @@ const ART: Record<string, ImageSourcePropType> = {
   tilefusion: require('../../assets/games/tilefusion.png'),
   slidefifteen: require('../../assets/games/slidefifteen.png'),
   neonlights: require('../../assets/games/neonlights.png'),
+  pyramidhop: require('../../assets/games/pyramidhop.png'),
+  gemcolumns: require('../../assets/games/gemcolumns.png'),
 };
 
 const DEFS: Omit<GameDef, 'art'>[] = [
@@ -92,6 +96,7 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'gemdigger', category: 'action', free: false, showLives: true, icon: '⛏️', render: (api) => <GemDiggerGame api={api} /> },
   { id: 'skyshield', category: 'action', free: false, icon: '🛡️', render: (api) => <SkyShieldGame api={api} /> },
   { id: 'divesquadron', category: 'action', free: false, showLives: true, icon: '🛸', render: (api) => <DiveSquadronGame api={api} /> },
+  { id: 'pyramidhop', category: 'action', free: false, showLives: true, icon: '🔺', render: (api) => <PyramidHopGame api={api} /> },
   // Spooky
   { id: 'hauntedmaze', category: 'spooky', free: false, showLives: true, icon: '👻', render: (api) => <HauntedMazeGame api={api} /> },
   { id: 'ghostsweeper', category: 'spooky', free: false, icon: '🔮', render: (api) => <GhostSweeperGame api={api} /> },
@@ -103,6 +108,7 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'tilefusion', category: 'brain', free: false, icon: '🔢', render: (api) => <TileFusionGame api={api} /> },
   { id: 'slidefifteen', category: 'brain', free: false, icon: '🔀', render: (api) => <SlideFifteenGame api={api} /> },
   { id: 'neonlights', category: 'brain', free: false, icon: '💡', render: (api) => <NeonLightsGame api={api} /> },
+  { id: 'gemcolumns', category: 'brain', free: false, icon: '💎', render: (api) => <GemColumnsGame api={api} /> },
 ];
 
 export const GAMES: GameDef[] = DEFS.map((def) => ({ ...def, art: ART[def.id] }));

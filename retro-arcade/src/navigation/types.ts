@@ -4,4 +4,5 @@ export type RootStackParamList = {
   Purchase: undefined;
   Settings: undefined;
   Language: undefined;
+  Records: undefined;
 };

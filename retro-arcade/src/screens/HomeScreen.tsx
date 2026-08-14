@@ -39,13 +39,22 @@ export function HomeScreen({ navigation }: Props) {
         <PixelText size="heading" color={colors.neonGreen} glow>
           RETRO ARCADE
         </PixelText>
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel={t('settings.title')}
-          onPress={() => navigation.navigate('Settings')}
-          style={{ padding: spacing.s, minWidth: 48, minHeight: 48, alignItems: 'center', justifyContent: 'center' }}>
-          <PixelText size="heading">⚙️</PixelText>
-        </Pressable>
+        <View style={{ flexDirection: 'row' }}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={t('records.title')}
+            onPress={() => navigation.navigate('Records')}
+            style={{ padding: spacing.s, minWidth: 48, minHeight: 48, alignItems: 'center', justifyContent: 'center' }}>
+            <PixelText size="heading">🏆</PixelText>
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={t('settings.title')}
+            onPress={() => navigation.navigate('Settings')}
+            style={{ padding: spacing.s, minWidth: 48, minHeight: 48, alignItems: 'center', justifyContent: 'center' }}>
+            <PixelText size="heading">⚙️</PixelText>
+          </Pressable>
+        </View>
       </View>
 
       {!unlocked && (
