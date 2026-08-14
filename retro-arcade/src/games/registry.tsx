@@ -29,6 +29,9 @@ import { DiveSquadronGame } from './divesquadron/DiveSquadronGame';
 import { EggCatchGame } from './eggcatch/EggCatchGame';
 import { PyramidHopGame } from './pyramidhop/PyramidHopGame';
 import { GemColumnsGame } from './gemcolumns/GemColumnsGame';
+import { AlleyBowlGame } from './alleybowl/AlleyBowlGame';
+import { MoonBuggyGame } from './moonbuggy/MoonBuggyGame';
+import { SpookShootGame } from './spookshoot/SpookShootGame';
 
 export type Category = 'classics' | 'action' | 'spooky' | 'brain';
 
@@ -75,6 +78,9 @@ const ART: Record<string, ImageSourcePropType> = {
   neonlights: require('../../assets/games/neonlights.png'),
   pyramidhop: require('../../assets/games/pyramidhop.png'),
   gemcolumns: require('../../assets/games/gemcolumns.png'),
+  alleybowl: require('../../assets/games/alleybowl.png'),
+  moonbuggy: require('../../assets/games/moonbuggy.png'),
+  spookshoot: require('../../assets/games/spookshoot.png'),
 };
 
 const DEFS: Omit<GameDef, 'art'>[] = [
@@ -88,6 +94,7 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'retroracer', category: 'classics', free: false, icon: '🏎️', render: (api) => <RetroRacerGame api={api} /> },
   { id: 'moonlander', category: 'classics', free: false, icon: '🌙', render: (api) => <MoonLanderGame api={api} /> },
   { id: 'eggcatch', category: 'classics', free: false, showLives: true, icon: '🥚', render: (api) => <EggCatchGame api={api} /> },
+  { id: 'alleybowl', category: 'classics', free: false, icon: '🎳', render: (api) => <AlleyBowlGame api={api} /> },
   // Action
   { id: 'spacedefenders', category: 'action', free: false, showLives: true, icon: '👾', render: (api) => <SpaceDefendersGame api={api} /> },
   { id: 'meteordodge', category: 'action', free: false, icon: '☄️', render: (api) => <MeteorDodgeGame api={api} /> },
@@ -97,11 +104,13 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'skyshield', category: 'action', free: false, icon: '🛡️', render: (api) => <SkyShieldGame api={api} /> },
   { id: 'divesquadron', category: 'action', free: false, showLives: true, icon: '🛸', render: (api) => <DiveSquadronGame api={api} /> },
   { id: 'pyramidhop', category: 'action', free: false, showLives: true, icon: '🔺', render: (api) => <PyramidHopGame api={api} /> },
+  { id: 'moonbuggy', category: 'action', free: false, showLives: true, icon: '🚙', render: (api) => <MoonBuggyGame api={api} /> },
   // Spooky
   { id: 'hauntedmaze', category: 'spooky', free: false, showLives: true, icon: '👻', render: (api) => <HauntedMazeGame api={api} /> },
   { id: 'ghostsweeper', category: 'spooky', free: false, icon: '🔮', render: (api) => <GhostSweeperGame api={api} /> },
   { id: 'zombiebop', category: 'spooky', free: false, icon: '🧟', render: (api) => <ZombieBopGame api={api} /> },
   { id: 'creepycrawler', category: 'spooky', free: false, showLives: true, icon: '🐛', render: (api) => <CreepyCrawlerGame api={api} /> },
+  { id: 'spookshoot', category: 'spooky', free: false, icon: '🎯', render: (api) => <SpookShootGame api={api} /> },
   // Brain
   { id: 'memorymatch', category: 'brain', free: true, icon: '🃏', render: (api) => <MemoryMatchGame api={api} /> },
   { id: 'simonecho', category: 'brain', free: false, icon: '🎵', render: (api) => <SimonEchoGame api={api} /> },
