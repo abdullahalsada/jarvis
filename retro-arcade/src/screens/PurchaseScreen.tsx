@@ -71,7 +71,15 @@ export function PurchaseScreen({ navigation }: Props) {
         padding: spacing.xl,
         paddingTop: insets.top + spacing.l,
       }}>
-      <PixelText size="title" color={colors.neonYellow} glow style={{ textAlign: 'center' }}>
+      {/* Sized for the wide pixel font — 34px wraps mid-word on phones. */}
+      <PixelText
+        size={22}
+        color={colors.neonYellow}
+        glow
+        numberOfLines={2}
+        adjustsFontSizeToFit
+        minimumFontScale={0.6}
+        style={{ textAlign: 'center' }}>
         {t('purchase.title')}
       </PixelText>
       <PixelText

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, ScrollView, View } from 'react-native';
+import { Image, Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -83,6 +83,11 @@ export function HomeScreen({ navigation }: Props) {
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: spacing.m }}>
             {GAMES.filter((g) => g.category === cat).map((game) => {
               const locked = !game.free && !unlocked;
+              const name = t(`games.${game.id}.name`);
+              // The pixel font is ~1em per glyph; long single words need a
+              // smaller size or they'd break mid-word inside the card.
+              const longestWord = Math.max(...name.split(/\s+/).map((w) => w.length));
+              const nameSize = longestWord > 8 || name.length > 12 ? 12 : 15;
               return (
                 <Pressable
                   key={game.id}
@@ -102,24 +107,38 @@ export function HomeScreen({ navigation }: Props) {
                     padding: spacing.m,
                     opacity: pressed ? 0.7 : 1,
                   })}>
-                  <PixelText size={40} style={{ textAlign: 'center', opacity: locked ? 0.4 : 1 }}>
-                    {game.icon}
-                  </PixelText>
+                  <Image
+                    source={game.art}
+                    style={{
+                      width: 56,
+                      height: 56,
+                      alignSelf: 'center',
+                      opacity: locked ? 0.4 : 1,
+                    }}
+                    accessibilityIgnoresInvertColors
+                  />
                   <PixelText
-                    size="body"
+                    size={nameSize}
                     color={locked ? colors.locked : colors.text}
+                    numberOfLines={2}
+                    adjustsFontSizeToFit
+                    minimumFontScale={0.6}
                     style={{ textAlign: 'center', marginTop: spacing.s, fontWeight: 'bold' }}>
-                    {t(`games.${game.id}.name`)}
+                    {name}
                   </PixelText>
                   <PixelText
-                    size="label"
+                    size={13}
                     color={colors.textDim}
+                    numberOfLines={2}
                     style={{ textAlign: 'center', marginTop: spacing.xs }}>
                     {t(`games.${game.id}.desc`)}
                   </PixelText>
                   <PixelText
-                    size="label"
+                    size={10}
                     color={locked ? colors.locked : colors.neonGreen}
+                    numberOfLines={1}
+                    adjustsFontSizeToFit
+                    minimumFontScale={0.6}
                     style={{ textAlign: 'center', marginTop: spacing.s }}>
                     {locked ? `🔒 ${t('home.locked')}` : game.free && !unlocked ? t('home.playFree') : '▶'}
                   </PixelText>

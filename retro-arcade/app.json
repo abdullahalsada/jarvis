@@ -35,7 +35,9 @@
     },
     "locales": {
       "en": "./src/i18n/native/en.json",
-      "ar": "./src/i18n/native/ar.json"
+      "ar": "./src/i18n/native/ar.json",
+      "es": "./src/i18n/native/es.json",
+      "fr": "./src/i18n/native/fr.json"
     },
     "extra": {
       "publisher": "Golden Age Games"

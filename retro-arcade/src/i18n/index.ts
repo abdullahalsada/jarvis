@@ -6,6 +6,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import en from './locales/en.json';
 import ar from './locales/ar.json';
+import es from './locales/es.json';
+import fr from './locales/fr.json';
 
 /**
  * Adding a language = drop a JSON file here and register it below.
@@ -14,6 +16,8 @@ import ar from './locales/ar.json';
 export const resources = {
   en: { translation: en },
   ar: { translation: ar },
+  es: { translation: es },
+  fr: { translation: fr },
 } as const;
 
 export type Language = keyof typeof resources;
@@ -21,6 +25,8 @@ export type Language = keyof typeof resources;
 export const LANGUAGES: { code: Language; nativeName: string }[] = [
   { code: 'en', nativeName: 'English' },
   { code: 'ar', nativeName: 'العربية' },
+  { code: 'es', nativeName: 'Español' },
+  { code: 'fr', nativeName: 'Français' },
 ];
 
 const RTL_LANGUAGES: Language[] = ['ar'];
