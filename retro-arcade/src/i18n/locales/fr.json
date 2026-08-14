@@ -1,0 +1,229 @@
+{
+  "app": {
+    "name": "Retro Arcade",
+    "publisher": "Golden Age Games",
+    "tagline": "Les jeux de ton enfance"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Annuler",
+    "back": "Retour",
+    "continue": "Continuer",
+    "loading": "Chargement…",
+    "error": "Un problème est survenu. Réessaie.",
+    "offline": "Hors ligne. Les scores se synchroniseront plus tard."
+  },
+  "language": {
+    "title": "Choisis ta langue",
+    "subtitle": "Modifiable à tout moment dans les Réglages",
+    "english": "English",
+    "arabic": "العربية"
+  },
+  "auth": {
+    "welcome": "Bienvenue dans Retro Arcade",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "login": "Se connecter",
+    "register": "Créer un compte",
+    "haveAccount": "J'ai déjà un compte",
+    "noAccount": "Je suis nouveau ici",
+    "registerTitle": "Crée ton compte",
+    "loginTitle": "Content de te revoir",
+    "passwordHint": "8 caractères minimum",
+    "checkEmail": "Vérifie tes e-mails !",
+    "confirmationSent": "Nous t'avons envoyé un e-mail de confirmation. Ouvre-le et touche le lien pour commencer à jouer.",
+    "invalidEmail": "Saisis une adresse e-mail valide",
+    "shortPassword": "Le mot de passe doit contenir au moins 8 caractères",
+    "authFailed": "E-mail ou mot de passe incorrect",
+    "registerFailed": "Impossible de créer le compte. Réessaie.",
+    "logout": "Se déconnecter"
+  },
+  "home": {
+    "playFree": "GRATUIT",
+    "locked": "VERROUILLÉ",
+    "unlockCard": "Débloque tous les jeux — 4,99 $ une seule fois",
+    "unlockCardSub": "Sans pub, jamais. Tous les futurs jeux inclus.",
+    "categories": {
+      "classics": "Classiques",
+      "action": "Action",
+      "spooky": "Frissons",
+      "brain": "Cerveau"
+    }
+  },
+  "purchase": {
+    "title": "Débloque tout",
+    "price": "4,99 $",
+    "bullet1": "Paiement unique — plus jamais rien à payer",
+    "bullet2": "Sans publicité, jamais",
+    "bullet3": "Tous les jeux pour toujours, y compris les futurs",
+    "buy": "Débloquer pour {{price}}",
+    "restore": "Restaurer les achats",
+    "restoring": "Restauration…",
+    "restored": "Ton achat a été restauré !",
+    "nothingToRestore": "Aucun achat précédent trouvé pour ce compte.",
+    "thanks": "Merci ! Toute la salle d'arcade est à toi.",
+    "failed": "L'achat n'a pas pu aboutir.",
+    "unavailable": "La boutique est indisponible pour le moment. Réessaie plus tard."
+  },
+  "settings": {
+    "title": "Réglages",
+    "language": "Langue",
+    "sound": "Son",
+    "haptics": "Vibrations",
+    "scanlines": "Effet lignes CRT",
+    "account": "Compte",
+    "deleteAccount": "Supprimer mon compte",
+    "deleteConfirmTitle": "Supprimer le compte ?",
+    "deleteConfirmBody": "Ton compte, ton e-mail et tes scores seront définitivement supprimés. Cette action est irréversible.",
+    "deleteConfirmYes": "Supprimer définitivement",
+    "deleted": "Ton compte a été supprimé.",
+    "privacyTitle": "Confidentialité",
+    "privacyBody": "Nous ne stockons que ton e-mail, ton mot de passe (chiffré) et tes scores. Rien d'autre. Jamais de pub, jamais de vente de données.",
+    "restartNeeded": "Redémarrage requis",
+    "restartNeededBody": "L'application doit redémarrer pour changer le sens de l'affichage. Ferme-la puis rouvre-la."
+  },
+  "game": {
+    "score": "Score",
+    "best": "Record",
+    "lives": "Vies",
+    "level": "Niveau",
+    "moves": "Coups",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "quit": "Quitter la partie",
+    "howToPlay": "Comment jouer",
+    "start": "Jouer",
+    "gameOver": "PARTIE TERMINÉE",
+    "youWin": "GAGNÉ !",
+    "newBest": "NOUVEAU RECORD !",
+    "playAgain": "Rejouer",
+    "backToArcade": "Retour à l'arcade"
+  },
+  "games": {
+    "snake": {
+      "name": "Serpent",
+      "desc": "Mange, grandis, évite les murs",
+      "howto": "Glisse ton doigt dans une direction pour guider le serpent. Mange la nourriture pour grandir. Ne touche ni les murs ni ta propre queue. Le serpent accélère à mesure qu'il grandit !"
+    },
+    "brickbreaker": {
+      "name": "Casse-Briques",
+      "desc": "Détruis toutes les briques",
+      "howto": "Fais glisser ton doigt pour déplacer la raquette. Fais rebondir la balle pour casser toutes les briques. Frappe la balle avec le bord de la raquette pour changer son angle. Tu as 3 balles."
+    },
+    "paddleduel": {
+      "name": "Duel de Raquettes",
+      "desc": "Le premier à 7 gagne",
+      "howto": "Fais glisser ton doigt pour déplacer ta raquette. Renvoie la balle derrière la raquette de l'ordinateur pour marquer. Le premier à 7 points gagne. L'échange s'accélère plus il dure !"
+    },
+    "spacedefenders": {
+      "name": "Défenseurs de l'Espace",
+      "desc": "Stoppe l'invasion",
+      "howto": "Fais glisser ton doigt pour déplacer ton vaisseau — il tire tout seul. Détruis tous les envahisseurs avant qu'ils ne t'atteignent. Ils accélèrent quand leurs rangs s'éclaircissent !"
+    },
+    "meteordodge": {
+      "name": "Esquive Météores",
+      "desc": "Survis à la tempête",
+      "howto": "Fais glisser ton doigt pour diriger ton vaisseau à gauche et à droite. Esquive les météores le plus longtemps possible. Ils tombent de plus en plus vite — combien de temps tiendras-tu ?"
+    },
+    "hauntedmaze": {
+      "name": "Labyrinthe Hanté",
+      "desc": "Échappe aux fantômes",
+      "howto": "Glisse pour te déplacer dans le labyrinthe. Ramasse toutes les orbes lumineuses pendant que les fantômes te traquent. Attrape une étoile de pouvoir pour inverser les rôles et les chasser à ton tour !"
+    },
+    "memorymatch": {
+      "name": "Mémoire",
+      "desc": "Trouve toutes les paires",
+      "howto": "Touche une carte pour la retourner, puis trouve sa jumelle. Associe toutes les paires pour gagner. Moins de coups, plus de points. Prends ton temps — il n'y a pas de chrono."
+    },
+    "simonecho": {
+      "name": "Écho de Simon",
+      "desc": "Répète la séquence",
+      "howto": "Regarde et écoute les couleurs s'allumer, puis touche-les dans le même ordre. Chaque manche ajoute une étape. Jusqu'où ira ta mémoire ?"
+    },
+    "neonstack": {
+      "name": "Tour de Néon",
+      "desc": "Empile les blocs qui tombent",
+      "howto": "Fais glisser sur les côtés pour déplacer la pièce, touche pour la faire pivoter, glisse vers le bas pour la faire tomber plus vite. Complète une ligne pour l'effacer — efface-en quatre d'un coup pour un bonus énorme ! Les blocs tombent de plus en plus vite."
+    },
+    "solitaire": {
+      "name": "Solitaire",
+      "desc": "La patience classique",
+      "howto": "Touche une carte pour l'envoyer automatiquement au meilleur endroit. Construis les quatre piles par couleur de l'as au roi. Dans les colonnes, empile en ordre décroissant en alternant rouge et noir. Touche la pioche pour tirer une carte. Prends tout ton temps."
+    },
+    "roadhopper": {
+      "name": "Saute-Route",
+      "desc": "Traverse la route et la rivière",
+      "howto": "Glisse pour sauter d'une case à la fois. Évite les voitures sur la route, puis traverse la rivière en montant sur les troncs — ne touche jamais l'eau ! Remplis les cinq nids en haut pour passer au niveau suivant. Attention : tout accélère à chaque manche."
+    },
+    "astroshards": {
+      "name": "Éclats d'Astéroïdes",
+      "desc": "Pulvérise les rochers spatiaux",
+      "howto": "Maintiens ↺ et ↻ pour faire pivoter ton vaisseau et ▲ pour accélérer — il tire tout seul. Les gros rochers se brisent en morceaux plus petits et plus rapides. Les petits rapportent le plus de points. Sors d'un bord de l'écran et tu réapparais de l'autre côté !"
+    },
+    "pixelwings": {
+      "name": "Ailes de Pixel",
+      "desc": "Vole entre les tours",
+      "howto": "Touche n'importe où pour battre des ailes et rester en l'air. Faufile-toi dans l'ouverture entre les tours — un point par tour franchie. Un seul choc et c'est fini. Jusqu'où voleras-tu ?"
+    },
+    "gemdigger": {
+      "name": "Chercheur de Gemmes",
+      "desc": "Creuse profond, ramasse tout",
+      "howto": "Glisse pour creuser des tunnels et ramasse toutes les gemmes. Deux créatures des cavernes te traquent — mais elles ne se déplacent que dans tes tunnels, alors creuse malin ! Ramasse toutes les gemmes pour gagner."
+    },
+    "skyshield": {
+      "name": "Bouclier Céleste",
+      "desc": "Défends tes villes",
+      "howto": "Des missiles pleuvent sur tes six villes ! Touche le ciel pour lancer un intercepteur — son explosion détruit tout autour. Les munitions sont limitées à chaque vague, vise donc devant les missiles. Munitions restantes et villes sauvées rapportent de gros bonus."
+    },
+    "divesquadron": {
+      "name": "Escadron Piqué",
+      "desc": "Survis aux piqués ennemis",
+      "howto": "Glisse pour piloter ton vaisseau — il tire tout seul. Les ennemis quittent la formation et piquent droit sur toi. Un ennemi en piqué vaut double — le tir audacieux paie ! Élimine tout l'escadron pour affronter une vague plus rapide."
+    },
+    "ghostsweeper": {
+      "name": "Chasse-Fantômes",
+      "desc": "Trouve les fantômes cachés",
+      "howto": "Touche une case pour la révéler. Les chiffres indiquent combien de fantômes se cachent dans les cases voisines — déduis leur position. Appuie longuement pour poser un sceau sur un fantôme suspect. Révèle toutes les cases sûres pour gagner. Pas de chrono, que de la logique."
+    },
+    "zombiebop": {
+      "name": "Tape-Zombie",
+      "desc": "Renvoie-les sous terre",
+      "howto": "Les zombies surgissent des tombes ! Touche-les avant qu'ils ne replongent. Le squelette doré vaut 5 fois plus. Tu as 60 secondes — ils accélèrent vers la fin !"
+    },
+    "tilefusion": {
+      "name": "Fusion de Tuiles",
+      "desc": "Fusionne jusqu'à 2048",
+      "howto": "Glisse pour faire glisser toutes les tuiles. Quand deux nombres identiques se rencontrent, ils fusionnent en un plus grand. Atteins la tuile lumineuse 2048 ! La partie s'arrête quand le plateau est plein et que rien ne peut fusionner. Pas de chrono — réfléchis à chaque coup."
+    },
+    "slidefifteen": {
+      "name": "Taquin Quinze",
+      "desc": "Remets les tuiles en ordre",
+      "howto": "Touche une tuile dans la ligne ou la colonne de la case vide pour la faire glisser. Range les tuiles de 1 à 15. Chaque grille a une solution — moins de coups, plus de points, et pas de chrono."
+    },
+    "neonlights": {
+      "name": "Néons",
+      "desc": "Éteins toutes les lumières",
+      "howto": "Toucher une lampe l'inverse ainsi que ses quatre voisines. Plonge tout le plateau dans le noir pour finir la manche — trois manches, de plus en plus emmêlées. Moins de touches, plus de points. Pure logique, sans chrono."
+    },
+    "retroracer": {
+      "name": "Pilote Rétro",
+      "desc": "Slalome dans le trafic",
+      "howto": "Glisse à gauche ou à droite pour sauter entre les trois voies. Faufile-toi entre les voitures — la route devient plus rapide et plus dense au fil des kilomètres. Un seul accrochage et c'est terminé. Jusqu'où iras-tu ?"
+    },
+    "moonlander": {
+      "name": "Alunisseur",
+      "desc": "Pose-toi en douceur",
+      "howto": "Maintiens ▲ pour allumer le moteur contre la gravité et ◀ ▶ pour dériver sur les côtés. Pose-toi lentement sur la plateforme verte — ton vaisseau brille en bleu quand tu es assez lent pour atterrir. Le carburant est limité ! Chaque alunissage réussit amène une plateforme plus petite et une gravité plus forte."
+    },
+    "eggcatch": {
+      "name": "Attrape-Œufs",
+      "desc": "Attrape chaque œuf qui roule",
+      "howto": "Les œufs dévalent quatre rampes. Touche un coin de l'écran pour placer ton panier sous cette rampe. Attrape chaque œuf avant qu'il ne tombe — trois œufs cassés et la partie s'arrête. Ils roulent plus vite à mesure que ton score grimpe !"
+    },
+    "creepycrawler": {
+      "name": "Rampant Sinistre",
+      "desc": "Coupe le rampant en deux",
+      "howto": "Glisse pour déplacer ton chasseur — il tire tout seul. Tire sur le rampant qui serpente entre les pierres tombales : touche-le au milieu et il se scinde en deux ! Chaque segment détruit devient une nouvelle pierre tombale. Ne le laisse pas t'atteindre."
+    }
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "app": {
+    "name": "Retro Arcade",
+    "publisher": "Golden Age Games",
+    "tagline": "Los juegos con los que creciste"
+  },
+  "common": {
+    "ok": "Aceptar",
+    "cancel": "Cancelar",
+    "back": "Atrás",
+    "continue": "Continuar",
+    "loading": "Cargando…",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "offline": "Sin conexión. Las puntuaciones se sincronizarán después."
+  },
+  "language": {
+    "title": "Elige tu idioma",
+    "subtitle": "Puedes cambiarlo cuando quieras en Ajustes",
+    "english": "English",
+    "arabic": "العربية"
+  },
+  "auth": {
+    "welcome": "Bienvenido a Retro Arcade",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "login": "Iniciar sesión",
+    "register": "Crear cuenta",
+    "haveAccount": "Ya tengo una cuenta",
+    "noAccount": "Soy nuevo aquí",
+    "registerTitle": "Crea tu cuenta",
+    "loginTitle": "Bienvenido de nuevo",
+    "passwordHint": "Mínimo 8 caracteres",
+    "checkEmail": "¡Revisa tu correo!",
+    "confirmationSent": "Te enviamos un correo de confirmación. Ábrelo y toca el enlace para empezar a jugar.",
+    "invalidEmail": "Introduce un correo electrónico válido",
+    "shortPassword": "La contraseña debe tener al menos 8 caracteres",
+    "authFailed": "Correo o contraseña incorrectos",
+    "registerFailed": "No se pudo crear la cuenta. Inténtalo de nuevo.",
+    "logout": "Cerrar sesión"
+  },
+  "home": {
+    "playFree": "GRATIS",
+    "locked": "BLOQUEADO",
+    "unlockCard": "Desbloquea todos los juegos — 4,99 $ una sola vez",
+    "unlockCardSub": "Sin anuncios, nunca. Todos los juegos futuros incluidos.",
+    "categories": {
+      "classics": "Clásicos",
+      "action": "Acción",
+      "spooky": "Terror",
+      "brain": "Mente"
+    }
+  },
+  "purchase": {
+    "title": "Desbloquéalo todo",
+    "price": "4,99 $",
+    "bullet1": "Pago único — nunca vuelves a pagar",
+    "bullet2": "Sin anuncios, nunca",
+    "bullet3": "Todos los juegos para siempre, incluidos los futuros",
+    "buy": "Desbloquear por {{price}}",
+    "restore": "Restaurar compras",
+    "restoring": "Restaurando…",
+    "restored": "¡Tu compra ha sido restaurada!",
+    "nothingToRestore": "No se encontró ninguna compra anterior para esta cuenta.",
+    "thanks": "¡Gracias! Todo el arcade es tuyo.",
+    "failed": "No se pudo completar la compra.",
+    "unavailable": "La tienda no está disponible ahora. Inténtalo más tarde."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "language": "Idioma",
+    "sound": "Sonido",
+    "haptics": "Vibración",
+    "scanlines": "Efecto de líneas CRT",
+    "account": "Cuenta",
+    "deleteAccount": "Eliminar mi cuenta",
+    "deleteConfirmTitle": "¿Eliminar la cuenta?",
+    "deleteConfirmBody": "Esto elimina permanentemente tu cuenta, tu correo y tus puntuaciones. No se puede deshacer.",
+    "deleteConfirmYes": "Eliminar para siempre",
+    "deleted": "Tu cuenta ha sido eliminada.",
+    "privacyTitle": "Privacidad",
+    "privacyBody": "Solo guardamos tu correo, tu contraseña (cifrada) y tus puntuaciones. Nada más. Nunca mostramos anuncios ni vendemos datos.",
+    "restartNeeded": "Se requiere reiniciar",
+    "restartNeededBody": "La app debe reiniciarse para cambiar la dirección del diseño. Ciérrala y vuelve a abrirla."
+  },
+  "game": {
+    "score": "Puntos",
+    "best": "Récord",
+    "lives": "Vidas",
+    "level": "Nivel",
+    "moves": "Movimientos",
+    "pause": "Pausa",
+    "resume": "Continuar",
+    "quit": "Salir del juego",
+    "howToPlay": "Cómo se juega",
+    "start": "Empezar",
+    "gameOver": "FIN DEL JUEGO",
+    "youWin": "¡GANASTE!",
+    "newBest": "¡NUEVO RÉCORD!",
+    "playAgain": "Jugar otra vez",
+    "backToArcade": "Volver al arcade"
+  },
+  "games": {
+    "snake": {
+      "name": "Serpiente",
+      "desc": "Come, crece, no choques",
+      "howto": "Desliza el dedo en cualquier dirección para guiar a la serpiente. Come la comida para crecer. No choques con las paredes ni contigo mismo. ¡La serpiente va más rápido cuanto más crece!"
+    },
+    "brickbreaker": {
+      "name": "Rompe Bloques",
+      "desc": "Destroza todos los ladrillos",
+      "howto": "Desliza el dedo para mover la paleta. Haz rebotar la bola para romper todos los ladrillos. Golpea la bola con el borde de la paleta para cambiar su ángulo. Tienes 3 bolas."
+    },
+    "paddleduel": {
+      "name": "Duelo de Paletas",
+      "desc": "El primero en llegar a 7 gana",
+      "howto": "Desliza el dedo para mover tu paleta. Devuelve la bola más allá de la paleta de la máquina para anotar. El primero en llegar a 7 puntos gana. ¡El peloteo se acelera cuanto más dura!"
+    },
+    "spacedefenders": {
+      "name": "Defensores del Espacio",
+      "desc": "Detén la invasión",
+      "howto": "Desliza el dedo para mover tu nave — dispara sola. Destruye a todos los invasores antes de que te alcancen. ¡Se aceleran cuando quedan pocos!"
+    },
+    "meteordodge": {
+      "name": "Esquiva Meteoros",
+      "desc": "Sobrevive a la tormenta",
+      "howto": "Desliza el dedo para mover tu nave a izquierda y derecha. Esquiva los meteoros que caen todo el tiempo que puedas. Caen cada vez más rápido — ¿cuánto aguantarás?"
+    },
+    "hauntedmaze": {
+      "name": "Laberinto Encantado",
+      "desc": "Escapa de los fantasmas",
+      "howto": "Desliza para moverte por el laberinto. Recoge todas las esferas brillantes mientras los fantasmas te persiguen. ¡Coge una estrella de poder para darle la vuelta y perseguirlos tú!"
+    },
+    "memorymatch": {
+      "name": "Memoria",
+      "desc": "Encuentra todas las parejas",
+      "howto": "Toca una carta para voltearla y encuentra su pareja. Empareja todas para ganar. Menos movimientos, más puntos. Tómate tu tiempo — no hay reloj."
+    },
+    "simonecho": {
+      "name": "Eco de Simón",
+      "desc": "Repite el patrón",
+      "howto": "Mira y escucha cómo se iluminan los colores, luego tócalos en el mismo orden. Cada ronda añade un paso más. ¿Qué patrón tan largo puedes recordar?"
+    },
+    "neonstack": {
+      "name": "Torre de Neón",
+      "desc": "Apila los bloques que caen",
+      "howto": "Arrastra a los lados para mover la pieza, toca para girarla y arrastra hacia abajo para soltarla más rápido. Completa una fila para eliminarla — ¡elimina cuatro a la vez para un bonus enorme! Los bloques caen cada vez más rápido."
+    },
+    "solitaire": {
+      "name": "Solitario",
+      "desc": "El clásico juego de cartas",
+      "howto": "Toca una carta para moverla automáticamente al mejor lugar. Forma los cuatro montones por palo del as al rey. En las columnas, ordena en descendente alternando colores. Toca el mazo para robar. Tómate todo el tiempo que necesites."
+    },
+    "roadhopper": {
+      "name": "Salta Carreteras",
+      "desc": "Cruza la carretera y el río",
+      "howto": "Desliza para saltar un paso a la vez. Esquiva los coches en la carretera y cruza el río subiéndote a los troncos — ¡nunca toques el agua! Llena los cinco nidos de arriba para avanzar. Ojo: todo va más rápido en cada ronda."
+    },
+    "astroshards": {
+      "name": "Fragmentos Astrales",
+      "desc": "Revienta las rocas espaciales",
+      "howto": "Mantén pulsados ↺ y ↻ para girar tu nave y ▲ para propulsarte — dispara sola. Las rocas grandes se parten en otras más pequeñas y rápidas. Las pequeñas dan más puntos. ¡Sal por un borde y aparecerás por el otro!"
+    },
+    "pixelwings": {
+      "name": "Alas de Píxel",
+      "desc": "Aletea entre las torres",
+      "howto": "Toca en cualquier parte para aletear y mantenerte en el aire. Pasa por el hueco entre las torres — un punto por cada torre superada. Un golpe y se acabó. ¿Hasta dónde llegarás?"
+    },
+    "gemdigger": {
+      "name": "Buscagemas",
+      "desc": "Excava hondo, coge las gemas",
+      "howto": "Desliza para excavar túneles y recoge todas las gemas. Dos criaturas te cazan — pero solo pueden seguirte por tus túneles, ¡así que excava con cabeza! Recoge todas las gemas para ganar."
+    },
+    "skyshield": {
+      "name": "Escudo Celeste",
+      "desc": "Defiende tus ciudades",
+      "howto": "¡Los misiles caen hacia tus seis ciudades! Toca el cielo para lanzar un interceptor — su explosión destruye todo lo cercano. La munición es limitada en cada oleada, así que apunta por delante de los misiles. La munición sobrante y las ciudades salvadas dan grandes bonus."
+    },
+    "divesquadron": {
+      "name": "Escuadrón en Picado",
+      "desc": "Sobrevive a los bombarderos",
+      "howto": "Desliza para pilotar tu nave — dispara sola. Los enemigos salen de la formación y se lanzan en picado hacia ti. ¡Un enemigo en picado vale el doble — el disparo valiente se premia! Elimina todo el escuadrón para enfrentarte a una oleada más rápida."
+    },
+    "ghostsweeper": {
+      "name": "Caza Fantasmas",
+      "desc": "Encuentra los fantasmas ocultos",
+      "howto": "Toca una casilla para revelarla. Los números indican cuántos fantasmas se esconden en las casillas vecinas — usa la lógica para localizarlos. Mantén pulsado para marcar un fantasma sospechoso. Revela todas las casillas seguras para ganar. Sin reloj, solo pensar."
+    },
+    "zombiebop": {
+      "name": "Aporrea Zombis",
+      "desc": "Devuélvelos bajo tierra",
+      "howto": "¡Los zombis salen de las tumbas! Tócalos antes de que se hundan de nuevo. El esqueleto dorado vale 5 veces más. Tienes 60 segundos — ¡se aceleran al final!"
+    },
+    "tilefusion": {
+      "name": "Fusión de Fichas",
+      "desc": "Fusiona hasta 2048",
+      "howto": "Desliza para mover todas las fichas. Cuando dos números iguales chocan, se fusionan en uno mayor. ¡Llega a la ficha brillante de 2048! La partida termina cuando el tablero está lleno y nada puede fusionarse. Sin reloj — planifica cada movimiento."
+    },
+    "slidefifteen": {
+      "name": "Quince Deslizante",
+      "desc": "Ordena las fichas",
+      "howto": "Toca cualquier ficha en la fila o columna del hueco para deslizarla. Ordena las fichas del 1 al 15. Todos los puzles tienen solución — menos movimientos, más puntos, y sin reloj."
+    },
+    "neonlights": {
+      "name": "Luces de Neón",
+      "desc": "Apaga todas las luces",
+      "howto": "Tocar una lámpara la cambia a ella y a sus cuatro vecinas. Deja todo el tablero a oscuras para superar la ronda — tres rondas, cada una más enredada. Menos toques, más puntos. Lógica pura, sin tiempo."
+    },
+    "retroracer": {
+      "name": "Piloto Retro",
+      "desc": "Zigzaguea entre el tráfico",
+      "howto": "Desliza a izquierda o derecha para saltar entre los tres carriles. Esquiva los coches que vienen — la carretera se vuelve más rápida y concurrida cuanto más avanzas. Un choque y se acabó. ¿Hasta dónde llegarás?"
+    },
+    "moonlander": {
+      "name": "Alunizaje",
+      "desc": "Posa la nave con suavidad",
+      "howto": "Mantén ▲ para encender el motor contra la gravedad y ◀ ▶ para derivar a los lados. Aterriza despacio en la plataforma verde — tu nave brilla en azul cuando vas lo bastante lento. ¡El combustible es limitado! Cada aterrizaje trae una plataforma más pequeña y más gravedad."
+    },
+    "eggcatch": {
+      "name": "Atrapa Huevos",
+      "desc": "Atrapa cada huevo rodante",
+      "howto": "Los huevos ruedan por cuatro rampas. Toca una esquina de la pantalla para poner tu cesta bajo esa rampa. Atrapa cada huevo antes de que caiga — con tres caídas se acaba. ¡Ruedan más rápido cuanto más puntúas!"
+    },
+    "creepycrawler": {
+      "name": "Reptador Siniestro",
+      "desc": "Divide al reptador",
+      "howto": "Desliza para mover a tu cazador — dispara solo. Dispara al reptador que serpentea entre las lápidas: ¡dale en el medio y se divide en dos! Cada trozo destruido se convierte en una lápida nueva. No dejes que te alcance."
+    }
+  }
+}
