@@ -82,6 +82,10 @@
     "restartNeeded": "Se requiere reiniciar",
     "restartNeededBody": "La app debe reiniciarse para cambiar la dirección del diseño. Ciérrala y vuelve a abrirla."
   },
+  "records": {
+    "title": "Mis Récords",
+    "subtitle": "{{played}} de {{total}} juegos jugados"
+  },
   "game": {
     "score": "Puntos",
     "best": "Récord",
@@ -189,6 +193,16 @@
       "name": "Aporrea Zombis",
       "desc": "Devuélvelos bajo tierra",
       "howto": "¡Los zombis salen de las tumbas! Tócalos antes de que se hundan de nuevo. El esqueleto dorado vale 5 veces más. Tienes 60 segundos — ¡se aceleran al final!"
+    },
+    "pyramidhop": {
+      "name": "Salto Piramidal",
+      "desc": "Pinta cada cubo",
+      "howto": "Desliza en DIAGONAL para saltar entre los cubos — abajo-izquierda, abajo-derecha, arriba-izquierda, arriba-derecha. Cada cubo donde aterrizas se ilumina; ilumínalos todos para superar el nivel. ¡Esquiva las esferas rojas y no saltes fuera del borde!"
+    },
+    "gemcolumns": {
+      "name": "Columnas de Gemas",
+      "desc": "Alinea tres gemas",
+      "howto": "Una columna de tres gemas cae al pozo. Arrastra a los lados para guiarla, toca para reordenar las gemas y arrastra hacia abajo para acelerar. Alinea tres o más de un color — en horizontal, vertical o diagonal — para romperlas. ¡Las cadenas puntúan a lo grande!"
     },
     "tilefusion": {
       "name": "Fusión de Fichas",

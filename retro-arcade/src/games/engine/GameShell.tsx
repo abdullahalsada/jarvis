@@ -104,7 +104,7 @@ export function GameShell({ gameId, color, showLives, onQuit, children }: Props)
           gap: spacing.m,
         }}>
         <View style={{ flex: 1 }}>
-          <PixelText size="label" color={colors.textDim}>
+          <PixelText size={11} color={colors.textDim} numberOfLines={1} adjustsFontSizeToFit>
             {t('game.score')}
           </PixelText>
           <PixelText size="score" color={color} glow>
@@ -112,7 +112,7 @@ export function GameShell({ gameId, color, showLives, onQuit, children }: Props)
           </PixelText>
         </View>
         <View style={{ flex: 1 }}>
-          <PixelText size="label" color={colors.textDim}>
+          <PixelText size={11} color={colors.textDim} numberOfLines={1} adjustsFontSizeToFit>
             {t('game.best')}
           </PixelText>
           <PixelText size="score" color={colors.text}>
@@ -121,7 +121,7 @@ export function GameShell({ gameId, color, showLives, onQuit, children }: Props)
         </View>
         {showLives && (
           <View style={{ flex: 1 }}>
-            <PixelText size="label" color={colors.textDim}>
+            <PixelText size={11} color={colors.textDim} numberOfLines={1} adjustsFontSizeToFit>
               {t('game.lives')}
             </PixelText>
             <PixelText size="score" color={colors.neonRed}>

@@ -82,6 +82,10 @@
     "restartNeeded": "Redémarrage requis",
     "restartNeededBody": "L'application doit redémarrer pour changer le sens de l'affichage. Ferme-la puis rouvre-la."
   },
+  "records": {
+    "title": "Mes Records",
+    "subtitle": "{{played}} jeux joués sur {{total}}"
+  },
   "game": {
     "score": "Score",
     "best": "Record",
@@ -189,6 +193,16 @@
       "name": "Tape-Zombie",
       "desc": "Renvoie-les sous terre",
       "howto": "Les zombies surgissent des tombes ! Touche-les avant qu'ils ne replongent. Le squelette doré vaut 5 fois plus. Tu as 60 secondes — ils accélèrent vers la fin !"
+    },
+    "pyramidhop": {
+      "name": "Saut Pyramide",
+      "desc": "Colore chaque cube",
+      "howto": "Glisse en DIAGONALE pour sauter de cube en cube — bas-gauche, bas-droite, haut-gauche, haut-droite. Chaque cube où tu atterris s'illumine ; illumine-les tous pour finir le niveau. Évite les orbes rouges qui dégringolent, et ne saute pas dans le vide !"
+    },
+    "gemcolumns": {
+      "name": "Colonnes de Gemmes",
+      "desc": "Aligne trois gemmes",
+      "howto": "Une colonne de trois gemmes tombe dans le puits. Glisse sur les côtés pour la diriger, touche pour réordonner les gemmes, glisse vers le bas pour accélérer la chute. Aligne trois gemmes ou plus d'une couleur — en ligne, en colonne ou en diagonale — pour les briser. Les enchaînements rapportent gros !"
     },
     "tilefusion": {
       "name": "Fusion de Tuiles",

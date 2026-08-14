@@ -82,6 +82,10 @@
     "restartNeeded": "Restart required",
     "restartNeededBody": "The app needs to restart to switch the layout direction. Please close and reopen the app."
   },
+  "records": {
+    "title": "My Records",
+    "subtitle": "{{played}} of {{total}} games played"
+  },
   "game": {
     "score": "Score",
     "best": "Best",
@@ -184,6 +188,16 @@
       "name": "Zombie Bop",
       "desc": "Bop them back down",
       "howto": "Zombies are popping out of the graves! Tap them before they sink back down. The golden skeleton is worth 5× points. You have 60 seconds — they get faster near the end!"
+    },
+    "pyramidhop": {
+      "name": "Pyramid Hop",
+      "desc": "Paint every cube",
+      "howto": "Swipe DIAGONALLY to hop between the cubes — down-left, down-right, up-left, up-right. Every cube you land on lights up; light them all to clear the level. Dodge the tumbling red orbs, and don't hop off the edge!"
+    },
+    "gemcolumns": {
+      "name": "Gem Columns",
+      "desc": "Line up three gems",
+      "howto": "A stack of three gems falls into the well. Drag sideways to steer it, tap to reshuffle the gem order, drag down to drop faster. Line up three or more of a color — across, down, or diagonally — to shatter them. Chains score big!"
     },
     "tilefusion": {
       "name": "Tile Fusion",
