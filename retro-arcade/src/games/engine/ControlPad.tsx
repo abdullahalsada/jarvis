@@ -12,9 +12,16 @@ import { PixelText } from '../../components/PixelText';
  * Layout heights are exported so games can size their field: subtract the
  * matching PAD_* constant from api.height.
  */
-export const PAD_DPAD = 172;
-export const PAD_DIAG = 128;
-export const PAD_BAR = 84;
+/**
+ * Bottom lift keeps buttons comfortably above the screen edge (and the
+ * iPhone home-indicator zone) — device feedback said flush-bottom buttons
+ * were hard to reach.
+ */
+const LIFT = 44;
+
+export const PAD_DPAD = 172 + LIFT;
+export const PAD_DIAG = 128 + LIFT;
+export const PAD_BAR = 84 + LIFT;
 
 interface PadProps {
   onDown: (key: string) => void;
@@ -75,7 +82,7 @@ function PadButton({
 /** Classic cross D-pad: ▲ / ◀ ▶ / ▼. */
 export function DPad({ onDown, onUp }: PadProps) {
   return (
-    <View style={{ height: PAD_DPAD, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ height: PAD_DPAD, alignItems: 'center', justifyContent: 'center', paddingBottom: LIFT }}>
       <PadButton label="▲" keyName="up" onDown={onDown} onUp={onUp} />
       <View style={{ flexDirection: 'row' }}>
         <PadButton label="◀" keyName="left" onDown={onDown} onUp={onUp} />
@@ -90,7 +97,7 @@ export function DPad({ onDown, onUp }: PadProps) {
 /** Diagonal 2×2 pad for isometric hoppers: ↖ ↗ / ↙ ↘. */
 export function DiagPad({ onDown, onUp }: PadProps) {
   return (
-    <View style={{ height: PAD_DIAG, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ height: PAD_DIAG, alignItems: 'center', justifyContent: 'center', paddingBottom: LIFT }}>
       <View style={{ flexDirection: 'row' }}>
         <PadButton label="↖" keyName="ul" onDown={onDown} onUp={onUp} />
         <PadButton label="↗" keyName="ur" onDown={onDown} onUp={onUp} />
@@ -119,6 +126,7 @@ export function PadBar({
           alignItems: 'center',
           justifyContent: 'space-evenly',
           paddingHorizontal: 8,
+          paddingBottom: LIFT,
         },
         style,
       ]}>
