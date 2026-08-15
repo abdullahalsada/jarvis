@@ -4,6 +4,7 @@ import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
+import { PadBar, PAD_BAR } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -34,7 +35,7 @@ interface Shot {
 
 export function DiveSquadronGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_BAR;
   const ALIEN = Math.floor(W / 15);
   const GAP = Math.floor(ALIEN * 0.55);
   const SHIP_W = ALIEN * 1.4;
@@ -87,7 +88,13 @@ export function DiveSquadronGame({ api }: { api: GameApi }) {
     ship.current = Math.max(SHIP_W / 2, Math.min(W - SHIP_W / 2, x));
   });
 
+  const held = useRef({ left: false, right: false });
+
   useGameLoop(api.running, (dt) => {
+    if (held.current.left || held.current.right) {
+      const dx = (held.current.right ? 1 : 0) - (held.current.left ? 1 : 0);
+      ship.current = Math.max(SHIP_W / 2, Math.min(W - SHIP_W / 2, ship.current + dx * W * 0.9 * dt));
+    }
     breathe.current += dt * 1.2;
 
     // Launch dives: 1-2 enemies peel off, more often in later waves.
@@ -185,8 +192,9 @@ export function DiveSquadronGame({ api }: { api: GameApi }) {
   });
 
   return (
-    <View style={{ flex: 1 }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ flex: 1 }}>
         {enemies.current.map((e, i) => (
           <View
             key={i}
@@ -239,7 +247,20 @@ export function DiveSquadronGame({ api }: { api: GameApi }) {
             backgroundColor: colors.neonGreen,
           }}
         />
+        </View>
       </View>
+      <PadBar
+        buttons={[
+          { key: 'left', label: '◀', wide: true },
+          { key: 'right', label: '▶', wide: true },
+        ]}
+        onDown={(k) => {
+          held.current[k as 'left' | 'right'] = true;
+        }}
+        onUp={(k) => {
+          held.current[k as 'left' | 'right'] = false;
+        }}
+      />
     </View>
   );
 }

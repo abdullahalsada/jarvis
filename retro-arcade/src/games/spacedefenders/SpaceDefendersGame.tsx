@@ -4,6 +4,7 @@ import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
+import { PadBar, PAD_BAR } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -27,7 +28,7 @@ interface Shot {
 
 export function SpaceDefendersGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_BAR;
   const ALIEN = Math.floor(W / 14);
   const GAP = Math.floor(ALIEN * 0.5);
   const SHIP_W = ALIEN * 1.4;
@@ -68,7 +69,13 @@ export function SpaceDefendersGame({ api }: { api: GameApi }) {
     ship.current = Math.max(SHIP_W / 2, Math.min(W - SHIP_W / 2, x));
   });
 
+  const held = useRef({ left: false, right: false });
+
   useGameLoop(api.running, (dt) => {
+    if (held.current.left || held.current.right) {
+      const dx = (held.current.right ? 1 : 0) - (held.current.left ? 1 : 0);
+      ship.current = Math.max(SHIP_W / 2, Math.min(W - SHIP_W / 2, ship.current + dx * W * 0.9 * dt));
+    }
     const count = alive.current.filter(Boolean).length;
 
     // March speed: crawls with a full rack, screams with few left.
@@ -174,8 +181,9 @@ export function SpaceDefendersGame({ api }: { api: GameApi }) {
   });
 
   return (
-    <View style={{ flex: 1 }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ flex: 1 }}>
         {alive.current.map((a, i) => {
           if (!a) return null;
           const row = Math.floor(i / ICOLS);
@@ -242,7 +250,20 @@ export function SpaceDefendersGame({ api }: { api: GameApi }) {
             backgroundColor: colors.neonGreen,
           }}
         />
+        </View>
       </View>
+      <PadBar
+        buttons={[
+          { key: 'left', label: '◀', wide: true },
+          { key: 'right', label: '▶', wide: true },
+        ]}
+        onDown={(k) => {
+          held.current[k as 'left' | 'right'] = true;
+        }}
+        onUp={(k) => {
+          held.current[k as 'left' | 'right'] = false;
+        }}
+      />
     </View>
   );
 }

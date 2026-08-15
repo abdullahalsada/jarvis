@@ -4,6 +4,7 @@ import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useTick } from '../engine/useGameLoop';
 import { useSwipe, type Dir } from '../engine/controls';
+import { DPad, PAD_DPAD } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -28,8 +29,9 @@ const DELTA: Record<Dir, Cell> = {
 };
 
 export function GemDiggerGame({ api }: { api: GameApi }) {
-  const cell = Math.floor(Math.min(api.width / COLS, api.height / 14));
-  const ROWS = Math.max(10, Math.min(14, Math.floor(api.height / cell)));
+  const fieldH = api.height - PAD_DPAD;
+  const cell = Math.floor(Math.min(api.width / COLS, fieldH / 14));
+  const ROWS = Math.max(10, Math.min(14, Math.floor(fieldH / cell)));
 
   const dug = useRef<Set<string>>(new Set());
   const gems = useRef<Set<string>>(new Set());
@@ -85,9 +87,10 @@ export function GemDiggerGame({ api }: { api: GameApi }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api.resetToken]);
 
-  const pan = useSwipe((d) => {
+  const steer = (d: Dir) => {
     wanted.current = d;
-  });
+  };
+  const pan = useSwipe(steer);
 
   const die = (): boolean => {
     lives.current -= 1;
@@ -167,8 +170,9 @@ export function GemDiggerGame({ api }: { api: GameApi }) {
   const boardH = ROWS * cell;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ width: boardW, height: boardH, backgroundColor: '#3d2b17' }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ width: boardW, height: boardH, backgroundColor: '#3d2b17' }}>
         {/* Sky strip on row 0 */}
         <View style={{ position: 'absolute', top: 0, width: boardW, height: cell, backgroundColor: colors.bg }} />
         {[...dug.current].map((k) => {
@@ -229,7 +233,9 @@ export function GemDiggerGame({ api }: { api: GameApi }) {
             backgroundColor: colors.neonGreen,
           }}
         />
+        </View>
       </View>
+      <DPad onDown={(k) => steer(k as Dir)} />
     </View>
   );
 }

@@ -3,6 +3,7 @@ import { PanResponder, View } from 'react-native';
 import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useTick } from '../engine/useGameLoop';
+import { DiagPad, PAD_DIAG } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -27,7 +28,7 @@ interface Hazard {
 
 export function PyramidHopGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_DIAG;
   const cube = Math.floor(Math.min(W / (ROWS + 1.5), H / (ROWS * 0.8 + 2)));
   const topPad = Math.floor(cube * 1.2);
 
@@ -116,7 +117,10 @@ export function PyramidHopGame({ api }: { api: GameApi }) {
   };
 
   // Diagonal swipe control: the quadrant of the drag picks one of the four
-  // diagonal hops (down-left, down-right, up-left, up-right).
+  // diagonal hops (down-left, down-right, up-left, up-right). The responder
+  // is created once, so it must call the latest hop() through a ref.
+  const hopRef = useRef(hop);
+  hopRef.current = hop;
   const start = useRef({ x: 0, y: 0 });
   const pan = useRef(
     PanResponder.create({
@@ -130,8 +134,8 @@ export function PyramidHopGame({ api }: { api: GameApi }) {
         const dy = evt.nativeEvent.pageY - start.current.y;
         if (Math.abs(dx) < 22 || Math.abs(dy) < 12) return; // need a clear diagonal
         start.current = { x: evt.nativeEvent.pageX, y: evt.nativeEvent.pageY };
-        if (dy > 0) hop(1, dx > 0 ? 1 : 0);
-        else hop(-1, dx > 0 ? 0 : -1);
+        if (dy > 0) hopRef.current(1, dx > 0 ? 1 : 0);
+        else hopRef.current(-1, dx > 0 ? 0 : -1);
       },
     })
   );
@@ -175,9 +179,17 @@ export function PyramidHopGame({ api }: { api: GameApi }) {
     for (let idx = 0; idx <= row; idx++) cells.push({ row, idx });
   }
 
+  const padHop = (k: string) => {
+    if (k === 'dl') hop(1, 0);
+    else if (k === 'dr') hop(1, 1);
+    else if (k === 'ul') hop(-1, -1);
+    else hop(-1, 0);
+  };
+
   return (
-    <View style={{ flex: 1 }} {...pan.current.panHandlers}>
-      <View pointerEvents="none" style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }} {...pan.current.panHandlers}>
+        <View pointerEvents="none" style={{ flex: 1 }}>
         {cells.map((p) => {
           const isPainted = painted.current.has(key(p));
           return (
@@ -222,7 +234,9 @@ export function PyramidHopGame({ api }: { api: GameApi }) {
             backgroundColor: colors.neonMagenta,
           }}
         />
+        </View>
       </View>
+      <DiagPad onDown={padHop} />
     </View>
   );
 }

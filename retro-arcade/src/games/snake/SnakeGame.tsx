@@ -4,6 +4,7 @@ import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useTick } from '../engine/useGameLoop';
 import { useSwipe, type Dir } from '../engine/controls';
+import { DPad, PAD_DPAD } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -29,7 +30,7 @@ const DELTA: Record<Dir, Cell> = {
 
 export function SnakeGame({ api }: { api: GameApi }) {
   const cell = Math.floor(api.width / COLS);
-  const rows = Math.max(10, Math.floor(api.height / cell) - 1);
+  const rows = Math.max(10, Math.floor((api.height - PAD_DPAD) / cell) - 1);
 
   const snake = useRef<Cell[]>([]);
   const dir = useRef<Dir>('right');
@@ -62,13 +63,16 @@ export function SnakeGame({ api }: { api: GameApi }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api.resetToken, rows]);
 
-  const pan = useSwipe((d) => {
-    // Buffer up to 2 turns; ignore direct reversals against the *last queued*
-    // heading, matching original handheld behavior.
+  // Buffer up to 2 turns; ignore direct reversals against the *last queued*
+  // heading, matching original handheld behavior. Fed by both the D-pad and
+  // swipes anywhere on the board.
+  const steer = (d: Dir) => {
     const last = queue.current[queue.current.length - 1] ?? dir.current;
     if (d === last || d === OPPOSITE[last]) return;
     if (queue.current.length < 2) queue.current.push(d);
-  });
+  };
+
+  const pan = useSwipe(steer);
 
   // Speed: -6ms per food eaten, floor at MIN_MS — the classic ramp.
   const intervalMs = Math.max(MIN_MS, START_MS - (snake.current.length - 3) * 6);
@@ -103,41 +107,139 @@ export function SnakeGame({ api }: { api: GameApi }) {
   const boardH = rows * cell;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} {...pan.panHandlers}>
-      <View
-        pointerEvents="none"
-        style={{
-          width: boardW,
-          height: boardH,
-          borderWidth: 2,
-          borderColor: colors.border,
-          backgroundColor: colors.bgRaised,
-        }}>
-        {snake.current.map((s, i) => (
-          <View
-            key={i}
-            style={{
-              position: 'absolute',
-              left: s.x * cell,
-              top: s.y * cell,
-              width: cell - 1,
-              height: cell - 1,
-              backgroundColor: i === 0 ? colors.neonGreen : '#2bcc10',
-            }}
-          />
-        ))}
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} {...pan.panHandlers}>
+        <View
+          pointerEvents="none"
+          style={{
+            width: boardW,
+            height: boardH,
+            borderWidth: 2,
+            borderColor: colors.border,
+            backgroundColor: colors.bgRaised,
+          }}>
+        {snake.current.map((s, i) => {
+          const isHead = i === 0;
+          const isTail = i === snake.current.length - 1;
+          if (isHead) {
+            const d = DELTA[dir.current];
+            const perp = { x: -d.y, y: d.x };
+            const cx = s.x * cell + cell / 2;
+            const cy = s.y * cell + cell / 2;
+            const eye = (side: 1 | -1) => ({
+              left: cx + d.x * cell * 0.12 + perp.x * side * cell * 0.22 - cell * 0.11,
+              top: cy + d.y * cell * 0.12 + perp.y * side * cell * 0.22 - cell * 0.11,
+            });
+            return (
+              <View key={i}>
+                <View
+                  style={{
+                    position: 'absolute',
+                    left: s.x * cell - 1,
+                    top: s.y * cell - 1,
+                    width: cell + 1,
+                    height: cell + 1,
+                    borderRadius: cell * 0.45,
+                    backgroundColor: colors.neonGreen,
+                  }}
+                />
+                {/* Tongue flicking ahead of the head */}
+                <View
+                  style={{
+                    position: 'absolute',
+                    left: cx + d.x * cell * 0.55 - cell * 0.06,
+                    top: cy + d.y * cell * 0.55 - cell * 0.06,
+                    width: cell * 0.12,
+                    height: cell * 0.12,
+                    borderRadius: cell * 0.06,
+                    backgroundColor: colors.neonMagenta,
+                  }}
+                />
+                {([1, -1] as const).map((side) => (
+                  <View
+                    key={side}
+                    style={{
+                      position: 'absolute',
+                      ...eye(side),
+                      width: cell * 0.22,
+                      height: cell * 0.22,
+                      borderRadius: cell * 0.11,
+                      backgroundColor: '#ffffff',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}>
+                    <View
+                      style={{
+                        width: cell * 0.1,
+                        height: cell * 0.1,
+                        borderRadius: cell * 0.05,
+                        backgroundColor: '#101018',
+                      }}
+                    />
+                  </View>
+                ))}
+              </View>
+            );
+          }
+          if (isTail) {
+            return (
+              <View
+                key={i}
+                style={{
+                  position: 'absolute',
+                  left: s.x * cell + cell * 0.18,
+                  top: s.y * cell + cell * 0.18,
+                  width: cell * 0.64,
+                  height: cell * 0.64,
+                  borderRadius: cell * 0.32,
+                  backgroundColor: '#249e0d',
+                }}
+              />
+            );
+          }
+          // Body: rounded segments in alternating shades so the coil reads.
+          return (
+            <View
+              key={i}
+              style={{
+                position: 'absolute',
+                left: s.x * cell,
+                top: s.y * cell,
+                width: cell - 1,
+                height: cell - 1,
+                borderRadius: cell * 0.3,
+                backgroundColor: i % 2 === 0 ? '#2bcc10' : '#35ea12',
+              }}
+            />
+          );
+        })}
+        {/* Apple: red fruit with a leaf */}
         <View
           style={{
             position: 'absolute',
-            left: food.current.x * cell,
-            top: food.current.y * cell,
-            width: cell - 1,
-            height: cell - 1,
-            backgroundColor: colors.neonMagenta,
-            borderRadius: cell / 2,
+            left: food.current.x * cell + cell * 0.1,
+            top: food.current.y * cell + cell * 0.18,
+            width: cell * 0.8,
+            height: cell * 0.8,
+            borderRadius: cell * 0.4,
+            backgroundColor: colors.neonRed,
           }}
         />
+        <View
+          style={{
+            position: 'absolute',
+            left: food.current.x * cell + cell * 0.52,
+            top: food.current.y * cell + cell * 0.02,
+            width: cell * 0.3,
+            height: cell * 0.18,
+            borderRadius: cell * 0.09,
+            backgroundColor: colors.neonGreen,
+            transform: [{ rotate: '-30deg' }],
+          }}
+        />
+        </View>
       </View>
+      <DPad onDown={(k) => steer(k as Dir)} />
     </View>
   );
 }

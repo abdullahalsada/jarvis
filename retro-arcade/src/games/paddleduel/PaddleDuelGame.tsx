@@ -5,6 +5,7 @@ import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
+import { PadBar, PAD_BAR } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -19,7 +20,7 @@ const WIN_SCORE = 7;
 
 export function PaddleDuelGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_BAR;
   const PADDLE_W = W * 0.24;
   const PADDLE_H = 14;
   const BALL = 12;
@@ -59,6 +60,8 @@ export function PaddleDuelGame({ api }: { api: GameApi }) {
     player.current = Math.max(PADDLE_W / 2, Math.min(W - PADDLE_W / 2, x));
   });
 
+  const held = useRef({ left: false, right: false });
+
   const deflect = (paddleX: number, up: boolean) => {
     const b = ball.current;
     const hit = (b.x - paddleX) / (PADDLE_W / 2);
@@ -70,6 +73,13 @@ export function PaddleDuelGame({ api }: { api: GameApi }) {
   };
 
   useGameLoop(api.running, (dt) => {
+    if (held.current.left || held.current.right) {
+      const dx = (held.current.right ? 1 : 0) - (held.current.left ? 1 : 0);
+      player.current = Math.max(
+        PADDLE_W / 2,
+        Math.min(W - PADDLE_W / 2, player.current + dx * W * 0.95 * dt)
+      );
+    }
     const b = ball.current;
 
     if (serveTimer.current > 0) {
@@ -146,8 +156,9 @@ export function PaddleDuelGame({ api }: { api: GameApi }) {
   });
 
   return (
-    <View style={{ flex: 1 }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ flex: 1 }}>
         {/* Center line + AI score */}
         <View
           style={{
@@ -203,7 +214,20 @@ export function PaddleDuelGame({ api }: { api: GameApi }) {
             backgroundColor: colors.text,
           }}
         />
+        </View>
       </View>
+      <PadBar
+        buttons={[
+          { key: 'left', label: '◀', wide: true },
+          { key: 'right', label: '▶', wide: true },
+        ]}
+        onDown={(k) => {
+          held.current[k as 'left' | 'right'] = true;
+        }}
+        onUp={(k) => {
+          held.current[k as 'left' | 'right'] = false;
+        }}
+      />
     </View>
   );
 }

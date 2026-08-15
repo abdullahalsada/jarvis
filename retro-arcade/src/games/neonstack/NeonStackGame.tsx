@@ -3,6 +3,7 @@ import { PanResponder, View } from 'react-native';
 import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useTick } from '../engine/useGameLoop';
+import { PadBar, PAD_BAR } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -50,7 +51,7 @@ function cellsOf(p: Piece): [number, number][] {
 }
 
 export function NeonStackGame({ api }: { api: GameApi }) {
-  const cell = Math.floor(Math.min(api.width / (COLS + 5), api.height / ROWS));
+  const cell = Math.floor(Math.min(api.width / (COLS + 5), (api.height - PAD_BAR) / ROWS));
   const boardW = COLS * cell;
 
   const grid = useRef<(string | null)[]>([]);
@@ -204,8 +205,17 @@ export function NeonStackGame({ api }: { api: GameApi }) {
   const px = (Math.min(api.width, boardW + 5 * cell) - (boardW + 4 * cell)) / 2;
   const preview = cellsOf({ kind: nextKind.current, rot: 0, x: 0, y: 0 });
 
+  const padDown = (k: string) => {
+    if (!api.running || over.current) return;
+    if (k === 'left') tryMove(-1, 0);
+    else if (k === 'right') tryMove(1, 0);
+    else if (k === 'rotate') rotate();
+    else if (k === 'drop') hardDrop();
+  };
+
   return (
-    <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', paddingTop: 8 }} {...pan.current.panHandlers}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', paddingTop: 8 }} {...pan.current.panHandlers}>
       <View
         pointerEvents="none"
         style={{
@@ -273,6 +283,16 @@ export function NeonStackGame({ api }: { api: GameApi }) {
           ))}
         </View>
       </View>
+      </View>
+      <PadBar
+        buttons={[
+          { key: 'left', label: '◀' },
+          { key: 'rotate', label: '↻' },
+          { key: 'drop', label: '▼' },
+          { key: 'right', label: '▶' },
+        ]}
+        onDown={padDown}
+      />
     </View>
   );
 }

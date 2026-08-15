@@ -4,6 +4,7 @@ import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useTick } from '../engine/useGameLoop';
 import { useSwipe, type Dir } from '../engine/controls';
+import { DPad, PAD_DPAD } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -60,7 +61,7 @@ interface Ghost {
 }
 
 export function HauntedMazeGame({ api }: { api: GameApi }) {
-  const cell = Math.floor(Math.min(api.width / COLS, api.height / ROWS));
+  const cell = Math.floor(Math.min(api.width / COLS, (api.height - PAD_DPAD) / ROWS));
 
   const player = useRef<Cell>({ x: 6, y: 10 });
   const dir = useRef<Dir>('left');
@@ -107,9 +108,11 @@ export function HauntedMazeGame({ api }: { api: GameApi }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api.resetToken]);
 
-  const pan = useSwipe((d) => {
-    wanted.current = d; // buffered until a junction allows the turn
-  });
+  // Buffered until a junction allows the turn; fed by D-pad and swipes alike.
+  const steer = (d: Dir) => {
+    wanted.current = d;
+  };
+  const pan = useSwipe(steer);
 
   const tryMove = (from: Cell, d: Dir): Cell | null => {
     const next = wrap({ x: from.x + DELTA[d].x, y: from.y + DELTA[d].y });
@@ -214,8 +217,9 @@ export function HauntedMazeGame({ api }: { api: GameApi }) {
   const boardH = ROWS * cell;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ width: boardW, height: boardH }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ width: boardW, height: boardH }}>
         {MAZE.map((row, y) =>
           row.split('').map((ch, x) =>
             ch === '#' ? (
@@ -296,7 +300,9 @@ export function HauntedMazeGame({ api }: { api: GameApi }) {
             backgroundColor: colors.neonGreen,
           }}
         />
+        </View>
       </View>
+      <DPad onDown={(k) => steer(k as Dir)} />
     </View>
   );
 }

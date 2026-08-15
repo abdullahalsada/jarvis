@@ -4,6 +4,7 @@ import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
+import { PadBar, PAD_BAR } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -31,7 +32,7 @@ interface Shot {
 
 export function CreepyCrawlerGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_BAR;
   const cell = Math.floor(W / COLS);
   const ROWS = Math.floor(H / cell);
   const PLAYER_ROW = ROWS - 2;
@@ -85,7 +86,13 @@ export function CreepyCrawlerGame({ api }: { api: GameApi }) {
     player.current = Math.max(cell / 2, Math.min(W - cell / 2, x));
   });
 
+  const held = useRef({ left: false, right: false });
+
   useGameLoop(api.running, (dt) => {
+    if (held.current.left || held.current.right) {
+      const dx = (held.current.right ? 1 : 0) - (held.current.left ? 1 : 0);
+      player.current = Math.max(cell / 2, Math.min(W - cell / 2, player.current + dx * W * 0.85 * dt));
+    }
     // Crawler speed in cells/s; faster with each wave and as segments thin out.
     const speed = (3 + wave.current * 0.8) * (1 + (1 - crawlerCount() / 14) * 0.8);
 
@@ -191,8 +198,9 @@ export function CreepyCrawlerGame({ api }: { api: GameApi }) {
   const crawlerCount = () => crawlers.current.reduce((n, segs) => n + segs.length, 0);
 
   return (
-    <View style={{ flex: 1 }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ flex: 1 }}>
         {[...stones.current].map((k) => {
           const [x, y] = k.split(',').map(Number);
           return (
@@ -249,7 +257,20 @@ export function CreepyCrawlerGame({ api }: { api: GameApi }) {
             backgroundColor: colors.neonGreen,
           }}
         />
+        </View>
       </View>
+      <PadBar
+        buttons={[
+          { key: 'left', label: '◀', wide: true },
+          { key: 'right', label: '▶', wide: true },
+        ]}
+        onDown={(k) => {
+          held.current[k as 'left' | 'right'] = true;
+        }}
+        onUp={(k) => {
+          held.current[k as 'left' | 'right'] = false;
+        }}
+      />
     </View>
   );
 }
