@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 /**
- * 🐍 Generates the Retro Arcade mascot — a cute front-facing pixel snake —
- * as a transparent 480×480 PNG (24×24 sprite at 20× scale) used on the
- * loading screen. Original artwork.
+ * 🕹️ Generates the Retro Arcade mascot — an arcade-cabinet character with a
+ * face on its screen — as three transparent 480×480 PNG animation frames
+ * (24×24 sprite at 20× scale) used on the loading screen:
  *
- *   node scripts/gen-mascot.mjs
+ *   mascot-0.png  eyes center, joystick center
+ *   mascot-1.png  eyes left,   joystick tilted left
+ *   mascot-2.png  eyes right,  joystick tilted right
+ *
+ * Original artwork.   node scripts/gen-mascot.mjs
  */
 import { deflateSync } from 'node:zlib';
 import { writeFileSync } from 'node:fs';
@@ -17,49 +21,59 @@ const SCALE = 20;
 
 const PAL = {
   '.': null,
-  G: [0x39, 0xff, 0x14, 255], // bright body green
-  g: [0x2b, 0xcc, 0x10, 255], // shade green
-  l: [0x8f, 0xff, 0x66, 255], // highlight green
-  W: [0xff, 0xff, 0xff, 255], // eye white
-  K: [0x10, 0x10, 0x18, 255], // pupil / mouth
-  R: [0xff, 0x3b, 0x3b, 255], // tongue
+  C: [0x00, 0xff, 0xf7, 255], // cyan cabinet trim
+  D: [0x2a, 0x2a, 0x45, 255], // cabinet panel
+  K: [0x10, 0x10, 0x18, 255], // screen glass
+  G: [0x39, 0xff, 0x14, 255], // face on screen
+  M: [0xff, 0x20, 0x79, 255], // marquee magenta
+  Y: [0xff, 0xe6, 0x00, 255], // marquee lights + buttons
+  R: [0xff, 0x3b, 0x3b, 255], // joystick ball
+  w: [0x9a, 0x9a, 0xb5, 255], // joystick stem + coin slot
 };
 
-// Cute snake: big round head with huge eyes + grin, forked tongue,
-// coiled body below (like a plush toy sitting on its coil).
-const ROWS = [
-  '........gGGGGGg.........',
-  '......gGGGGGGGGGg.......',
-  '.....GGGGGGGGGGGGG......',
-  '....GGGGGGGGGGGGGGG.....',
-  '....GGWWWWGGGWWWWGG.....',
-  '...GGWWWWWWGWWWWWWGG....',
-  '...GGWWKKWWGWWKKWWGG....',
-  '...GGWWKKWWGWWKKWWGG....',
-  '...GGWWWWWWGWWWWWWGG....',
-  '....GGWWWWGGGWWWWGG.....',
-  '....GGGKGGGGGGGKGGG.....',
-  '.....GGGKKKKKKKGGG......',
-  '......gGGGGRRGGGg.......',
-  '.........GGRRGG.........',
-  '........gGGRGRGGg.......',
-  '.....gGGGGGGGGGGGg......',
-  '....gGllGGGGGGGGGGg.....',
-  '...gGGGGGGGGGGGGGGGg....',
-  '...ggggggggggggggggg....',
-  '..gGllGGGGGGGGGGGGGGg...',
-  '..GGGGGGGGGGGGGGGGGGGG..',
-  '..gGGGGGGGGGGGGGGGGGGGg.',
-  '...ggGGGGGGGGGGGGGggGGg.',
-  '.................ggg....',
-];
+// Screen row x5..18 with 2×2 eyes at x8-9 / x14-15, shifted by `off`.
+const eyeRow = (off) => {
+  const px = Array(SIZE).fill('.');
+  px[3] = 'C'; px[4] = 'D'; px[19] = 'D'; px[20] = 'C';
+  for (let x = 5; x <= 18; x++) px[x] = 'K';
+  for (const x of [8 + off, 9 + off, 14 + off, 15 + off]) px[x] = 'G';
+  return px.join('');
+};
+// Control-deck row x4..19 with the 2px joystick ball at x7-8 + `off`.
+const ballRow = (off) => {
+  const px = Array(SIZE).fill('.');
+  px[3] = 'C'; px[20] = 'C';
+  for (let x = 4; x <= 19; x++) px[x] = 'D';
+  px[7 + off] = 'R'; px[8 + off] = 'R';
+  return px.join('');
+};
 
-if (ROWS.length !== SIZE || ROWS.some((r) => r.length !== SIZE)) {
-  console.error(
-    `❌ mascot must be ${SIZE}×${SIZE} (got ${ROWS.length} rows: ${ROWS.map((r) => r.length).join(',')})`
-  );
-  process.exit(1);
-}
+const frame = (off) => [
+  '....MMMMMMMMMMMMMMMM....', // marquee
+  '....MYYMYYMMYYMMYYMM....',
+  '....MMMMMMMMMMMMMMMM....',
+  '...CCCCCCCCCCCCCCCCCC...', // cabinet top
+  '...CDDDDDDDDDDDDDDDDC...',
+  '...CDKKKKKKKKKKKKKKDC...', // screen
+  eyeRow(off),
+  eyeRow(off),
+  '...CDKKKKKKKKKKKKKKDC...',
+  '...CDKKGKKKKKKKKGKKDC...', // smile corners
+  '...CDKKKGGGGGGGGKKKDC...', // smile
+  '...CDDDDDDDDDDDDDDDDC...',
+  '...CCCCCCCCCCCCCCCCCC...',
+  ballRow(off), //                joystick ball
+  ballRow(off),
+  '...CDDDwwDDYYDDYYDDDC...', // stem + two buttons
+  '...CDDDDDDDDDDDDDDDDC...',
+  '...CCCCCCCCCCCCCCCCCC...',
+  '...CDDDDDDDwwDDDDDDDC...', // coin slot
+  '...CDDDDDDDDDDDDDDDDC...',
+  '...CCCCCCCCCCCCCCCCCC...',
+  '.....DDD........DDD.....', // feet
+  '........................',
+  '........................',
+];
 
 // ─── Minimal PNG encoder (same as gen-icons.mjs, kept self-contained) ───────
 const CRC_TABLE = Array.from({ length: 256 }, (_, n) => {
@@ -102,10 +116,18 @@ function png(size, pixelAt) {
   ]);
 }
 
-const img = png(SIZE * SCALE, (x, y) => {
-  const ch = ROWS[Math.floor(y / SCALE)][Math.floor(x / SCALE)];
-  if (!(ch in PAL)) return [255, 0, 255, 255];
-  return PAL[ch] ?? [0, 0, 0, 0];
+const OFFSETS = [0, -1, 1];
+OFFSETS.forEach((off, i) => {
+  const rows = frame(off);
+  if (rows.length !== SIZE || rows.some((r) => r.length !== SIZE)) {
+    console.error(`❌ frame ${i}: must be ${SIZE}×${SIZE} (rows: ${rows.map((r) => r.length).join(',')})`);
+    process.exit(1);
+  }
+  const img = png(SIZE * SCALE, (x, y) => {
+    const ch = rows[Math.floor(y / SCALE)][Math.floor(x / SCALE)];
+    if (!(ch in PAL)) return [255, 0, 255, 255];
+    return PAL[ch] ?? [0, 0, 0, 0];
+  });
+  writeFileSync(join(ROOT, 'assets', `mascot-${i}.png`), img);
 });
-writeFileSync(join(ROOT, 'assets', 'mascot.png'), img);
-console.log('✅ mascot written to assets/mascot.png');
+console.log('✅ 3 mascot frames written to assets/mascot-{0,1,2}.png');
