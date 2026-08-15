@@ -116,7 +116,10 @@ export function PyramidHopGame({ api }: { api: GameApi }) {
   };
 
   // Diagonal swipe control: the quadrant of the drag picks one of the four
-  // diagonal hops (down-left, down-right, up-left, up-right).
+  // diagonal hops (down-left, down-right, up-left, up-right). The responder
+  // is created once, so it must call the latest hop() through a ref.
+  const hopRef = useRef(hop);
+  hopRef.current = hop;
   const start = useRef({ x: 0, y: 0 });
   const pan = useRef(
     PanResponder.create({
@@ -130,8 +133,8 @@ export function PyramidHopGame({ api }: { api: GameApi }) {
         const dy = evt.nativeEvent.pageY - start.current.y;
         if (Math.abs(dx) < 22 || Math.abs(dy) < 12) return; // need a clear diagonal
         start.current = { x: evt.nativeEvent.pageX, y: evt.nativeEvent.pageY };
-        if (dy > 0) hop(1, dx > 0 ? 1 : 0);
-        else hop(-1, dx > 0 ? 0 : -1);
+        if (dy > 0) hopRef.current(1, dx > 0 ? 1 : 0);
+        else hopRef.current(-1, dx > 0 ? 0 : -1);
       },
     })
   );

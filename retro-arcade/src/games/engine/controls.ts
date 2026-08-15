@@ -14,6 +14,11 @@ export type Dir = 'up' | 'down' | 'left' | 'right';
  * so a swipe toward the left edge always means "left" in any language.
  */
 export function useSwipe(onDir: (dir: Dir) => void): PanResponderInstance {
+  // The responder is created once, so it must call the LATEST callback via a
+  // ref — otherwise it forever holds the first render's closure, where the
+  // game hadn't started yet (running === false) and every swipe is ignored.
+  const cb = useRef(onDir);
+  cb.current = onDir;
   const start = useRef({ x: 0, y: 0 });
   const responder = useRef(
     PanResponder.create({
@@ -28,9 +33,9 @@ export function useSwipe(onDir: (dir: Dir) => void): PanResponderInstance {
         const THRESHOLD = 24;
         if (Math.abs(dx) < THRESHOLD && Math.abs(dy) < THRESHOLD) return;
         if (Math.abs(dx) > Math.abs(dy)) {
-          onDir(dx > 0 ? 'right' : 'left');
+          cb.current(dx > 0 ? 'right' : 'left');
         } else {
-          onDir(dy > 0 ? 'down' : 'up');
+          cb.current(dy > 0 ? 'down' : 'up');
         }
         // Re-arm from the current point for chained swipes.
         start.current = { x: evt.nativeEvent.pageX, y: evt.nativeEvent.pageY };
@@ -49,12 +54,15 @@ export function useSwipe(onDir: (dir: Dir) => void): PanResponderInstance {
  * rendered inside it must set pointerEvents="none" or coordinates will jump.
  */
 export function useSlideX(onX: (x: number) => void): PanResponderInstance {
+  // Same latest-callback ref as useSwipe — see the note there.
+  const cb = useRef(onX);
+  cb.current = onX;
   const responder = useRef(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
-      onPanResponderGrant: (evt) => onX(evt.nativeEvent.locationX),
-      onPanResponderMove: (evt) => onX(evt.nativeEvent.locationX),
+      onPanResponderGrant: (evt) => cb.current(evt.nativeEvent.locationX),
+      onPanResponderMove: (evt) => cb.current(evt.nativeEvent.locationX),
     })
   );
   return responder.current;
