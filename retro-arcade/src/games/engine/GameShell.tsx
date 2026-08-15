@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Image, Pressable, View, type ImageSourcePropType } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { colors, spacing, touchTarget } from '../../theme';
@@ -33,6 +33,8 @@ interface Props {
   color: string;
   /** When true the header shows a lives counter. */
   showLives?: boolean;
+  /** Pixel-art sprite shown on the pre-game screen. */
+  art?: ImageSourcePropType;
   onQuit: () => void;
   children: (api: GameApi) => React.ReactNode;
 }
@@ -42,7 +44,7 @@ interface Props {
  * before the first run (no time pressure — waits for a tap), pause, and the
  * game-over overlay with best-score handling.
  */
-export function GameShell({ gameId, color, showLives, onQuit, children }: Props) {
+export function GameShell({ gameId, color, showLives, art, onQuit, children }: Props) {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const [phase, setPhase] = useState<GamePhase>('howto');
@@ -157,16 +159,21 @@ export function GameShell({ gameId, color, showLives, onQuit, children }: Props)
         {area.width > 0 && children(api)}
         <Scanlines height={area.height} />
 
+        {/* Pre-game screen: sprite, name, one-line tagline — no walls of text.
+            Controls are visible buttons now, so the games explain themselves. */}
         {phase === 'howto' && (
           <Overlay>
+            {art && (
+              <Image source={art} style={{ width: 112, height: 112, marginBottom: spacing.l }} />
+            )}
             <PixelText size="heading" color={color} glow style={{ textAlign: 'center' }}>
               {t(`games.${gameId}.name`)}
             </PixelText>
             <PixelText
               size="body"
-              color={colors.text}
-              style={{ textAlign: 'center', lineHeight: 28, marginVertical: spacing.l }}>
-              {t(`games.${gameId}.howto`)}
+              color={colors.textDim}
+              style={{ textAlign: 'center', lineHeight: 26, marginTop: spacing.m, marginBottom: spacing.xl }}>
+              {t(`games.${gameId}.desc`)}
             </PixelText>
             <NeonButton label={t('game.start')} color={color} onPress={start} />
           </Overlay>
