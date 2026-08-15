@@ -66,6 +66,9 @@ context/
 # infra/context/ 는 공유 SSoT (페르소나 등) 추적 허용 — 2026-05-26 negation 추가
 !infra/context/
 !infra/context/**
+# retro-arcade 앱 소스의 React context 디렉터리 — 개인정보 아님, 추적 허용 (2026-08-15)
+!retro-arcade/src/context/
+!retro-arcade/src/context/**
 # Docker (Langfuse + 크레덴셜)
 docker/
 # Board (Jarvis Board 로컬 인스턴스)
