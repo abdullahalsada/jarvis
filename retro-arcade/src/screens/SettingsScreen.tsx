@@ -10,6 +10,9 @@ import { useSettings, type Settings } from '../context/SettingsContext';
 import { useAuth } from '../context/AuthContext';
 import type { RootStackParamList } from '../navigation/types';
 
+// Shown in the footer so anyone can tell at a glance which build is running.
+const appVersion: string = require('../../app.json').expo.version;
+
 type Props = NativeStackScreenProps<RootStackParamList, 'Settings'>;
 
 /** Settings: language, sound, haptics, scanlines, account + store-required deletion. */
@@ -130,7 +133,7 @@ export function SettingsScreen({ navigation }: Props) {
         size="label"
         color={colors.textDim}
         style={{ textAlign: 'center', marginTop: spacing.xl }}>
-        {t('app.name')} — {t('app.publisher')}
+        {t('app.name')} v{appVersion} — {t('app.publisher')}
       </PixelText>
     </ScrollView>
   );

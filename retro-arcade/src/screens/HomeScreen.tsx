@@ -40,33 +40,36 @@ export function HomeScreen({ navigation }: Props) {
         paddingTop: insets.top + spacing.m,
         paddingBottom: spacing.xl,
       }}>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          marginBottom: spacing.l,
-        }}>
-        <PixelText size="heading" color={colors.neonGreen} glow>
-          RETRO ARCADE
-        </PixelText>
-        <View style={{ flexDirection: 'row' }}>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={t('records.title')}
-            onPress={() => navigation.navigate('Records')}
-            style={{ padding: spacing.s, minWidth: 48, minHeight: 48, alignItems: 'center', justifyContent: 'center' }}>
-            <PixelText size="heading">🏆</PixelText>
-          </Pressable>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={t('settings.title')}
-            onPress={() => navigation.navigate('Settings')}
-            style={{ padding: spacing.s, minWidth: 48, minHeight: 48, alignItems: 'center', justifyContent: 'center' }}>
-            <PixelText size="heading">⚙️</PixelText>
-          </Pressable>
-        </View>
+      <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={t('records.title')}
+          onPress={() => navigation.navigate('Records')}
+          style={{ padding: spacing.s, minWidth: 48, minHeight: 48, alignItems: 'center', justifyContent: 'center' }}>
+          <PixelText size="heading">🏆</PixelText>
+        </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={t('settings.title')}
+          onPress={() => navigation.navigate('Settings')}
+          style={{ padding: spacing.s, minWidth: 48, minHeight: 48, alignItems: 'center', justifyContent: 'center' }}>
+          <PixelText size="heading">⚙️</PixelText>
+        </Pressable>
       </View>
+
+      {/* The app logo IS the header — it pushes the catalog toward mid-screen */}
+      <Image
+        source={require('../../assets/splash-icon.png')}
+        style={{
+          width: 200,
+          height: 200,
+          alignSelf: 'center',
+          borderRadius: 28,
+          marginBottom: spacing.xl,
+        }}
+        accessibilityIgnoresInvertColors
+        accessibilityLabel={t('app.name')}
+      />
 
       {!unlocked && (
         <Pressable
@@ -165,13 +168,6 @@ export function HomeScreen({ navigation }: Props) {
                     minimumFontScale={0.6}
                     style={{ textAlign: 'center', marginTop: spacing.s, fontWeight: 'bold' }}>
                     {name}
-                  </PixelText>
-                  <PixelText
-                    size={13}
-                    color={colors.textDim}
-                    numberOfLines={2}
-                    style={{ textAlign: 'center', marginTop: spacing.xs }}>
-                    {t(`games.${game.id}.desc`)}
                   </PixelText>
                   <PixelText
                     size={10}
