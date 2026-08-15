@@ -13,6 +13,21 @@
       "resizeMode": "contain",
       "backgroundColor": "#0a0a12"
     },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "resizeMode": "contain",
+          "imageWidth": 240,
+          "backgroundColor": "#0a0a12",
+          "dark": {
+            "image": "./assets/splash-icon.png",
+            "backgroundColor": "#0a0a12"
+          }
+        }
+      ]
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.goldenagegames.retroarcade",
