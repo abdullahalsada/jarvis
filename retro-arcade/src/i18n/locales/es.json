@@ -19,25 +19,6 @@
     "english": "English",
     "arabic": "العربية"
   },
-  "auth": {
-    "welcome": "Bienvenido a Retro Arcade",
-    "email": "Correo electrónico",
-    "password": "Contraseña",
-    "login": "Iniciar sesión",
-    "register": "Crear cuenta",
-    "haveAccount": "Ya tengo una cuenta",
-    "noAccount": "Soy nuevo aquí",
-    "registerTitle": "Crea tu cuenta",
-    "loginTitle": "Bienvenido de nuevo",
-    "passwordHint": "Mínimo 8 caracteres",
-    "checkEmail": "¡Revisa tu correo!",
-    "confirmationSent": "Te enviamos un correo de confirmación. Ábrelo y toca el enlace para empezar a jugar.",
-    "invalidEmail": "Introduce un correo electrónico válido",
-    "shortPassword": "La contraseña debe tener al menos 8 caracteres",
-    "authFailed": "Correo o contraseña incorrectos",
-    "registerFailed": "No se pudo crear la cuenta. Inténtalo de nuevo.",
-    "logout": "Cerrar sesión"
-  },
   "home": {
     "playFree": "GRATIS",
     "locked": "BLOQUEADO",
@@ -74,11 +55,11 @@
     "account": "Cuenta",
     "deleteAccount": "Eliminar mi cuenta",
     "deleteConfirmTitle": "¿Eliminar la cuenta?",
-    "deleteConfirmBody": "Esto elimina permanentemente tu cuenta, tu correo y tus puntuaciones. No se puede deshacer.",
+    "deleteConfirmBody": "Esto elimina permanentemente tu nombre de jugador y todas tus puntuaciones. No se puede deshacer.",
     "deleteConfirmYes": "Eliminar para siempre",
     "deleted": "Tu cuenta ha sido eliminada.",
     "privacyTitle": "Privacidad",
-    "privacyBody": "Solo guardamos tu correo, tu contraseña (cifrada) y tus puntuaciones. Nada más. Nunca mostramos anuncios ni vendemos datos.",
+    "privacyBody": "Solo guardamos tu nombre de jugador y tus puntuaciones. Nada más. Sin correo, sin anuncios, sin venta de datos — nunca.",
     "restartNeeded": "Se requiere reiniciar",
     "restartNeededBody": "La app debe reiniciarse para cambiar la dirección del diseño. Ciérrala y vuelve a abrirla."
   },
@@ -254,5 +235,14 @@
       "desc": "Divide al reptador",
       "howto": "Desliza para mover a tu cazador — dispara solo. Dispara al reptador que serpentea entre las lápidas: ¡dale en el medio y se divide en dos! Cada trozo destruido se convierte en una lápida nueva. No dejes que te alcance."
     }
+  },
+  "username": {
+    "title": "Elige tu nombre de jugador",
+    "subtitle": "Sin registro: tu cuenta del App Store o Google Play es tu identidad. ¡Solo elige un nombre para los marcadores!",
+    "placeholder": "PLAYER_ONE",
+    "suggest": "🎲 Sorpréndeme",
+    "confirm": "¡A jugar!",
+    "taken": "Ese nombre está ocupado — prueba otro",
+    "invalid": "Solo 3–16 letras, números o _"
   }
 }

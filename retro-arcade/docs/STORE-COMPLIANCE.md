@@ -9,13 +9,13 @@ Status legend: ✅ implemented in app · 🔧 dashboard/console task before subm
 - ✅ **No mention of external payment** anywhere in UI or strings (3.1.1)
 - ✅ No ads, no tracking → App Tracking Transparency prompt not needed
 - 🔧 **Privacy policy URL** in App Store Connect — page is drafted at `docs/privacy-policy.html` (+ `.md`); host it anywhere public and replace the placeholder support email before submitting
-- 🔧 Privacy "nutrition label": Data linked to you → Email address, Gameplay content (scores). No tracking.
+- 🔧 Privacy "nutrition label": Data linked to you → User ID (chosen player name), Gameplay content (scores). No email, no tracking.
 - 🔧 In-app purchase `retro_arcade_full` created, priced $4.99 tier with regional equivalents
 
 ## Google Play
 
 - ✅ **Account deletion** in-app (User Data policy)
-- 🔧 **Data safety form**: collects Email (account management), App activity → scores (app functionality); encrypted in transit; deletable via in-app deletion
+- 🔧 **Data safety form**: collects User IDs (chosen player name), App activity → scores (app functionality); encrypted in transit; deletable via in-app deletion. No email collected.
 - 🔧 Same privacy policy URL
 - 🔧 In-app product `retro_arcade_full`, $4.99 with regional pricing
 - 🔧 "Families" not targeted (broad audience app) — confirm content rating questionnaire
@@ -29,4 +29,4 @@ Status legend: ✅ implemented in app · 🔧 dashboard/console task before subm
 
 ## Privacy statement (shown in Settings)
 
-"We store only your email, your password (encrypted), and your game scores. Nothing else. We never show ads and never sell data."
+"We store only your player name and your game scores. Nothing else. No email, no ads, no data selling — ever."

@@ -8,9 +8,10 @@ Retro Arcade is a paid game collection with no ads and no tracking. This policy 
 
 | Data | Why | Where it lives |
 |---|---|---|
-| Email address | Your account sign-in and the one confirmation email | Our authentication provider (Supabase) |
-| Password | Account sign-in — stored **encrypted (hashed)**; we can never read it | Supabase |
-| Game high scores | So your best scores follow your account across devices | Supabase |
+| Player name (chosen by you) | Shown on your records; there is no sign-up and no email | Our backend (Supabase) |
+| Game high scores | So your best scores follow you across devices | Supabase |
+
+Your identity is anchored to your App Store / Google Play account through Apple Game Center / Google Play Games — Apple and Google handle that sign-in themselves; we never receive your email or password.
 
 That is the complete list.
 
@@ -27,10 +28,10 @@ The one-time unlock is processed entirely by Apple's App Store or Google Play. W
 
 ## Your rights
 
-- **Delete your account** any time in **Settings → Delete my account**. This permanently removes your email and all scores from our servers, immediately.
+- **Delete your account** any time in **Settings → Delete my account**. This permanently removes your player name and all scores from our servers, immediately.
 - **Access or questions**: email us at **support@goldenagegames.example** and we'll respond within 30 days.
 
-We do not knowingly collect data from children beyond the same email/scores above; no additional data is collected from any user regardless of age.
+We do not knowingly collect data from children beyond the same player name/scores above; no additional data is collected from any user regardless of age.
 
 ## Changes
 

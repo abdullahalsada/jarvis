@@ -2,13 +2,13 @@
 
 ## Why Supabase over Firebase
 
-Both fit the requirements (email/password auth + per-user score storage). Supabase wins for this app because:
+Both fit the requirements (silent per-player accounts + score storage). Supabase wins for this app because:
 
 1. **Pure-JS client** — `@supabase/supabase-js` has no native module, so it runs in Expo Go, EAS builds, and web with zero config. Firebase's fully-featured RN path (`@react-native-firebase/*`) needs native config files per platform and a dev build even to iterate.
-2. **Custom confirmation email** — the brief requires a specific registration email. Supabase Auth email templates are editable per project in the dashboard (subject + full HTML body). Firebase Auth's template customization is more constrained (limited body customization on the free path).
+2. **Anonymous sign-ins built in** — the app's no-registration design (owner decision 2026-08-15: player name only, store account as identity) maps directly onto Supabase anonymous auth plus one `claim_username` RPC.
 3. **Postgres + RLS** — the scores table is one table with two policies; the "never lower a best score" rule is a 5-line SQL function instead of client logic or Cloud Functions.
 4. **Store-required account deletion** — one `SECURITY DEFINER` RPC deletes auth user + data in a single transaction. Firebase needs a Cloud Function (paid tier for outbound calls) or client-side re-auth juggling.
-5. **Privacy posture** — single-region Postgres you control fits "we store only email + scores, nothing else" cleanly; no cross-product analytics defaults to disable.
+5. **Privacy posture** — single-region Postgres you control fits "we store only a player name + scores, nothing else" cleanly; no cross-product analytics defaults to disable.
 
 Costs are comparable at this scale (free tier covers launch; scores are tiny rows).
 
@@ -16,8 +16,16 @@ Costs are comparable at this scale (free tier covers launch; scores are tiny row
 
 1. Create a project at [supabase.com](https://supabase.com) (Golden Age Games org).
 2. Run `supabase/schema.sql` in the SQL editor.
-3. **Auth → Providers → Email**: keep "Confirm email" **enabled** (the brief requires a real confirmation email).
-4. **Auth → Email Templates → Confirm signup**: set the body to include the exact required message:
+3. **Auth → Providers**: enable **"Allow anonymous sign-ins"**. Email provider can stay disabled — the app never registers emails.
+4. ~~Email templates~~ — not needed anymore. (Historical note: the original brief specified email registration with a confirmation email; the owner replaced that with the no-registration design below.)
+
+### Identity design (owner decision, 2026-08-15)
+
+- First launch: the app silently calls `signInAnonymously()`, then asks the player to pick a unique **player name** (`claim_username` RPC, 3–16 chars).
+- The **store account is the identity**: in dev/store builds the app authenticates with **Game Center** (iOS, via the `expo-game-center` module) / **Play Games Services v2** (Android) and links `profiles.platform_player_id`, so a reinstall or new phone finds the same profile with zero sign-in. Expo Go can't load those native modules, so in development this link is skipped (see `src/services/identity.ts`).
+- Purchases already follow the store account via RevenueCat + Restore Purchases, independent of all of this.
+
+<details><summary>Original email template (superseded)</summary>
 
    > **Subject:** Welcome to Retro Arcade 🕹️
    >
@@ -28,7 +36,7 @@ Costs are comparable at this scale (free tier covers launch; scores are tiny row
    > <p>— Golden Age Games</p>
    > ```
 
-   Localize later by switching to a custom SMTP + template hook if per-language emails are needed.
+</details>
 5. Copy the project URL + anon key into `.env` (see `.env.example`).
 
 The anon key ships in the client by design; every data path is guarded by RLS.

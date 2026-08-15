@@ -31,9 +31,9 @@ Paste-ready copy for App Store Connect and Play Console. Keep the no-ads promise
 >
 > **Made for comfortable play:** big buttons, large clear text, simple menus, instructions on every game, and no time pressure anywhere outside the games themselves.
 >
-> **Your scores, everywhere.** Sign in with just an email and your best scores follow you across devices. Playing offline always works.
+> **No sign-up. Ever.** Just pick a player name and play — your App Store / Google Play account is your identity, and your best scores follow it. Playing offline always works.
 >
-> **Privacy you can read in one breath:** we store your email, your password (encrypted) and your scores. Nothing else. We never sell data and never show ads.
+> **Privacy you can read in one breath:** we store your player name and your scores. Nothing else. No email. We never sell data and never show ads.
 >
 > Available in English, العربية, Español and Français.
 
@@ -50,9 +50,9 @@ Paste-ready copy for App Store Connect and Play Console. Keep the no-ads promise
 >
 > **مصمم للعب المريح:** أزرار كبيرة، نصوص واضحة كبيرة، قوائم بسيطة، تعليمات في كل لعبة، وبلا أي ضغط وقت خارج الألعاب نفسها.
 >
-> **نقاطك معك أينما كنت.** سجّل الدخول ببريدك الإلكتروني فقط وستتبعك أفضل نقاطك عبر أجهزتك. اللعب دون اتصال يعمل دائمًا.
+> **بلا تسجيل. أبدًا.** اختر اسم لاعب والعب فورًا — حسابك في متجر التطبيقات أو جوجل بلاي هو هويتك، ونقاطك تتبعه. اللعب دون اتصال يعمل دائمًا.
 >
-> **خصوصية تُقرأ في نفَس واحد:** نخزن بريدك وكلمة مرورك (مشفرة) ونقاطك. لا شيء آخر. لا نبيع البيانات أبدًا ولا نعرض إعلانات أبدًا.
+> **خصوصية تُقرأ في نفَس واحد:** نخزن اسم اللاعب ونقاطك. لا شيء آخر. لا بريد إلكتروني. لا نبيع البيانات أبدًا ولا نعرض إعلانات أبدًا.
 >
 > متوفر بالإنجليزية والعربية والإسبانية والفرنسية.
 
