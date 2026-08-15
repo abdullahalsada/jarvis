@@ -4,6 +4,7 @@ import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
+import { PadBar, PAD_BAR } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -25,7 +26,7 @@ const ROW_COLORS = [
 
 export function BrickBreakerGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_BAR; // field above the ◀ ▶ buttons
   const PADDLE_W = W * 0.24;
   const PADDLE_H = 14;
   const BALL = 12;
@@ -80,7 +81,24 @@ export function BrickBreakerGame({ api }: { api: GameApi }) {
     if (serving.current && api.running) launch();
   });
 
+  // Hold ◀ ▶ to steer; pressing either also serves the ball.
+  const held = useRef({ left: false, right: false });
+  const padDown = (k: string) => {
+    held.current[k as 'left' | 'right'] = true;
+    if (serving.current && api.running) launch();
+  };
+  const padUp = (k: string) => {
+    held.current[k as 'left' | 'right'] = false;
+  };
+
   useGameLoop(api.running, (dt) => {
+    if (held.current.left || held.current.right) {
+      const dx = (held.current.right ? 1 : 0) - (held.current.left ? 1 : 0);
+      paddle.current = Math.max(
+        PADDLE_W / 2,
+        Math.min(W - PADDLE_W / 2, paddle.current + dx * W * 0.95 * dt)
+      );
+    }
     const b = ball.current;
     if (serving.current) {
       b.x = paddle.current;
@@ -169,8 +187,9 @@ export function BrickBreakerGame({ api }: { api: GameApi }) {
   });
 
   return (
-    <View style={{ flex: 1 }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ flex: 1 }}>
         {bricks.current.map((alive, i) => {
           if (!alive) return null;
           const row = Math.floor(i / COLS);
@@ -210,7 +229,16 @@ export function BrickBreakerGame({ api }: { api: GameApi }) {
             backgroundColor: colors.text,
           }}
         />
+        </View>
       </View>
+      <PadBar
+        buttons={[
+          { key: 'left', label: '◀', wide: true },
+          { key: 'right', label: '▶', wide: true },
+        ]}
+        onDown={padDown}
+        onUp={padUp}
+      />
     </View>
   );
 }

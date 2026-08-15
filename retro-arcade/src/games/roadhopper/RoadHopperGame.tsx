@@ -3,7 +3,8 @@ import { View } from 'react-native';
 import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
-import { useSwipe } from '../engine/controls';
+import { useSwipe, type Dir } from '../engine/controls';
+import { DPad, PAD_DPAD } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -30,7 +31,7 @@ interface Lane {
 
 export function RoadHopperGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_DPAD;
   const ROWS = 13;
   const cell = Math.min(Math.floor(W / COLS), Math.floor(H / ROWS));
   const boardW = COLS * cell;
@@ -109,7 +110,7 @@ export function RoadHopperGame({ api }: { api: GameApi }) {
 
   const clock = useRef(0);
 
-  const pan = useSwipe((dir) => {
+  const hopMove = (dir: Dir) => {
     if (!api.running) return;
     const f = frog.current;
     if (dir === 'left' && f.col > 0) f.col -= 1;
@@ -151,7 +152,8 @@ export function RoadHopperGame({ api }: { api: GameApi }) {
         return;
       }
     }
-  });
+  };
+  const pan = useSwipe(hopMove);
 
   useGameLoop(api.running, (dt) => {
     clock.current += dt;
@@ -189,8 +191,9 @@ export function RoadHopperGame({ api }: { api: GameApi }) {
   const f = frog.current;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center' }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ width: boardW, height: ROWS * cell, marginLeft: ox > 0 ? 0 : undefined }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, alignItems: 'center' }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ width: boardW, height: ROWS * cell, marginLeft: ox > 0 ? 0 : undefined }}>
         {Array.from({ length: ROWS }, (_, row) => (
           <View
             key={row}
@@ -251,7 +254,9 @@ export function RoadHopperGame({ api }: { api: GameApi }) {
             backgroundColor: colors.neonGreen,
           }}
         />
+        </View>
       </View>
+      <DPad onDown={(k) => hopMove(k as Dir)} />
     </View>
   );
 }

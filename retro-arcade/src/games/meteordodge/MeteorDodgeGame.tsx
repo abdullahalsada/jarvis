@@ -4,6 +4,7 @@ import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
+import { PadBar, PAD_BAR } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -22,7 +23,7 @@ interface Meteor {
 
 export function MeteorDodgeGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_BAR;
   const SHIP = 26;
   const SHIP_Y = H - 80;
 
@@ -46,7 +47,13 @@ export function MeteorDodgeGame({ api }: { api: GameApi }) {
     ship.current = Math.max(SHIP / 2, Math.min(W - SHIP / 2, x));
   });
 
+  const held = useRef({ left: false, right: false });
+
   useGameLoop(api.running, (dt) => {
+    if (held.current.left || held.current.right) {
+      const dx = (held.current.right ? 1 : 0) - (held.current.left ? 1 : 0);
+      ship.current = Math.max(SHIP / 2, Math.min(W - SHIP / 2, ship.current + dx * W * 0.9 * dt));
+    }
     elapsed.current += dt;
     const difficulty = 1 + elapsed.current / 15; // ramps forever
 
@@ -88,8 +95,9 @@ export function MeteorDodgeGame({ api }: { api: GameApi }) {
   });
 
   return (
-    <View style={{ flex: 1 }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ flex: 1 }}>
         {meteors.current.map((m, i) => (
           <View
             key={i}
@@ -116,7 +124,20 @@ export function MeteorDodgeGame({ api }: { api: GameApi }) {
             borderRadius: 4,
           }}
         />
+        </View>
       </View>
+      <PadBar
+        buttons={[
+          { key: 'left', label: '◀', wide: true },
+          { key: 'right', label: '▶', wide: true },
+        ]}
+        onDown={(k) => {
+          held.current[k as 'left' | 'right'] = true;
+        }}
+        onUp={(k) => {
+          held.current[k as 'left' | 'right'] = false;
+        }}
+      />
     </View>
   );
 }

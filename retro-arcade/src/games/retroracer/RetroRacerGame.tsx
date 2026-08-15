@@ -3,7 +3,8 @@ import { View } from 'react-native';
 import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
-import { useSwipe } from '../engine/controls';
+import { useSwipe, type Dir } from '../engine/controls';
+import { PadBar, PAD_BAR } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -26,7 +27,7 @@ const CAR_COLORS = [colors.neonMagenta, colors.neonYellow, colors.neonOrange, co
 
 export function RetroRacerGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_BAR;
   const ROAD_W = Math.min(W * 0.8, 360);
   const LANE_W = ROAD_W / LANES;
   const roadX = (W - ROAD_W) / 2;
@@ -51,7 +52,7 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api.resetToken]);
 
-  const pan = useSwipe((dir) => {
+  const steer = (dir: Dir) => {
     if (!api.running) return;
     if (dir === 'left' && lane.current > 0) {
       lane.current -= 1;
@@ -63,7 +64,8 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
       playSfx('select');
       haptic.light();
     }
-  });
+  };
+  const pan = useSwipe(steer);
 
   useGameLoop(api.running, (dt) => {
     // Speed ramps from 0.45H/s toward 1.2H/s over ~90 seconds of driving.
@@ -120,8 +122,9 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
   const laneX = (l: number) => roadX + l * LANE_W + (LANE_W - CAR_W) / 2;
 
   return (
-    <View style={{ flex: 1 }} {...pan.panHandlers}>
-      <View pointerEvents="none" style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }} {...pan.panHandlers}>
+        <View pointerEvents="none" style={{ flex: 1 }}>
         {/* Road */}
         <View
           style={{
@@ -188,7 +191,15 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
             }}
           />
         </View>
+        </View>
       </View>
+      <PadBar
+        buttons={[
+          { key: 'left', label: '◀', wide: true },
+          { key: 'right', label: '▶', wide: true },
+        ]}
+        onDown={(k) => steer(k as Dir)}
+      />
     </View>
   );
 }

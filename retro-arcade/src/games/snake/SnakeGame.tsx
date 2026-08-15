@@ -4,6 +4,7 @@ import { colors } from '../../theme';
 import { type GameApi } from '../engine/GameShell';
 import { useTick } from '../engine/useGameLoop';
 import { useSwipe, type Dir } from '../engine/controls';
+import { DPad, PAD_DPAD } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
@@ -29,7 +30,7 @@ const DELTA: Record<Dir, Cell> = {
 
 export function SnakeGame({ api }: { api: GameApi }) {
   const cell = Math.floor(api.width / COLS);
-  const rows = Math.max(10, Math.floor(api.height / cell) - 1);
+  const rows = Math.max(10, Math.floor((api.height - PAD_DPAD) / cell) - 1);
 
   const snake = useRef<Cell[]>([]);
   const dir = useRef<Dir>('right');
@@ -62,13 +63,16 @@ export function SnakeGame({ api }: { api: GameApi }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api.resetToken, rows]);
 
-  const pan = useSwipe((d) => {
-    // Buffer up to 2 turns; ignore direct reversals against the *last queued*
-    // heading, matching original handheld behavior.
+  // Buffer up to 2 turns; ignore direct reversals against the *last queued*
+  // heading, matching original handheld behavior. Fed by both the D-pad and
+  // swipes anywhere on the board.
+  const steer = (d: Dir) => {
     const last = queue.current[queue.current.length - 1] ?? dir.current;
     if (d === last || d === OPPOSITE[last]) return;
     if (queue.current.length < 2) queue.current.push(d);
-  });
+  };
+
+  const pan = useSwipe(steer);
 
   // Speed: -6ms per food eaten, floor at MIN_MS — the classic ramp.
   const intervalMs = Math.max(MIN_MS, START_MS - (snake.current.length - 3) * 6);
@@ -103,16 +107,17 @@ export function SnakeGame({ api }: { api: GameApi }) {
   const boardH = rows * cell;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} {...pan.panHandlers}>
-      <View
-        pointerEvents="none"
-        style={{
-          width: boardW,
-          height: boardH,
-          borderWidth: 2,
-          borderColor: colors.border,
-          backgroundColor: colors.bgRaised,
-        }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} {...pan.panHandlers}>
+        <View
+          pointerEvents="none"
+          style={{
+            width: boardW,
+            height: boardH,
+            borderWidth: 2,
+            borderColor: colors.border,
+            backgroundColor: colors.bgRaised,
+          }}>
         {snake.current.map((s, i) => {
           const isHead = i === 0;
           const isTail = i === snake.current.length - 1;
@@ -232,7 +237,9 @@ export function SnakeGame({ api }: { api: GameApi }) {
             transform: [{ rotate: '-30deg' }],
           }}
         />
+        </View>
       </View>
+      <DPad onDown={(k) => steer(k as Dir)} />
     </View>
   );
 }
