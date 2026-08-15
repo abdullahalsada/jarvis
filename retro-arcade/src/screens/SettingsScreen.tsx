@@ -17,7 +17,7 @@ export function SettingsScreen({ navigation }: Props) {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const settings = useSettings();
-  const { logout, deleteAccount, guestMode } = useAuth();
+  const { username, deleteAccount, guestMode } = useAuth();
 
   const toggles: { key: keyof Settings; label: string }[] = [
     { key: 'sound', label: t('settings.sound') },
@@ -100,26 +100,24 @@ export function SettingsScreen({ navigation }: Props) {
         </PixelText>
       </View>
 
+      <PixelText size="body" color={colors.textDim} style={{ marginBottom: spacing.m }}>
+        {t('settings.account')}
+      </PixelText>
+      <NeonButton
+        label={`👤 ${username ?? '—'}`}
+        color={colors.neonCyan}
+        variant="outline"
+        onPress={() => navigation.navigate('Player')}
+        style={{ marginBottom: spacing.m }}
+      />
       {!guestMode && (
-        <>
-          <PixelText size="body" color={colors.textDim} style={{ marginBottom: spacing.m }}>
-            {t('settings.account')}
-          </PixelText>
-          <NeonButton
-            label={t('auth.logout')}
-            color={colors.neonOrange}
-            variant="outline"
-            onPress={logout}
-            style={{ marginBottom: spacing.m }}
-          />
-          <NeonButton
-            label={t('settings.deleteAccount')}
-            color={colors.neonRed}
-            variant="outline"
-            onPress={confirmDelete}
-            style={{ marginBottom: spacing.l }}
-          />
-        </>
+        <NeonButton
+          label={t('settings.deleteAccount')}
+          color={colors.neonRed}
+          variant="outline"
+          onPress={confirmDelete}
+          style={{ marginBottom: spacing.l }}
+        />
       )}
 
       <NeonButton

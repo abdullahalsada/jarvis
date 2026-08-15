@@ -19,25 +19,6 @@
     "english": "English",
     "arabic": "العربية"
   },
-  "auth": {
-    "welcome": "Bienvenue dans Retro Arcade",
-    "email": "Adresse e-mail",
-    "password": "Mot de passe",
-    "login": "Se connecter",
-    "register": "Créer un compte",
-    "haveAccount": "J'ai déjà un compte",
-    "noAccount": "Je suis nouveau ici",
-    "registerTitle": "Crée ton compte",
-    "loginTitle": "Content de te revoir",
-    "passwordHint": "8 caractères minimum",
-    "checkEmail": "Vérifie tes e-mails !",
-    "confirmationSent": "Nous t'avons envoyé un e-mail de confirmation. Ouvre-le et touche le lien pour commencer à jouer.",
-    "invalidEmail": "Saisis une adresse e-mail valide",
-    "shortPassword": "Le mot de passe doit contenir au moins 8 caractères",
-    "authFailed": "E-mail ou mot de passe incorrect",
-    "registerFailed": "Impossible de créer le compte. Réessaie.",
-    "logout": "Se déconnecter"
-  },
   "home": {
     "playFree": "GRATUIT",
     "locked": "VERROUILLÉ",
@@ -74,11 +55,11 @@
     "account": "Compte",
     "deleteAccount": "Supprimer mon compte",
     "deleteConfirmTitle": "Supprimer le compte ?",
-    "deleteConfirmBody": "Ton compte, ton e-mail et tes scores seront définitivement supprimés. Cette action est irréversible.",
+    "deleteConfirmBody": "Ton nom de joueur et tous tes scores seront définitivement supprimés. Cette action est irréversible.",
     "deleteConfirmYes": "Supprimer définitivement",
     "deleted": "Ton compte a été supprimé.",
     "privacyTitle": "Confidentialité",
-    "privacyBody": "Nous ne stockons que ton e-mail, ton mot de passe (chiffré) et tes scores. Rien d'autre. Jamais de pub, jamais de vente de données.",
+    "privacyBody": "Nous ne stockons que ton nom de joueur et tes scores. Rien d autre. Pas d e-mail, pas de pub, pas de vente de données — jamais.",
     "restartNeeded": "Redémarrage requis",
     "restartNeededBody": "L'application doit redémarrer pour changer le sens de l'affichage. Ferme-la puis rouvre-la."
   },
@@ -254,5 +235,14 @@
       "desc": "Coupe le rampant en deux",
       "howto": "Glisse pour déplacer ton chasseur — il tire tout seul. Tire sur le rampant qui serpente entre les pierres tombales : touche-le au milieu et il se scinde en deux ! Chaque segment détruit devient une nouvelle pierre tombale. Ne le laisse pas t'atteindre."
     }
+  },
+  "username": {
+    "title": "Choisis ton nom de joueur",
+    "subtitle": "Aucune inscription : ton compte App Store ou Google Play est ton identité. Choisis juste un nom pour les tableaux de scores !",
+    "placeholder": "PLAYER_ONE",
+    "suggest": "🎲 Surprends-moi",
+    "confirm": "On joue !",
+    "taken": "Ce nom est pris — essaie un autre",
+    "invalid": "3–16 lettres, chiffres ou _ uniquement"
   }
 }

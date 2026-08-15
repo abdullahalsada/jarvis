@@ -16,11 +16,11 @@ With no `.env` keys the app runs in **guest mode**: auth is skipped, purchases u
 
 **Web preview caveat:** the web build (`expo export --platform web`) is a dev/preview harness, not a shipping target. Known limitation there: `onPressIn`-based tap controls (Memory Match cards, Simon pads, Zombie Bop, Spook Shoot, etc.) don't respond to mouse events in the exported web build, while `onPress` buttons work fine. Native (Expo Go / device builds) is unaffected — `onPressIn` is standard RN touch handling.
 
-Backend setup (Supabase project, confirmation-email template, RevenueCat products): see [docs/BACKEND.md](docs/BACKEND.md). Store submission items: [docs/STORE-COMPLIANCE.md](docs/STORE-COMPLIANCE.md).
+Backend setup (Supabase project with anonymous sign-ins, RevenueCat products): see [docs/BACKEND.md](docs/BACKEND.md). Store submission items: [docs/STORE-COMPLIANCE.md](docs/STORE-COMPLIANCE.md).
 
 ## What's here (milestones 1–4 of the brief)
 
-- **App flow**: Splash → language select (first run, EN/العربية with full RTL) → register/login → catalog
+- **App flow**: Splash → language select (first run, EN/العربية with full RTL) → player name (no registration) → catalog
 - **30 games** on a shared engine, each with instructions overlay, pause, per-account best scores, synth SFX + haptics:
   - Classics: Snake 🐍, Brick Breaker 🧱, Paddle Duel 🏓, Neon Stack 🟦 (falling blocks), Solitaire ♠️ (Klondike, tap-to-move), Road Hopper 🐸 (road crosser), Retro Racer 🏎️ (lane racer), Moon Lander 🌙, Egg Catch 🥚 (LCD-style catcher), Alley Bowl 🎳 (ten-pin with real scoring)
   - Action: Space Defenders 👾, Meteor Dodge ☄️, Astro Shards 🚀 (rock blaster), Pixel Wings 🐦 (one-touch flyer), Gem Digger ⛏️ (tunneler), Sky Shield 🛡️ (missile defense), Dive Squadron 🛸 (formation dive-bombers), Pyramid Hop 🔺 (diagonal cube-hopper), Moon Buggy 🚙 (jump-and-shoot scroller)
@@ -28,7 +28,7 @@ Backend setup (Supabase project, confirmation-email template, RevenueCat product
   - Brain: Memory Match 🃏 (free), Simon Echo 🎵, Tile Fusion 🔢 (2048-style), Slide Fifteen 🔀 (15-puzzle), Neon Lights 💡 (lights-out), Gem Columns 💎 (match-3 stacker) — Snake is the other free demo game
 - **My Records** screen 🏆: every personal best in one place, grouped by category
 - **Demo lock/unlock**: full catalog visible; locked games route to the $4.99 purchase screen (localized store price, restore-purchases button)
-- **Settings**: language, sound, vibration, scanlines, logout, account deletion, plain-language privacy statement
+- **Settings**: language, sound, vibration, scanlines, player name, account deletion, plain-language privacy statement
 - **Offline-first scores**: local best always saved; queued sync to Supabase when online
 
 ## Architecture notes

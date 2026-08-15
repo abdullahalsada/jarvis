@@ -19,25 +19,6 @@
     "english": "English",
     "arabic": "العربية"
   },
-  "auth": {
-    "welcome": "Welcome to Retro Arcade",
-    "email": "Email address",
-    "password": "Password",
-    "login": "Log in",
-    "register": "Create account",
-    "haveAccount": "I already have an account",
-    "noAccount": "I'm new here",
-    "registerTitle": "Create your account",
-    "loginTitle": "Welcome back",
-    "passwordHint": "At least 8 characters",
-    "checkEmail": "Check your email!",
-    "confirmationSent": "We sent you a confirmation email. Open it and tap the link to start playing.",
-    "invalidEmail": "Please enter a valid email address",
-    "shortPassword": "Password must be at least 8 characters",
-    "authFailed": "Email or password is incorrect",
-    "registerFailed": "Could not create the account. Please try again.",
-    "logout": "Log out"
-  },
   "home": {
     "playFree": "FREE",
     "locked": "LOCKED",
@@ -74,11 +55,11 @@
     "account": "Account",
     "deleteAccount": "Delete my account",
     "deleteConfirmTitle": "Delete account?",
-    "deleteConfirmBody": "This permanently deletes your account, email, and high scores. This cannot be undone.",
+    "deleteConfirmBody": "This permanently deletes your player name and all your scores. This cannot be undone.",
     "deleteConfirmYes": "Delete forever",
     "deleted": "Your account has been deleted.",
     "privacyTitle": "Privacy",
-    "privacyBody": "We store only your email, your password (encrypted), and your game scores. Nothing else. We never show ads and never sell data.",
+    "privacyBody": "We store only your player name and your game scores. Nothing else. No email, no ads, no data selling — ever.",
     "restartNeeded": "Restart required",
     "restartNeededBody": "The app needs to restart to switch the layout direction. Please close and reopen the app."
   },
@@ -254,5 +235,14 @@
       "desc": "Catch every rolling egg",
       "howto": "Eggs roll down four ramps. Tap a corner of the screen to hold your basket under that ramp. Catch every egg before it falls — drop three and the game is over. They roll faster as your score grows!"
     }
+  },
+  "username": {
+    "title": "Choose your player name",
+    "subtitle": "No sign-up needed — your App Store or Google Play account is your identity. Just pick a name for the scoreboards!",
+    "placeholder": "PLAYER_ONE",
+    "suggest": "🎲 Surprise me",
+    "confirm": "Let's play!",
+    "taken": "That name is taken — try another",
+    "invalid": "3–16 letters, numbers or _ only"
   }
 }

@@ -5,4 +5,5 @@ export type RootStackParamList = {
   Settings: undefined;
   Language: undefined;
   Records: undefined;
+  Player: undefined;
 };

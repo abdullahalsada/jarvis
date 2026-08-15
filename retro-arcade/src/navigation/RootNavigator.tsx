@@ -8,6 +8,7 @@ import { PurchaseScreen } from '../screens/PurchaseScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { LanguageScreen } from '../screens/LanguageScreen';
 import { RecordsScreen } from '../screens/RecordsScreen';
+import { UsernameScreen } from '../screens/UsernameScreen';
 import type { RootStackParamList } from './types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -36,6 +37,9 @@ export function RootNavigator() {
         <Stack.Screen name="Records" component={RecordsScreen} />
         <Stack.Screen name="Language">
           {({ navigation }) => <LanguageScreen onDone={() => navigation.goBack()} />}
+        </Stack.Screen>
+        <Stack.Screen name="Player">
+          {({ navigation }) => <UsernameScreen onDone={() => navigation.goBack()} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
