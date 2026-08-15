@@ -5,48 +5,46 @@ import { PixelText } from '../components/PixelText';
 
 /**
  * In-app loading screen (shown while fonts/language/session initialize):
- * the animated Retro Arcade mascot — an arcade cabinet with a face — bobbing
- * above "Loading..." and a chunky segmented progress bar, per the owner's
- * reference. The cabinet cycles pixel frames (eyes glance left/right, the
- * joystick wiggles) while the whole character bobs. The bar is indeterminate
- * (fills in a loop) since startup is fast and unmeasured. Text is plain
- * "LOADING" — i18n isn't initialized yet on the first frames.
+ * the Retro Arcade mascot — a neon robot holding an arcade joystick panel —
+ * gently bobbing and rocking above "Loading..." and a chunky segmented
+ * progress bar, per the owner's reference. The bar is indeterminate (fills
+ * in a loop) since startup is fast and unmeasured. Text is plain "LOADING"
+ * because i18n isn't initialized yet on the first frames.
  */
 const SEGMENTS = 10;
 
-const FRAMES = [
-  require('../../assets/mascot-0.png'),
-  require('../../assets/mascot-1.png'),
-  require('../../assets/mascot-2.png'),
-];
-// center → left → center → right, like it's playing its own game
-const FRAME_ORDER = [0, 1, 0, 2];
-
 export function SplashScreen() {
   const [filled, setFilled] = useState(2);
-  const [step, setStep] = useState(0);
   const bob = useRef(new Animated.Value(0)).current;
+  const rock = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    const barTimer = setInterval(() => {
+    const timer = setInterval(() => {
       setFilled((n) => (n >= SEGMENTS ? 2 : n + 1));
     }, 160);
-    const frameTimer = setInterval(() => {
-      setStep((s) => (s + 1) % FRAME_ORDER.length);
-    }, 240);
-    const loop = Animated.loop(
+    const bobLoop = Animated.loop(
       Animated.sequence([
-        Animated.timing(bob, { toValue: -8, duration: 420, useNativeDriver: true }),
-        Animated.timing(bob, { toValue: 0, duration: 420, useNativeDriver: true }),
+        Animated.timing(bob, { toValue: -10, duration: 520, useNativeDriver: true }),
+        Animated.timing(bob, { toValue: 0, duration: 520, useNativeDriver: true }),
       ])
     );
-    loop.start();
+    // Slightly different period than the bob so the motion feels organic
+    const rockLoop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(rock, { toValue: 1, duration: 700, useNativeDriver: true }),
+        Animated.timing(rock, { toValue: -1, duration: 700, useNativeDriver: true }),
+      ])
+    );
+    bobLoop.start();
+    rockLoop.start();
     return () => {
-      clearInterval(barTimer);
-      clearInterval(frameTimer);
-      loop.stop();
+      clearInterval(timer);
+      bobLoop.stop();
+      rockLoop.stop();
     };
-  }, [bob]);
+  }, [bob, rock]);
+
+  const tilt = rock.interpolate({ inputRange: [-1, 1], outputRange: ['-3deg', '3deg'] });
 
   return (
     <View
@@ -56,23 +54,13 @@ export function SplashScreen() {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Animated.View style={{ transform: [{ translateY: bob }] }}>
-        {/* All frames stay mounted so switching never flickers on first show */}
-        <View style={{ width: 180, height: 180 }}>
-          {FRAMES.map((src, i) => (
-            <Image
-              key={i}
-              source={src}
-              style={{
-                position: 'absolute',
-                width: 180,
-                height: 180,
-                opacity: FRAME_ORDER[step] === i ? 1 : 0,
-              }}
-              accessibilityIgnoresInvertColors
-            />
-          ))}
-        </View>
+      <Animated.View style={{ transform: [{ translateY: bob }, { rotate: tilt }] }}>
+        <Image
+          source={require('../../assets/mascot.webp')}
+          style={{ width: 168, height: 240 }}
+          resizeMode="contain"
+          accessibilityIgnoresInvertColors
+        />
       </Animated.View>
 
       <PixelText size="heading" color={colors.neonGreen} glow style={{ marginTop: spacing.l }}>
