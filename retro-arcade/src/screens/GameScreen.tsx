@@ -28,6 +28,7 @@ export function GameScreen({ route, navigation }: Props) {
       gameId={game.id}
       color={gameColor(game)}
       showLives={game.showLives}
+      art={game.art}
       onQuit={() => navigation.goBack()}>
       {(api) => game.render(api)}
     </GameShell>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { colors, categoryColors, spacing } from '../theme';
 import { PixelText } from '../components/PixelText';
-import { CATEGORIES, GAMES, gameColor } from '../games/registry';
+import { CATEGORIES, GAMES, gameColor, type Category } from '../games/registry';
 import { useEntitlement } from '../context/EntitlementContext';
 import { playSfx } from '../audio/sfx';
 import type { RootStackParamList } from '../navigation/types';
@@ -20,6 +20,17 @@ export function HomeScreen({ navigation }: Props) {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const { unlocked } = useEntitlement();
+  // Accordion catalog: categories start closed for a calm, compact home.
+  const [open, setOpen] = useState<Record<Category, boolean>>({
+    classics: false,
+    action: false,
+    spooky: false,
+    brain: false,
+  });
+  const toggle = (cat: Category) => {
+    playSfx('flip');
+    setOpen((prev) => ({ ...prev, [cat]: !prev[cat] }));
+  };
 
   return (
     <ScrollView
@@ -82,14 +93,34 @@ export function HomeScreen({ navigation }: Props) {
       )}
 
       {CATEGORIES.map((cat) => (
-        <View key={cat} style={{ marginBottom: spacing.l }}>
-          <PixelText
-            size="body"
-            color={categoryColors[cat]}
-            style={{ marginBottom: spacing.m, fontWeight: 'bold' }}>
-            ■ {t(`home.categories.${cat}`)}
-          </PixelText>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: spacing.m }}>
+        <View key={cat} style={{ marginBottom: spacing.m }}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityState={{ expanded: open[cat] }}
+            onPress={() => toggle(cat)}
+            style={({ pressed }) => ({
+              flexDirection: 'row',
+              alignItems: 'center',
+              backgroundColor: colors.bgCard,
+              borderWidth: 2,
+              borderColor: open[cat] ? categoryColors[cat] : colors.border,
+              borderRadius: 6,
+              paddingHorizontal: spacing.m,
+              minHeight: 64,
+              opacity: pressed ? 0.75 : 1,
+            })}>
+            <PixelText size="body" color={categoryColors[cat]} style={{ flex: 1, fontWeight: 'bold' }}>
+              ■ {t(`home.categories.${cat}`)}
+            </PixelText>
+            <PixelText size={12} color={colors.textDim} style={{ marginRight: spacing.m }}>
+              {String(GAMES.filter((g) => g.category === cat).length)}
+            </PixelText>
+            <PixelText size="body" color={open[cat] ? categoryColors[cat] : colors.textDim}>
+              {open[cat] ? '▼' : '▶'}
+            </PixelText>
+          </Pressable>
+          {open[cat] && (
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: spacing.m, marginTop: spacing.m }}>
             {GAMES.filter((g) => g.category === cat).map((game) => {
               const locked = !game.free && !unlocked;
               const name = t(`games.${game.id}.name`);
@@ -155,6 +186,7 @@ export function HomeScreen({ navigation }: Props) {
               );
             })}
           </View>
+          )}
         </View>
       ))}
     </ScrollView>

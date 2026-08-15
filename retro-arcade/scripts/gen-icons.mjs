@@ -1,11 +1,19 @@
 #!/usr/bin/env node
 /**
- * 🎨 Generates the app's original pixel-art icons (joystick motif) as PNGs:
+ * 🎨 Generates pixel-art placeholder icons (joystick motif) as PNGs:
  * icon, Android adaptive foreground/background/monochrome, splash, favicon.
- * Pure Node (zlib) — no image libraries needed. Rerun after editing the ART map.
  *
- *   node scripts/gen-icons.mjs
+ * ⚠️  SUPERSEDED (2026-08-15): the shipping brand assets are the owner-chosen
+ * neon-joystick artwork committed in assets/. Running this would overwrite
+ * them, so it now requires --force. The monochrome glyph it makes is still
+ * used as the Android themed-icon layer.
+ *
+ *   node scripts/gen-icons.mjs --force
  */
+if (!process.argv.includes('--force')) {
+  console.error('🛑 Refusing to overwrite the chosen brand assets. Use --force if you really mean it.');
+  process.exit(1);
+}
 import { deflateSync } from 'node:zlib';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
