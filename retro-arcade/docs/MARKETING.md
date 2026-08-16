@@ -39,11 +39,17 @@ family/two generations (Two Players). Remaining ideas for future waves: "1985"
 
 ### Arabic version notes (owner-approved copy)
 
+- ✅ **OFFICIAL Arabic launch ad — Creatify "Kareem" version (owner-approved 2026-08-16):**
+  - Original render: https://s3.us-west-2.amazonaws.com/remotionlambda-uswest2-30tewi8y5c/renders/mw7mydj4sp/output.mp4
+  - Durable mirror (Higgsfield media `03b039c0-2750-453d-9aac-e183a0575be8`):
+    https://d2ol7oe51mr4n9.cloudfront.net/user_3FuMiM0RFxY37XzRCTFVfVzlX8s/03b039c0-2750-453d-9aac-e183a0575be8.mp4
+  - Made by Creatify Creative Agent (session `7e228eb1-42de-4df7-8bf8-0ff4f3801306`,
+    "Kareem" persona) reading the owner's script verbatim.
 - ❌ Higgsfield's generated Arabic VO was unintelligible (native-speaker verdict) —
   rejected. Arabic audio must come from TTS reading an exact script, never from
-  video-model speech generation.
-- ✅ Redone via Creatify Creative Agent (session `7e228eb1-42de-4df7-8bf8-0ff4f3801306`),
-  script read verbatim. **Owner's official Gulf Arabic CTA (use everywhere):**
+  video-model speech generation. (An ElevenLabs-TTS remix of those visuals was a
+  fallback candidate; superseded by the Creatify version.)
+- **Owner's official Gulf Arabic CTA (use everywhere):**
   «حمّله الحين واستمتع في لعبة زمن الطيبين»
 - **"زمن الطيبين"** ("the good old days") is the approved Arabic campaign tagline —
   candidate for the Arabic App Store / Play Store subtitle as well.
