@@ -37,6 +37,22 @@ Angle coverage: nostalgia hook (Coin Drop EN/AR) · offline + no-ads (Flight) ·
 family/two generations (Two Players). Remaining ideas for future waves: "1985"
 (kid in a 90s arcade match-cut to the same man today), ES/FR language versions.
 
+### Arabic version notes (owner-approved copy)
+
+- ❌ Higgsfield's generated Arabic VO was unintelligible (native-speaker verdict) —
+  rejected. Arabic audio must come from TTS reading an exact script, never from
+  video-model speech generation.
+- ✅ Redone via Creatify Creative Agent (session `7e228eb1-42de-4df7-8bf8-0ff4f3801306`),
+  script read verbatim. **Owner's official Gulf Arabic CTA (use everywhere):**
+  «حمّله الحين واستمتع في لعبة زمن الطيبين»
+- **"زمن الطيبين"** ("the good old days") is the approved Arabic campaign tagline —
+  candidate for the Arabic App Store / Play Store subtitle as well.
+- Full approved VO script:
+  «هل تذكر الألعاب اللي كبرنا عليها؟ ثلاثون لعبة كلاسيكية... الثعبان، وكسر الطوب،
+  وحروب الفضاء. كلها في جيبك، من جديد. تدفع مرة واحدة بس — ٤٫٩٩ دولار — وتملكها
+  للأبد. بدون إعلانات... أبداً. وتلعب بدون إنترنت. ريترو أركيد — حمّله الحين
+  واستمتع في لعبة زمن الطيبين!»
+
 ## Earlier drafts (superseded, kept for reference)
 
 - v1 hand-cut (27s): scene + real gameplay + end card, chiptune bed
