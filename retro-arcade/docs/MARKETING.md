@@ -21,6 +21,22 @@ Live record of ad creatives and the pipeline that produced them (2026-08-16).
 - Robot mascot master image (job): `47c1c1f0-ead9-46c6-9673-8892eddaef04`
   (neon robot holding joystick — same art as `assets/mascot.webp`).
 
+## ✅ Campaign wave 2 (2026-08-16) — three stories, same Marketing Studio product
+
+1. **"Coin Drop" — Arabic version** 🇸🇦 (15s, 9:16, full MSA voiceover by the robot,
+   incl. on-screen "بِدُونِ إِعْلَانَات" beat):
+   https://d8j0ntlcm91z4.cloudfront.net/user_3FuMiM0RFxY37XzRCTFVfVzlX8s/hf_20260816_161105_82ced3d5-ee4a-4d4d-b68b-0cf1319504f5.mp4
+2. **"The Flight"** ✈️ (15s, EN — offline/no-ads story: bored cabin, neighbor's game
+   buffering with ads, our hero plays in airplane mode, robot rides the seatback):
+   https://d8j0ntlcm91z4.cloudfront.net/user_3FuMiM0RFxY37XzRCTFVfVzlX8s/hf_20260816_161105_79a405cc-76d5-4be8-8133-af925c65fed0.mp4
+3. **"Two Players"** 👨‍👦 (15s, EN — dad + 8-year-old son bond over the classics,
+   "The games you grew up with… now theirs too."):
+   https://d8j0ntlcm91z4.cloudfront.net/user_3FuMiM0RFxY37XzRCTFVfVzlX8s/hf_20260816_161105_95b4a5b3-00d7-4ed3-ba0a-2a29144c39c3.mp4
+
+Angle coverage: nostalgia hook (Coin Drop EN/AR) · offline + no-ads (Flight) ·
+family/two generations (Two Players). Remaining ideas for future waves: "1985"
+(kid in a 90s arcade match-cut to the same man today), ES/FR language versions.
+
 ## Earlier drafts (superseded, kept for reference)
 
 - v1 hand-cut (27s): scene + real gameplay + end card, chiptune bed
