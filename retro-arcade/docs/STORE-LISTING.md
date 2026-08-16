@@ -8,26 +8,30 @@ Paste-ready copy for App Store Connect and Play Console. Keep the no-ads promise
 
 ## Subtitle / short description (30 chars Apple, 80 Google)
 
-**Apple:** `25 classics. $4.99. No ads.`
+**Apple (EN):** `30 classics. $4.99. No ads.`
 
-**Google:** `The games you grew up with — 25 classics, one-time $4.99, no ads ever.`
+**Google (EN):** `The games you grew up with — 30 classics, one-time $4.99, no ads ever.`
+
+**Apple (AR):** `٣٠ لعبة من زمن الطيبين`
+
+**Google (AR):** `ألعاب زمن الطيبين — ٣٠ لعبة كلاسيكية، ادفع ٤٫٩٩$ مرة واحدة، بدون إعلانات أبداً`
 
 ## Description (EN)
 
 > **The games you grew up with — back in your pocket.**
 >
-> Retro Arcade brings the golden age of games back to life: 25 lovingly rebuilt classics from the 70s, 80s and 90s, with chunky pixels, neon glow, chiptune sounds and an optional CRT scanline effect.
+> Retro Arcade brings the golden age of games back to life: 30 lovingly rebuilt classics from the 70s, 80s and 90s, with chunky pixels, neon glow, chiptune sounds and an optional CRT scanline effect.
 >
 > **One price. Everything. Forever.**
 > Pay $4.99 once and own every game — including every game we add in the future. No subscriptions. No coins. And absolutely **no ads, ever**.
 >
 > **Try before you buy.** Snake and Memory Match are free, with no ads in the free games either.
 >
-> **25 games across four rooms of the arcade:**
-> 🕹️ *Classics* — Snake, Brick Breaker, Paddle Duel, Neon Stack, Solitaire, Road Hopper, Retro Racer, Moon Lander, Egg Catch
-> 🚀 *Action* — Space Defenders, Meteor Dodge, Astro Shards, Pixel Wings, Gem Digger, Sky Shield, Dive Squadron
-> 👻 *Spooky* — Haunted Maze, Ghost Sweeper, Zombie Bop, Creepy Crawler
-> 🧠 *Brain* — Memory Match, Simon Echo, Tile Fusion, Slide Fifteen, Neon Lights
+> **30 games across four rooms of the arcade:**
+> 🕹️ *Classics* — Snake, Brick Breaker, Paddle Duel, Neon Stack, Solitaire, Road Hopper, Retro Racer, Moon Lander, Egg Catch, Alley Bowl
+> 🚀 *Action* — Space Defenders, Meteor Dodge, Astro Shards, Pixel Wings, Gem Digger, Sky Shield, Dive Squadron, Pyramid Hop, Moon Buggy
+> 👻 *Spooky* — Haunted Maze, Ghost Sweeper, Zombie Bop, Creepy Crawler, Spook Shoot
+> 🧠 *Brain* — Memory Match, Simon Echo, Tile Fusion, Slide Fifteen, Neon Lights, Gem Columns
 >
 > **Made for comfortable play:** big buttons, large clear text, simple menus, instructions on every game, and no time pressure anywhere outside the games themselves.
 >
@@ -39,9 +43,9 @@ Paste-ready copy for App Store Connect and Play Console. Keep the no-ads promise
 
 ## Description (AR)
 
-> **الألعاب التي كبرت معها — عادت إلى جيبك.**
+> **ألعاب زمن الطيبين — عادت إلى جيبك.**
 >
-> يعيد «ريترو أركيد» إحياء العصر الذهبي للألعاب: 25 لعبة كلاسيكية من السبعينيات والثمانينيات والتسعينيات أُعيد بناؤها بحب، ببكسلات كبيرة وتوهج نيون وأصوات چيب تيون وتأثير شاشة CRT اختياري.
+> يعيد «ريترو أركيد» إحياء العصر الذهبي للألعاب: 30 لعبة كلاسيكية من السبعينيات والثمانينيات والتسعينيات أُعيد بناؤها بحب، ببكسلات كبيرة وتوهج نيون وأصوات چيب تيون وتأثير شاشة CRT اختياري.
 >
 > **سعر واحد. كل شيء. للأبد.**
 > ادفع 4.99$ مرة واحدة وامتلك كل الألعاب — بما فيها كل لعبة نضيفها مستقبلًا. لا اشتراكات. لا عملات. و**لا إعلانات أبدًا**.
@@ -55,6 +59,8 @@ Paste-ready copy for App Store Connect and Play Console. Keep the no-ads promise
 > **خصوصية تُقرأ في نفَس واحد:** نخزن اسم اللاعب ونقاطك. لا شيء آخر. لا بريد إلكتروني. لا نبيع البيانات أبدًا ولا نعرض إعلانات أبدًا.
 >
 > متوفر بالإنجليزية والعربية والإسبانية والفرنسية.
+>
+> **حمّله الحين واستمتع في لعبة زمن الطيبين!**
 
 ## Keywords (Apple, 100 chars)
 
@@ -67,11 +73,13 @@ Paste-ready copy for App Store Connect and Play Console. Keep the no-ads promise
 
 ## What's-new template (first release)
 
-> Welcome to the arcade! 25 classic games, one $4.99 unlock, no ads ever. Snake and Memory Match are free — come try them.
+> Welcome to the arcade! 30 classic games, one $4.99 unlock, no ads ever. Snake and Memory Match are free — come try them.
+>
+> (AR) أهلاً بك في الأركيد! ٣٠ لعبة من زمن الطيبين، بدون إعلانات أبداً. «الثعبان» و«لعبة الذاكرة» مجانيتان — جرّبهما الحين.
 
 ## Screenshot plan (6-8 per platform)
 
-1. Catalog (hero shot: neon grid of 25 games)
+1. Catalog (hero shot: neon grid of 30 games)
 2. Snake gameplay with scanlines
 3. Brick Breaker mid-volley
 4. Haunted Maze chase
