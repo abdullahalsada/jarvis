@@ -20,11 +20,21 @@ const LANES = 3;
 interface Car {
   lane: number;
   y: number;
-  sprite: (typeof CAR_SPRITES)[number];
+  sprite: (typeof TRAFFIC)[number]['sprite'];
+  /** Height in car-lengths — buses are longer than sedans. */
+  len: number;
   passed: boolean;
 }
 
-const CAR_SPRITES = ['racecar_magenta', 'racecar_yellow', 'racecar_orange', 'racecar_red'] as const;
+// Civilian traffic: taxis, SUVs, pickups, sedans, and the occasional long bus.
+const TRAFFIC = [
+  { sprite: 'taxi_top', len: 1 },
+  { sprite: 'suv_top', len: 1 },
+  { sprite: 'pickup_top', len: 1 },
+  { sprite: 'sedan_top_magenta', len: 1 },
+  { sprite: 'sedan_top_white', len: 1 },
+  { sprite: 'bus_top', len: 1.5 },
+] as const;
 
 export function RetroRacerGame({ api }: { api: GameApi }) {
   const W = api.width;
@@ -81,10 +91,12 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
       const open = [0, 1, 2].sort(() => Math.random() - 0.5);
       const count = Math.random() < Math.min(0.5, distance.current / 3000) ? 2 : 1;
       for (let i = 0; i < count; i++) {
+        const kind = TRAFFIC[Math.floor(Math.random() * TRAFFIC.length)];
         cars.current.push({
           lane: open[i],
-          y: -CAR_H,
-          sprite: CAR_SPRITES[Math.floor(Math.random() * CAR_SPRITES.length)],
+          y: -CAR_H * kind.len,
+          sprite: kind.sprite,
+          len: kind.len,
           passed: false,
         });
       }
@@ -98,7 +110,7 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
         playSfx('bounce');
       }
     }
-    cars.current = cars.current.filter((c) => c.y < H + CAR_H);
+    cars.current = cars.current.filter((c) => c.y < H + CAR_H * c.len);
 
     // Score: distance + 5 per overtaken car.
     const overtaken = cars.current.filter((c) => c.passed).length;
@@ -108,7 +120,7 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
     const crash = cars.current.some(
       (c) =>
         c.lane === lane.current &&
-        c.y + CAR_H * 0.85 > PLAYER_Y &&
+        c.y + CAR_H * c.len - CAR_H * 0.15 > PLAYER_Y &&
         c.y < PLAYER_Y + CAR_H * 0.85
     );
     if (crash) {
@@ -156,7 +168,7 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
             />
           ))
         )}
-        {/* Oncoming traffic: top-view cars facing down (toward the player) */}
+        {/* Oncoming traffic: top-view vehicles facing down (toward the player) */}
         {cars.current.map((c, i) => (
           <Image
             key={i}
@@ -166,14 +178,14 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
               left: laneX(c.lane),
               top: c.y,
               width: CAR_W,
-              height: CAR_H,
+              height: CAR_H * c.len,
               transform: [{ rotate: '180deg' }],
             }}
           />
         ))}
         {/* Player car */}
         <Image
-          source={ACTORS.racecar_cyan}
+          source={ACTORS.player_racer}
           style={{
             position: 'absolute',
             left: laneX(lane.current),

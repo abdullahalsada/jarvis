@@ -174,13 +174,7 @@ export function MoonBuggyGame({ api }: { api: GameApi }) {
 
   return (
     <View style={{ flex: 1 }}>
-      {/* Thumb zones: left = shoot, right = jump */}
-      <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, flexDirection: 'row', zIndex: 2 }}>
-        <Pressable accessibilityRole="button" accessibilityLabel="shoot" onPressIn={shoot} style={{ flex: 1 }} />
-        <Pressable accessibilityRole="button" accessibilityLabel="jump" onPressIn={jump} style={{ flex: 1 }} />
-      </View>
-
-      <View pointerEvents="none" style={{ flex: 1, zIndex: 1 }}>
+      <View pointerEvents="none" style={{ flex: 1 }}>
         {/* Ground */}
         <View
           style={{
@@ -261,6 +255,16 @@ export function MoonBuggyGame({ api }: { api: GameApi }) {
         <PixelText size={10} color={colors.textDim} style={{ position: 'absolute', bottom: 10, right: 16 }}>
           ↥ JUMP
         </PixelText>
+      </View>
+
+      {/* Thumb zones: left = shoot, right = jump. Rendered last so they sit
+          above the field but below the shell's Start/pause overlays; inert
+          until the round is actually running. */}
+      <View
+        pointerEvents={api.running ? 'auto' : 'none'}
+        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, flexDirection: 'row' }}>
+        <Pressable accessibilityRole="button" accessibilityLabel="shoot" onPressIn={shoot} style={{ flex: 1 }} />
+        <Pressable accessibilityRole="button" accessibilityLabel="jump" onPressIn={jump} style={{ flex: 1 }} />
       </View>
     </View>
   );
