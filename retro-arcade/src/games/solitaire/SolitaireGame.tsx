@@ -216,13 +216,18 @@ export function SolitaireGame({ api }: { api: GameApi }) {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      {card.faceUp && (
+      {card.faceUp ? (
         <PixelText
           size={Math.floor(w * 0.42)}
           color={isRed(card) ? '#c02040' : '#101020'}
           style={{ fontWeight: 'bold', textAlign: 'center' }}>
           {`${RANKS[card.rank]}\n${SUITS[card.suit]}`}
         </PixelText>
+      ) : (
+        // Card back: neon diamond motif on navy, like a real deck
+        <View style={{ width: '72%', height: '80%', borderWidth: 1.5, borderColor: '#3b3b7a', borderRadius: 2, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ width: '38%', height: '24%', borderWidth: 1.5, borderColor: colors.neonCyan, transform: [{ rotate: '45deg' }] }} />
+        </View>
       )}
     </View>
   );

@@ -246,17 +246,15 @@ export function SkyShieldGame({ api }: { api: GameApi }) {
         />
         {cities.current.map((alive, i) =>
           alive ? (
-            <View
-              key={i}
-              style={{
-                position: 'absolute',
-                left: cityX(i) - 14,
-                top: GROUND - 12,
-                width: 28,
-                height: 12,
-                backgroundColor: colors.neonMagenta,
-              }}
-            />
+            // Living city: three towers with lit windows
+            <View key={i} style={{ position: 'absolute', left: cityX(i) - 14, top: GROUND - 18, width: 28, height: 18, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+              {[12, 18, 9].map((h, t) => (
+                <View key={t} style={{ width: 8, height: h, backgroundColor: colors.neonMagenta, alignItems: 'center', justifyContent: 'space-evenly' }}>
+                  <View style={{ width: 3, height: 2, backgroundColor: colors.neonYellow }} />
+                  {h > 10 && <View style={{ width: 3, height: 2, backgroundColor: colors.neonYellow }} />}
+                </View>
+              ))}
+            </View>
           ) : (
             <View
               key={i}

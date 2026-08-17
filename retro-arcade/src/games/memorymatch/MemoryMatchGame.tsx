@@ -130,9 +130,10 @@ export function MemoryMatchGame({ api }: { api: GameApi }) {
                 {SYMBOLS[card.symbol]}
               </PixelText>
             ) : (
-              <PixelText size={Math.floor(cardSize * 0.4)} color={colors.border}>
-                ?
-              </PixelText>
+              // Card back: neon diamond motif, like a real deck
+              <View style={{ width: '78%', height: '78%', borderWidth: 2, borderColor: '#3b3b5e', borderRadius: 3, alignItems: 'center', justifyContent: 'center' }}>
+                <View style={{ width: '42%', height: '42%', borderWidth: 2, borderColor: colors.neonPurple, transform: [{ rotate: '45deg' }] }} />
+              </View>
             )}
           </Pressable>
         ))}

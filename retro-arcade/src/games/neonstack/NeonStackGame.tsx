@@ -237,6 +237,14 @@ export function NeonStackGame({ api }: { api: GameApi }) {
                 width: cell - 1,
                 height: cell - 1,
                 backgroundColor: c,
+                borderTopWidth: 2,
+                borderLeftWidth: 2,
+                borderBottomWidth: 2,
+                borderRightWidth: 2,
+                borderTopColor: 'rgba(255,255,255,0.5)',
+                borderLeftColor: 'rgba(255,255,255,0.3)',
+                borderBottomColor: 'rgba(0,0,0,0.45)',
+                borderRightColor: 'rgba(0,0,0,0.3)',
               }}
             />
           ) : null
@@ -253,6 +261,14 @@ export function NeonStackGame({ api }: { api: GameApi }) {
                   width: cell - 1,
                   height: cell - 1,
                   backgroundColor: PIECES[piece.current.kind].color,
+                  borderTopWidth: 2,
+                  borderLeftWidth: 2,
+                  borderBottomWidth: 2,
+                  borderRightWidth: 2,
+                  borderTopColor: 'rgba(255,255,255,0.5)',
+                  borderLeftColor: 'rgba(255,255,255,0.3)',
+                  borderBottomColor: 'rgba(0,0,0,0.45)',
+                  borderRightColor: 'rgba(0,0,0,0.3)',
                 }}
               />
             ) : null
