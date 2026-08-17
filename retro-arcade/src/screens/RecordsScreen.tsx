@@ -8,6 +8,8 @@ import { PixelText } from '../components/PixelText';
 import { NeonButton } from '../components/NeonButton';
 import { CATEGORIES, GAMES } from '../games/registry';
 import { getLocalBest } from '../services/scores';
+import { getAllBestLevels, getCoins } from '../services/wallet';
+import { trophyForLevel, TROPHY_ICON } from '../games/engine/progression';
 import type { RootStackParamList } from '../navigation/types';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Records'>;
@@ -21,6 +23,8 @@ export function RecordsScreen({ navigation }: Props) {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const [bests, setBests] = useState<Record<string, number>>({});
+  const [levels, setLevels] = useState<Record<string, number>>({});
+  const [coins, setCoins] = useState(0);
 
   useEffect(() => {
     (async () => {
@@ -28,10 +32,13 @@ export function RecordsScreen({ navigation }: Props) {
         GAMES.map(async (g) => [g.id, await getLocalBest(g.id)] as const)
       );
       setBests(Object.fromEntries(entries));
+      setLevels(await getAllBestLevels(GAMES.map((g) => g.id)));
+      setCoins(await getCoins());
     })();
   }, []);
 
   const played = GAMES.filter((g) => (bests[g.id] ?? 0) > 0).length;
+  const trophies = GAMES.filter((g) => trophyForLevel(levels[g.id] ?? 0) !== null).length;
 
   return (
     <ScrollView
@@ -40,9 +47,18 @@ export function RecordsScreen({ navigation }: Props) {
       <PixelText size="heading" color={colors.neonYellow} glow>
         {t('records.title')}
       </PixelText>
-      <PixelText size="label" color={colors.textDim} style={{ marginTop: spacing.s, marginBottom: spacing.l }}>
+      <PixelText size="label" color={colors.textDim} style={{ marginTop: spacing.s }}>
         {t('records.subtitle', { played, total: GAMES.length })}
       </PixelText>
+      {/* Purse + trophy cabinet totals */}
+      <View style={{ flexDirection: 'row', gap: spacing.l, marginTop: spacing.m, marginBottom: spacing.l }}>
+        <PixelText size="body" color={colors.neonYellow} glow>
+          🪙 {String(coins)}
+        </PixelText>
+        <PixelText size="body" color={colors.neonYellow}>
+          🏆 {String(trophies)}/{String(GAMES.length)}
+        </PixelText>
+      </View>
 
       {CATEGORIES.map((cat) => (
         <View key={cat} style={{ marginBottom: spacing.l }}>
@@ -51,6 +67,7 @@ export function RecordsScreen({ navigation }: Props) {
           </PixelText>
           {GAMES.filter((g) => g.category === cat).map((game) => {
             const best = bests[game.id] ?? 0;
+            const tier = trophyForLevel(levels[game.id] ?? 0);
             return (
               <View
                 key={game.id}
@@ -76,6 +93,7 @@ export function RecordsScreen({ navigation }: Props) {
                   style={{ flex: 1 }}>
                   {t(`games.${game.id}.name`)}
                 </PixelText>
+                {tier && <PixelText size={14}>{TROPHY_ICON[tier]}</PixelText>}
                 <PixelText size="score" color={best > 0 ? categoryColors[cat] : colors.border} glow={best > 0}>
                   {best > 0 ? String(best) : '—'}
                 </PixelText>

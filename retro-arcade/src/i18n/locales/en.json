@@ -61,7 +61,10 @@
     "privacyTitle": "Privacy",
     "privacyBody": "We store only your player name and your game scores. Nothing else. No email, no ads, no data selling — ever.",
     "restartNeeded": "Restart required",
-    "restartNeededBody": "The app needs to restart to switch the layout direction. Please close and reopen the app."
+    "restartNeededBody": "The app needs to restart to switch the layout direction. Please close and reopen the app.",
+    "store": "Store",
+    "owned": "All games unlocked",
+    "resetPurchase": "Reset purchase (test mode)"
   },
   "records": {
     "title": "My Records",
@@ -82,7 +85,16 @@
     "youWin": "YOU WIN!",
     "newBest": "NEW BEST SCORE!",
     "playAgain": "Play again",
-    "backToArcade": "Back to arcade"
+    "backToArcade": "Back to arcade",
+    "levelUp": "LEVEL {{n}}!",
+    "bonusRound": "BONUS ROUND! 2x COINS",
+    "levelReached": "Level {{n}}",
+    "coinsEarned": "+{{n}} 🪙",
+    "trophy": {
+      "bronze": "Bronze trophy!",
+      "silver": "Silver trophy!",
+      "gold": "Gold trophy!"
+    }
   },
   "games": {
     "snake": {

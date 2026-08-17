@@ -25,6 +25,14 @@ const isExpoGo = Constants.appOwnership === 'expo';
 const apiKey = Platform.OS === 'ios' ? API_KEYS.ios : API_KEYS.android;
 const useMock = isExpoGo || apiKey.length === 0;
 
+/** True when the fake dev store is active (Expo Go / missing keys). */
+export const isMockStore = useMock;
+
+/** Dev helper: clears the fake purchase so the flow can be tested again. */
+export async function resetMockPurchase(): Promise<void> {
+  if (useMock) await AsyncStorage.removeItem(MOCK_KEY);
+}
+
 export interface PurchaseResult {
   success: boolean;
   /** 'cancelled' is not an error — the user just backed out. */

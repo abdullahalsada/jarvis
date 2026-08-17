@@ -61,7 +61,10 @@
     "privacyTitle": "Confidentialité",
     "privacyBody": "Nous ne stockons que ton nom de joueur et tes scores. Rien d autre. Pas d e-mail, pas de pub, pas de vente de données — jamais.",
     "restartNeeded": "Redémarrage requis",
-    "restartNeededBody": "L'application doit redémarrer pour changer le sens de l'affichage. Ferme-la puis rouvre-la."
+    "restartNeededBody": "L'application doit redémarrer pour changer le sens de l'affichage. Ferme-la puis rouvre-la.",
+    "store": "Boutique",
+    "owned": "Tous les jeux débloqués",
+    "resetPurchase": "Réinitialiser l'achat (mode test)"
   },
   "records": {
     "title": "Mes Records",
@@ -82,7 +85,16 @@
     "youWin": "GAGNÉ !",
     "newBest": "NOUVEAU RECORD !",
     "playAgain": "Rejouer",
-    "backToArcade": "Retour à l'arcade"
+    "backToArcade": "Retour à l'arcade",
+    "levelUp": "NIVEAU {{n}} !",
+    "bonusRound": "MANCHE BONUS ! PIÈCES ×2",
+    "levelReached": "Niveau {{n}}",
+    "coinsEarned": "+{{n}} 🪙",
+    "trophy": {
+      "bronze": "Trophée de bronze !",
+      "silver": "Trophée d'argent !",
+      "gold": "Trophée d'or !"
+    }
   },
   "games": {
     "snake": {
