@@ -8,6 +8,8 @@ import { PixelText } from '../components/PixelText';
 import { NeonButton } from '../components/NeonButton';
 import { useSettings, type Settings } from '../context/SettingsContext';
 import { useAuth } from '../context/AuthContext';
+import { useEntitlement } from '../context/EntitlementContext';
+import { isMockStore, resetMockPurchase } from '../services/purchases';
 import type { RootStackParamList } from '../navigation/types';
 
 // Shown in the footer so anyone can tell at a glance which build is running.
@@ -21,6 +23,7 @@ export function SettingsScreen({ navigation }: Props) {
   const insets = useSafeAreaInsets();
   const settings = useSettings();
   const { username, deleteAccount, guestMode } = useAuth();
+  const { unlocked, refresh } = useEntitlement();
 
   const toggles: { key: keyof Settings; label: string }[] = [
     { key: 'sound', label: t('settings.sound') },
@@ -84,6 +87,45 @@ export function SettingsScreen({ navigation }: Props) {
           />
         </View>
       ))}
+
+      {/* Store: the one purchase, always reachable here even after unlock. */}
+      <PixelText size="body" color={colors.textDim} style={{ marginBottom: spacing.m, marginTop: spacing.s }}>
+        {t('settings.store')}
+      </PixelText>
+      {unlocked ? (
+        <View
+          style={{
+            backgroundColor: colors.bgCard,
+            borderWidth: 2,
+            borderColor: colors.neonGreen,
+            borderRadius: 6,
+            padding: spacing.m,
+            marginBottom: spacing.m,
+          }}>
+          <PixelText size="body" color={colors.neonGreen}>
+            ✓ {t('settings.owned')}
+          </PixelText>
+        </View>
+      ) : (
+        <NeonButton
+          label={`🔓 ${t('home.unlockCard')}`}
+          color={colors.neonYellow}
+          onPress={() => navigation.navigate('Purchase')}
+          style={{ marginBottom: spacing.m }}
+        />
+      )}
+      {unlocked && isMockStore && (
+        <NeonButton
+          label={t('settings.resetPurchase')}
+          color={colors.textDim}
+          variant="outline"
+          onPress={async () => {
+            await resetMockPurchase();
+            await refresh();
+          }}
+          style={{ marginBottom: spacing.m }}
+        />
+      )}
 
       {/* Privacy statement — plain and honest, per the brand promise. */}
       <View

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Image, Pressable, View, type ImageSourcePropType } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
@@ -6,9 +6,18 @@ import { colors, spacing, touchTarget } from '../../theme';
 import { PixelText } from '../../components/PixelText';
 import { NeonButton } from '../../components/NeonButton';
 import { Scanlines } from '../../components/Scanlines';
-import { playSfx } from '../../audio/sfx';
+import { playSfx, playJingle } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 import { getLocalBest, submitScore } from '../../services/scores';
+import { addCoins, recordLevel } from '../../services/wallet';
+import {
+  coinsForRun,
+  isBonusLevel,
+  levelForScore,
+  trophyForLevel,
+  TROPHY_ICON,
+  type TrophyTier,
+} from './progression';
 
 export type GamePhase = 'howto' | 'playing' | 'paused' | 'over';
 
@@ -39,10 +48,16 @@ interface Props {
   children: (api: GameApi) => React.ReactNode;
 }
 
+/** How long level-up / bonus-round banners stay on screen. */
+const BANNER_MS = 1500;
+/** Header score refresh cadence — throttled so score-per-frame games don't re-render the whole shell 60×/s. */
+const SCORE_FLUSH_MS = 120;
+
 /**
  * Common wrapper for every game: score/best header, how-to-play overlay
- * before the first run (no time pressure — waits for a tap), pause, and the
- * game-over overlay with best-score handling.
+ * before the first run (no time pressure — waits for a tap), pause, the
+ * game-over overlay with best-score handling, and the shared progression
+ * layer (levels from score, bonus rounds, coin payouts, trophies).
  */
 export function GameShell({ gameId, color, showLives, art, onQuit, children }: Props) {
   const { t } = useTranslation();
@@ -55,39 +70,132 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
   const [isNewBest, setIsNewBest] = useState(false);
   const [resetToken, setResetToken] = useState(0);
   const [area, setArea] = useState({ width: 0, height: 0 });
+  const [level, setLevel] = useState(1);
+  const [banner, setBanner] = useState<{ text: string; bonus: boolean } | null>(null);
+  const [coinsEarned, setCoinsEarned] = useState(0);
+  const [newTrophy, setNewTrophy] = useState<TrophyTier | null>(null);
+
+  const scoreRef = useRef(0);
+  const lastFlush = useRef(0);
+  const flushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const levelRef = useRef(1);
+  const bannerTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const phaseRef = useRef<GamePhase>('howto');
+  phaseRef.current = phase;
 
   useEffect(() => {
     getLocalBest(gameId).then(setBest);
+    return () => {
+      if (flushTimer.current) clearTimeout(flushTimer.current);
+      if (bannerTimer.current) clearTimeout(bannerTimer.current);
+    };
   }, [gameId]);
+
+  const showBanner = useCallback(
+    (text: string, bonus: boolean) => {
+      setBanner({ text, bonus });
+      if (bannerTimer.current) clearTimeout(bannerTimer.current);
+      bannerTimer.current = setTimeout(() => setBanner(null), BANNER_MS);
+    },
+    []
+  );
+
+  /** Level-up check against the live (unthrottled) score. */
+  const checkLevel = useCallback(
+    (s: number) => {
+      const lv = levelForScore(gameId, s);
+      if (lv > levelRef.current) {
+        levelRef.current = lv;
+        setLevel(lv);
+        if (phaseRef.current === 'playing') {
+          const bonus = isBonusLevel(lv);
+          playSfx(bonus ? 'bonusRound' : 'levelUp');
+          haptic.medium();
+          showBanner(
+            bonus ? t('game.bonusRound') : t('game.levelUp', { n: lv }),
+            bonus
+          );
+        }
+      }
+    },
+    [gameId, showBanner, t]
+  );
+
+  /**
+   * Games may report score every frame (racers, dodgers). The header only
+   * needs ~8 updates/s, so state flushes are throttled — this halves the
+   * per-frame render work for score-spamming games and keeps movement smooth.
+   */
+  const reportScore = useCallback(
+    (s: number) => {
+      scoreRef.current = s;
+      checkLevel(s);
+      const now = Date.now();
+      if (now - lastFlush.current >= SCORE_FLUSH_MS) {
+        lastFlush.current = now;
+        setScore(s);
+      } else if (!flushTimer.current) {
+        flushTimer.current = setTimeout(() => {
+          flushTimer.current = null;
+          lastFlush.current = Date.now();
+          setScore(scoreRef.current);
+        }, SCORE_FLUSH_MS);
+      }
+    },
+    [checkLevel]
+  );
 
   const end = useCallback(
     ({ score: finalScore, won: didWin }: { score: number; won?: boolean }) => {
+      scoreRef.current = finalScore;
+      checkLevel(finalScore);
       setScore(finalScore); // include any end-of-game bonus in the overlay
       setWon(!!didWin);
       setPhase('over');
       playSfx(didWin ? 'win' : 'gameOver');
       if (didWin) haptic.success();
       else haptic.heavy();
-      submitScore(gameId, finalScore).then((newBest) => {
-        setIsNewBest(newBest);
-        if (newBest) setBest(finalScore);
+
+      const finalLevel = levelForScore(gameId, finalScore);
+      submitScore(gameId, finalScore).then(async (newBestScore) => {
+        setIsNewBest(newBestScore);
+        if (newBestScore) setBest(finalScore);
+        // Coins + trophies: pay the run out, then celebrate a new tier.
+        const coins = coinsForRun(gameId, finalScore, newBestScore);
+        setCoinsEarned(coins);
+        if (coins > 0) {
+          await addCoins(coins);
+          setTimeout(() => playSfx('coin'), 350);
+        }
+        const prevBestLevel = await recordLevel(gameId, finalLevel);
+        const tier = trophyForLevel(finalLevel);
+        if (tier && tier !== trophyForLevel(prevBestLevel)) {
+          setNewTrophy(tier);
+          setTimeout(() => playSfx('trophy'), 800);
+        }
       });
     },
-    [gameId]
+    [gameId, checkLevel]
   );
 
   const start = () => {
     setScore(0);
+    scoreRef.current = 0;
+    levelRef.current = 1;
+    setLevel(1);
+    setBanner(null);
     setIsNewBest(false);
+    setCoinsEarned(0);
+    setNewTrophy(null);
     setResetToken((n) => n + 1);
     setPhase('playing');
-    playSfx('start');
+    playJingle(gameId);
   };
 
   const api: GameApi = {
     running: phase === 'playing',
     resetToken,
-    setScore,
+    setScore: reportScore,
     setLives,
     end,
     width: area.width,
@@ -96,7 +204,7 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
-      {/* Header: score, best, lives, pause */}
+      {/* Header: score, best, level, lives, pause */}
       <View
         style={{
           flexDirection: 'row',
@@ -119,6 +227,14 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
           </PixelText>
           <PixelText size="score" color={colors.text}>
             {String(Math.max(best, score))}
+          </PixelText>
+        </View>
+        <View style={{ flex: 0.8 }}>
+          <PixelText size={11} color={colors.textDim} numberOfLines={1} adjustsFontSizeToFit>
+            {t('game.level')}
+          </PixelText>
+          <PixelText size="score" color={isBonusLevel(level) ? colors.neonYellow : colors.text} glow={isBonusLevel(level)}>
+            {String(level)}
           </PixelText>
         </View>
         {showLives && (
@@ -158,6 +274,21 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
         onLayout={(e) => setArea(e.nativeEvent.layout)}>
         {area.width > 0 && children(api)}
         <Scanlines height={area.height} />
+
+        {/* Level-up / bonus-round banner */}
+        {banner && phase === 'playing' && (
+          <View
+            pointerEvents="none"
+            style={{ position: 'absolute', top: '16%', left: 0, right: 0, alignItems: 'center', zIndex: 5 }}>
+            <PixelText
+              size="heading"
+              color={banner.bonus ? colors.neonYellow : colors.neonGreen}
+              glow
+              style={{ textAlign: 'center', paddingHorizontal: spacing.l }}>
+              {banner.text}
+            </PixelText>
+          </View>
+        )}
 
         {/* Pre-game screen: sprite, name, one-line tagline — no walls of text.
             Controls are visible buttons now, so the games explain themselves. */}
@@ -207,6 +338,19 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
             <PixelText size="heading" color={colors.text} style={{ marginVertical: spacing.m }}>
               {t('game.score')}: {score}
             </PixelText>
+            <PixelText size="body" color={colors.textDim} style={{ marginBottom: spacing.m }}>
+              {t('game.levelReached', { n: level })}
+            </PixelText>
+            {coinsEarned > 0 && (
+              <PixelText size="body" color={colors.neonYellow} glow style={{ marginBottom: spacing.m }}>
+                {t('game.coinsEarned', { n: coinsEarned })}
+              </PixelText>
+            )}
+            {newTrophy && (
+              <PixelText size="body" color={colors.neonYellow} glow style={{ marginBottom: spacing.m }}>
+                {TROPHY_ICON[newTrophy]} {t(`game.trophy.${newTrophy}`)}
+              </PixelText>
+            )}
             {isNewBest && (
               <PixelText size="body" color={colors.neonYellow} glow style={{ marginBottom: spacing.m }}>
                 {t('game.newBest')}

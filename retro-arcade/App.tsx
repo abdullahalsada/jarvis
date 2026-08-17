@@ -11,6 +11,8 @@ import { LanguageScreen } from './src/screens/LanguageScreen';
 import { UsernameScreen } from './src/screens/UsernameScreen';
 import { getStoredLanguage, deviceLanguage, initI18n } from './src/i18n';
 import { flushScoreQueue } from './src/services/scores';
+import { initSfx } from './src/audio/sfx';
+import { AssetWarmup } from './src/components/AssetWarmup';
 
 /**
  * App flow: Splash → Language (first run) → Player name (first run) → Arcade.
@@ -31,6 +33,9 @@ function Gate() {
       await initI18n(stored ?? deviceLanguage());
       setLangChosen(stored !== null);
       flushScoreQueue();
+      // Pre-render the whole synth bank (jingles included) during the splash
+      // so the first sound of a session never stalls a frame.
+      initSfx();
     })();
   }, []);
 
@@ -50,6 +55,7 @@ export default function App() {
       <SettingsProvider>
         <AuthProvider>
           <StatusBar style="light" />
+          <AssetWarmup />
           <Gate />
         </AuthProvider>
       </SettingsProvider>

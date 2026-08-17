@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Image, Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useFocusEffect } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { colors, categoryColors, spacing } from '../theme';
 import { PixelText } from '../components/PixelText';
 import { CATEGORIES, GAMES, gameColor, type Category } from '../games/registry';
 import { useEntitlement } from '../context/EntitlementContext';
+import { getCoins } from '../services/wallet';
 import { playSfx } from '../audio/sfx';
 import type { RootStackParamList } from '../navigation/types';
 
@@ -32,6 +34,14 @@ export function HomeScreen({ navigation }: Props) {
     setOpen((prev) => ({ ...prev, [cat]: !prev[cat] }));
   };
 
+  // Coin purse refreshes whenever the player returns from a game.
+  const [coins, setCoins] = useState(0);
+  useFocusEffect(
+    useCallback(() => {
+      getCoins().then(setCoins);
+    }, [])
+  );
+
   return (
     <ScrollView
       style={{ flex: 1, backgroundColor: colors.bg }}
@@ -40,7 +50,25 @@ export function HomeScreen({ navigation }: Props) {
         paddingTop: insets.top + spacing.m,
         paddingBottom: spacing.xl,
       }}>
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
+        {/* Coin purse — earned by climbing levels in any game. */}
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 6,
+            borderWidth: 2,
+            borderColor: colors.border,
+            borderRadius: 20,
+            paddingHorizontal: spacing.m,
+            paddingVertical: 6,
+            marginRight: 'auto',
+          }}>
+          <PixelText size="body">🪙</PixelText>
+          <PixelText size={14} color={colors.neonYellow} glow>
+            {String(coins)}
+          </PixelText>
+        </View>
         <Pressable
           accessibilityRole="button"
           accessibilityLabel={t('records.title')}

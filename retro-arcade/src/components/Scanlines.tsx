@@ -6,7 +6,7 @@ import { useSettings } from '../context/SettingsContext';
  * CRT scanline overlay: thin dark lines every 4px. Pure Views, pointerEvents
  * off so gameplay touches pass straight through. Toggleable in Settings.
  */
-export function Scanlines({ height }: { height: number }) {
+export const Scanlines = React.memo(function Scanlines({ height }: { height: number }) {
   const { scanlines } = useSettings();
   if (!scanlines || height <= 0) return null;
   const lines = Math.ceil(height / 4);
@@ -27,4 +27,4 @@ export function Scanlines({ height }: { height: number }) {
       ))}
     </View>
   );
-}
+});

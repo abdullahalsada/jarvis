@@ -1,6 +1,7 @@
 import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import { getSettings } from '../context/SettingsContext';
 import { wavDataUri, type Tone } from './synth';
+import { GAME_JINGLES } from './jingles';
 
 /**
  * Shared sound-effect bank. Every game plays from this fixed set so the whole
@@ -53,6 +54,31 @@ const BANK: Record<string, Tone[]> = {
   padYellow: [{ freq: 262, duration: 0.3, wave: 'triangle' }],
   padBlue: [{ freq: 196, duration: 0.3, wave: 'triangle' }],
   wrong: [{ freq: 110, duration: 0.5, wave: 'square', volume: 0.6 }],
+  // Progression
+  levelUp: [
+    { freq: 523, duration: 0.07 },
+    { freq: 659, duration: 0.07 },
+    { freq: 784, duration: 0.07 },
+    { freq: 1047, duration: 0.16 },
+  ],
+  bonusRound: [
+    { freq: 784, duration: 0.08 },
+    { freq: 988, duration: 0.08 },
+    { freq: 784, duration: 0.08 },
+    { freq: 988, duration: 0.08 },
+    { freq: 1319, duration: 0.22 },
+  ],
+  coin: [
+    { freq: 988, duration: 0.05 },
+    { freq: 1319, duration: 0.14 },
+  ],
+  trophy: [
+    { freq: 523, duration: 0.1 },
+    { freq: 523, duration: 0.05 },
+    { freq: 784, duration: 0.1 },
+    { freq: 1047, duration: 0.1 },
+    { freq: 1319, duration: 0.28 },
+  ],
 };
 
 export type SfxName = keyof typeof BANK;
@@ -67,15 +93,32 @@ async function ensureInit(): Promise<void> {
   for (const [name, tones] of Object.entries(BANK)) {
     players.set(name, createAudioPlayer({ uri: wavDataUri(tones) }));
   }
+  for (const [gameId, tones] of Object.entries(GAME_JINGLES)) {
+    players.set(`jingle:${gameId}`, createAudioPlayer({ uri: wavDataUri(tones) }));
+  }
 }
 
-export function playSfx(name: SfxName): void {
+/** Pre-render and register every sound at startup so the first play is instant. */
+export function initSfx(): Promise<void> {
+  return ensureInit().catch(() => {});
+}
+
+function playByKey(key: string): void {
   if (!getSettings().sound) return;
   ensureInit().then(() => {
-    const player = players.get(name);
+    const player = players.get(key);
     if (player) {
       player.seekTo(0);
       player.play();
     }
   });
+}
+
+export function playSfx(name: SfxName): void {
+  playByKey(name);
+}
+
+/** The game's signature start jingle; falls back to the shared start sound. */
+export function playJingle(gameId: string): void {
+  playByKey(gameId in GAME_JINGLES ? `jingle:${gameId}` : 'start');
 }
