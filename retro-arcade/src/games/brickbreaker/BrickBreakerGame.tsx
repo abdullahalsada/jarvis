@@ -195,6 +195,7 @@ export function BrickBreakerGame({ api }: { api: GameApi }) {
           const row = Math.floor(i / COLS);
           const col = i % COLS;
           return (
+            // Beveled brick: light top-left edge, dark bottom-right edge.
             <View
               key={i}
               style={{
@@ -204,10 +205,19 @@ export function BrickBreakerGame({ api }: { api: GameApi }) {
                 width: BRICK_W - 4,
                 height: BRICK_H - 4,
                 backgroundColor: ROW_COLORS[row],
+                borderTopWidth: 2,
+                borderLeftWidth: 2,
+                borderBottomWidth: 2,
+                borderRightWidth: 2,
+                borderTopColor: 'rgba(255,255,255,0.55)',
+                borderLeftColor: 'rgba(255,255,255,0.35)',
+                borderBottomColor: 'rgba(0,0,0,0.45)',
+                borderRightColor: 'rgba(0,0,0,0.3)',
               }}
             />
           );
         })}
+        {/* Paddle: glossy bar with a highlight strip and rounded ends */}
         <View
           style={{
             position: 'absolute',
@@ -216,9 +226,12 @@ export function BrickBreakerGame({ api }: { api: GameApi }) {
             width: PADDLE_W,
             height: PADDLE_H,
             backgroundColor: colors.neonCyan,
-            borderRadius: 3,
-          }}
-        />
+            borderRadius: PADDLE_H / 2,
+            overflow: 'hidden',
+          }}>
+          <View style={{ height: PADDLE_H * 0.35, marginHorizontal: 4, marginTop: 1.5, borderRadius: PADDLE_H * 0.2, backgroundColor: 'rgba(255,255,255,0.55)' }} />
+        </View>
+        {/* Ball: glossy sphere with a shine dot */}
         <View
           style={{
             position: 'absolute',
@@ -226,9 +239,11 @@ export function BrickBreakerGame({ api }: { api: GameApi }) {
             top: ball.current.y - BALL / 2,
             width: BALL,
             height: BALL,
+            borderRadius: BALL / 2,
             backgroundColor: colors.text,
-          }}
-        />
+          }}>
+          <View style={{ position: 'absolute', left: BALL * 0.15, top: BALL * 0.15, width: BALL * 0.3, height: BALL * 0.3, borderRadius: BALL * 0.15, backgroundColor: '#ffffff' }} />
+        </View>
         </View>
       </View>
       <PadBar

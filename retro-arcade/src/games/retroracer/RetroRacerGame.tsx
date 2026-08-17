@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSwipe, type Dir } from '../engine/controls';
@@ -19,11 +20,11 @@ const LANES = 3;
 interface Car {
   lane: number;
   y: number;
-  color: string;
+  sprite: (typeof CAR_SPRITES)[number];
   passed: boolean;
 }
 
-const CAR_COLORS = [colors.neonMagenta, colors.neonYellow, colors.neonOrange, colors.neonPurple];
+const CAR_SPRITES = ['racecar_magenta', 'racecar_yellow', 'racecar_orange', 'racecar_red'] as const;
 
 export function RetroRacerGame({ api }: { api: GameApi }) {
   const W = api.width;
@@ -83,7 +84,7 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
         cars.current.push({
           lane: open[i],
           y: -CAR_H,
-          color: CAR_COLORS[Math.floor(Math.random() * CAR_COLORS.length)],
+          sprite: CAR_SPRITES[Math.floor(Math.random() * CAR_SPRITES.length)],
           passed: false,
         });
       }
@@ -155,42 +156,32 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
             />
           ))
         )}
+        {/* Oncoming traffic: top-view cars facing down (toward the player) */}
         {cars.current.map((c, i) => (
-          <View
+          <Image
             key={i}
+            source={ACTORS[c.sprite]}
             style={{
               position: 'absolute',
               left: laneX(c.lane),
               top: c.y,
               width: CAR_W,
               height: CAR_H,
-              borderRadius: 6,
-              backgroundColor: c.color,
+              transform: [{ rotate: '180deg' }],
             }}
           />
         ))}
         {/* Player car */}
-        <View
+        <Image
+          source={ACTORS.racecar_cyan}
           style={{
             position: 'absolute',
             left: laneX(lane.current),
             top: PLAYER_Y,
             width: CAR_W,
             height: CAR_H,
-            borderRadius: 6,
-            backgroundColor: colors.neonCyan,
-          }}>
-          <View
-            style={{
-              marginTop: CAR_H * 0.18,
-              alignSelf: 'center',
-              width: CAR_W * 0.6,
-              height: CAR_H * 0.22,
-              borderRadius: 3,
-              backgroundColor: colors.bg,
-            }}
-          />
-        </View>
+          }}
+        />
         </View>
       </View>
       <PadBar

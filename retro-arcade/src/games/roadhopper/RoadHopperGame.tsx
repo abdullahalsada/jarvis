@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSwipe, type Dir } from '../engine/controls';
@@ -26,6 +27,7 @@ interface Lane {
   gap: number; // gap between entities in cells
   kind: 'car' | 'log';
   color: string;
+  sprite?: string; // vehicle color variant, e.g. 'yellow' → car_side_yellow
   offset: number;
 }
 
@@ -56,11 +58,11 @@ export function RoadHopperGame({ api }: { api: GameApi }) {
       { row: 3, speed: base * 1.6, length: 5, gap: 6, kind: 'log', color: '#8a5a2b', offset: 4 },
       { row: 4, speed: -base * 1.1, length: 3, gap: 5, kind: 'log', color: '#a06a33', offset: 1 },
       { row: 5, speed: base * 0.8, length: 4, gap: 4, kind: 'log', color: '#8a5a2b', offset: 3 },
-      { row: 7, speed: -base * 1.2, length: 2, gap: 5, kind: 'car', color: colors.neonYellow, offset: 0 },
-      { row: 8, speed: base * 1.5, length: 1, gap: 4, kind: 'car', color: colors.neonCyan, offset: 2 },
-      { row: 9, speed: -base * 1.8, length: 2, gap: 6, kind: 'car', color: colors.neonMagenta, offset: 4 },
-      { row: 10, speed: base, length: 1, gap: 3, kind: 'car', color: colors.neonOrange, offset: 1 },
-      { row: 11, speed: -base * 1.4, length: 2, gap: 5, kind: 'car', color: colors.neonRed, offset: 3 },
+      { row: 7, speed: -base * 1.2, length: 2, gap: 5, kind: 'car', color: colors.neonYellow, sprite: 'yellow', offset: 0 },
+      { row: 8, speed: base * 1.5, length: 1, gap: 4, kind: 'car', color: colors.neonCyan, sprite: 'cyan', offset: 2 },
+      { row: 9, speed: -base * 1.8, length: 2, gap: 6, kind: 'car', color: colors.neonMagenta, sprite: 'magenta', offset: 4 },
+      { row: 10, speed: base, length: 1, gap: 3, kind: 'car', color: colors.neonOrange, sprite: 'orange', offset: 1 },
+      { row: 11, speed: -base * 1.4, length: 2, gap: 5, kind: 'car', color: colors.neonRed, sprite: 'red', offset: 3 },
     ];
   };
 
@@ -223,35 +225,61 @@ export function RoadHopperGame({ api }: { api: GameApi }) {
               justifyContent: 'center',
             }}>
             {homes.current[i] && (
-              <View style={{ width: cell * 0.5, height: cell * 0.5, borderRadius: cell * 0.25, backgroundColor: colors.neonGreen }} />
+              <Image source={ACTORS.frog} style={{ width: cell * 0.8, height: cell * 0.8 }} />
             )}
           </View>
         ))}
         {lanes.current.map((lane) =>
-          entities(lane, clock.current).map((e, i) => (
-            <View
-              key={`${lane.row}-${i}`}
-              style={{
-                position: 'absolute',
-                top: lane.row * cell + 3,
-                left: e.left,
-                width: e.width,
-                height: cell - 6,
-                borderRadius: lane.kind === 'log' ? cell / 3 : 3,
-                backgroundColor: lane.color,
-              }}
-            />
-          ))
+          entities(lane, clock.current).map((e, i) => {
+            if (lane.kind === 'log') {
+              // Log: rounded timber with grain stripes and lighter end caps.
+              return (
+                <View
+                  key={`${lane.row}-${i}`}
+                  style={{
+                    position: 'absolute',
+                    top: lane.row * cell + 3,
+                    left: e.left,
+                    width: e.width,
+                    height: cell - 6,
+                    borderRadius: (cell - 6) / 2,
+                    backgroundColor: lane.color,
+                    overflow: 'hidden',
+                    justifyContent: 'center',
+                  }}>
+                  <View style={{ position: 'absolute', left: 0, width: 6, top: 0, bottom: 0, backgroundColor: '#c89a5b' }} />
+                  <View style={{ position: 'absolute', right: 0, width: 6, top: 0, bottom: 0, backgroundColor: '#c89a5b' }} />
+                  <View style={{ height: 2, marginHorizontal: 10, backgroundColor: '#5e3d1c', opacity: 0.7 }} />
+                  <View style={{ height: 2, marginHorizontal: 14, marginTop: 4, backgroundColor: '#5e3d1c', opacity: 0.5 }} />
+                </View>
+              );
+            }
+            // Vehicles: 1-cell cars, 2-cell trucks, flipped to face travel direction.
+            const name = (lane.length >= 2 ? 'truck_side_' : 'car_side_') + lane.sprite;
+            return (
+              <Image
+                key={`${lane.row}-${i}`}
+                source={ACTORS[name as keyof typeof ACTORS]}
+                style={{
+                  position: 'absolute',
+                  top: lane.row * cell,
+                  left: e.left,
+                  width: e.width,
+                  height: cell,
+                  transform: [{ scaleX: lane.speed < 0 ? -1 : 1 }],
+                }}
+              />
+            );
+          })
         )}
-        <View
+        <Image
+          source={ACTORS.frog}
           style={{
             position: 'absolute',
-            top: f.row * cell + 4,
-            left: f.px - (cell - 8) / 2,
-            width: cell - 8,
-            height: cell - 8,
-            borderRadius: 4,
-            backgroundColor: colors.neonGreen,
+            top: f.row * cell + 1,
+            left: f.px - (cell - 2) / 2,
+            width: cell - 2,
+            height: cell - 2,
           }}
         />
         </View>
