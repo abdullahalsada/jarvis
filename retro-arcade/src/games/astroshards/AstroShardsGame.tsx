@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { colors, touchTarget } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
@@ -230,17 +231,15 @@ export function AstroShardsGame({ api }: { api: GameApi }) {
     <View style={{ flex: 1 }}>
       <View pointerEvents="none" style={{ width: W, height: FIELD_H, overflow: 'hidden' }}>
         {rocks.current.map((r, i) => (
-          <View
+          <Image
             key={i}
+            source={ACTORS.meteor}
             style={{
               position: 'absolute',
-              left: r.x - SIZES[r.size] / 2,
-              top: r.y - SIZES[r.size] / 2,
-              width: SIZES[r.size],
-              height: SIZES[r.size],
-              borderWidth: 2,
-              borderColor: colors.neonOrange,
-              borderRadius: SIZES[r.size] / 4,
+              left: r.x - SIZES[r.size] * 0.65,
+              top: r.y - SIZES[r.size] * 0.65,
+              width: SIZES[r.size] * 1.3,
+              height: SIZES[r.size] * 1.3,
               transform: [{ rotate: `${(i * 53) % 360}deg` }],
             }}
           />

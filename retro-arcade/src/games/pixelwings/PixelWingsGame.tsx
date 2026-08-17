@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { playSfx } from '../../audio/sfx';
@@ -139,30 +140,18 @@ export function PixelWingsGame({ api }: { api: GameApi }) {
             />
           </React.Fragment>
         ))}
-        <View
+        {/* The bird, pitching with its vertical speed */}
+        <Image
+          source={ACTORS.bird}
           style={{
             position: 'absolute',
-            left: BIRD_X - BIRD / 2,
-            top: bird.current.y - BIRD / 2,
-            width: BIRD,
-            height: BIRD,
-            borderRadius: 6,
-            backgroundColor: colors.neonYellow,
+            left: BIRD_X - BIRD,
+            top: bird.current.y - BIRD,
+            width: BIRD * 2,
+            height: BIRD * 2,
             transform: [{ rotate: `${Math.max(-25, Math.min(60, bird.current.vy * 0.06))}deg` }],
-          }}>
-          {/* Wing */}
-          <View
-            style={{
-              position: 'absolute',
-              left: -6,
-              top: BIRD * 0.35,
-              width: BIRD * 0.5,
-              height: BIRD * 0.3,
-              borderRadius: 4,
-              backgroundColor: colors.neonOrange,
-            }}
-          />
-        </View>
+          }}
+        />
       </View>
     </Pressable>
   );

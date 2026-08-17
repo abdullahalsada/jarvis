@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { colors, spacing } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
@@ -115,22 +116,17 @@ export function ZombieBopGame({ api }: { api: GameApi }) {
               }}
             />
             {h.up > 0 && (
-              <View
+              // A real zombie pops up; the golden bonus one glows.
+              <Image
+                source={ACTORS.zombie}
                 style={{
-                  width: size * 0.5,
-                  height: size * 0.55,
-                  marginBottom: size * 0.12,
-                  borderTopLeftRadius: size * 0.25,
-                  borderTopRightRadius: size * 0.25,
-                  backgroundColor: h.golden ? colors.neonYellow : '#4caf50',
-                  alignItems: 'center',
-                }}>
-                {/* Eyes */}
-                <View style={{ flexDirection: 'row', marginTop: size * 0.14, gap: size * 0.1 }}>
-                  <View style={{ width: size * 0.09, height: size * 0.09, backgroundColor: colors.bg }} />
-                  <View style={{ width: size * 0.09, height: size * 0.09, backgroundColor: colors.bg }} />
-                </View>
-              </View>
+                  width: size * 0.85,
+                  height: size * 0.85,
+                  marginBottom: size * 0.05,
+                  opacity: 1,
+                  tintColor: h.golden ? colors.neonYellow : undefined,
+                }}
+              />
             )}
           </Pressable>
         ))}

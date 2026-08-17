@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
@@ -146,25 +147,22 @@ export function SpookShootGame({ api }: { api: GameApi }) {
         {targets.current.map((t, i) => {
           if (!t.alive) return null;
           const size = t.size;
+          // Gallery targets: bats up top, ghosts mid-row, zombies below;
+          // the golden bonus target glows yellow.
+          const source = t.row === 0 ? ACTORS.bat : t.row === 1 ? ACTORS.ghost_magenta : ACTORS.zombie;
           return (
-            <View
+            <Image
               key={i}
+              source={source}
               style={{
                 position: 'absolute',
                 left: targetX(t),
                 top: rowY(t.row),
                 width: size,
                 height: size,
-                borderTopLeftRadius: size / 2,
-                borderTopRightRadius: size / 2,
-                backgroundColor: t.golden ? colors.neonYellow : t.row === 0 ? colors.neonPurple : t.row === 1 ? colors.neonMagenta : '#4caf50',
-                alignItems: 'center',
-              }}>
-              <View style={{ flexDirection: 'row', marginTop: size * 0.28, gap: size * 0.14 }}>
-                <View style={{ width: size * 0.13, height: size * 0.13, backgroundColor: colors.bg }} />
-                <View style={{ width: size * 0.13, height: size * 0.13, backgroundColor: colors.bg }} />
-              </View>
-            </View>
+                tintColor: t.golden ? colors.neonYellow : undefined,
+              }}
+            />
           );
         })}
         {/* Muzzle flash */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useTick } from '../engine/useGameLoop';
 import { useSwipe, type Dir } from '../engine/controls';
@@ -273,31 +274,31 @@ export function HauntedMazeGame({ api }: { api: GameApi }) {
             />
           );
         })}
+        {/* Ghosts: real sprites with eyes; frightened ghosts dim and shiver-tilt */}
         {ghosts.current.map((g, i) => (
-          <View
+          <Image
             key={i}
+            source={i % 2 === 0 ? ACTORS.ghost_magenta : ACTORS.ghost_cyan}
             style={{
               position: 'absolute',
-              left: g.pos.x * cell + 2,
-              top: g.pos.y * cell + 2,
-              width: cell - 4,
-              height: cell - 4,
-              borderTopLeftRadius: cell / 2,
-              borderTopRightRadius: cell / 2,
-              backgroundColor: fright.current > 0 ? '#4444dd' : g.color,
-              opacity: g.eaten ? 0 : 1,
+              left: g.pos.x * cell,
+              top: g.pos.y * cell,
+              width: cell,
+              height: cell,
+              opacity: g.eaten ? 0 : fright.current > 0 ? 0.45 : 1,
+              transform: fright.current > 0 ? [{ rotate: '8deg' }] : undefined,
             }}
           />
         ))}
-        <View
+        {/* Player: the brave little jack-o'-lantern */}
+        <Image
+          source={ACTORS.pumpkin}
           style={{
             position: 'absolute',
-            left: player.current.x * cell + 2,
-            top: player.current.y * cell + 2,
-            width: cell - 4,
-            height: cell - 4,
-            borderRadius: cell / 2,
-            backgroundColor: colors.neonGreen,
+            left: player.current.x * cell,
+            top: player.current.y * cell,
+            width: cell,
+            height: cell,
           }}
         />
         </View>

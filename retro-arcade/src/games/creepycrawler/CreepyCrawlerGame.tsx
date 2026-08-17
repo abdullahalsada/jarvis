@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
@@ -204,35 +205,48 @@ export function CreepyCrawlerGame({ api }: { api: GameApi }) {
         {[...stones.current].map((k) => {
           const [x, y] = k.split(',').map(Number);
           return (
-            <View
+            <Image
               key={k}
+              source={ACTORS.mushroom}
               style={{
                 position: 'absolute',
-                left: x * cell + 2,
-                top: y * cell + 2,
-                width: cell - 4,
-                height: cell - 4,
-                borderTopLeftRadius: cell / 3,
-                borderTopRightRadius: cell / 3,
-                backgroundColor: '#4a4a6a',
+                left: x * cell,
+                top: y * cell,
+                width: cell,
+                height: cell,
               }}
             />
           );
         })}
-        {crawlers.current.flat().map((s, i) => (
-          <View
-            key={i}
-            style={{
-              position: 'absolute',
-              left: s.x * cell + 1,
-              top: s.y * cell + 1,
-              width: cell - 2,
-              height: cell - 2,
-              borderRadius: (cell - 2) / 2,
-              backgroundColor: s.head ? colors.neonMagenta : colors.neonPurple,
-            }}
-          />
-        ))}
+        {crawlers.current.flat().map((s, i) =>
+          s.head ? (
+            <Image
+              key={i}
+              source={ACTORS.crawler_head}
+              style={{
+                position: 'absolute',
+                left: s.x * cell,
+                top: s.y * cell,
+                width: cell,
+                height: cell,
+              }}
+            />
+          ) : (
+            <View
+              key={i}
+              style={{
+                position: 'absolute',
+                left: s.x * cell + 1,
+                top: s.y * cell + 1,
+                width: cell - 2,
+                height: cell - 2,
+                borderRadius: (cell - 2) / 2,
+                backgroundColor: i % 2 === 0 ? colors.neonPurple : '#8a3bc4',
+              }}>
+              <View style={{ position: 'absolute', left: '18%', top: '18%', width: '28%', height: '28%', borderRadius: 99, backgroundColor: 'rgba(255,255,255,0.35)' }} />
+            </View>
+          )
+        )}
         {shots.current.map((s, i) => (
           <View
             key={i}
@@ -246,15 +260,14 @@ export function CreepyCrawlerGame({ api }: { api: GameApi }) {
             }}
           />
         ))}
-        <View
+        <Image
+          source={ACTORS.cannon}
           style={{
             position: 'absolute',
-            left: player.current - cell * 0.4,
-            top: PLAYER_ROW * cell,
-            width: cell * 0.8,
-            height: cell * 0.8,
-            borderRadius: 4,
-            backgroundColor: colors.neonGreen,
+            left: player.current - cell * 0.6,
+            top: PLAYER_ROW * cell - cell * 0.2,
+            width: cell * 1.2,
+            height: cell * 1.2,
           }}
         />
         </View>

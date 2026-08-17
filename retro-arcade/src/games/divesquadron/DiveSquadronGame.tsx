@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
@@ -195,22 +196,18 @@ export function DiveSquadronGame({ api }: { api: GameApi }) {
     <View style={{ flex: 1 }}>
       <View style={{ flex: 1 }} {...pan.panHandlers}>
         <View pointerEvents="none" style={{ flex: 1 }}>
+        {/* Formation planes; divers flip nose-down and bats lead the top row */}
         {enemies.current.map((e, i) => (
-          <View
+          <Image
             key={i}
+            source={Math.floor(e.slot / FCOLS) === 0 ? ACTORS.bat : ACTORS.plane_enemy}
             style={{
               position: 'absolute',
-              left: e.x,
-              top: e.y,
-              width: ALIEN,
-              height: ALIEN,
-              borderRadius: 3,
-              backgroundColor:
-                e.state === 'diving'
-                  ? colors.neonRed
-                  : Math.floor(e.slot / FCOLS) === 0
-                    ? colors.neonMagenta
-                    : colors.neonCyan,
+              left: e.x - ALIEN * 0.25,
+              top: e.y - ALIEN * 0.25,
+              width: ALIEN * 1.5,
+              height: ALIEN * 1.5,
+              transform: [{ rotate: e.state === 'diving' ? '180deg' : '0deg' }],
             }}
           />
         ))}
@@ -227,24 +224,14 @@ export function DiveSquadronGame({ api }: { api: GameApi }) {
             }}
           />
         ))}
-        <View
+        <Image
+          source={ACTORS.cannon}
           style={{
             position: 'absolute',
-            left: ship.current - SHIP_W / 2,
-            top: SHIP_Y,
-            width: SHIP_W,
-            height: 12,
-            backgroundColor: colors.neonGreen,
-          }}
-        />
-        <View
-          style={{
-            position: 'absolute',
-            left: ship.current - 4,
-            top: SHIP_Y - 8,
-            width: 8,
-            height: 8,
-            backgroundColor: colors.neonGreen,
+            left: ship.current - SHIP_W * 0.75,
+            top: SHIP_Y - SHIP_W * 0.75,
+            width: SHIP_W * 1.5,
+            height: SHIP_W * 1.5,
           }}
         />
         </View>

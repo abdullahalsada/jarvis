@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { PanResponder, View } from 'react-native';
+import { Image, PanResponder, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useTick } from '../engine/useGameLoop';
 import { DiagPad, PAD_DIAG } from '../engine/ControlPad';
@@ -209,6 +210,7 @@ export function PyramidHopGame({ api }: { api: GameApi }) {
             />
           );
         })}
+        {/* Hazard balls with a glossy highlight */}
         {hazards.current.map((h, i) => (
           <View
             key={i}
@@ -220,18 +222,18 @@ export function PyramidHopGame({ api }: { api: GameApi }) {
               height: cube * 0.5,
               borderRadius: cube * 0.25,
               backgroundColor: colors.neonRed,
-            }}
-          />
+            }}>
+            <View style={{ position: 'absolute', left: '15%', top: '15%', width: '30%', height: '30%', borderRadius: 99, backgroundColor: 'rgba(255,255,255,0.6)' }} />
+          </View>
         ))}
-        <View
+        <Image
+          source={ACTORS.hopper}
           style={{
             position: 'absolute',
-            left: cubeX(player.current) + cube * 0.18,
-            top: cubeY(player.current) - cube * 0.32,
-            width: cube * 0.58,
-            height: cube * 0.58,
-            borderRadius: cube * 0.29,
-            backgroundColor: colors.neonMagenta,
+            left: cubeX(player.current) + cube * 0.06,
+            top: cubeY(player.current) - cube * 0.5,
+            width: cube * 0.85,
+            height: cube * 0.85,
           }}
         />
         </View>

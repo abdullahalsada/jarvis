@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useTick } from '../engine/useGameLoop';
 import { useSwipe, type Dir } from '../engine/controls';
@@ -194,43 +195,40 @@ export function GemDiggerGame({ api }: { api: GameApi }) {
         {[...gems.current].map((k) => {
           const [x, y] = k.split(',').map(Number);
           return (
-            <View
+            <Image
               key={k}
+              source={ACTORS.gemstone}
               style={{
                 position: 'absolute',
-                left: x * cell + cell * 0.25,
-                top: y * cell + cell * 0.25,
-                width: cell * 0.5,
-                height: cell * 0.5,
-                backgroundColor: colors.neonCyan,
-                transform: [{ rotate: '45deg' }],
+                left: x * cell + cell * 0.08,
+                top: y * cell + cell * 0.08,
+                width: cell * 0.84,
+                height: cell * 0.84,
               }}
             />
           );
         })}
         {monsters.current.map((m, i) => (
-          <View
+          <Image
             key={i}
+            source={i === 0 ? ACTORS.ghost_magenta : ACTORS.ghost_cyan}
             style={{
               position: 'absolute',
-              left: m.pos.x * cell + 3,
-              top: m.pos.y * cell + 3,
-              width: cell - 6,
-              height: cell - 6,
-              borderRadius: (cell - 6) / 2,
-              backgroundColor: i === 0 ? colors.neonRed : colors.neonOrange,
+              left: m.pos.x * cell,
+              top: m.pos.y * cell,
+              width: cell,
+              height: cell,
             }}
           />
         ))}
-        <View
+        <Image
+          source={ACTORS.miner}
           style={{
             position: 'absolute',
-            left: player.current.x * cell + 3,
-            top: player.current.y * cell + 3,
-            width: cell - 6,
-            height: cell - 6,
-            borderRadius: 4,
-            backgroundColor: colors.neonGreen,
+            left: player.current.x * cell,
+            top: player.current.y * cell,
+            width: cell,
+            height: cell,
           }}
         />
         </View>
