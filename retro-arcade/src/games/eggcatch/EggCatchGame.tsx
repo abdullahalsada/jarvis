@@ -111,19 +111,7 @@ export function EggCatchGame({ api }: { api: GameApi }) {
 
   return (
     <View style={{ flex: 1 }}>
-      {/* Quadrant tap zones (invisible, full-field) */}
-      <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, flexDirection: 'row', flexWrap: 'wrap', zIndex: 2 }}>
-        {[0, 2, 1, 3].map((ramp) => (
-          <Pressable
-            key={ramp}
-            accessibilityRole="button"
-            onPressIn={() => moveTo(ramp)}
-            style={{ width: '50%', height: '50%' }}
-          />
-        ))}
-      </View>
-
-      <View pointerEvents="none" style={{ flex: 1, zIndex: 1 }}>
+      <View pointerEvents="none" style={{ flex: 1 }}>
         {/* Ramps with the hens that lay the eggs perched at the top */}
         {[0, 1, 2, 3].map((r) => (
           <View key={r}>
@@ -184,6 +172,22 @@ export function EggCatchGame({ api }: { api: GameApi }) {
         <PixelText size="label" color={colors.neonRed} style={{ position: 'absolute', bottom: 8, alignSelf: 'center' }}>
           {'✖'.repeat(misses.current)}
         </PixelText>
+      </View>
+
+      {/* Quadrant tap zones (invisible, full-field). Rendered last so they sit
+          above the field but below the shell's Start/pause overlays; inert
+          until the round is actually running. */}
+      <View
+        pointerEvents={api.running ? 'auto' : 'none'}
+        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, flexDirection: 'row', flexWrap: 'wrap' }}>
+        {[0, 2, 1, 3].map((ramp) => (
+          <Pressable
+            key={ramp}
+            accessibilityRole="button"
+            onPressIn={() => moveTo(ramp)}
+            style={{ width: '50%', height: '50%' }}
+          />
+        ))}
       </View>
     </View>
   );

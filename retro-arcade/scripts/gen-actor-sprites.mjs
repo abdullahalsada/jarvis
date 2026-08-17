@@ -99,6 +99,144 @@ const CAR_TOP = [
 ];
 const carTop = (B, S) => tint(CAR_TOP, B, S);
 
+// Top-view civilian sedan (nose up): windshield, roof, rear window, 4 tires.
+const SEDAN_TOP = [
+  '................',
+  '................',
+  '.....XXXXXX.....',
+  '....XXXXXXXX....',
+  '..KKXXXXXXXXKK..',
+  '..KKXxxxxxxXKK..',
+  '....XKKKKKKX....',
+  '....XXXXXXXX....',
+  '....XXXXXXXX....',
+  '....XKKKKKKX....',
+  '..KKXXXXXXXXKK..',
+  '..KKXxxxxxxXKK..',
+  '....xxxxxxxx....',
+  '................',
+  '................',
+  '................',
+];
+const sedanTop = (B, S) => tint(SEDAN_TOP, B, S);
+
+// Yellow cab: checkerboard band across the roof.
+const TAXI_TOP = [
+  '................',
+  '................',
+  '.....YYYYYY.....',
+  '....YYYYYYYY....',
+  '..KKYYYYYYYYKK..',
+  '..KKYyyyyyyYKK..',
+  '....YKKKKKKY....',
+  '....WKWKWKWK....',
+  '....KWKWKWKW....',
+  '....YKKKKKKY....',
+  '..KKYYYYYYYYKK..',
+  '..KKYyyyyyyYKK..',
+  '....yyyyyyyy....',
+  '................',
+  '................',
+  '................',
+];
+
+// Boxy 4x4 with roof-rack rails running front to back.
+const SUV_TOP = [
+  '................',
+  '................',
+  '....GGGGGGGG....',
+  '....GGGGGGGG....',
+  '..KKGGGGGGGGKK..',
+  '..KKGKKKKKKGKK..',
+  '....GgGGGGgG....',
+  '....GgGGGGgG....',
+  '....GgGGGGgG....',
+  '....GKKKKKKG....',
+  '..KKGGGGGGGGKK..',
+  '..KKGggggggGKK..',
+  '....gggggggg....',
+  '................',
+  '................',
+  '................',
+];
+
+// Pickup: cab up front, open dark bed behind.
+const PICKUP_TOP = [
+  '................',
+  '................',
+  '....OOOOOOOO....',
+  '....OOOOOOOO....',
+  '..KKOOOOOOOOKK..',
+  '..KKOKKKKKKOKK..',
+  '....OOOOOOOO....',
+  '....OooooooO....',
+  '....OoKKKKoO....',
+  '....OoKKKKoO....',
+  '..KKOoKKKKoOKK..',
+  '..KKOooooooOKK..',
+  '....oooooooo....',
+  '................',
+  '................',
+  '................',
+];
+
+// City bus (16×24, fills 1.5 car lengths): roof panels + sunroofs.
+const BUS_TOP = [
+  '................',
+  '....RRRRRRRR....',
+  '...RRRRRRRRRR...',
+  '..KKRRRRRRRRKK..',
+  '..KKRKKKKKKRKK..',
+  '....RWWWWWWR....',
+  '....RWWWWWWR....',
+  '....RrrrrrrR....',
+  '....RWWWWWWR....',
+  '....RWWWWWWR....',
+  '....RrrrrrrR....',
+  '....RWWWWWWR....',
+  '....RWWWWWWR....',
+  '..KKRrrrrrrRKK..',
+  '..KKRWWWWWWRKK..',
+  '....RWWWWWWR....',
+  '....RrrrrrrR....',
+  '....RWWWWWWR....',
+  '....RWWWWWWR....',
+  '....RKKKKKKR....',
+  '..KKRRRRRRRRKK..',
+  '..KKRrrrrrrRKK..',
+  '....rrrrrrrr....',
+  '................',
+];
+
+// The player's machine (16×24 — drawn at the in-game 1:1.5 aspect so nothing
+// stretches): cyan F1 with front/rear wings, white stripe, open cockpit.
+const PLAYER_RACER = [
+  '................',
+  '.......CC.......',
+  '.......CC.......',
+  '..CCCCCCCCCCCC..',
+  '..cc..CCCC..cc..',
+  '.KKK..CFFC..KKK.',
+  '.KKK.CCFFCC.KKK.',
+  '.KKKCCCFFCCCKKK.',
+  '..CCCCCFFCCCCC..',
+  '..CCCCcKKcCCCC..',
+  '..CCCCcKKcCCCC..',
+  '..CCCCcKKcCCCC..',
+  '..cCCCCFFCCCCc..',
+  '...CCCCFFCCCC...',
+  '...CCCCFFCCCC...',
+  '.KKKCCCFFCCCKKK.',
+  '.KKKCCCFFCCCKKK.',
+  '.KKKCCCFFCCCKKK.',
+  '..cccCCFFCCccc..',
+  '..cccccccccccc..',
+  '................',
+  '................',
+  '................',
+  '................',
+];
+
 const SPRITES = {
   // ─── Road Hopper ───
   frog: [
@@ -134,6 +272,13 @@ const SPRITES = {
   racecar_yellow: carTop('Y', 'y'),
   racecar_magenta: carTop('M', 'm'),
   racecar_orange: carTop('O', 'o'),
+  player_racer: PLAYER_RACER,
+  taxi_top: TAXI_TOP,
+  suv_top: SUV_TOP,
+  pickup_top: PICKUP_TOP,
+  bus_top: BUS_TOP,
+  sedan_top_magenta: sedanTop('M', 'm'),
+  sedan_top_white: sedanTop('W', 'w'),
 
   // ─── Moon Lander ───
   lander: [

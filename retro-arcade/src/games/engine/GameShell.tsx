@@ -240,6 +240,11 @@ function Overlay({ children }: { children: React.ReactNode }) {
         left: 0,
         right: 0,
         bottom: 0,
+        // Explicitly above any game-layer zIndex/elevation on native —
+        // without this, Android view flattening can let a game's absolute
+        // touch layers swallow taps meant for the Start button.
+        zIndex: 10,
+        elevation: 10,
         backgroundColor: 'rgba(10,10,18,0.92)',
         alignItems: 'center',
         justifyContent: 'center',
