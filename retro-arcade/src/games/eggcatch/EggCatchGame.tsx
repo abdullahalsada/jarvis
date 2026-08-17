@@ -5,17 +5,22 @@ import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
+import { DiagPad, PAD_DIAG } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
 /**
  * Handheld-LCD catcher in the Game & Watch tradition: eggs roll down four
  * ramps (two per side) and you hold the basket under one of four positions.
- * Tap a quadrant of the screen to jump the basket there — instant, discrete,
- * exactly like the original's four buttons. Three dropped eggs end the game.
- * The roll speeds up and eggs bunch closer as your score climbs.
+ * A visible arcade pad (↖ ↗ / ↙ ↘) mirrors the original's four buttons —
+ * one per ramp; tapping a screen quadrant still works as a fast alternate.
+ * Three dropped eggs end the game. The roll speeds up and eggs bunch closer
+ * as your score climbs.
  */
 const RAMPS = 4; // 0 top-left, 1 bottom-left, 2 top-right, 3 bottom-right
+
+/** Pad key → ramp: left column = ramps 0/1, right column = ramps 2/3. */
+const PAD_TO_RAMP: Record<string, number> = { ul: 0, dl: 1, ur: 2, dr: 3 };
 
 interface Egg {
   ramp: number;
@@ -24,7 +29,7 @@ interface Egg {
 
 export function EggCatchGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_DIAG;
   const FIELD_H = H - 20;
 
   const eggs = useRef<Egg[]>([]);
@@ -111,6 +116,7 @@ export function EggCatchGame({ api }: { api: GameApi }) {
 
   return (
     <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
       <View pointerEvents="none" style={{ flex: 1 }}>
         {/* Ramps with the hens that lay the eggs perched at the top */}
         {[0, 1, 2, 3].map((r) => (
@@ -174,9 +180,9 @@ export function EggCatchGame({ api }: { api: GameApi }) {
         </PixelText>
       </View>
 
-      {/* Quadrant tap zones (invisible, full-field). Rendered last so they sit
-          above the field but below the shell's Start/pause overlays; inert
-          until the round is actually running. */}
+      {/* Quadrant tap zones over the field (invisible fast alternate to the
+          pad). Rendered after the field so they sit above it but below the
+          shell's Start/pause overlays; inert until the round is running. */}
       <View
         pointerEvents={api.running ? 'auto' : 'none'}
         style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, flexDirection: 'row', flexWrap: 'wrap' }}>
@@ -189,6 +195,10 @@ export function EggCatchGame({ api }: { api: GameApi }) {
           />
         ))}
       </View>
+      </View>
+
+      {/* Arcade pad: one button per ramp, like the original's four buttons */}
+      <DiagPad onDown={(k) => moveTo(PAD_TO_RAMP[k])} />
     </View>
   );
 }
