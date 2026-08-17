@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { colors, touchTarget } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
@@ -176,32 +177,60 @@ export function MoonLanderGame({ api }: { api: GameApi }) {
             backgroundColor: colors.neonGreen,
           }}
         />
-        {/* Ship */}
+        {/* Ship: the lunar module, with a speed ring that glows when landing-safe */}
         <View
           style={{
             position: 'absolute',
-            left: s.x - SHIP / 2,
-            top: s.y - SHIP / 2,
-            width: SHIP,
-            height: SHIP,
-            borderRadius: 4,
-            backgroundColor: gentleNow ? colors.neonCyan : colors.neonOrange,
+            left: s.x - SHIP * 0.95,
+            top: s.y - SHIP * 0.95,
+            width: SHIP * 1.9,
+            height: SHIP * 1.9,
+            borderRadius: SHIP * 0.95,
+            borderWidth: 2,
+            borderColor: gentleNow ? colors.neonCyan : colors.neonOrange,
+            opacity: 0.5,
+          }}
+        />
+        <Image
+          source={ACTORS.lander}
+          style={{
+            position: 'absolute',
+            left: s.x - SHIP * 0.8,
+            top: s.y - SHIP * 0.8,
+            width: SHIP * 1.6,
+            height: SHIP * 1.6,
           }}
         />
         {held.current.thrust && fuel.current > 0 && (
-          <View
-            style={{
-              position: 'absolute',
-              left: s.x - 4,
-              top: s.y + SHIP / 2,
-              width: 8,
-              height: 12,
-              backgroundColor: colors.neonYellow,
-            }}
-          />
+          <>
+            <View
+              style={{
+                position: 'absolute',
+                left: s.x - 5,
+                top: s.y + SHIP * 0.72,
+                width: 10,
+                height: 14,
+                borderBottomLeftRadius: 5,
+                borderBottomRightRadius: 5,
+                backgroundColor: colors.neonOrange,
+              }}
+            />
+            <View
+              style={{
+                position: 'absolute',
+                left: s.x - 2.5,
+                top: s.y + SHIP * 0.72,
+                width: 5,
+                height: 9,
+                borderBottomLeftRadius: 3,
+                borderBottomRightRadius: 3,
+                backgroundColor: colors.neonYellow,
+              }}
+            />
+          </>
         )}
         {/* Fuel + velocity readout: cyan means landing-safe */}
-        <PixelText size="label" color={colors.textDim} style={{ position: 'absolute', top: 6, left: 12 }}>
+        <PixelText size="label" color={gentleNow ? colors.neonCyan : colors.textDim} style={{ position: 'absolute', top: 6, left: 12 }}>
           {`⛽ ${Math.round(fuel.current)}  ▼ ${Math.round(s.vy)}`}
         </PixelText>
       </View>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
@@ -208,17 +209,15 @@ export function MoonBuggyGame({ api }: { api: GameApi }) {
               }}
             />
           ) : (
-            <View
+            <Image
               key={i}
+              source={ACTORS.meteor}
               style={{
                 position: 'absolute',
-                left: o.x,
-                top: GROUND - 18,
-                width: o.w,
-                height: 18,
-                borderTopLeftRadius: 8,
-                borderTopRightRadius: 8,
-                backgroundColor: colors.neonOrange,
+                left: o.x - 4,
+                top: GROUND - o.w - 4,
+                width: o.w + 8,
+                height: o.w + 8,
               }}
             />
           )
@@ -239,21 +238,16 @@ export function MoonBuggyGame({ api }: { api: GameApi }) {
         ))}
         {/* Buggy */}
         {!blink && (
-          <View style={{ position: 'absolute', left: BUGGY_X, top: by }}>
-            <View
-              style={{
-                width: BUGGY_W,
-                height: BUGGY_H - 8,
-                borderRadius: 6,
-                backgroundColor: colors.neonCyan,
-              }}
-            />
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 3 }}>
-              <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: colors.text }} />
-              <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: colors.text }} />
-              <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: colors.text }} />
-            </View>
-          </View>
+          <Image
+            source={ACTORS.buggy}
+            style={{
+              position: 'absolute',
+              left: BUGGY_X - BUGGY_W * 0.15,
+              top: by - BUGGY_H * 0.55,
+              width: BUGGY_W * 1.3,
+              height: BUGGY_W * 1.3,
+            }}
+          />
         )}
         {/* Checkpoint flash + control hints */}
         {checkpointFlash.current > 0 && (

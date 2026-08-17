@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
@@ -189,16 +190,16 @@ export function SpaceDefendersGame({ api }: { api: GameApi }) {
           const row = Math.floor(i / ICOLS);
           const col = i % ICOLS;
           return (
-            <View
+            // Two invader species: crabs up top, squids below.
+            <Image
               key={i}
+              source={row < 2 ? ACTORS.invader_magenta : ACTORS.invader_cyan}
               style={{
                 position: 'absolute',
-                left: rack.current.x + col * (ALIEN + GAP),
-                top: rack.current.y + row * (ALIEN + GAP),
-                width: ALIEN,
-                height: ALIEN,
-                backgroundColor: row === 0 ? colors.neonMagenta : row < 3 ? colors.neonCyan : colors.neonGreen,
-                borderRadius: 2,
+                left: rack.current.x + col * (ALIEN + GAP) - ALIEN * 0.25,
+                top: rack.current.y + row * (ALIEN + GAP) - ALIEN * 0.25,
+                width: ALIEN * 1.5,
+                height: ALIEN * 1.5,
               }}
             />
           );
@@ -229,25 +230,15 @@ export function SpaceDefendersGame({ api }: { api: GameApi }) {
             }}
           />
         ))}
-        {/* Player ship: simple chunky-pixel triangle-ish shape from two rects */}
-        <View
+        {/* Player ship: the laser cannon */}
+        <Image
+          source={ACTORS.cannon}
           style={{
             position: 'absolute',
-            left: ship.current - SHIP_W / 2,
-            top: SHIP_Y,
-            width: SHIP_W,
-            height: 12,
-            backgroundColor: colors.neonGreen,
-          }}
-        />
-        <View
-          style={{
-            position: 'absolute',
-            left: ship.current - 4,
-            top: SHIP_Y - 8,
-            width: 8,
-            height: 8,
-            backgroundColor: colors.neonGreen,
+            left: ship.current - SHIP_W * 0.75,
+            top: SHIP_Y - SHIP_W * 0.75,
+            width: SHIP_W * 1.5,
+            height: SHIP_W * 1.5,
           }}
         />
         </View>

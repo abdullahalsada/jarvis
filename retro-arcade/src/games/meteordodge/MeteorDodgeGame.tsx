@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
 import { useSlideX } from '../engine/controls';
@@ -98,30 +99,30 @@ export function MeteorDodgeGame({ api }: { api: GameApi }) {
     <View style={{ flex: 1 }}>
       <View style={{ flex: 1 }} {...pan.panHandlers}>
         <View pointerEvents="none" style={{ flex: 1 }}>
+        {/* Rocky meteors, each tumbling at its own angle */}
         {meteors.current.map((m, i) => (
-          <View
+          <Image
             key={i}
+            source={ACTORS.meteor}
             style={{
               position: 'absolute',
-              left: m.x - m.size / 2,
-              top: m.y - m.size / 2,
-              width: m.size,
-              height: m.size,
-              backgroundColor: colors.neonOrange,
-              borderRadius: 4,
-              transform: [{ rotate: `${(i * 37) % 90}deg` }],
+              left: m.x - m.size * 0.65,
+              top: m.y - m.size * 0.65,
+              width: m.size * 1.3,
+              height: m.size * 1.3,
+              transform: [{ rotate: `${(i * 67) % 360}deg` }],
             }}
           />
         ))}
-        <View
+        {/* The player's rocket with its exhaust flame */}
+        <Image
+          source={ACTORS.rocket}
           style={{
             position: 'absolute',
-            left: ship.current - SHIP / 2,
-            top: SHIP_Y,
-            width: SHIP,
-            height: SHIP,
-            backgroundColor: colors.neonCyan,
-            borderRadius: 4,
+            left: ship.current - SHIP * 0.75,
+            top: SHIP_Y - SHIP * 0.4,
+            width: SHIP * 1.5,
+            height: SHIP * 1.5,
           }}
         />
         </View>

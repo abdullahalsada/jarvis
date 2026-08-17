@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { PanResponder, View } from 'react-native';
+import { Image, PanResponder, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
@@ -279,24 +280,23 @@ export function AlleyBowlGame({ api }: { api: GameApi }) {
         <PixelText size={11} color={colors.textDim} style={{ position: 'absolute', top: 12, left: 12 }}>
           {`▸ ${frameNo}/10  ${currentFrame.join(' · ')}`}
         </PixelText>
-        {/* Pins */}
+        {/* Pins: real striped bowling pins; downed pins lie tipped and dimmed */}
         {pins.current.map((p, i) => (
-          <View
+          <Image
             key={i}
+            source={ACTORS.pin}
             style={{
               position: 'absolute',
-              left: p.x - PIN_R,
-              top: p.y - PIN_R,
-              width: PIN_R * 2,
-              height: PIN_R * 2,
-              borderRadius: PIN_R,
-              backgroundColor: p.up ? colors.text : '#3a3a55',
-              borderWidth: 2,
-              borderColor: p.up ? colors.neonRed : '#3a3a55',
+              left: p.x - PIN_R * 1.4,
+              top: p.y - PIN_R * 1.8,
+              width: PIN_R * 2.8,
+              height: PIN_R * 3.6,
+              opacity: p.up ? 1 : 0.3,
+              transform: p.up ? undefined : [{ rotate: i % 2 === 0 ? '75deg' : '-75deg' }],
             }}
           />
         ))}
-        {/* Ball */}
+        {/* Ball: glossy with finger holes */}
         <View
           style={{
             position: 'absolute',
@@ -306,8 +306,11 @@ export function AlleyBowlGame({ api }: { api: GameApi }) {
             height: BALL_R * 2,
             borderRadius: BALL_R,
             backgroundColor: colors.neonCyan,
-          }}
-        />
+          }}>
+          <View style={{ position: 'absolute', left: BALL_R * 0.55, top: BALL_R * 0.45, width: BALL_R * 0.3, height: BALL_R * 0.3, borderRadius: BALL_R * 0.15, backgroundColor: 'rgba(0,0,0,0.5)' }} />
+          <View style={{ position: 'absolute', left: BALL_R * 1.05, top: BALL_R * 0.55, width: BALL_R * 0.3, height: BALL_R * 0.3, borderRadius: BALL_R * 0.15, backgroundColor: 'rgba(0,0,0,0.5)' }} />
+          <View style={{ position: 'absolute', left: BALL_R * 0.8, top: BALL_R * 0.95, width: BALL_R * 0.3, height: BALL_R * 0.3, borderRadius: BALL_R * 0.15, backgroundColor: 'rgba(0,0,0,0.5)' }} />
+        </View>
         {/* Aim hint line */}
         {phase.current === 'aim' && (
           <View

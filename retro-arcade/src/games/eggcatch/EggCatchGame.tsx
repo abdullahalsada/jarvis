@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { colors } from '../../theme';
+import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
@@ -123,53 +124,60 @@ export function EggCatchGame({ api }: { api: GameApi }) {
       </View>
 
       <View pointerEvents="none" style={{ flex: 1, zIndex: 1 }}>
-        {/* Ramps */}
+        {/* Ramps with the hens that lay the eggs perched at the top */}
         {[0, 1, 2, 3].map((r) => (
-          <View
-            key={r}
-            style={{
-              position: 'absolute',
-              left: rampLeft(r) ? 0 : W - RAMP_LEN,
-              top: rampY(r) + RAMP_LEN * 0.175,
-              width: RAMP_LEN,
-              height: 6,
-              backgroundColor: colors.border,
-              transform: [{ rotate: rampLeft(r) ? '19deg' : '-19deg' }],
-            }}
-          />
+          <View key={r}>
+            <View
+              style={{
+                position: 'absolute',
+                left: rampLeft(r) ? 0 : W - RAMP_LEN,
+                top: rampY(r) + RAMP_LEN * 0.175,
+                width: RAMP_LEN,
+                height: 6,
+                backgroundColor: colors.border,
+                transform: [{ rotate: rampLeft(r) ? '19deg' : '-19deg' }],
+              }}
+            />
+            <Image
+              source={ACTORS.hen}
+              style={{
+                position: 'absolute',
+                left: rampLeft(r) ? 2 : W - 38,
+                top: rampY(r) - 34,
+                width: 36,
+                height: 36,
+                transform: [{ scaleX: rampLeft(r) ? 1 : -1 }],
+              }}
+            />
+          </View>
         ))}
         {/* Eggs */}
         {eggs.current.map((egg, i) => {
           const p = eggPos(egg);
           return (
-            <View
+            <Image
               key={i}
+              source={ACTORS.egg}
               style={{
                 position: 'absolute',
-                left: p.x - 7,
-                top: p.y - 9,
-                width: 14,
-                height: 18,
-                borderRadius: 8,
-                backgroundColor: colors.neonYellow,
+                left: p.x - 11,
+                top: p.y - 11,
+                width: 22,
+                height: 22,
+                transform: [{ rotate: `${(egg.t * 360) % 360}deg` }],
               }}
             />
           );
         })}
         {/* Basket */}
-        <View
+        <Image
+          source={ACTORS.basket}
           style={{
             position: 'absolute',
-            left: catchX(basket.current) - 26,
-            top: catchY(basket.current),
-            width: 52,
-            height: 26,
-            borderBottomLeftRadius: 14,
-            borderBottomRightRadius: 14,
-            borderWidth: 3,
-            borderTopWidth: 0,
-            borderColor: colors.neonCyan,
-            backgroundColor: colors.bgRaised,
+            left: catchX(basket.current) - 30,
+            top: catchY(basket.current) - 14,
+            width: 60,
+            height: 60,
           }}
         />
         {/* Miss markers */}

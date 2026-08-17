@@ -159,17 +159,12 @@ export function PaddleDuelGame({ api }: { api: GameApi }) {
     <View style={{ flex: 1 }}>
       <View style={{ flex: 1 }} {...pan.panHandlers}>
         <View pointerEvents="none" style={{ flex: 1 }}>
-        {/* Center line + AI score */}
-        <View
-          style={{
-            position: 'absolute',
-            top: H / 2,
-            left: 0,
-            right: 0,
-            height: 2,
-            backgroundColor: colors.border,
-          }}
-        />
+        {/* Dashed center net, classic table-tennis style */}
+        <View style={{ position: 'absolute', top: H / 2, left: 0, right: 0, height: 3, flexDirection: 'row', justifyContent: 'space-between' }}>
+          {Array.from({ length: 14 }, (_, i) => (
+            <View key={i} style={{ width: 14, height: 3, backgroundColor: colors.border, borderRadius: 1.5 }} />
+          ))}
+        </View>
         <PixelText
           size="title"
           color={colors.textDim}
@@ -182,6 +177,7 @@ export function PaddleDuelGame({ api }: { api: GameApi }) {
           style={{ position: 'absolute', top: H / 2 + 20, alignSelf: 'center' }}>
           {`${scores.current.player}`}
         </PixelText>
+        {/* Paddles: glossy rounded bars with a highlight strip */}
         <View
           style={{
             position: 'absolute',
@@ -190,9 +186,11 @@ export function PaddleDuelGame({ api }: { api: GameApi }) {
             width: PADDLE_W,
             height: PADDLE_H,
             backgroundColor: colors.neonMagenta,
-            borderRadius: 3,
-          }}
-        />
+            borderRadius: PADDLE_H / 2,
+            overflow: 'hidden',
+          }}>
+          <View style={{ height: PADDLE_H * 0.35, marginHorizontal: 4, marginTop: 1.5, borderRadius: PADDLE_H * 0.2, backgroundColor: 'rgba(255,255,255,0.5)' }} />
+        </View>
         <View
           style={{
             position: 'absolute',
@@ -201,9 +199,12 @@ export function PaddleDuelGame({ api }: { api: GameApi }) {
             width: PADDLE_W,
             height: PADDLE_H,
             backgroundColor: colors.neonCyan,
-            borderRadius: 3,
-          }}
-        />
+            borderRadius: PADDLE_H / 2,
+            overflow: 'hidden',
+          }}>
+          <View style={{ height: PADDLE_H * 0.35, marginHorizontal: 4, marginTop: 1.5, borderRadius: PADDLE_H * 0.2, backgroundColor: 'rgba(255,255,255,0.5)' }} />
+        </View>
+        {/* Ball: glossy with shine dot */}
         <View
           style={{
             position: 'absolute',
@@ -211,9 +212,11 @@ export function PaddleDuelGame({ api }: { api: GameApi }) {
             top: ball.current.y - BALL / 2,
             width: BALL,
             height: BALL,
+            borderRadius: BALL / 2,
             backgroundColor: colors.text,
-          }}
-        />
+          }}>
+          <View style={{ position: 'absolute', left: BALL * 0.15, top: BALL * 0.15, width: BALL * 0.3, height: BALL * 0.3, borderRadius: BALL * 0.15, backgroundColor: '#ffffff' }} />
+        </View>
         </View>
       </View>
       <PadBar
