@@ -64,7 +64,9 @@
     "restartNeededBody": "La app debe reiniciarse para cambiar la dirección del diseño. Ciérrala y vuelve a abrirla.",
     "store": "Tienda",
     "owned": "Todos los juegos desbloqueados",
-    "resetPurchase": "Restablecer compra (modo prueba)"
+    "resetPurchase": "Restablecer compra (modo prueba)",
+    "feedback": "Enviar comentarios",
+    "feedbackFallback": "Escríbenos a {{email}}"
   },
   "records": {
     "title": "Mis Récords",

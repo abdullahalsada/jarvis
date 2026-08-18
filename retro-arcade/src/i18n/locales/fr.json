@@ -64,7 +64,9 @@
     "restartNeededBody": "L'application doit redémarrer pour changer le sens de l'affichage. Ferme-la puis rouvre-la.",
     "store": "Boutique",
     "owned": "Tous les jeux débloqués",
-    "resetPurchase": "Réinitialiser l'achat (mode test)"
+    "resetPurchase": "Réinitialiser l'achat (mode test)",
+    "feedback": "Envoyer un avis",
+    "feedbackFallback": "Écris-nous à {{email}}"
   },
   "records": {
     "title": "Mes Records",

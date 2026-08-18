@@ -64,7 +64,9 @@
     "restartNeededBody": "The app needs to restart to switch the layout direction. Please close and reopen the app.",
     "store": "Store",
     "owned": "All games unlocked",
-    "resetPurchase": "Reset purchase (test mode)"
+    "resetPurchase": "Reset purchase (test mode)",
+    "feedback": "Send feedback",
+    "feedbackFallback": "Write to us at {{email}}"
   },
   "records": {
     "title": "My Records",
