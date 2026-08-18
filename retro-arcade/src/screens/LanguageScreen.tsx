@@ -30,13 +30,8 @@ export function LanguageScreen({ onDone }: Props) {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
-      <ScrollView
-        contentContainerStyle={{
-          flexGrow: 1,
-          justifyContent: 'center',
-          padding: spacing.xl,
-          paddingBottom: spacing.xl + insets.bottom,
-        }}>
+      {/* Fixed header — stays put while the list scrolls underneath */}
+      <View style={{ padding: spacing.xl, paddingBottom: spacing.m }}>
         <PixelText size="title" color={colors.neonGreen} glow style={{ textAlign: 'center' }}>
           RETRO ARCADE
         </PixelText>
@@ -46,25 +41,27 @@ export function LanguageScreen({ onDone }: Props) {
           style={{ textAlign: 'center', marginTop: spacing.xl, marginBottom: spacing.s }}>
           {t('language.title')}
         </PixelText>
-        <PixelText
-          size="label"
-          color={colors.textDim}
-          style={{ textAlign: 'center', marginBottom: spacing.xl }}>
+        <PixelText size="label" color={colors.textDim} style={{ textAlign: 'center' }}>
           {t('language.subtitle')}
         </PixelText>
-        {/* Two-column grid so all languages fit without endless scrolling */}
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-          {LANGUAGES.map((lang) => (
-            <NeonButton
-              key={lang.code}
-              label={lang.nativeName}
-              color={colors.neonCyan}
-              variant="outline"
-              onPress={() => choose(lang.code)}
-              style={{ marginBottom: spacing.m, width: '48%' }}
-            />
-          ))}
-        </View>
+      </View>
+      {/* One language per row — scroll and pick */}
+      <ScrollView
+        contentContainerStyle={{
+          paddingHorizontal: spacing.xl,
+          paddingTop: spacing.s,
+          paddingBottom: spacing.xl + insets.bottom,
+        }}>
+        {LANGUAGES.map((lang) => (
+          <NeonButton
+            key={lang.code}
+            label={lang.nativeName}
+            color={colors.neonCyan}
+            variant="outline"
+            onPress={() => choose(lang.code)}
+            style={{ marginBottom: spacing.m }}
+          />
+        ))}
       </ScrollView>
     </View>
   );
