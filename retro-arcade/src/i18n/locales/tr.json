@@ -1,0 +1,262 @@
+{
+  "app": {
+    "name": "Retro Arcade",
+    "publisher": "Golden Age Games",
+    "tagline": "Çocukluğunun oyunları"
+  },
+  "common": {
+    "ok": "Tamam",
+    "cancel": "İptal",
+    "back": "Geri",
+    "continue": "Devam",
+    "loading": "Yükleniyor…",
+    "error": "Bir şeyler ters gitti. Lütfen tekrar dene.",
+    "offline": "Çevrimdışısın. Skorlar daha sonra eşitlenecek."
+  },
+  "language": {
+    "title": "Dilini seç",
+    "subtitle": "Bunu istediğin zaman Ayarlar'dan değiştirebilirsin",
+    "english": "English",
+    "arabic": "العربية"
+  },
+  "home": {
+    "playFree": "ÜCRETSİZ",
+    "locked": "KİLİTLİ",
+    "unlockCard": "Tüm oyunların kilidini aç — tek seferlik 4,99 $",
+    "unlockCardSub": "Asla reklam yok. Gelecekteki tüm oyunlar dahil.",
+    "categories": {
+      "classics": "Klasikler",
+      "action": "Aksiyon",
+      "spooky": "Korku",
+      "brain": "Zekâ"
+    }
+  },
+  "purchase": {
+    "title": "Her şeyin kilidini aç",
+    "price": "4,99 $",
+    "bullet1": "Tek seferlik satın alma — bir daha asla ödeme yok",
+    "bullet2": "Asla reklam yok",
+    "bullet3": "Tüm oyunlar sonsuza dek, gelecektekiler dahil",
+    "buy": "{{price}} karşılığında aç",
+    "restore": "Satın alımları geri yükle",
+    "restoring": "Geri yükleniyor…",
+    "restored": "Satın alımın geri yüklendi!",
+    "nothingToRestore": "Bu hesapta önceki bir satın alma bulunamadı.",
+    "thanks": "Teşekkürler! Bütün oyun salonu senin.",
+    "failed": "Satın alma tamamlanamadı.",
+    "unavailable": "Mağaza şu anda kullanılamıyor. Lütfen daha sonra tekrar dene."
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "language": "Dil",
+    "sound": "Ses",
+    "haptics": "Titreşim",
+    "scanlines": "Tarama çizgisi efekti",
+    "account": "Hesap",
+    "deleteAccount": "Hesabımı sil",
+    "deleteConfirmTitle": "Hesap silinsin mi?",
+    "deleteConfirmBody": "Bu, oyuncu adını ve tüm skorlarını kalıcı olarak siler. Geri alınamaz.",
+    "deleteConfirmYes": "Kalıcı olarak sil",
+    "deleted": "Hesabın silindi.",
+    "privacyTitle": "Gizlilik",
+    "privacyBody": "Yalnızca oyuncu adını ve skorlarını saklıyoruz. Başka hiçbir şey. E-posta yok, reklam yok, veri satışı yok — asla.",
+    "restartNeeded": "Yeniden başlatma gerekli",
+    "restartNeededBody": "Yerleşim yönünü değiştirmek için uygulamanın yeniden başlaması gerekiyor. Lütfen uygulamayı kapatıp tekrar aç.",
+    "store": "Mağaza",
+    "owned": "Tüm oyunların kilidi açık",
+    "resetPurchase": "Satın almayı sıfırla (test modu)",
+    "feedback": "Geri bildirim gönder",
+    "feedbackFallback": "Bize yaz: {{email}}"
+  },
+  "records": {
+    "title": "Rekorlarım",
+    "subtitle": "{{total}} oyundan {{played}} tanesi oynandı"
+  },
+  "game": {
+    "score": "Skor",
+    "best": "Rekor",
+    "lives": "Can",
+    "level": "Seviye",
+    "moves": "Hamle",
+    "pause": "Duraklat",
+    "resume": "Devam et",
+    "quit": "Oyundan çık",
+    "howToPlay": "Nasıl oynanır",
+    "start": "Başla",
+    "gameOver": "OYUN BİTTİ",
+    "youWin": "KAZANDIN!",
+    "newBest": "YENİ REKOR!",
+    "playAgain": "Tekrar oyna",
+    "backToArcade": "Salona dön",
+    "levelUp": "SEVİYE {{n}}!",
+    "bonusRound": "BONUS TUR! 2x ALTIN",
+    "levelReached": "Seviye {{n}}",
+    "coinsEarned": "+{{n}} 🪙",
+    "trophy": {
+      "bronze": "Bronz kupa!",
+      "silver": "Gümüş kupa!",
+      "gold": "Altın kupa!"
+    }
+  },
+  "games": {
+    "snake": {
+      "name": "Yılan",
+      "desc": "Ye, büyü, çarpma",
+      "howto": "Yılanı yönlendirmek için ekranda kaydır. Büyümek için yemleri ye. Duvarlara ve kendine çarpma. Yılan büyüdükçe hızlanır!"
+    },
+    "brickbreaker": {
+      "name": "Tuğla Kıran",
+      "desc": "Her tuğlayı parçala",
+      "howto": "Raketi hareket ettirmek için parmağını kaydır. Topu sektirerek tüm tuğlaları kır. Açıyı değiştirmek için topa raketin kenarıyla vur. 3 topun var."
+    },
+    "paddleduel": {
+      "name": "Raket Düellosu",
+      "desc": "7 yapan kazanır",
+      "howto": "Raketini hareket ettirmek için parmağını kaydır. Sayı için topu bilgisayarın raketinin arkasına geçir. İlk 7 sayıya ulaşan kazanır. Ralli uzadıkça hızlanır!"
+    },
+    "spacedefenders": {
+      "name": "Uzay Savunucuları",
+      "desc": "İstilayı durdur",
+      "howto": "Gemini hareket ettirmek için parmağını kaydır — kendiliğinden ateş eder. İstilacılar sana ulaşmadan hepsini yok et. Sayıları azaldıkça hızlanırlar!"
+    },
+    "meteordodge": {
+      "name": "Meteor Kaçışı",
+      "desc": "Fırtınadan sağ çık",
+      "howto": "Gemini sağa sola sürmek için parmağını kaydır. Düşen meteorlardan olabildiğince uzun süre kaç. Gitgide daha hızlı düşerler — ne kadar dayanabilirsin?"
+    },
+    "hauntedmaze": {
+      "name": "Perili Labirent",
+      "desc": "Hayaletlerden kaç",
+      "howto": "Labirentte ilerlemek için kaydır. Hayaletler seni kovalarken tüm parlayan küreleri topla. Güç yıldızını kap ve işleri tersine çevir: sen onları kovala!"
+    },
+    "memorymatch": {
+      "name": "Hafıza Eşleştirme",
+      "desc": "Tüm çiftleri bul",
+      "howto": "Bir kartı çevirmek için dokun, sonra eşini bul. Kazanmak için tüm çiftleri eşleştir. Az hamle, yüksek skor demek. Acele etme — saat yok."
+    },
+    "simonecho": {
+      "name": "Simon Yankısı",
+      "desc": "Deseni tekrarla",
+      "howto": "Renklerin yanışını izle ve dinle, sonra aynı sırayla dokun. Her turda bir adım eklenir. Ne kadar uzun bir deseni hatırlayabilirsin?"
+    },
+    "neonstack": {
+      "name": "Neon Yığını",
+      "desc": "Düşen blokları diz",
+      "howto": "Düşen parçayı sağa sola sürükle, döndürmek için dokun, hızlı düşürmek için aşağı sürükle. Bir sırayı tamamla ve temizle — dördü birden dev bonus verir. Bloklar gittikçe hızlanır!"
+    },
+    "solitaire": {
+      "name": "Solitaire",
+      "desc": "Klasik iskambil sabrı",
+      "howto": "Bir karta dokun; en iyi yere kendisi gider. Astan Papaza dört seri destesini kur. Sütunlarda kartları azalan sırayla ve renkleri değiştirerek diz. Yeni kart çekmek için desteye dokun. İstediğin kadar düşün."
+    },
+    "roadhopper": {
+      "name": "Yol Zıplayanı",
+      "desc": "Yolu ve nehri geç",
+      "howto": "Adım adım zıplamak için kaydır. Yoldaki arabalardan kaç, sonra kütüklerin üstünde nehri geç — suya sakın değme! İlerlemek için tepedeki beş yuvayı doldur. Dikkat: her turda her şey hızlanır."
+    },
+    "astroshards": {
+      "name": "Astro Kırıkları",
+      "desc": "Uzay kayalarını patlat",
+      "howto": "Gemiyi döndürmek için ↺ ve ↻ tuşlarını, itmek için ▲ tuşunu basılı tut — kendiliğinden ateş eder. Büyük kayalar daha küçük ve hızlı parçalara bölünür. Küçükler en çok puanı verir. Bir kenardan çık, karşıdan geri gir!"
+    },
+    "pixelwings": {
+      "name": "Piksel Kanatlar",
+      "desc": "Kulelerin arasından süzül",
+      "howto": "Kanat çırpmak ve havada kalmak için herhangi bir yere dokun. Kuleler arasındaki boşluktan süzül — geçtiğin her kule bir puan. Bir çarpma, her şey biter. Ne kadar uzağa uçabilirsin?"
+    },
+    "gemdigger": {
+      "name": "Mücevher Kazıcısı",
+      "desc": "Derine kaz, taşları kap",
+      "howto": "Tünel kazmak ve tüm mücevherleri toplamak için kaydır. İki mağara yaratığı seni avlıyor — ama yalnızca senin tünellerinden gidebilirler, akıllıca kaz! Kazanmak için tüm mücevherleri topla."
+    },
+    "skyshield": {
+      "name": "Gök Kalkanı",
+      "desc": "Şehirlerini savun",
+      "howto": "Altı şehrine füzeler yağıyor! Önleyici fırlatmak için gökyüzüne dokun — patlaması çevredeki her şeyi yok eder. Her dalgada cephane sınırlı, füzelerin önünü hedefle. Artan cephane ve kurtulan şehirler büyük bonus getirir."
+    },
+    "ghostsweeper": {
+      "name": "Hayalet Avcısı",
+      "desc": "Gizli hayaletleri bul",
+      "howto": "Bir kareyi açmak için dokun. Sayılar, komşu karelerde kaç hayalet saklandığını söyler — yerlerini mantıkla çöz. Şüpheli kareye tılsım koymak için basılı tut. Tüm güvenli kareleri açarak kazan. Süre yok, sadece düşünmek var."
+    },
+    "zombiebop": {
+      "name": "Zombi Tokatı",
+      "desc": "Onları geri göm",
+      "howto": "Zombiler mezarlardan fırlıyor! Geri batmadan önce üstlerine dokun. Altın iskelet 5 kat puan verir. 60 saniyen var — sona doğru hızlanırlar!"
+    },
+    "alleybowl": {
+      "name": "Bovling Salonu",
+      "desc": "Kusursuz 300'ü hedefle",
+      "howto": "Topu hizalamak için yana sürükle, atmak için YUKARI savur — savuruşunun açısı topa falso verir. On lobutun hepsini devir! Strike ve spare gerçek bovlingdeki gibi bonus verir. On el; kusursuz oyun 300."
+    },
+    "moonbuggy": {
+      "name": "Ay Aracı",
+      "desc": "Kraterlerden atla, kayaları vur",
+      "howto": "Aracın kendi kendine gider, gittikçe hızlanır. Kraterlerden atlamak için ekranın SAĞINA, yoldaki kayaları vurmak için SOLUNA dokun. Her 500 metrede kontrol noktası. Üç can — iyi şanslar sürücü!"
+    },
+    "spookshoot": {
+      "name": "Hortlak Avı",
+      "desc": "Sakin el kazanır",
+      "howto": "Hortlaklar üç sırada süzülüyor — vurmak için dokun! Vursan da vurmasan da her atış bir fişek harcar; 25 fişeğin var. Arka sıra en çok puanı verir; altın hayalet 100 eder. Üst üste 5 isabetle 3 bonus fişek kazan!"
+    },
+    "pyramidhop": {
+      "name": "Piramit Zıplayanı",
+      "desc": "Her küpü boya",
+      "howto": "Küpler arasında zıplamak için ÇAPRAZ kaydır — aşağı-sol, aşağı-sağ, yukarı-sol, yukarı-sağ. Bastığın her küp yanar; hepsini yakınca bölüm biter. Yuvarlanan kırmızı kürelerden kaç ve kenardan düşme!"
+    },
+    "gemcolumns": {
+      "name": "Mücevher Sütunları",
+      "desc": "Üç taşı hizala",
+      "howto": "Üç taşlık bir sütun kuyuya düşer. Yönlendirmek için yana sürükle, sırayı değiştirmek için dokun, hızlandırmak için aşağı sürükle. Aynı renkten üç veya daha fazlasını hizala — yatay, dikey ya da çapraz. Zincirler büyük puan getirir!"
+    },
+    "tilefusion": {
+      "name": "Karo Birleştirme",
+      "desc": "2048'e kadar birleştir",
+      "howto": "Tüm karoları kaydırmak için ekranı kaydır. Aynı iki sayı çarpışınca daha büyük bir sayıya birleşir. Parlayan 2048 karosuna ulaş! Tahta dolup hiçbir şey birleşmeyince oyun biter. Saat yok — her hamleyi planla."
+    },
+    "slidefifteen": {
+      "name": "On Beş Taşı",
+      "desc": "Kayan taşları sırala",
+      "howto": "Boş kareyle aynı satır veya sütundaki bir taşa dokun; taş oraya kayar. Taşları 1'den 15'e sırala. Her diziliş çözülebilir — az hamle çok puan demek ve saat yok."
+    },
+    "neonlights": {
+      "name": "Neon Işıklar",
+      "desc": "Bütün ışıkları söndür",
+      "howto": "Bir lambaya dokununca kendisi ve dört komşusu tersine döner. Turu geçmek için tüm tahtayı karart — üç tur, her biri daha karışık. Az dokunuş çok puan getirir. Saf mantık, süre yok."
+    },
+    "retroracer": {
+      "name": "Retro Yarışçı",
+      "desc": "Trafikte slalom yap",
+      "howto": "Üç şerit arasında geçmek için sağa veya sola kaydır. Karşıdan gelen araçların yanından sıyrıl — ilerledikçe yol hızlanır ve kalabalıklaşır. Tek kaza yarışı bitirir. Ne kadar uzağa gidebilirsin?"
+    },
+    "moonlander": {
+      "name": "Ay'a İniş",
+      "desc": "Yumuşak iniş yap",
+      "howto": "Yerçekimine karşı motoru ateşlemek için ▲ tuşunu, yana kaymak için ◀ ▶ tuşlarını basılı tut. Yeşil pede yavaşça in — yeterince yavaşsan gemin mavi parlar. Yakıt sınırlı! Her inişte ped küçülür, yerçekimi güçlenir."
+    },
+    "creepycrawler": {
+      "name": "Ürkünç Sürüngen",
+      "desc": "Sürünen dehşeti böl",
+      "howto": "Avcını hareket ettirmek için kaydır — kendiliğinden ateş eder. Mezar taşları arasında kıvrılarak inen yaratığa ateş et: ortasından vurursan ikiye bölünür! Yok ettiğin her parça yeni bir mezar taşı olur. Sana ulaşmasına izin verme."
+    },
+    "divesquadron": {
+      "name": "Dalış Filosu",
+      "desc": "Pike bombacılarından kurtul",
+      "howto": "Gemini sürmek için kaydır — kendiliğinden ateş eder. Düşmanlar düzenden çıkıp üstüne pike yapar. Dalıştaki düşman iki kat puan verir — cesur atış kazandırır! Daha hızlı bir dalgayla yüzleşmek için bütün filoyu temizle."
+    },
+    "eggcatch": {
+      "name": "Yumurta Kapmaca",
+      "desc": "Düşen her yumurtayı yakala",
+      "howto": "Yumurtalar dört rampadan yuvarlanıp kenardan düşer. Parmağını herhangi bir yerde kaydır — sepet onu izler. Her yumurtayı yere düşmeden yakala; üçü kırılırsa oyun biter. Gittikçe hızlanırlar!"
+    }
+  },
+  "username": {
+    "title": "Oyuncu adını seç",
+    "subtitle": "Kayıt gerekmez — App Store veya Google Play hesabın kimliğindir. Skor tabloları için bir ad seçmen yeter!",
+    "placeholder": "OYUNCU_BIR",
+    "suggest": "🎲 Beni şaşırt",
+    "confirm": "Hadi oynayalım!",
+    "taken": "Bu ad alınmış — başka bir tane dene",
+    "invalid": "3–16 harf, rakam veya _"
+  }
+}

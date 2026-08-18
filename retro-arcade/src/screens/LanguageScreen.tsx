@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, View } from 'react-native';
+import { Alert, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { colors, spacing } from '../theme';
@@ -29,39 +29,43 @@ export function LanguageScreen({ onDone }: Props) {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: colors.bg,
-        justifyContent: 'center',
-        padding: spacing.xl,
-        paddingTop: insets.top,
-      }}>
-      <PixelText size="title" color={colors.neonGreen} glow style={{ textAlign: 'center' }}>
-        RETRO ARCADE
-      </PixelText>
-      <PixelText
-        size="heading"
-        color={colors.text}
-        style={{ textAlign: 'center', marginTop: spacing.xl, marginBottom: spacing.s }}>
-        {t('language.title')}
-      </PixelText>
-      <PixelText
-        size="label"
-        color={colors.textDim}
-        style={{ textAlign: 'center', marginBottom: spacing.xl }}>
-        {t('language.subtitle')}
-      </PixelText>
-      {LANGUAGES.map((lang) => (
-        <NeonButton
-          key={lang.code}
-          label={lang.nativeName}
-          color={colors.neonCyan}
-          variant="outline"
-          onPress={() => choose(lang.code)}
-          style={{ marginBottom: spacing.m }}
-        />
-      ))}
+    <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
+      <ScrollView
+        contentContainerStyle={{
+          flexGrow: 1,
+          justifyContent: 'center',
+          padding: spacing.xl,
+          paddingBottom: spacing.xl + insets.bottom,
+        }}>
+        <PixelText size="title" color={colors.neonGreen} glow style={{ textAlign: 'center' }}>
+          RETRO ARCADE
+        </PixelText>
+        <PixelText
+          size="heading"
+          color={colors.text}
+          style={{ textAlign: 'center', marginTop: spacing.xl, marginBottom: spacing.s }}>
+          {t('language.title')}
+        </PixelText>
+        <PixelText
+          size="label"
+          color={colors.textDim}
+          style={{ textAlign: 'center', marginBottom: spacing.xl }}>
+          {t('language.subtitle')}
+        </PixelText>
+        {/* Two-column grid so all languages fit without endless scrolling */}
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+          {LANGUAGES.map((lang) => (
+            <NeonButton
+              key={lang.code}
+              label={lang.nativeName}
+              color={colors.neonCyan}
+              variant="outline"
+              onPress={() => choose(lang.code)}
+              style={{ marginBottom: spacing.m, width: '48%' }}
+            />
+          ))}
+        </View>
+      </ScrollView>
     </View>
   );
 }
