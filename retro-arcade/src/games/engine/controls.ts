@@ -68,5 +68,25 @@ export function useSlideX(onX: (x: number) => void): PanResponderInstance {
   return responder.current;
 }
 
+/**
+ * Two-axis slide control: reports the touch position (x, y) in the
+ * responder view's coordinates from pointer-down onward, so an object can
+ * follow the finger anywhere on the field. Same latest-callback and
+ * pointerEvents caveats as useSlideX.
+ */
+export function useSlideXY(onMove: (x: number, y: number) => void): PanResponderInstance {
+  const cb = useRef(onMove);
+  cb.current = onMove;
+  const responder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderGrant: (evt) => cb.current(evt.nativeEvent.locationX, evt.nativeEvent.locationY),
+      onPanResponderMove: (evt) => cb.current(evt.nativeEvent.locationX, evt.nativeEvent.locationY),
+    })
+  );
+  return responder.current;
+}
+
 /** Physical-direction helper: unused for now but kept for RTL-aware UIs. */
 export const layoutIsRTL = (): boolean => I18nManager.isRTL;

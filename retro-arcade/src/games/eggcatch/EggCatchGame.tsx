@@ -5,16 +5,16 @@ import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
-import { useSlideX } from '../engine/controls';
+import { useSlideXY } from '../engine/controls';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
 /**
  * Free-movement catcher: eggs roll down four ramps (two per side), tumble
- * off the end, and fall — you slide the basket anywhere along the bottom
- * with your finger to catch them. No buttons, no fixed positions: the
- * basket follows your thumb, arcade-smooth. Three cracked eggs end the
- * game; rolls speed up and bunch closer as your score climbs.
+ * off the end, and fall — the basket follows your finger ANYWHERE on the
+ * screen (riding slightly above it so your hand never hides it), so you can
+ * snatch an egg mid-air or camp under a ramp lip. Three cracked eggs end
+ * the game; rolls speed up and bunch closer as your score climbs.
  */
 const RAMPS = 4; // 0 top-left, 1 bottom-left, 2 top-right, 3 bottom-right
 
@@ -34,10 +34,12 @@ const BASKET_W = 64;
 export function EggCatchGame({ api }: { api: GameApi }) {
   const W = api.width;
   const H = api.height;
-  const BASKET_Y = H - 86; // top of the basket mouth
+  // The basket rides a bit above the finger so the hand never covers it.
+  const FINGER_LIFT = 56;
 
   const eggs = useRef<Egg[]>([]);
   const basketX = useRef(W / 2);
+  const basketY = useRef(H - 86); // top of the basket mouth
   const misses = useRef(0);
   const score = useRef(0);
   const spawnTimer = useRef(1);
@@ -46,6 +48,7 @@ export function EggCatchGame({ api }: { api: GameApi }) {
   useEffect(() => {
     eggs.current = [];
     basketX.current = W / 2;
+    basketY.current = H - 86;
     misses.current = 0;
     score.current = 0;
     spawnTimer.current = 1.2;
@@ -55,9 +58,11 @@ export function EggCatchGame({ api }: { api: GameApi }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api.resetToken]);
 
-  // The whole field is the controller: the basket follows the finger.
-  const pan = useSlideX((x) => {
+  // The whole field is the controller: the basket follows the finger in
+  // BOTH axes — anywhere on the screen.
+  const pan = useSlideXY((x, y) => {
     basketX.current = Math.max(BASKET_W / 2, Math.min(W - BASKET_W / 2, x));
+    basketY.current = Math.max(40, Math.min(H - 60, y - FINGER_LIFT));
   });
 
   // Ramp geometry: left ramps roll rightward, right ramps leftward.
@@ -105,8 +110,13 @@ export function EggCatchGame({ api }: { api: GameApi }) {
     for (let i = eggs.current.length - 1; i >= 0; i--) {
       const egg = eggs.current[i];
       if (egg.phase !== 'fall') continue;
-      // Caught: egg crosses the basket mouth while over it.
-      if (egg.y >= BASKET_Y - 6 && egg.y <= BASKET_Y + 26 && Math.abs(egg.x - basketX.current) < BASKET_W / 2) {
+      // Caught: a falling egg meets the basket mouth — wherever the basket is.
+      if (
+        egg.vy > 0 &&
+        egg.y >= basketY.current - 6 &&
+        egg.y <= basketY.current + 26 &&
+        Math.abs(egg.x - basketX.current) < BASKET_W / 2
+      ) {
         eggs.current.splice(i, 1);
         score.current += 1;
         api.setScore(score.current);
@@ -189,13 +199,13 @@ export function EggCatchGame({ api }: { api: GameApi }) {
             />
           );
         })}
-        {/* Basket — glides with the finger */}
+        {/* Basket — glides with the finger, anywhere on the screen */}
         <Image
           source={ACTORS.basket}
           style={{
             position: 'absolute',
             left: basketX.current - BASKET_W / 2,
-            top: BASKET_Y - 12,
+            top: basketY.current - 12,
             width: BASKET_W,
             height: BASKET_W,
           }}
