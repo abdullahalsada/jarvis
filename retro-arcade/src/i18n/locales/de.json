@@ -1,0 +1,262 @@
+{
+  "app": {
+    "name": "Retro Arcade",
+    "publisher": "Golden Age Games",
+    "tagline": "Die Spiele deiner Kindheit"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Abbrechen",
+    "back": "Zurück",
+    "continue": "Weiter",
+    "loading": "Lädt…",
+    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+    "offline": "Du bist offline. Punktestände werden später synchronisiert."
+  },
+  "language": {
+    "title": "Sprache auswählen",
+    "subtitle": "Du kannst das jederzeit in den Einstellungen ändern",
+    "english": "English",
+    "arabic": "العربية"
+  },
+  "home": {
+    "playFree": "GRATIS",
+    "locked": "GESPERRT",
+    "unlockCard": "Alle Spiele freischalten — einmalig 4,99 $",
+    "unlockCardSub": "Keine Werbung, niemals. Alle künftigen Spiele inklusive.",
+    "categories": {
+      "classics": "Klassiker",
+      "action": "Action",
+      "spooky": "Gruselig",
+      "brain": "Denksport"
+    }
+  },
+  "purchase": {
+    "title": "Alles freischalten",
+    "price": "4,99 $",
+    "bullet1": "Einmaliger Kauf — nie wieder zahlen",
+    "bullet2": "Keine Werbung, niemals",
+    "bullet3": "Alle Spiele für immer, inklusive aller künftigen Spiele",
+    "buy": "Freischalten für {{price}}",
+    "restore": "Käufe wiederherstellen",
+    "restoring": "Wird wiederhergestellt…",
+    "restored": "Dein Kauf wurde wiederhergestellt!",
+    "nothingToRestore": "Kein früherer Kauf für dieses Konto gefunden.",
+    "thanks": "Danke! Die ganze Spielhalle gehört dir.",
+    "failed": "Der Kauf konnte nicht abgeschlossen werden.",
+    "unavailable": "Der Store ist gerade nicht erreichbar. Bitte versuche es später erneut."
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "sound": "Ton",
+    "haptics": "Vibration",
+    "scanlines": "Scanline-Effekt",
+    "account": "Konto",
+    "deleteAccount": "Mein Konto löschen",
+    "deleteConfirmTitle": "Konto löschen?",
+    "deleteConfirmBody": "Dein Spielername und alle Punktestände werden dauerhaft gelöscht. Das kann nicht rückgängig gemacht werden.",
+    "deleteConfirmYes": "Endgültig löschen",
+    "deleted": "Dein Konto wurde gelöscht.",
+    "privacyTitle": "Datenschutz",
+    "privacyBody": "Wir speichern nur deinen Spielernamen und deine Punktestände. Sonst nichts. Keine E-Mail, keine Werbung, kein Datenverkauf — niemals.",
+    "restartNeeded": "Neustart erforderlich",
+    "restartNeededBody": "Die App muss neu starten, um die Leserichtung zu ändern. Bitte schließe die App und öffne sie erneut.",
+    "store": "Store",
+    "owned": "Alle Spiele freigeschaltet",
+    "resetPurchase": "Kauf zurücksetzen (Testmodus)",
+    "feedback": "Feedback senden",
+    "feedbackFallback": "Schreib uns an {{email}}"
+  },
+  "records": {
+    "title": "Meine Rekorde",
+    "subtitle": "{{played}} von {{total}} Spielen gespielt"
+  },
+  "game": {
+    "score": "Punkte",
+    "best": "Rekord",
+    "lives": "Leben",
+    "level": "Level",
+    "moves": "Züge",
+    "pause": "Pause",
+    "resume": "Weiter",
+    "quit": "Spiel beenden",
+    "howToPlay": "So wird gespielt",
+    "start": "Start",
+    "gameOver": "GAME OVER",
+    "youWin": "GEWONNEN!",
+    "newBest": "NEUER REKORD!",
+    "playAgain": "Nochmal spielen",
+    "backToArcade": "Zurück zur Spielhalle",
+    "levelUp": "LEVEL {{n}}!",
+    "bonusRound": "BONUSRUNDE! 2x MÜNZEN",
+    "levelReached": "Level {{n}}",
+    "coinsEarned": "+{{n}} 🪙",
+    "trophy": {
+      "bronze": "Bronze-Pokal!",
+      "silver": "Silber-Pokal!",
+      "gold": "Gold-Pokal!"
+    }
+  },
+  "games": {
+    "snake": {
+      "name": "Snake",
+      "desc": "Friss, wachse, nicht anstoßen",
+      "howto": "Wische irgendwo, um die Schlange zu lenken. Friss das Futter, um zu wachsen. Berühre weder Wände noch dich selbst. Die Schlange wird schneller, je länger sie wird!"
+    },
+    "brickbreaker": {
+      "name": "Brick Breaker",
+      "desc": "Zerschlage jeden Stein",
+      "howto": "Bewege den Schläger mit dem Finger. Lass den Ball abprallen und zerschlage alle Steine. Triff den Ball mit der Schlägerkante, um den Winkel zu ändern. Du hast 3 Bälle."
+    },
+    "paddleduel": {
+      "name": "Paddel-Duell",
+      "desc": "Wer zuerst 7 hat, gewinnt",
+      "howto": "Bewege dein Paddel mit dem Finger. Spiele den Ball am Computer-Paddel vorbei, um zu punkten. Wer zuerst 7 Punkte hat, gewinnt. Der Ballwechsel wird immer schneller!"
+    },
+    "spacedefenders": {
+      "name": "Weltraum-Verteidiger",
+      "desc": "Stoppe die Invasion",
+      "howto": "Bewege dein Schiff mit dem Finger — es feuert automatisch. Zerstöre alle Invasoren, bevor sie dich erreichen. Je weniger übrig sind, desto schneller werden sie!"
+    },
+    "meteordodge": {
+      "name": "Meteor-Ausweichen",
+      "desc": "Überlebe den Sturm",
+      "howto": "Steuere dein Schiff mit dem Finger nach links und rechts. Weiche den fallenden Meteoren so lange wie möglich aus. Sie fallen immer schneller — wie lange hältst du durch?"
+    },
+    "hauntedmaze": {
+      "name": "Geisterlabyrinth",
+      "desc": "Entkomme den Geistern",
+      "howto": "Wische, um durchs Labyrinth zu laufen. Sammle alle leuchtenden Kugeln, während die Geister dich jagen. Schnapp dir einen Kraftstern und jage sie stattdessen!"
+    },
+    "memorymatch": {
+      "name": "Memory",
+      "desc": "Finde alle Paare",
+      "howto": "Tippe eine Karte an, um sie umzudrehen, und finde ihren Partner. Finde alle Paare, um zu gewinnen. Weniger Züge bedeuten mehr Punkte. Lass dir Zeit — es gibt keine Uhr."
+    },
+    "simonecho": {
+      "name": "Simon Echo",
+      "desc": "Wiederhole das Muster",
+      "howto": "Schau und höre zu, wie die Farben aufleuchten, und tippe sie in derselben Reihenfolge nach. Jede Runde kommt ein Schritt dazu. Wie lange kannst du dir das Muster merken?"
+    },
+    "neonstack": {
+      "name": "Neon-Stapel",
+      "desc": "Staple die fallenden Blöcke",
+      "howto": "Ziehe nach links oder rechts, um den fallenden Stein zu bewegen, tippe zum Drehen und ziehe nach unten für schnelles Fallen. Fülle eine Reihe, um sie zu löschen — vier auf einmal geben einen Riesenbonus. Die Steine fallen immer schneller!"
+    },
+    "solitaire": {
+      "name": "Solitär",
+      "desc": "Die klassische Patience",
+      "howto": "Tippe eine Karte an, und sie wandert automatisch an den besten Platz. Baue die vier Farbstapel von Ass bis König auf. In den Spalten stapelst du absteigend mit wechselnden Farben. Tippe auf den Stapel für eine neue Karte. Lass dir Zeit."
+    },
+    "roadhopper": {
+      "name": "Straßenhüpfer",
+      "desc": "Über Straße und Fluss",
+      "howto": "Wische, um Schritt für Schritt zu hüpfen. Weiche den Autos aus und überquere den Fluss auf den Baumstämmen — nie das Wasser berühren! Fülle alle fünf Nester oben, um weiterzukommen. Achtung: Jede Runde wird alles schneller."
+    },
+    "astroshards": {
+      "name": "Astro-Splitter",
+      "desc": "Sprenge die Weltraumfelsen",
+      "howto": "Halte ↺ und ↻, um dein Schiff zu drehen, und ▲ für Schub — gefeuert wird automatisch. Große Felsen zerbrechen in kleinere, schnellere. Kleine Felsen bringen die meisten Punkte. Fliegst du über den Rand, erscheinst du gegenüber!"
+    },
+    "pixelwings": {
+      "name": "Pixel-Flügel",
+      "desc": "Flattere durch die Türme",
+      "howto": "Tippe irgendwo, um zu flattern und in der Luft zu bleiben. Gleite durch die Lücken zwischen den Türmen — ein Punkt pro Turm. Eine Berührung und es ist vorbei. Wie weit fliegst du?"
+    },
+    "gemdigger": {
+      "name": "Edelstein-Gräber",
+      "desc": "Grab tief, hol die Steine",
+      "howto": "Wische, um Tunnel zu graben und alle Edelsteine zu sammeln. Zwei Höhlenwesen jagen dich — aber sie können nur deinen Tunneln folgen, also grabe schlau! Sammle alle Edelsteine, um zu gewinnen."
+    },
+    "skyshield": {
+      "name": "Himmelsschild",
+      "desc": "Verteidige deine Städte",
+      "howto": "Raketen fallen auf deine sechs Städte! Tippe in den Himmel, um einen Abfangjäger zu starten — seine Explosion zerstört alles in der Nähe. Die Munition pro Welle ist begrenzt, also ziele vorausschauend. Übrige Munition und gerettete Städte bringen Bonuspunkte."
+    },
+    "ghostsweeper": {
+      "name": "Geisterfeger",
+      "desc": "Finde die versteckten Geister",
+      "howto": "Tippe ein Feld an, um es aufzudecken. Die Zahlen verraten, wie viele Geister in den Nachbarfeldern stecken — kombiniere logisch. Halte gedrückt, um einen Bannzauber zu setzen. Decke alle sicheren Felder auf, um zu gewinnen. Kein Timer, nur Köpfchen."
+    },
+    "zombiebop": {
+      "name": "Zombie-Klopfer",
+      "desc": "Klopf sie zurück",
+      "howto": "Zombies steigen aus den Gräbern! Tippe sie an, bevor sie wieder versinken. Das goldene Skelett zählt 5-fach. Du hast 60 Sekunden — am Ende werden sie schneller!"
+    },
+    "alleybowl": {
+      "name": "Bowlingbahn",
+      "desc": "Wirf die perfekte 300",
+      "howto": "Ziehe seitwärts, um die Kugel auszurichten, und schnippe nach OBEN zum Werfen — der Winkel deines Schwungs macht Effet. Räum alle zehn Pins ab! Strikes und Spares geben Bonuspunkte wie beim echten Bowling. Zehn Durchgänge; das perfekte Spiel ist 300."
+    },
+    "moonbuggy": {
+      "name": "Mond-Buggy",
+      "desc": "Spring über Krater, sprenge Felsen",
+      "howto": "Dein Buggy fährt von allein, immer schneller. Tippe RECHTS, um über Krater zu springen, und LINKS, um Felsen wegzuschießen. Checkpoints alle 500 m. Drei Leben — gute Fahrt!"
+    },
+    "spookshoot": {
+      "name": "Geisterschießen",
+      "desc": "Ruhige Hand gewinnt",
+      "howto": "Gespenster gleiten über drei Reihen — tippe, um zu schießen! Jeder Schuss kostet eine Patrone, Treffer oder nicht, und du hast 25. Die hintere Reihe zählt am meisten; das goldene Phantom bringt 100. Triff 5 in Folge für 3 Bonuspatronen!"
+    },
+    "pyramidhop": {
+      "name": "Pyramidenhüpfer",
+      "desc": "Färbe jeden Würfel",
+      "howto": "Wische DIAGONAL, um zwischen den Würfeln zu hüpfen — runter-links, runter-rechts, hoch-links, hoch-rechts. Jeder Würfel leuchtet auf, wenn du landest; bring alle zum Leuchten. Weiche den roten Kugeln aus und hüpf nicht über den Rand!"
+    },
+    "gemcolumns": {
+      "name": "Edelstein-Säulen",
+      "desc": "Drei Steine in Reihe",
+      "howto": "Ein Turm aus drei Edelsteinen fällt in den Schacht. Ziehe seitwärts zum Lenken, tippe zum Umsortieren, ziehe nach unten für schnelles Fallen. Bringe drei gleiche Farben in Reihe — quer, senkrecht oder diagonal. Ketten geben fette Punkte!"
+    },
+    "tilefusion": {
+      "name": "Kachel-Fusion",
+      "desc": "Verschmelze bis 2048",
+      "howto": "Wische, um alle Kacheln zu schieben. Treffen zwei gleiche Zahlen aufeinander, verschmelzen sie zu einer größeren. Erreiche die leuchtende 2048! Das Spiel endet, wenn das Brett voll ist und nichts mehr geht. Keine Uhr — plane jeden Zug."
+    },
+    "slidefifteen": {
+      "name": "Fünfzehner-Schieber",
+      "desc": "Ordne die Schiebekacheln",
+      "howto": "Tippe eine Kachel in der Reihe oder Spalte des leeren Felds an, um sie zu verschieben. Ordne die Kacheln von 1 bis 15. Jedes Rätsel ist lösbar — weniger Züge geben mehr Punkte, und es gibt keine Uhr."
+    },
+    "neonlights": {
+      "name": "Neonlichter",
+      "desc": "Schalte jedes Licht aus",
+      "howto": "Ein Tipp auf eine Lampe schaltet sie und ihre vier Nachbarn um. Mach das ganze Brett dunkel, um die Runde zu schaffen — drei Runden, immer stärker verwürfelt. Weniger Tipps bringen mehr Punkte. Pure Logik, kein Timer."
+    },
+    "retroracer": {
+      "name": "Retro-Raser",
+      "desc": "Schlängle dich durch den Verkehr",
+      "howto": "Wische links oder rechts, um die Spur zu wechseln. Zieh am Gegenverkehr vorbei — je weiter du fährst, desto schneller und voller wird die Straße. Ein Crash beendet die Fahrt. Wie weit kommst du?"
+    },
+    "moonlander": {
+      "name": "Mondlander",
+      "desc": "Sanft aufsetzen",
+      "howto": "Halte ▲, um gegen die Schwerkraft zu feuern, und ◀ ▶ zum seitlichen Driften. Lande langsam auf dem grünen Pad — dein Schiff leuchtet blau, wenn du langsam genug bist. Der Treibstoff ist knapp! Jede Landung bringt ein kleineres Pad und stärkere Schwerkraft."
+    },
+    "creepycrawler": {
+      "name": "Gruselkrabbler",
+      "desc": "Teile das Krabbelmonster",
+      "howto": "Bewege deinen Jäger mit dem Finger — er feuert von allein. Schieß auf den Krabbler, der sich durch die Grabsteine schlängelt: Triffst du die Mitte, teilt er sich! Jedes zerstörte Stück wird zum neuen Grabstein. Lass ihn nicht zu dir durch."
+    },
+    "divesquadron": {
+      "name": "Sturzflug-Staffel",
+      "desc": "Überlebe die Sturzbomber",
+      "howto": "Steuere dein Schiff mit dem Finger — es feuert von allein. Feinde scheren aus der Formation aus und stürzen direkt auf dich. Ein stürzender Feind zählt doppelt — der mutige Schuss lohnt sich! Räume die ganze Staffel für eine schnellere Welle."
+    },
+    "eggcatch": {
+      "name": "Eierfangen",
+      "desc": "Fang jedes fallende Ei",
+      "howto": "Eier rollen vier Rampen hinunter und kippen über die Kante. Wische mit dem Finger — der Korb folgt ihm. Fang jedes Ei, bevor es den Boden trifft; drei zerbrochene Eier und das Spiel ist aus. Sie kommen immer schneller!"
+    }
+  },
+  "username": {
+    "title": "Wähle deinen Spielernamen",
+    "subtitle": "Keine Anmeldung nötig — dein App-Store- oder Google-Play-Konto ist deine Identität. Such dir einfach einen Namen für die Bestenlisten aus!",
+    "placeholder": "SPIELER_EINS",
+    "suggest": "🎲 Überrasch mich",
+    "confirm": "Los geht's!",
+    "taken": "Der Name ist vergeben — probier einen anderen",
+    "invalid": "3–16 Buchstaben, Zahlen oder _"
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "app": {
+    "name": "Retro Arcade",
+    "publisher": "Golden Age Games",
+    "tagline": "I giochi con cui sei cresciuto"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Annulla",
+    "back": "Indietro",
+    "continue": "Continua",
+    "loading": "Caricamento…",
+    "error": "Qualcosa è andato storto. Riprova.",
+    "offline": "Sei offline. I punteggi verranno sincronizzati più tardi."
+  },
+  "language": {
+    "title": "Seleziona la lingua",
+    "subtitle": "Puoi cambiarla quando vuoi nelle Impostazioni",
+    "english": "English",
+    "arabic": "العربية"
+  },
+  "home": {
+    "playFree": "GRATIS",
+    "locked": "BLOCCATO",
+    "unlockCard": "Sblocca tutti i giochi — 4,99 $ una tantum",
+    "unlockCardSub": "Niente pubblicità, mai. Tutti i giochi futuri inclusi.",
+    "categories": {
+      "classics": "Classici",
+      "action": "Azione",
+      "spooky": "Spettrali",
+      "brain": "Cervello"
+    }
+  },
+  "purchase": {
+    "title": "Sblocca tutto",
+    "price": "4,99 $",
+    "bullet1": "Acquisto unico — non paghi mai più",
+    "bullet2": "Niente pubblicità, mai",
+    "bullet3": "Tutti i giochi per sempre, compresi quelli futuri",
+    "buy": "Sblocca per {{price}}",
+    "restore": "Ripristina acquisti",
+    "restoring": "Ripristino…",
+    "restored": "Il tuo acquisto è stato ripristinato!",
+    "nothingToRestore": "Nessun acquisto precedente trovato per questo account.",
+    "thanks": "Grazie! L'intera sala giochi è tua.",
+    "failed": "Impossibile completare l'acquisto.",
+    "unavailable": "Il negozio non è disponibile al momento. Riprova più tardi."
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "language": "Lingua",
+    "sound": "Audio",
+    "haptics": "Vibrazione",
+    "scanlines": "Effetto scanline",
+    "account": "Account",
+    "deleteAccount": "Elimina il mio account",
+    "deleteConfirmTitle": "Eliminare l'account?",
+    "deleteConfirmBody": "Questo elimina per sempre il tuo nome giocatore e tutti i tuoi punteggi. Non si può annullare.",
+    "deleteConfirmYes": "Elimina per sempre",
+    "deleted": "Il tuo account è stato eliminato.",
+    "privacyTitle": "Privacy",
+    "privacyBody": "Conserviamo solo il tuo nome giocatore e i tuoi punteggi. Nient'altro. Niente email, niente pubblicità, nessuna vendita di dati — mai.",
+    "restartNeeded": "Riavvio necessario",
+    "restartNeededBody": "L'app deve riavviarsi per cambiare la direzione del layout. Chiudi e riapri l'app.",
+    "store": "Negozio",
+    "owned": "Tutti i giochi sbloccati",
+    "resetPurchase": "Azzera acquisto (modalità test)",
+    "feedback": "Invia feedback",
+    "feedbackFallback": "Scrivici a {{email}}"
+  },
+  "records": {
+    "title": "I Miei Record",
+    "subtitle": "{{played}} giochi su {{total}} giocati"
+  },
+  "game": {
+    "score": "Punti",
+    "best": "Record",
+    "lives": "Vite",
+    "level": "Livello",
+    "moves": "Mosse",
+    "pause": "Pausa",
+    "resume": "Riprendi",
+    "quit": "Esci dal gioco",
+    "howToPlay": "Come si gioca",
+    "start": "Via!",
+    "gameOver": "GAME OVER",
+    "youWin": "HAI VINTO!",
+    "newBest": "NUOVO RECORD!",
+    "playAgain": "Gioca ancora",
+    "backToArcade": "Torna alla sala giochi",
+    "levelUp": "LIVELLO {{n}}!",
+    "bonusRound": "ROUND BONUS! MONETE 2x",
+    "levelReached": "Livello {{n}}",
+    "coinsEarned": "+{{n}} 🪙",
+    "trophy": {
+      "bronze": "Trofeo di bronzo!",
+      "silver": "Trofeo d'argento!",
+      "gold": "Trofeo d'oro!"
+    }
+  },
+  "games": {
+    "snake": {
+      "name": "Snake",
+      "desc": "Mangia, cresci, non sbattere",
+      "howto": "Scorri ovunque per guidare il serpente. Mangia il cibo per crescere. Non toccare i muri né te stesso. Il serpente accelera man mano che cresce!"
+    },
+    "brickbreaker": {
+      "name": "Spaccamattoni",
+      "desc": "Frantuma ogni mattone",
+      "howto": "Fai scorrere il dito per muovere la racchetta. Fai rimbalzare la palla e frantuma tutti i mattoni. Colpisci la palla col bordo della racchetta per cambiarne l'angolo. Hai 3 palle."
+    },
+    "paddleduel": {
+      "name": "Duello di Racchette",
+      "desc": "Il primo a 7 vince",
+      "howto": "Fai scorrere il dito per muovere la racchetta. Manda la palla oltre la racchetta del computer per segnare. Il primo a 7 punti vince. Lo scambio diventa sempre più veloce!"
+    },
+    "spacedefenders": {
+      "name": "Difensori Spaziali",
+      "desc": "Ferma l'invasione",
+      "howto": "Fai scorrere il dito per muovere la nave — spara da sola. Distruggi tutti gli invasori prima che ti raggiungano. Meno ne restano, più diventano veloci!"
+    },
+    "meteordodge": {
+      "name": "Schiva Meteore",
+      "desc": "Sopravvivi alla tempesta",
+      "howto": "Fai scorrere il dito per guidare la nave a destra e a sinistra. Schiva le meteore che cadono il più a lungo possibile. Cadono sempre più veloci — quanto resisti?"
+    },
+    "hauntedmaze": {
+      "name": "Labirinto Stregato",
+      "desc": "Sfuggi ai fantasmi",
+      "howto": "Scorri per muoverti nel labirinto. Raccogli tutte le sfere luminose mentre i fantasmi ti danno la caccia. Prendi una stella del potere e ribalta la situazione: caccia tu loro!"
+    },
+    "memorymatch": {
+      "name": "Memory",
+      "desc": "Trova tutte le coppie",
+      "howto": "Tocca una carta per girarla, poi trova la sua gemella. Abbina tutte le coppie per vincere. Meno mosse fai, più punti prendi. Fai con calma — non c'è orologio."
+    },
+    "simonecho": {
+      "name": "Eco di Simon",
+      "desc": "Ripeti la sequenza",
+      "howto": "Guarda e ascolta i colori che si accendono, poi toccali nello stesso ordine. Ogni round aggiunge un passo. Quanto lunga riesci a ricordarla?"
+    },
+    "neonstack": {
+      "name": "Pila Neon",
+      "desc": "Impila i blocchi che cadono",
+      "howto": "Trascina a destra o a sinistra per muovere il pezzo, tocca per ruotarlo, trascina in giù per farlo cadere più in fretta. Completa una riga per eliminarla — quattro insieme danno un bonus enorme. I blocchi cadono sempre più veloci!"
+    },
+    "solitaire": {
+      "name": "Solitario",
+      "desc": "Il classico solitario di carte",
+      "howto": "Tocca una carta e si sposta da sola nel posto migliore. Costruisci le quattro pile di seme dall'Asso al Re. Nelle colonne impila in ordine decrescente alternando i colori. Tocca il mazzo per pescare. Tutto il tempo che vuoi."
+    },
+    "roadhopper": {
+      "name": "Salta-Strada",
+      "desc": "Attraversa strada e fiume",
+      "howto": "Scorri per saltare un passo alla volta. Schiva le auto sulla strada, poi attraversa il fiume sui tronchi — mai toccare l'acqua! Riempi i cinque nidi in cima per avanzare. Attenzione: tutto accelera a ogni round."
+    },
+    "astroshards": {
+      "name": "Schegge Astrali",
+      "desc": "Fai esplodere le rocce spaziali",
+      "howto": "Tieni premuti ↺ e ↻ per ruotare la nave e ▲ per la spinta — spara da sola. Le rocce grandi si spezzano in rocce più piccole e veloci. Le piccole valgono più punti. Esci da un bordo e riappari dall'altro!"
+    },
+    "pixelwings": {
+      "name": "Ali di Pixel",
+      "desc": "Svolazza tra le torri",
+      "howto": "Tocca ovunque per sbattere le ali e restare in volo. Passa nel varco tra le torri — un punto per ogni torre superata. Un urto e finisce tutto. Quanto lontano voli?"
+    },
+    "gemdigger": {
+      "name": "Scava-Gemme",
+      "desc": "Scava a fondo, prendi le gemme",
+      "howto": "Scorri per scavare gallerie e raccogliere tutte le gemme. Due creature della caverna ti danno la caccia — ma possono solo seguire le tue gallerie, quindi scava con astuzia! Raccogli tutte le gemme per vincere."
+    },
+    "skyshield": {
+      "name": "Scudo del Cielo",
+      "desc": "Difendi le tue città",
+      "howto": "I missili piovono sulle tue sei città! Tocca il cielo per lanciare un intercettore — la sua esplosione distrugge tutto nei dintorni. Le munizioni di ogni ondata sono limitate: mira davanti ai missili. Munizioni avanzate e città salvate valgono grossi bonus."
+    },
+    "ghostsweeper": {
+      "name": "Scova-Fantasmi",
+      "desc": "Trova i fantasmi nascosti",
+      "howto": "Tocca una casella per scoprirla. I numeri dicono quanti fantasmi si nascondono nelle caselle vicine — usa la logica per capire dove sono. Tieni premuto per piazzare un sigillo su un sospetto. Scopri tutte le caselle sicure per vincere. Niente timer, solo ragionamento."
+    },
+    "zombiebop": {
+      "name": "Picchia-Zombi",
+      "desc": "Rispediscili giù",
+      "howto": "Gli zombi spuntano dalle tombe! Toccali prima che sprofondino di nuovo. Lo scheletro dorato vale 5×. Hai 60 secondi — verso la fine diventano più veloci!"
+    },
+    "alleybowl": {
+      "name": "Bowling",
+      "desc": "Punta al 300 perfetto",
+      "howto": "Trascina di lato per allineare la boccia, poi lanciala in SU con un colpo secco — l'angolo del gesto dà l'effetto. Abbatti tutti e dieci i birilli! Strike e spare danno punti bonus, come nel bowling vero. Dieci tiri; la partita perfetta è 300."
+    },
+    "moonbuggy": {
+      "name": "Buggy Lunare",
+      "desc": "Salta i crateri, spara alle rocce",
+      "howto": "Il tuo buggy guida da solo, sempre più veloce. Tocca il lato DESTRO dello schermo per saltare i crateri, il SINISTRO per sparare alle rocce. Checkpoint ogni 500 m. Tre vite — buona fortuna, pilota!"
+    },
+    "spookshoot": {
+      "name": "Tiro allo Spettro",
+      "desc": "Vince la mano ferma",
+      "howto": "Gli spettri scivolano su tre file — tocca per sparare! Ogni colpo costa una cartuccia, centro o no, e ne hai 25. La fila in fondo vale di più; il fantasma dorato vale 100. Fai 5 centri di fila e vinci 3 cartucce bonus!"
+    },
+    "pyramidhop": {
+      "name": "Salta-Piramide",
+      "desc": "Colora ogni cubo",
+      "howto": "Scorri in DIAGONALE per saltare tra i cubi — giù-sinistra, giù-destra, su-sinistra, su-destra. Ogni cubo su cui atterri si accende; accendili tutti per superare il livello. Schiva le sfere rosse e non saltare oltre il bordo!"
+    },
+    "gemcolumns": {
+      "name": "Colonne di Gemme",
+      "desc": "Allinea tre gemme",
+      "howto": "Una colonna di tre gemme cade nel pozzo. Trascina di lato per guidarla, tocca per riordinare le gemme, trascina in giù per accelerare. Allinea tre o più dello stesso colore — in orizzontale, verticale o diagonale. Le catene valgono tantissimo!"
+    },
+    "tilefusion": {
+      "name": "Fusione di Tessere",
+      "desc": "Fondi fino a 2048",
+      "howto": "Scorri per far scivolare tutte le tessere. Quando due numeri uguali si scontrano, si fondono in uno più grande. Raggiungi la tessera 2048 luminosa! La partita finisce quando la griglia è piena e niente si fonde più. Niente orologio — pianifica ogni mossa."
+    },
+    "slidefifteen": {
+      "name": "Gioco del Quindici",
+      "desc": "Riordina le tessere scorrevoli",
+      "howto": "Tocca una tessera nella stessa riga o colonna dello spazio vuoto per farla scivolare. Riordina le tessere da 1 a 15. Ogni schema è risolvibile — meno mosse valgono più punti, e non c'è orologio."
+    },
+    "neonlights": {
+      "name": "Luci al Neon",
+      "desc": "Spegni ogni luce",
+      "howto": "Toccare una lampada inverte lei e le quattro vicine. Rendi buia tutta la griglia per superare il round — tre round, sempre più mescolati. Meno tocchi valgono più punti. Pura logica, niente timer."
+    },
+    "retroracer": {
+      "name": "Corsa Retrò",
+      "desc": "Sguscia nel traffico",
+      "howto": "Scorri a destra o a sinistra per cambiare corsia. Schiva le auto che arrivano — la strada diventa più veloce e affollata più vai avanti. Un incidente e la corsa finisce. Quanto lontano arrivi?"
+    },
+    "moonlander": {
+      "name": "Allunaggio",
+      "desc": "Atterra con dolcezza",
+      "howto": "Tieni premuto ▲ per accendere il motore contro la gravità e ◀ ▶ per spostarti di lato. Atterra piano sulla piazzola verde — la nave brilla di blu quando sei abbastanza lento. Il carburante è limitato! Ogni atterraggio porta una piazzola più piccola e una gravità più forte."
+    },
+    "creepycrawler": {
+      "name": "Strisciante Sinistro",
+      "desc": "Spezza l'orrore strisciante",
+      "howto": "Fai scorrere il dito per muovere il cacciatore — spara da solo. Colpisci la creatura che serpeggia tra le lapidi: colpiscila al centro e si divide in due! Ogni pezzo distrutto diventa una nuova lapide. Non lasciare che ti raggiunga."
+    },
+    "divesquadron": {
+      "name": "Squadrone in Picchiata",
+      "desc": "Sopravvivi ai bombardieri",
+      "howto": "Fai scorrere il dito per guidare la nave — spara da sola. I nemici escono dalla formazione e ti piombano addosso. Un nemico in picchiata vale doppio — il colpo coraggioso paga! Elimina l'intero squadrone per affrontare un'ondata più veloce."
+    },
+    "eggcatch": {
+      "name": "Acchiappa-Uova",
+      "desc": "Prendi ogni uovo che cade",
+      "howto": "Le uova rotolano giù per quattro rampe e cadono dal bordo. Fai scorrere il dito ovunque — il cestino lo segue. Prendi ogni uovo prima che tocchi terra; rompine tre e la partita finisce. Arrivano sempre più veloci!"
+    }
+  },
+  "username": {
+    "title": "Scegli il tuo nome giocatore",
+    "subtitle": "Nessuna registrazione — il tuo account App Store o Google Play è la tua identità. Scegli solo un nome per le classifiche!",
+    "placeholder": "GIOCATORE_UNO",
+    "suggest": "🎲 Sorprendimi",
+    "confirm": "Si gioca!",
+    "taken": "Nome già in uso — provane un altro",
+    "invalid": "3–16 lettere, numeri o _"
+  }
+}
