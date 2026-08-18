@@ -244,8 +244,8 @@
     },
     "eggcatch": {
       "name": "Egg Catch",
-      "desc": "Catch every rolling egg",
-      "howto": "Eggs roll down four ramps. Tap a corner of the screen to hold your basket under that ramp. Catch every egg before it falls — drop three and the game is over. They roll faster as your score grows!"
+      "desc": "Catch every falling egg",
+      "howto": "Eggs roll down four ramps and tumble off the edge. Slide your finger anywhere — the basket follows it. Catch every egg before it hits the floor; crack three and the game is over. They come faster as your score grows!"
     }
   },
   "username": {

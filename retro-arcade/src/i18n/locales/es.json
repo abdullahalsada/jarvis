@@ -239,8 +239,8 @@
     },
     "eggcatch": {
       "name": "Atrapa Huevos",
-      "desc": "Atrapa cada huevo rodante",
-      "howto": "Los huevos ruedan por cuatro rampas. Toca una esquina de la pantalla para poner tu cesta bajo esa rampa. Atrapa cada huevo antes de que caiga — con tres caídas se acaba. ¡Ruedan más rápido cuanto más puntúas!"
+      "desc": "Atrapa cada huevo que cae",
+      "howto": "Los huevos ruedan por cuatro rampas y caen por el borde. Desliza el dedo por cualquier parte: la cesta lo sigue. Atrapa cada huevo antes de que toque el suelo; con tres rotos se acaba. ¡Llegan más rápido cuanto más puntúas!"
     },
     "creepycrawler": {
       "name": "Reptador Siniestro",

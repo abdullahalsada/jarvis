@@ -1,39 +1,43 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Image, Pressable, View } from 'react-native';
+import { Image, View } from 'react-native';
 import { colors } from '../../theme';
 import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
-import { DiagPad, PAD_DIAG } from '../engine/ControlPad';
+import { useSlideX } from '../engine/controls';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
 /**
- * Handheld-LCD catcher in the Game & Watch tradition: eggs roll down four
- * ramps (two per side) and you hold the basket under one of four positions.
- * A visible arcade pad (↖ ↗ / ↙ ↘) mirrors the original's four buttons —
- * one per ramp; tapping a screen quadrant still works as a fast alternate.
- * Three dropped eggs end the game. The roll speeds up and eggs bunch closer
- * as your score climbs.
+ * Free-movement catcher: eggs roll down four ramps (two per side), tumble
+ * off the end, and fall — you slide the basket anywhere along the bottom
+ * with your finger to catch them. No buttons, no fixed positions: the
+ * basket follows your thumb, arcade-smooth. Three cracked eggs end the
+ * game; rolls speed up and bunch closer as your score climbs.
  */
 const RAMPS = 4; // 0 top-left, 1 bottom-left, 2 top-right, 3 bottom-right
 
-/** Pad key → ramp: left column = ramps 0/1, right column = ramps 2/3. */
-const PAD_TO_RAMP: Record<string, number> = { ul: 0, dl: 1, ur: 2, dr: 3 };
-
 interface Egg {
   ramp: number;
-  t: number; // 0 at spawn → 1 at basket
+  phase: 'roll' | 'fall';
+  t: number; // roll progress 0→1
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  spin: number;
 }
+
+const BASKET_W = 64;
 
 export function EggCatchGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height - PAD_DIAG;
-  const FIELD_H = H - 20;
+  const H = api.height;
+  const BASKET_Y = H - 86; // top of the basket mouth
 
   const eggs = useRef<Egg[]>([]);
-  const basket = useRef(0);
+  const basketX = useRef(W / 2);
   const misses = useRef(0);
   const score = useRef(0);
   const spawnTimer = useRef(1);
@@ -41,7 +45,7 @@ export function EggCatchGame({ api }: { api: GameApi }) {
 
   useEffect(() => {
     eggs.current = [];
-    basket.current = 0;
+    basketX.current = W / 2;
     misses.current = 0;
     score.current = 0;
     spawnTimer.current = 1.2;
@@ -51,14 +55,83 @@ export function EggCatchGame({ api }: { api: GameApi }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api.resetToken]);
 
+  // The whole field is the controller: the basket follows the finger.
+  const pan = useSlideX((x) => {
+    basketX.current = Math.max(BASKET_W / 2, Math.min(W - BASKET_W / 2, x));
+  });
+
   // Ramp geometry: left ramps roll rightward, right ramps leftward.
-  const rampY = (ramp: number) => (ramp % 2 === 0 ? FIELD_H * 0.22 : FIELD_H * 0.48);
+  const rampY = (ramp: number) => (ramp % 2 === 0 ? H * 0.16 : H * 0.38);
   const rampLeft = (ramp: number) => ramp < 2;
   const RAMP_LEN = W * 0.34;
-  const catchX = (ramp: number) => (rampLeft(ramp) ? RAMP_LEN + 24 : W - RAMP_LEN - 24);
-  const catchY = (ramp: number) => rampY(ramp) + RAMP_LEN * 0.35 + 24;
+
+  const rampEnd = (ramp: number) => ({
+    x: rampLeft(ramp) ? RAMP_LEN + 16 : W - RAMP_LEN - 16,
+    y: rampY(ramp) + RAMP_LEN * 0.35,
+  });
+
+  useGameLoop(api.running, (dt) => {
+    // Roll speed and spawn rate ramp with score, LCD-style difficulty.
+    const speed = 0.28 + Math.min(0.5, score.current * 0.004);
+
+    spawnTimer.current -= dt;
+    if (spawnTimer.current <= 0) {
+      const ramp = Math.floor(Math.random() * RAMPS);
+      eggs.current.push({ ramp, phase: 'roll', t: 0, x: 0, y: 0, vx: 0, vy: 0, spin: 0 });
+      playSfx('select');
+      spawnTimer.current = Math.max(0.55, 1.5 - score.current * 0.012);
+    }
+
+    for (const egg of eggs.current) {
+      egg.spin += dt * (egg.phase === 'roll' ? 360 : 540);
+      if (egg.phase === 'roll') {
+        egg.t += speed * dt * 2;
+        if (egg.t >= 1) {
+          // Tumble off the ramp lip into free fall, keeping roll direction.
+          const end = rampEnd(egg.ramp);
+          egg.phase = 'fall';
+          egg.x = end.x;
+          egg.y = end.y;
+          egg.vx = (rampLeft(egg.ramp) ? 1 : -1) * W * (0.12 + speed * 0.12);
+          egg.vy = H * 0.1;
+        }
+      } else {
+        egg.vy += H * 1.1 * dt; // gravity
+        egg.x += egg.vx * dt;
+        egg.y += egg.vy * dt;
+      }
+    }
+
+    for (let i = eggs.current.length - 1; i >= 0; i--) {
+      const egg = eggs.current[i];
+      if (egg.phase !== 'fall') continue;
+      // Caught: egg crosses the basket mouth while over it.
+      if (egg.y >= BASKET_Y - 6 && egg.y <= BASKET_Y + 26 && Math.abs(egg.x - basketX.current) < BASKET_W / 2) {
+        eggs.current.splice(i, 1);
+        score.current += 1;
+        api.setScore(score.current);
+        playSfx('eat');
+        haptic.light();
+        continue;
+      }
+      // Cracked on the floor.
+      if (egg.y > H - 18) {
+        eggs.current.splice(i, 1);
+        misses.current += 1;
+        api.setLives(3 - misses.current);
+        playSfx('loseLife');
+        haptic.heavy();
+        if (misses.current >= 3) {
+          api.end({ score: score.current });
+          return;
+        }
+      }
+    }
+    redraw((n) => n + 1);
+  });
 
   const eggPos = (egg: Egg) => {
+    if (egg.phase === 'fall') return { x: egg.x, y: egg.y };
     const y0 = rampY(egg.ramp);
     const x0 = rampLeft(egg.ramp) ? 8 : W - 8;
     const x1 = rampLeft(egg.ramp) ? RAMP_LEN + 16 : W - RAMP_LEN - 16;
@@ -68,55 +141,8 @@ export function EggCatchGame({ api }: { api: GameApi }) {
     };
   };
 
-  useGameLoop(api.running, (dt) => {
-    // Roll speed and spawn rate ramp with score, LCD-style difficulty.
-    const speed = 0.28 + Math.min(0.5, score.current * 0.004);
-
-    spawnTimer.current -= dt;
-    if (spawnTimer.current <= 0) {
-      // Never two eggs arriving at once early on; later it happens.
-      const ramp = Math.floor(Math.random() * RAMPS);
-      eggs.current.push({ ramp, t: 0 });
-      playSfx('select');
-      spawnTimer.current = Math.max(0.55, 1.5 - score.current * 0.012);
-    }
-
-    for (const egg of eggs.current) egg.t += speed * dt * 2;
-
-    for (let i = eggs.current.length - 1; i >= 0; i--) {
-      const egg = eggs.current[i];
-      if (egg.t >= 1) {
-        eggs.current.splice(i, 1);
-        if (basket.current === egg.ramp) {
-          score.current += 1;
-          api.setScore(score.current);
-          playSfx('eat');
-          haptic.light();
-        } else {
-          misses.current += 1;
-          api.setLives(3 - misses.current);
-          playSfx('loseLife');
-          haptic.heavy();
-          if (misses.current >= 3) {
-            api.end({ score: score.current });
-            return;
-          }
-        }
-      }
-    }
-    redraw((n) => n + 1);
-  });
-
-  const moveTo = (ramp: number) => {
-    if (!api.running) return;
-    basket.current = ramp;
-    playSfx('flip');
-    redraw((n) => n + 1);
-  };
-
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ flex: 1 }}>
+    <View style={{ flex: 1 }} {...pan.panHandlers}>
       <View pointerEvents="none" style={{ flex: 1 }}>
         {/* Ramps with the hens that lay the eggs perched at the top */}
         {[0, 1, 2, 3].map((r) => (
@@ -158,47 +184,37 @@ export function EggCatchGame({ api }: { api: GameApi }) {
                 top: p.y - 11,
                 width: 22,
                 height: 22,
-                transform: [{ rotate: `${(egg.t * 360) % 360}deg` }],
+                transform: [{ rotate: `${egg.spin % 360}deg` }],
               }}
             />
           );
         })}
-        {/* Basket */}
+        {/* Basket — glides with the finger */}
         <Image
           source={ACTORS.basket}
           style={{
             position: 'absolute',
-            left: catchX(basket.current) - 30,
-            top: catchY(basket.current) - 14,
-            width: 60,
-            height: 60,
+            left: basketX.current - BASKET_W / 2,
+            top: BASKET_Y - 12,
+            width: BASKET_W,
+            height: BASKET_W,
           }}
         />
-        {/* Miss markers */}
-        <PixelText size="label" color={colors.neonRed} style={{ position: 'absolute', bottom: 8, alignSelf: 'center' }}>
+        {/* Floor line + miss markers */}
+        <View
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: 12,
+            height: 3,
+            backgroundColor: colors.border,
+          }}
+        />
+        <PixelText size="label" color={colors.neonRed} style={{ position: 'absolute', bottom: 20, left: 12 }}>
           {'✖'.repeat(misses.current)}
         </PixelText>
       </View>
-
-      {/* Quadrant tap zones over the field (invisible fast alternate to the
-          pad). Rendered after the field so they sit above it but below the
-          shell's Start/pause overlays; inert until the round is running. */}
-      <View
-        pointerEvents={api.running ? 'auto' : 'none'}
-        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, flexDirection: 'row', flexWrap: 'wrap' }}>
-        {[0, 2, 1, 3].map((ramp) => (
-          <Pressable
-            key={ramp}
-            accessibilityRole="button"
-            onPressIn={() => moveTo(ramp)}
-            style={{ width: '50%', height: '50%' }}
-          />
-        ))}
-      </View>
-      </View>
-
-      {/* Arcade pad: one button per ramp, like the original's four buttons */}
-      <DiagPad onDown={(k) => moveTo(PAD_TO_RAMP[k])} />
     </View>
   );
 }
