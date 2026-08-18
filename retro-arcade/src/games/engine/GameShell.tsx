@@ -295,16 +295,23 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
         {phase === 'howto' && (
           <Overlay>
             {art && (
-              <Image source={art} style={{ width: 112, height: 112, marginBottom: spacing.l }} />
+              <Image source={art} style={{ width: 84, height: 84, marginBottom: spacing.m }} />
             )}
             <PixelText size="heading" color={color} glow style={{ textAlign: 'center' }}>
               {t(`games.${gameId}.name`)}
             </PixelText>
+            {/* How to play — the full instructions, shown before every run */}
             <PixelText
-              size="body"
+              size="label"
+              color={colors.neonCyan}
+              style={{ textAlign: 'center', marginTop: spacing.l }}>
+              {t('game.howToPlay')}
+            </PixelText>
+            <PixelText
+              size={11}
               color={colors.textDim}
-              style={{ textAlign: 'center', lineHeight: 26, marginTop: spacing.m, marginBottom: spacing.xl }}>
-              {t(`games.${gameId}.desc`)}
+              style={{ textAlign: 'center', lineHeight: 20, marginTop: spacing.s, marginBottom: spacing.xl }}>
+              {t(`games.${gameId}.howto`)}
             </PixelText>
             <NeonButton label={t('game.start')} color={color} onPress={start} />
           </Overlay>
