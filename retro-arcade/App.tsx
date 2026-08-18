@@ -21,7 +21,11 @@ import { AssetWarmup } from './src/components/AssetWarmup';
  */
 function Gate() {
   const { ready, username } = useAuth();
-  const [langChosen, setLangChosen] = useState<boolean | null>(null);
+  const [langReady, setLangReady] = useState(false);
+  // The branded welcome gate: every launch opens on RETRO ARCADE + the
+  // language drop-down (pre-set to the saved/device language), per the
+  // owner's direction — internationals see their language door first.
+  const [welcomed, setWelcomed] = useState(false);
   // Pixel font (OFL): the UI waits for it so type never visibly swaps.
   const [fontsLoaded, fontError] = useFonts({
     PressStart2P: require('./assets/fonts/PressStart2P-Regular.ttf'),
@@ -31,7 +35,7 @@ function Gate() {
     (async () => {
       const stored = await getStoredLanguage();
       await initI18n(stored ?? deviceLanguage());
-      setLangChosen(stored !== null);
+      setLangReady(true);
       flushScoreQueue();
       // Pre-render the whole synth bank (jingles included) during the splash
       // so the first sound of a session never stalls a frame.
@@ -39,8 +43,8 @@ function Gate() {
     })();
   }, []);
 
-  if (langChosen === null || !ready || (!fontsLoaded && !fontError)) return <SplashScreen />;
-  if (!langChosen) return <LanguageScreen onDone={() => setLangChosen(true)} />;
+  if (!langReady || !ready || (!fontsLoaded && !fontError)) return <SplashScreen />;
+  if (!welcomed) return <LanguageScreen onDone={() => setWelcomed(true)} />;
   if (!username) return <UsernameScreen onDone={() => {}} />;
   return (
     <EntitlementProvider>
