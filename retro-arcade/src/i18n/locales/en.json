@@ -64,7 +64,9 @@
     "restartNeededBody": "The app needs to restart to switch the layout direction. Please close and reopen the app.",
     "store": "Store",
     "owned": "All games unlocked",
-    "resetPurchase": "Reset purchase (test mode)"
+    "resetPurchase": "Reset purchase (test mode)",
+    "feedback": "Send feedback",
+    "feedbackFallback": "Write to us at {{email}}"
   },
   "records": {
     "title": "My Records",
@@ -244,8 +246,8 @@
     },
     "eggcatch": {
       "name": "Egg Catch",
-      "desc": "Catch every rolling egg",
-      "howto": "Eggs roll down four ramps. Tap a corner of the screen to hold your basket under that ramp. Catch every egg before it falls — drop three and the game is over. They roll faster as your score grows!"
+      "desc": "Catch every falling egg",
+      "howto": "Eggs roll down four ramps and tumble off the edge. Slide your finger anywhere — the basket follows it. Catch every egg before it hits the floor; crack three and the game is over. They come faster as your score grows!"
     }
   },
   "username": {

@@ -5,19 +5,20 @@ import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
+import { PadBar, PAD_BAR } from '../engine/ControlPad';
 import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
 /**
  * Moon-Patrol-style side-scroller: your buggy rolls across the lunar
  * surface at a steadily climbing speed. JUMP the craters, SHOOT the rocks —
- * two big thumb zones, exactly the two verbs of the original. Score is
+ * two big arcade buttons, exactly the two verbs of the original. Score is
  * distance plus rocks blasted; checkpoints flash every 500m. Three lives,
  * with a brief shield after each crash.
  */
 export function MoonBuggyGame({ api }: { api: GameApi }) {
   const W = api.width;
-  const H = api.height;
+  const H = api.height - PAD_BAR;
   const GROUND = H * 0.72;
   const BUGGY_X = W * 0.24;
   const BUGGY_W = 46;
@@ -249,23 +250,25 @@ export function MoonBuggyGame({ api }: { api: GameApi }) {
             {`${lastCheckpoint.current}m`}
           </PixelText>
         )}
-        <PixelText size={10} color={colors.textDim} style={{ position: 'absolute', bottom: 10, left: 16 }}>
-          ◎ FIRE
-        </PixelText>
-        <PixelText size={10} color={colors.textDim} style={{ position: 'absolute', bottom: 10, right: 16 }}>
-          ↥ JUMP
-        </PixelText>
       </View>
 
-      {/* Thumb zones: left = shoot, right = jump. Rendered last so they sit
-          above the field but below the shell's Start/pause overlays; inert
-          until the round is actually running. */}
+      {/* Field doubles as a control surface: left half fires, right half
+          jumps — a fast alternate to the buttons below. Inert until running. */}
       <View
         pointerEvents={api.running ? 'auto' : 'none'}
-        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, flexDirection: 'row' }}>
+        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: PAD_BAR, flexDirection: 'row' }}>
         <Pressable accessibilityRole="button" accessibilityLabel="shoot" onPressIn={shoot} style={{ flex: 1 }} />
         <Pressable accessibilityRole="button" accessibilityLabel="jump" onPressIn={jump} style={{ flex: 1 }} />
       </View>
+
+      {/* Arcade buttons: the original's two verbs */}
+      <PadBar
+        buttons={[
+          { key: 'fire', label: '◎', wide: true },
+          { key: 'jump', label: '↥', wide: true },
+        ]}
+        onDown={(k) => (k === 'fire' ? shoot() : jump())}
+      />
     </View>
   );
 }

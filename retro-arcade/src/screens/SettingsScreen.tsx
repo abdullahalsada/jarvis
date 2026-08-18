@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, ScrollView, Switch, View } from 'react-native';
+import { Alert, Linking, ScrollView, Switch, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -14,6 +14,9 @@ import type { RootStackParamList } from '../navigation/types';
 
 // Shown in the footer so anyone can tell at a glance which build is running.
 const appVersion: string = require('../../app.json').expo.version;
+
+// Same address as the privacy policy; version in the subject helps triage.
+const FEEDBACK_EMAIL = 'support@goldenagegames.example';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Settings'>;
 
@@ -126,6 +129,20 @@ export function SettingsScreen({ navigation }: Props) {
           style={{ marginBottom: spacing.m }}
         />
       )}
+
+      {/* Feedback: opens the player's own mail app — no forms, no tracking. */}
+      <NeonButton
+        label={`💬 ${t('settings.feedback')}`}
+        color={colors.neonCyan}
+        variant="outline"
+        onPress={() => {
+          const subject = encodeURIComponent(`Retro Arcade v${appVersion}`);
+          Linking.openURL(`mailto:${FEEDBACK_EMAIL}?subject=${subject}`).catch(() =>
+            Alert.alert(t('settings.feedbackFallback', { email: FEEDBACK_EMAIL }))
+          );
+        }}
+        style={{ marginBottom: spacing.m }}
+      />
 
       {/* Privacy statement — plain and honest, per the brand promise. */}
       <View

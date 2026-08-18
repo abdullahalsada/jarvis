@@ -64,7 +64,9 @@
     "restartNeededBody": "L'application doit redémarrer pour changer le sens de l'affichage. Ferme-la puis rouvre-la.",
     "store": "Boutique",
     "owned": "Tous les jeux débloqués",
-    "resetPurchase": "Réinitialiser l'achat (mode test)"
+    "resetPurchase": "Réinitialiser l'achat (mode test)",
+    "feedback": "Envoyer un avis",
+    "feedbackFallback": "Écris-nous à {{email}}"
   },
   "records": {
     "title": "Mes Records",
@@ -239,8 +241,8 @@
     },
     "eggcatch": {
       "name": "Attrape-Œufs",
-      "desc": "Attrape chaque œuf qui roule",
-      "howto": "Les œufs dévalent quatre rampes. Touche un coin de l'écran pour placer ton panier sous cette rampe. Attrape chaque œuf avant qu'il ne tombe — trois œufs cassés et la partie s'arrête. Ils roulent plus vite à mesure que ton score grimpe !"
+      "desc": "Attrape chaque œuf qui tombe",
+      "howto": "Les œufs dévalent quatre rampes et basculent dans le vide. Glisse ton doigt n'importe où : le panier le suit. Attrape chaque œuf avant qu'il ne touche le sol ; trois œufs cassés et la partie s'arrête. Ils tombent plus vite à mesure que ton score grimpe !"
     },
     "creepycrawler": {
       "name": "Rampant Sinistre",
