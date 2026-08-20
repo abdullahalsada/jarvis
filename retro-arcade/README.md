@@ -1,6 +1,6 @@
 # Retro Arcade 🕹️
 
-**Golden Age Games** — a mobile collection of classic 70s–90s arcade and handheld games, rebuilt with original names and art. One-time $4.99 purchase, no subscriptions, **no ads, ever**.
+**Orbit Oryx** — a mobile collection of classic 70s–90s arcade and handheld games, rebuilt with original names and art. One-time $4.99 purchase, no subscriptions, **no ads, ever**.
 
 Built with React Native + Expo (single codebase, iOS + Android), Supabase (auth + scores), RevenueCat (the one $4.99 non-consumable IAP).
 

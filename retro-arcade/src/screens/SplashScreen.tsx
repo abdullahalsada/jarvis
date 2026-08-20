@@ -5,11 +5,13 @@ import { PixelText } from '../components/PixelText';
 
 /**
  * In-app loading screen (shown while fonts/language/session initialize):
- * the Retro Arcade mascot — a neon robot holding an arcade joystick panel —
- * gently bobbing and rocking above "Loading..." and a chunky segmented
- * progress bar, per the owner's reference. The bar is indeterminate (fills
- * in a loop) since startup is fast and unmeasured. Text is plain "LOADING"
- * because i18n isn't initialized yet on the first frames.
+ * the Retro Arcade mascot — the Gamer, the joystick from the app logo come
+ * to life wearing a neon gaming headset, controller in one glove, waving
+ * hello with the other — gently bobbing and rocking
+ * above "Loading..." and a chunky segmented progress bar. The bar is
+ * indeterminate (fills in a loop) since startup is fast and unmeasured.
+ * Text is plain "LOADING" because i18n isn't initialized yet on the first
+ * frames.
  */
 const SEGMENTS = 10;
 
@@ -56,8 +58,8 @@ export function SplashScreen() {
       }}>
       <Animated.View style={{ transform: [{ translateY: bob }, { rotate: tilt }] }}>
         <Image
-          source={require('../../assets/mascot.webp')}
-          style={{ width: 168, height: 240 }}
+          source={require('../../assets/joystick-mascot.webp')}
+          style={{ width: 170, height: 240 }}
           resizeMode="contain"
           accessibilityIgnoresInvertColors
         />
@@ -92,7 +94,7 @@ export function SplashScreen() {
       </View>
 
       <PixelText size="label" color={colors.textDim} style={{ marginTop: spacing.xl }}>
-        Golden Age Games
+        Orbit Oryx
       </PixelText>
     </View>
   );

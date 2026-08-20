@@ -1,6 +1,6 @@
 # Retro Arcade — Privacy Policy
 
-**Golden Age Games** · Last updated: August 13, 2026
+**Orbit Oryx** · Last updated: August 13, 2026
 
 Retro Arcade is a paid game collection with no ads and no tracking. This policy says everything we do with your data — it's short because we collect almost nothing.
 
@@ -29,7 +29,7 @@ The one-time unlock is processed entirely by Apple's App Store or Google Play. W
 ## Your rights
 
 - **Delete your account** any time in **Settings → Delete my account**. This permanently removes your player name and all scores from our servers, immediately.
-- **Access or questions**: email us at **support@goldenagegames.example** and we'll respond within 30 days.
+- **Access or questions**: email us at **support@orbitoryx.example** and we'll respond within 30 days.
 
 We do not knowingly collect data from children beyond the same player name/scores above; no additional data is collected from any user regardless of age.
 

@@ -1,6 +1,6 @@
 # Milestone 6 — TestFlight / Play Internal Testing builds
 
-Everything code-side is ready (`eas.json` profiles below). The steps marked 👤 need the Golden Age Games accounts and cannot be automated from a session.
+Everything code-side is ready (`eas.json` profiles below). The steps marked 👤 need the Orbit Oryx accounts and cannot be automated from a session.
 
 ## One-time setup
 

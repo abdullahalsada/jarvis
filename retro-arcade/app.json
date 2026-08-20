@@ -2,7 +2,7 @@
   "expo": {
     "name": "Retro Arcade",
     "slug": "retro-arcade",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -30,13 +30,13 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.goldenagegames.retroarcade",
+      "bundleIdentifier": "com.orbitoryx.retroarcade",
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true
       }
     },
     "android": {
-      "package": "com.goldenagegames.retroarcade",
+      "package": "com.orbitoryx.retroarcade",
       "adaptiveIcon": {
         "backgroundColor": "#0a0a12",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -55,7 +55,7 @@
       "fr": "./src/i18n/native/fr.json"
     },
     "extra": {
-      "publisher": "Golden Age Games"
+      "publisher": "Orbit Oryx"
     }
   }
 }
