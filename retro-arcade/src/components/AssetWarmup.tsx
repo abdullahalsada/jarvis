@@ -14,7 +14,7 @@ import { GAMES } from '../games/registry';
 const SOURCES = [
   ...Object.values(ACTORS),
   ...GAMES.map((g) => g.art),
-  require('../../assets/mascot.webp'),
+  require('../../assets/joystick-mascot.webp'),
   require('../../assets/splash-icon.png'),
 ];
 
