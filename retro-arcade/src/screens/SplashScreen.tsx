@@ -5,8 +5,9 @@ import { PixelText } from '../components/PixelText';
 
 /**
  * In-app loading screen (shown while fonts/language/session initialize):
- * the Retro Arcade mascot — the joystick from the app logo come to life,
- * red ball head, glowing cyan body, waving — gently bobbing and rocking
+ * the Retro Arcade mascot — the Gamer, the joystick from the app logo come
+ * to life wearing a neon gaming headset, controller in one glove, waving
+ * hello with the other — gently bobbing and rocking
  * above "Loading..." and a chunky segmented progress bar. The bar is
  * indeterminate (fills in a loop) since startup is fast and unmeasured.
  * Text is plain "LOADING" because i18n isn't initialized yet on the first
