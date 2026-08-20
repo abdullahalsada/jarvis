@@ -29,7 +29,7 @@ The one-time unlock is processed entirely by Apple's App Store or Google Play. W
 ## Your rights
 
 - **Delete your account** any time in **Settings → Delete my account**. This permanently removes your player name and all scores from our servers, immediately.
-- **Access or questions**: email us at **support@orbitoryx.example** and we'll respond within 30 days.
+- **Access or questions**: email us at **support@orbitoryx.com** and we'll respond within 30 days.
 
 We do not knowingly collect data from children beyond the same player name/scores above; no additional data is collected from any user regardless of age.
 
