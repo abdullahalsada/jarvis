@@ -92,7 +92,7 @@ export function SplashScreen() {
       </View>
 
       <PixelText size="label" color={colors.textDim} style={{ marginTop: spacing.xl }}>
-        Golden Age Games
+        Orbit Oryx
       </PixelText>
     </View>
   );

@@ -14,7 +14,7 @@ Costs are comparable at this scale (free tier covers launch; scores are tiny row
 
 ## Project setup
 
-1. Create a project at [supabase.com](https://supabase.com) (Golden Age Games org).
+1. Create a project at [supabase.com](https://supabase.com) (Orbit Oryx org).
 2. Run `supabase/schema.sql` in the SQL editor.
 3. **Auth → Providers**: enable **"Allow anonymous sign-ins"**. Email provider can stay disabled — the app never registers emails.
 4. ~~Email templates~~ — not needed anymore. (Historical note: the original brief specified email registration with a confirmation email; the owner replaced that with the no-registration design below.)
@@ -33,7 +33,7 @@ Costs are comparable at this scale (free tier covers launch; scores are tiny row
    > ```html
    > <h2>You have successfully registered — you can enjoy a nostalgic experience with Retro Arcade</h2>
    > <p><a href="{{ .ConfirmationURL }}">Tap here to confirm your email and start playing</a></p>
-   > <p>— Golden Age Games</p>
+   > <p>— Orbit Oryx</p>
    > ```
 
 </details>
@@ -48,8 +48,8 @@ The anon key ships in the client by design; every data path is guarded by RLS.
 | Item | Value |
 |---|---|
 | Project | **Retro Arcade** (`projbceac287`) |
-| iOS app | `app0f1a18c13d`, bundle `com.goldenagegames.retroarcade` |
-| Android app | `appd76eb1bfde`, package `com.goldenagegames.retroarcade` |
+| iOS app | `app0f1a18c13d`, bundle `com.orbitoryx.retroarcade` |
+| Android app | `appd76eb1bfde`, package `com.orbitoryx.retroarcade` |
 | Products | `retro_arcade_full` non-consumable, registered on both apps (`prod0ea8496783` iOS, `prod842ed1f3c3` Android) |
 | Offering | `default` ("Full Arcade", current) with package `$rc_lifetime` containing both products |
 | iOS public SDK key | `appl_OdsWeaTwVSLSGaMKwdIjOFknCZO` → `EXPO_PUBLIC_REVENUECAT_IOS_KEY` |

@@ -16,7 +16,7 @@ import type { RootStackParamList } from '../navigation/types';
 const appVersion: string = require('../../app.json').expo.version;
 
 // Same address as the privacy policy; version in the subject helps triage.
-const FEEDBACK_EMAIL = 'support@goldenagegames.example';
+const FEEDBACK_EMAIL = 'support@orbitoryx.example';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Settings'>;
 

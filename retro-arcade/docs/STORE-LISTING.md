@@ -1,4 +1,4 @@
-# Store Listing Copy — Retro Arcade (Golden Age Games)
+# Store Listing Copy — Retro Arcade (Orbit Oryx)
 
 Paste-ready copy for App Store Connect and Play Console. Keep the no-ads promise front and center — it's the brand. Localized listings for es/fr can be derived from the in-app strings.
 
