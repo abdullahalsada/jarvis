@@ -48,7 +48,7 @@ export const GAME_JINGLES: Record<string, Tone[]> = {
   // Four-note descending invader march.
   spacedefenders: [note(52, 0.13), note(50, 0.13), note(48, 0.13), note(45, 0.2)],
   // Proximity alarm, then engines up.
-  meteordodge: [note(69, 0.09), note(63, 0.09), note(69, 0.09), slide(220, 880, 0.2)],
+  fruitslice: [note(72, 0.07), note(76, 0.07), note(79, 0.07), note(84, 0.14), note(88, 0.14)],
   // Sparse open fifths adrift in space.
   towerclimb: [note(53, 0.1), note(57, 0.1), note(60, 0.1), note(65, 0.2)],
   // Cheeky up-up trill — wings ready.
@@ -62,19 +62,19 @@ export const GAME_JINGLES: Record<string, Tone[]> = {
   // A staircase of hops up the pyramid.
   chopperrescue: [slide(180, 360, 0.18, 'triangle'), slide(360, 180, 0.18, 'triangle'), note(69, 0.16)],
   // Low bouncy groove over the dunes.
-  moonbuggy: [note(45, 0.1), note(52, 0.1), note(45, 0.1), note(57, 0.18)],
+  skyjump: [note(60, 0.08, 'triangle'), note(67, 0.08, 'triangle'), note(72, 0.08, 'triangle'), note(79, 0.16, 'triangle')],
 
   // ─── Spooky ───
   // Chromatic wobble from the crypt.
-  hauntedmaze: [note(58, 0.12, 'triangle'), note(59, 0.12, 'triangle'), note(58, 0.12, 'triangle'), note(53, 0.24, 'triangle')],
+  ghostrun: [note(57, 0.1, 'triangle'), note(60, 0.1, 'triangle'), note(64, 0.1, 'triangle'), note(69, 0.2, 'triangle')],
   // A hesitant minor-second question mark.
-  ghostsweeper: [note(64, 0.14, 'triangle'), note(65, 0.14, 'triangle'), note(64, 0.2, 'triangle')],
+  ghosthunt: [note(55, 0.12, 'triangle'), note(62, 0.12, 'triangle'), note(55, 0.08, 'triangle'), note(67, 0.2, 'triangle')],
   // A groan rising from below.
   vampirehunt: [note(50, 0.14, 'triangle'), note(53, 0.14, 'triangle'), note(56, 0.14, 'triangle'), note(62, 0.24, 'triangle')],
   // Fast skittering legs.
-  creepycrawler: [note(79, 0.05), note(77, 0.05), note(79, 0.05), note(77, 0.05), note(72, 0.14)],
+  monstermatch: [note(64, 0.08), note(68, 0.08), note(71, 0.08), note(76, 0.16)],
   // Carnival shooting-gallery flourish.
-  mummytomb: [note(52, 0.12, 'triangle'), note(55, 0.12, 'triangle'), note(52, 0.12, 'triangle'), note(47, 0.22, 'triangle')],
+  pumpkintoss: [slide(160, 640, 0.24), note(76, 0.1), note(72, 0.1), note(79, 0.18)],
 
   // ─── Brain ───
   // Flip… flip… match!
@@ -86,7 +86,7 @@ export const GAME_JINGLES: Record<string, Tone[]> = {
   // Tiles glissing into place.
   pixellogic: [note(72, 0.08, 'triangle'), note(76, 0.08, 'triangle'), note(79, 0.08, 'triangle'), note(83, 0.16, 'triangle')],
   // Switches clicking on, one by one.
-  navalduel: [note(45, 0.12, 'square', 0.5), note(52, 0.12, 'square', 0.5), note(57, 0.2, 'square', 0.5)],
+  blockdrop: [note(52, 0.1, 'square', 0.5), note(59, 0.1, 'square', 0.5), note(64, 0.1, 'square', 0.5), note(71, 0.2, 'square', 0.5)],
   // Sparkling falling thirds.
   fourstack: [note(64, 0.09), note(67, 0.09), note(71, 0.09), note(76, 0.18)],
 };

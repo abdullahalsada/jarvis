@@ -119,16 +119,6 @@
       "desc": "İstilayı durdur",
       "howto": "Gemini hareket ettirmek için parmağını kaydır — otomatik ateş eder. Yüksek puanlar avcına daha güçlü toplar kazandırır. Üç dalgayı da temizle, sonra ana gemiyi yen ve kazan!"
     },
-    "meteordodge": {
-      "name": "Meteor Kaçışı",
-      "desc": "Fırtınadan sağ çık",
-      "howto": "Gemini sağa sola sürmek için parmağını kaydır. Düşen meteorlardan olabildiğince uzun süre kaç. Gitgide daha hızlı düşerler — ne kadar dayanabilirsin?"
-    },
-    "hauntedmaze": {
-      "name": "Perili Labirent",
-      "desc": "Hayaletlerden kaç",
-      "howto": "Labirentte ilerlemek için kaydır. Hayaletler seni kovalarken tüm parlayan küreleri topla. Güç yıldızını kap ve işleri tersine çevir: sen onları kovala!"
-    },
     "memorymatch": {
       "name": "Hafıza Eşleştirme",
       "desc": "Tüm çiftleri bul",
@@ -154,20 +144,10 @@
       "desc": "Kulelerin arasından süzül",
       "howto": "Kanat çırpmak ve havada kalmak için herhangi bir yere dokun. Kuleler arasındaki boşluktan süzül — geçtiğin her kule bir puan. Bir çarpma, her şey biter. Ne kadar uzağa uçabilirsin?"
     },
-    "ghostsweeper": {
-      "name": "Hayalet Avcısı",
-      "desc": "Gizli hayaletleri bul",
-      "howto": "Bir kareyi açmak için dokun. Sayılar, komşu karelerde kaç hayalet saklandığını söyler — yerlerini mantıkla çöz. Şüpheli kareye tılsım koymak için basılı tut. Tüm güvenli kareleri açarak kazan. Süre yok, sadece düşünmek var."
-    },
     "alleybowl": {
       "name": "Bovling Salonu",
       "desc": "Kusursuz 300'ü hedefle",
       "howto": "Topu hizalamak için yana sürükle, atmak için YUKARI savur — savuruşunun açısı topa falso verir. On lobutun hepsini devir! Strike ve spare gerçek bovlingdeki gibi bonus verir. On el; kusursuz oyun 300."
-    },
-    "moonbuggy": {
-      "name": "Ay Aracı",
-      "desc": "Kraterlerden atla, kayaları vur",
-      "howto": "Aracın kendi kendine gider, gittikçe hızlanır. Kraterlerden atlamak için ekranın SAĞINA, yoldaki kayaları vurmak için SOLUNA dokun. Her 500 metrede kontrol noktası. Üç can — iyi şanslar sürücü!"
     },
     "tilefusion": {
       "name": "Karo Birleştirme",
@@ -178,11 +158,6 @@
       "name": "Retro Yarışçı",
       "desc": "Trafikte slalom yap",
       "howto": "Üç şerit arasında geçmek için sağa veya sola kaydır. Karşıdan gelen araçların yanından sıyrıl — ilerledikçe yol hızlanır ve kalabalıklaşır. Tek kaza yarışı bitirir. Ne kadar uzağa gidebilirsin?"
-    },
-    "creepycrawler": {
-      "name": "Ürkünç Sürüngen",
-      "desc": "Sürünen dehşeti böl",
-      "howto": "Hareket için kaydır veya ◀ ▶ basılı tut, ateş için ◎ dokun. Sürüngenin ortasını vur ve onu ikiye böl! Öldürülen her parça mezar taşına dönüşür. Sana ulaşmasına izin verme."
     },
     "divesquadron": {
       "name": "Dalış Filosu",
@@ -224,11 +199,6 @@
       "desc": "Geceyi atlat",
       "howto": "◀ ▶ ile yürü, ◎ ile hançer fırlat — biri alçaktan, biri yüksekten uçar. Zombiler yerde sürünür, yarasalar tepeden dalar. Geceyi bitirmek için çubuğu doldur!"
     },
-    "mummytomb": {
-      "name": "Mumyanın Mezarı",
-      "desc": "Altını kap ve kaç",
-      "howto": "Mumyalar seni kovalarken tüm hazineleri toplamak için yön tuşlarını veya kaydırmayı kullan. Baktığın yöndeki ilk mumyayı çarpmak için ⚡ dokun — her mezarda sadece birkaç hakkın var!"
-    },
     "cratepush": {
       "name": "Sandık İtme",
       "desc": "Her sandık hedefe",
@@ -239,15 +209,45 @@
       "desc": "Sayılar bir resim saklıyor",
       "howto": "Sayılar her satır ve sütundaki dolu hücre bloklarını gösterir. ■ modunda doldurmak için dokun, boşları işaretlemek için ✗ moduna geç. Üç hata oyunu bitirir!"
     },
-    "navalduel": {
-      "name": "Deniz Düellosu",
-      "desc": "Düşman filosunu batır",
-      "howto": "Düşman sularına ateş etmek için üstteki ızgaraya dokun. Kırmızı isabettir — düşman alttaki gemilerini batırmadan beş gemisini de batır. Kazanılan her savaş daha çok puan!"
-    },
     "fourstack": {
       "name": "Dörtlü Dizi",
       "desc": "Dördü dizen kazanır",
       "howto": "Diskini bırakmak için bir sütuna dokun. Bilgisayardan önce dördünü hizala — yatay, dikey veya çapraz. Kazandığın her turda daha akıllı olur!"
+    },
+    "fruitslice": {
+      "name": "Meyve Dilimle",
+      "desc": "Kaydır, dilimle, kombo!",
+      "howto": "Meyveler yukarı fırlar — parmağını içinden geçirip dilimle! Tek harekette birkaçını dilimleyerek kombo bonusu kap. Bombaları dilimleme ve meyveleri düşürme: üç kaçırma oyunu bitirir."
+    },
+    "skyjump": {
+      "name": "Gök Zıplaması",
+      "desc": "Yıldızlara sıçra",
+      "howto": "Yaratığın kendi kendine zıplar — platformlara yönlendirmek için kaydır veya ◀ ▶ kullan. Beyazlar tek sıçrayışta ufalanır, yaylar seni yükseğe fırlatır, kenarlar birbirine bağlıdır. Düşme!"
+    },
+    "ghostrun": {
+      "name": "Hayalet Koşusu",
+      "desc": "Mezarlıkta sprint",
+      "howto": "◀ ▶ ile (veya kaydırarak) şerit değiştir, ↥ ile mezar taşlarının üstünden atla. Hayaletlerin üstünden atlanmaz — onlardan kaç! Altın ışıkları topla, bonus puan kazan. Gece giderek hızlanıyor."
+    },
+    "ghosthunt": {
+      "name": "Hayalet Avı",
+      "desc": "Kaçmadan dokun",
+      "howto": "Ruhlar mezarlığın üzerinden süzülür — kaçmadan önce dokunup vur! Her çift için 3 fişeğin var; yarasalar hızlıdır ve üç kat puan getirir. Kaçan her ruh bir cana mal olur."
+    },
+    "pumpkintoss": {
+      "name": "Balkabağı Fırlat",
+      "desc": "Kemik kalelerini fethet",
+      "howto": "Balkabağını geri çek, bırak ve uçuşunu izle! Kemik blokları parçala, tüm iskeletleri devir ve sıradaki kaleye geç. Kale başına beş balkabağı — artanlar bonus puan."
+    },
+    "monstermatch": {
+      "name": "Canavar Eşleştir",
+      "desc": "Üçlü eşleştir, zincir kur",
+      "howto": "Bir canavara, sonra komşusuna dokunarak yerlerini değiştir ve 3 aynıyı hizala — patlarlar ve her şey aşağı dökülür. Zincirler puanını katlar! 30 hamlen var. İyi kullan."
+    },
+    "blockdrop": {
+      "name": "Blok Düşüşü",
+      "desc": "Satırları temizle, akışı yakala",
+      "howto": "Düşen parçayı ◀ ▶ ile yönlendir, ↻ ile döndür, ▼ ile çak (kaydırma da çalışır). Bir satırı doldur ve temizle — büyük bonus için aynı anda dört satır! Kuyu her 10 satırda hızlanır."
     }
   },
   "username": {

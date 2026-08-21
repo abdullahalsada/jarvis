@@ -119,16 +119,6 @@
       "desc": "Detenha a invasão",
       "howto": "Deslize o dedo para mover sua nave — ela atira sozinha. Pontuações altas melhoram seu caça com canhões mais fortes. Vença as três ondas e derrote a nave-mãe para ganhar!"
     },
-    "meteordodge": {
-      "name": "Desvio de Meteoros",
-      "desc": "Sobreviva à tempestade",
-      "howto": "Deslize o dedo para pilotar a nave para a esquerda e a direita. Desvie dos meteoros o máximo que puder. Eles caem cada vez mais rápido — quanto tempo você aguenta?"
-    },
-    "hauntedmaze": {
-      "name": "Labirinto Assombrado",
-      "desc": "Fuja dos fantasmas",
-      "howto": "Deslize para andar pelo labirinto. Colete todas as esferas brilhantes enquanto os fantasmas caçam você. Pegue uma estrela de poder e vire o jogo: cace você a eles!"
-    },
     "memorymatch": {
       "name": "Jogo da Memória",
       "desc": "Encontre todos os pares",
@@ -154,20 +144,10 @@
       "desc": "Voe entre as torres",
       "howto": "Toque em qualquer lugar para bater as asas e ficar no ar. Passe pelo vão entre as torres — um ponto por torre. Um toque e acabou. Até onde você voa?"
     },
-    "ghostsweeper": {
-      "name": "Caça-Fantasmas",
-      "desc": "Ache os fantasmas escondidos",
-      "howto": "Toque num quadrado para revelá-lo. Os números dizem quantos fantasmas há nos quadrados vizinhos — use a lógica para deduzir onde estão. Segure para marcar um fantasma suspeito. Revele todos os quadrados seguros para vencer. Sem timer, só raciocínio."
-    },
     "alleybowl": {
       "name": "Boliche",
       "desc": "Busque o 300 perfeito",
       "howto": "Arraste para os lados para alinhar a bola e arremesse para CIMA para lançar — o ângulo do gesto faz a bola fazer curva. Derrube os dez pinos! Strikes e spares dão bônus, como no boliche de verdade. Dez rodadas; o jogo perfeito é 300."
-    },
-    "moonbuggy": {
-      "name": "Jipe Lunar",
-      "desc": "Pule crateras, exploda rochas",
-      "howto": "Seu jipe anda sozinho, cada vez mais rápido. Toque no lado DIREITO da tela para pular as crateras e no ESQUERDO para atirar nas rochas. Checkpoints a cada 500 m. Três vidas — boa sorte, piloto!"
     },
     "tilefusion": {
       "name": "Fusão de Peças",
@@ -178,11 +158,6 @@
       "name": "Corrida Retrô",
       "desc": "Costure pelo trânsito",
       "howto": "Deslize para a esquerda ou direita para trocar de pista. Escape dos carros que vêm na contramão — a estrada fica mais rápida e cheia quanto mais longe você vai. Uma batida encerra a corrida. Até onde você chega?"
-    },
-    "creepycrawler": {
-      "name": "Rastejante Sinistro",
-      "desc": "Divida o monstro rastejante",
-      "howto": "Deslize ou segure ◀ ▶ para mover e toque ◎ para atirar. Acerte o meio da lagarta para parti-la em duas! Cada segmento abatido vira lápide. Não deixe que ela chegue até você."
     },
     "divesquadron": {
       "name": "Esquadrão de Mergulho",
@@ -224,11 +199,6 @@
       "desc": "Sobreviva à noite",
       "howto": "Ande com ◀ ▶ e arremesse adagas com ◎ — uma voa baixa, outra alta. Zumbis se arrastam pelo chão, morcegos mergulham do alto. Encha a barra para vencer a noite!"
     },
-    "mummytomb": {
-      "name": "Tumba da Múmia",
-      "desc": "Pegue o ouro e fuja",
-      "howto": "Mova-se com o direcional ou deslizando para juntar todos os tesouros enquanto as múmias caçam você. Toque ⚡ para eletrocutar a primeira múmia à sua frente — as cargas são poucas!"
-    },
     "cratepush": {
       "name": "Empurra Caixotes",
       "desc": "Cada caixote no alvo",
@@ -239,15 +209,45 @@
       "desc": "Os números escondem um desenho",
       "howto": "Os números mostram os grupos de células preenchidas de cada linha e coluna. Toque para preencher no modo ■ ou mude para ✗ e marque os vazios. Três erros encerram a rodada!"
     },
-    "navalduel": {
-      "name": "Duelo Naval",
-      "desc": "Afunde a frota inimiga",
-      "howto": "Toque na grade de cima para atirar nas águas inimigas. Vermelho é acerto — afunde os cinco navios antes que o inimigo afunde os seus embaixo. Cada batalha vencida vale mais!"
-    },
     "fourstack": {
       "name": "Quatro em Linha",
       "desc": "Quatro seguidas vencem",
       "howto": "Toque numa coluna para soltar seu disco. Alinhe quatro — na horizontal, vertical ou diagonal — antes do computador. Ele fica mais esperto a cada rodada que você vence!"
+    },
+    "fruitslice": {
+      "name": "Corta Frutas",
+      "desc": "Deslize, corte, combo!",
+      "howto": "As frutas voam para cima — passe o dedo para cortá-las! Encadeie várias num só gesto para bônus de combo. Não corte as bombas nem deixe frutas caírem: três falhas encerram o jogo."
+    },
+    "skyjump": {
+      "name": "Salto ao Céu",
+      "desc": "Quique até as estrelas",
+      "howto": "Seu bichinho quica sozinho — deslize ou use ◀ ▶ para guiá-lo às plataformas. As brancas desmoronam após um quique, as molas lançam você lá em cima e as bordas se conectam. Não caia!"
+    },
+    "ghostrun": {
+      "name": "Corrida Fantasma",
+      "desc": "Dispare pelo cemitério",
+      "howto": "Troque de pista com ◀ ▶ (ou deslize) e pule as lápides com ↥. Fantasmas não se pulam — desvie! Pegue os fogos-fátuos dourados para pontos extras. A noite fica cada vez mais rápida."
+    },
+    "ghosthunt": {
+      "name": "Caça Fantasmas",
+      "desc": "Toque antes que escapem",
+      "howto": "Os espíritos cruzam o cemitério — toque neles para atirar antes que escapem! São 3 cartuchos por dupla; morcegos são rápidos e valem o triplo. Cada espírito que escapa custa uma vida."
+    },
+    "pumpkintoss": {
+      "name": "Arremesso de Abóbora",
+      "desc": "Invada os fortes de osso",
+      "howto": "Puxe a abóbora para trás, solte e veja-a voar! Esmague os blocos de osso e derrube todos os esqueletos para invadir o próximo castelo. Cinco abóboras por castelo — as sobras valem bônus."
+    },
+    "monstermatch": {
+      "name": "Combina Monstros",
+      "desc": "Junte três, encadeie mais",
+      "howto": "Toque num monstro e depois num vizinho para trocá-los e alinhar 3 iguais — eles estouram e tudo desaba. Cadeias multiplicam sua pontuação! Você tem 30 jogadas. Faça valer."
+    },
+    "blockdrop": {
+      "name": "Queda de Blocos",
+      "desc": "Limpe linhas no ritmo",
+      "howto": "Guie a peça com ◀ ▶, gire com ↻ e desça de vez com ▼ (gestos também funcionam). Complete uma linha para limpá-la — quatro de uma vez para o grande bônus! O poço acelera a cada 10 linhas."
     }
   },
   "username": {

@@ -119,16 +119,6 @@
       "desc": "Hentikan invasi",
       "howto": "Usap jarimu untuk menggerakkan pesawat — tembakan otomatis. Skor tinggi meningkatkan pesawatmu dengan meriam lebih kuat. Tuntaskan tiga gelombang lalu kalahkan kapal induk untuk menang!"
     },
-    "meteordodge": {
-      "name": "Hindar Meteor",
-      "desc": "Bertahan dari badai",
-      "howto": "Geser jarimu untuk mengemudikan pesawat ke kiri dan kanan. Hindari meteor yang jatuh selama mungkin. Jatuhnya makin cepat — berapa lama kamu bertahan?"
-    },
-    "hauntedmaze": {
-      "name": "Labirin Berhantu",
-      "desc": "Kabur dari hantu",
-      "howto": "Usap untuk bergerak menyusuri labirin. Kumpulkan semua bola bercahaya selagi hantu memburumu. Ambil bintang kekuatan dan balik keadaan: kamu yang mengejar mereka!"
-    },
     "memorymatch": {
       "name": "Cocok Memori",
       "desc": "Temukan semua pasangan",
@@ -154,20 +144,10 @@
       "desc": "Terbang melewati menara",
       "howto": "Ketuk di mana saja untuk mengepakkan sayap dan tetap terbang. Melajulah lewat celah di antara menara — satu poin tiap menara. Sekali tabrak, selesai. Seberapa jauh kamu bisa terbang?"
     },
-    "ghostsweeper": {
-      "name": "Penyapu Hantu",
-      "desc": "Temukan hantu tersembunyi",
-      "howto": "Ketuk petak untuk membukanya. Angka menunjukkan berapa hantu bersembunyi di petak tetangga — pakai logika untuk menebak posisinya. Tekan lama untuk menaruh jimat di petak yang dicurigai. Buka semua petak aman untuk menang. Tanpa waktu, murni berpikir."
-    },
     "alleybowl": {
       "name": "Arena Boling",
       "desc": "Kejar skor sempurna 300",
       "howto": "Seret ke samping untuk meluruskan bola, lalu sentakkan ke ATAS untuk melempar — sudut sentakanmu membuat bola melengkung. Robohkan sepuluh pin! Strike dan spare dapat bonus, seperti boling sungguhan. Sepuluh frame; permainan sempurna 300."
-    },
-    "moonbuggy": {
-      "name": "Mobil Bulan",
-      "desc": "Lompati kawah, tembak batu",
-      "howto": "Mobilmu jalan sendiri, makin lama makin cepat. Ketuk sisi KANAN layar untuk melompati kawah, sisi KIRI untuk menembak batu di depan. Pos pemeriksaan tiap 500 m. Tiga nyawa — semoga beruntung, sopir!"
     },
     "tilefusion": {
       "name": "Fusi Ubin",
@@ -178,11 +158,6 @@
       "name": "Pembalap Retro",
       "desc": "Selap-selip di lalu lintas",
       "howto": "Usap kiri atau kanan untuk berpindah di antara tiga lajur. Lewati mobil-mobil dari arah berlawanan — makin jauh, jalan makin cepat dan ramai. Sekali tabrakan, selesai. Seberapa jauh kamu bisa melaju?"
-    },
-    "creepycrawler": {
-      "name": "Perayap Seram",
-      "desc": "Belah teror yang merayap",
-      "howto": "Usap atau tahan ◀ ▶ untuk bergerak dan ketuk ◎ untuk menembak. Kena bagian tengah ulat untuk membelahnya jadi dua! Tiap ruas yang mati menjadi nisan. Jangan biarkan ia mencapaimu."
     },
     "divesquadron": {
       "name": "Skuadron Terjun",
@@ -224,11 +199,6 @@
       "desc": "Bertahanlah semalaman",
       "howto": "Berjalan dengan ◀ ▶ dan lempar belati dengan ◎ — satu terbang rendah, satu tinggi. Zombi merayap di tanah, kelelawar menukik dari atas. Penuhi bilah untuk menuntaskan malam!"
     },
-    "mummytomb": {
-      "name": "Makam Mumi",
-      "desc": "Ambil emas lalu kabur",
-      "howto": "Bergerak dengan pad atau usapan untuk mengumpulkan semua harta selagi mumi memburumu. Ketuk ⚡ untuk menyetrum mumi pertama di hadapanmu — jatahnya cuma sedikit tiap makam!"
-    },
     "cratepush": {
       "name": "Dorong Peti",
       "desc": "Semua peti ke sasaran",
@@ -239,15 +209,45 @@
       "desc": "Angka menyembunyikan gambar",
       "howto": "Angka menunjukkan deret sel terisi di tiap baris dan kolom. Ketuk untuk mengisi dalam mode ■, atau beralih ke ✗ untuk menandai sel kosong. Tiga kesalahan mengakhiri permainan!"
     },
-    "navalduel": {
-      "name": "Duel Laut",
-      "desc": "Tenggelamkan armada musuh",
-      "howto": "Ketuk kisi atas untuk menembak perairan musuh. Merah berarti kena — tenggelamkan kelima kapal sebelum musuh menenggelamkan milikmu di kisi bawah. Tiap kemenangan bernilai lebih!"
-    },
     "fourstack": {
       "name": "Empat Sebaris",
       "desc": "Empat sebaris menang",
       "howto": "Ketuk kolom untuk menjatuhkan cakram. Susun empat — mendatar, menurun, atau diagonal — sebelum komputer. Ia makin pintar tiap ronde yang kamu menangkan!"
+    },
+    "fruitslice": {
+      "name": "Iris Buah",
+      "desc": "Usap, iris, kombo!",
+      "howto": "Buah melesat ke atas — usapkan jarimu untuk mengirisnya! Iris beberapa sekaligus dalam satu usapan demi bonus kombo. Jangan iris bom dan jangan biarkan buah jatuh: tiga kali luput, permainan usai."
+    },
+    "skyjump": {
+      "name": "Lompat Langit",
+      "desc": "Melambung ke bintang",
+      "howto": "Makhlukmu memantul sendiri — usap atau pakai ◀ ▶ untuk mengarahkannya ke platform. Yang putih hancur setelah sekali pantul, pegas melontarkanmu tinggi, dan tepi layar tersambung. Jangan jatuh!"
+    },
+    "ghostrun": {
+      "name": "Lari Hantu",
+      "desc": "Sprint di pemakaman",
+      "howto": "Pindah jalur dengan ◀ ▶ (atau usap) dan lompati nisan dengan ↥. Hantu tak bisa dilompati — hindari! Ambil cahaya emas untuk poin bonus. Malam makin lama makin cepat!"
+    },
+    "ghosthunt": {
+      "name": "Buru Hantu",
+      "desc": "Ketuk sebelum kabur",
+      "howto": "Arwah melayang melintasi pemakaman — ketuk untuk menembak sebelum kabur! Ada 3 peluru tiap pasangan; kelelawar cepat tapi bernilai tiga kali lipat. Tiap arwah yang lolos mengurangi nyawa."
+    },
+    "pumpkintoss": {
+      "name": "Lempar Labu",
+      "desc": "Serbu benteng tulang",
+      "howto": "Tarik labu ke belakang, lepaskan, dan lihat ia terbang! Hancurkan balok tulang dan robohkan semua tengkorak untuk menyerbu kastel berikutnya. Lima labu per kastel — sisanya jadi poin bonus."
+    },
+    "monstermatch": {
+      "name": "Cocokkan Monster",
+      "desc": "Samakan tiga, rangkai lebih",
+      "howto": "Ketuk satu monster lalu tetangganya untuk bertukar tempat dan menjajarkan 3 yang sama — mereka meletus dan semuanya runtuh. Rantai melipatgandakan skor! Kamu punya 30 langkah. Manfaatkan!"
+    },
+    "blockdrop": {
+      "name": "Jatuhkan Balok",
+      "desc": "Bersihkan baris, rasakan alurnya",
+      "howto": "Arahkan balok jatuh dengan ◀ ▶, putar dengan ↻, hempaskan dengan ▼ (usapan juga bisa). Penuhi satu baris untuk menghapusnya — empat sekaligus untuk bonus besar! Sumur makin cepat tiap 10 baris."
     }
   },
   "username": {

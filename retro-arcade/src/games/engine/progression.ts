@@ -22,26 +22,26 @@ export const LEVEL_STEPS: Record<string, number> = {
   alleybowl: 60,
   // Action
   spacedefenders: 500,
-  meteordodge: 300,
+  fruitslice: 200,
   towerclimb: 300,
   pixelwings: 5,
   jungledash: 250,
   blastmaze: 300,
   divesquadron: 800,
   chopperrescue: 400,
-  moonbuggy: 300,
+  skyjump: 250,
   // Spooky
-  hauntedmaze: 300,
-  ghostsweeper: 250,
+  ghostrun: 300,
+  ghosthunt: 200,
   vampirehunt: 350,
-  creepycrawler: 250,
-  mummytomb: 300,
+  monstermatch: 500,
+  pumpkintoss: 400,
   // Brain
   memorymatch: 60,
   cratepush: 120,
   tilefusion: 400,
   pixellogic: 100,
-  navalduel: 200,
+  blockdrop: 400,
   fourstack: 150,
 };
 
