@@ -292,7 +292,9 @@ export function AlleyBowlGame({ api }: { api: GameApi }) {
               width: PIN_R * 2.8,
               height: PIN_R * 3.6,
               opacity: p.up ? 1 : 0.3,
-              transform: p.up ? undefined : [{ rotate: i % 2 === 0 ? '75deg' : '-75deg' }],
+              // Always an array: toggling transform to undefined crashes RN on
+              // device ("forEach of null") when the style diff removes it.
+              transform: [{ rotate: p.up ? '0deg' : i % 2 === 0 ? '75deg' : '-75deg' }],
             }}
           />
         ))}

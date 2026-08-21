@@ -18,6 +18,9 @@ import { haptic } from '../../haptics';
 const LANES = 3;
 
 interface Car {
+  /** Stable identity for React keys — index keys made sprites swap between
+   * cars (visible glitching) whenever an off-screen car was filtered out. */
+  id: number;
   lane: number;
   y: number;
   sprite: (typeof TRAFFIC)[number]['sprite'];
@@ -42,12 +45,13 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
   const ROAD_W = Math.min(W * 0.8, 360);
   const LANE_W = ROAD_W / LANES;
   const roadX = (W - ROAD_W) / 2;
-  const CAR_W = LANE_W * 0.62;
+  const CAR_W = LANE_W * 0.48;
   const CAR_H = CAR_W * 1.5;
   const PLAYER_Y = H - CAR_H - 40;
 
   const lane = useRef(1);
   const cars = useRef<Car[]>([]);
+  const nextId = useRef(1);
   const distance = useRef(0);
   const spawnTimer = useRef(0);
   const dashOffset = useRef(0);
@@ -91,8 +95,11 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
       const open = [0, 1, 2].sort(() => Math.random() - 0.5);
       const count = Math.random() < Math.min(0.5, distance.current / 3000) ? 2 : 1;
       for (let i = 0; i < count; i++) {
+        // Don't stack a new car onto one still near the top of the same lane.
+        if (cars.current.some((c) => c.lane === open[i] && c.y < CAR_H * 2.2)) continue;
         const kind = TRAFFIC[Math.floor(Math.random() * TRAFFIC.length)];
         cars.current.push({
+          id: nextId.current++,
           lane: open[i],
           y: -CAR_H * kind.len,
           sprite: kind.sprite,
@@ -169,9 +176,9 @@ export function RetroRacerGame({ api }: { api: GameApi }) {
           ))
         )}
         {/* Oncoming traffic: top-view vehicles facing down (toward the player) */}
-        {cars.current.map((c, i) => (
+        {cars.current.map((c) => (
           <Image
-            key={i}
+            key={c.id}
             source={ACTORS[c.sprite]}
             style={{
               position: 'absolute',
