@@ -22,20 +22,25 @@ import { TowerClimbGame } from './towerclimb/TowerClimbGame';
 import { JungleDashGame } from './jungledash/JungleDashGame';
 import { BlastMazeGame } from './blastmaze/BlastMazeGame';
 import { ChopperRescueGame } from './chopperrescue/ChopperRescueGame';
-import { VampireHuntGame } from './vampirehunt/VampireHuntGame';
+import { BalloonFightGame } from './balloonfight/BalloonFightGame';
 import { CratePushGame } from './cratepush/CratePushGame';
 import { PixelLogicGame } from './pixellogic/PixelLogicGame';
 import { FourStackGame } from './fourstack/FourStackGame';
 
 import { FruitSliceGame } from './fruitslice/FruitSliceGame';
 import { SkyJumpGame } from './skyjump/SkyJumpGame';
-import { GhostRunGame } from './ghostrun/GhostRunGame';
-import { GhostHuntGame } from './ghosthunt/GhostHuntGame';
-import { PumpkinTossGame } from './pumpkintoss/PumpkinTossGame';
-import { MonsterMatchGame } from './monstermatch/MonsterMatchGame';
+import { StreetRunGame } from './streetrun/StreetRunGame';
+import { PigeonPanicGame } from './pigeonpanic/PigeonPanicGame';
+import { CanKnockGame } from './canknock/CanKnockGame';
+import { MarbleMatchGame } from './marblematch/MarbleMatchGame';
 import { BlockDropGame } from './blockdrop/BlockDropGame';
+import { BinShotGame } from './binshot/BinShotGame';
+import { PaperGliderGame } from './paperglider/PaperGliderGame';
+import { DotsBoxesGame } from './dotsboxes/DotsBoxesGame';
+import { EraserFlickGame } from './eraserflick/EraserFlickGame';
+import { MathSprintGame } from './mathsprint/MathSprintGame';
 
-export type Category = 'classics' | 'action' | 'spooky' | 'brain';
+export type Category = 'classics' | 'action' | 'street' | 'school' | 'brain';
 
 export interface GameDef {
   id: string;
@@ -72,17 +77,22 @@ const ART: Record<string, ImageSourcePropType> = {
   jungledash: require('../../assets/games/jungledash.png'),
   blastmaze: require('../../assets/games/blastmaze.png'),
   chopperrescue: require('../../assets/games/chopperrescue.png'),
-  vampirehunt: require('../../assets/games/vampirehunt.png'),
+  balloonfight: require('../../assets/games/balloonfight.png'),
   cratepush: require('../../assets/games/cratepush.png'),
   pixellogic: require('../../assets/games/pixellogic.png'),
   fourstack: require('../../assets/games/fourstack.png'),
   fruitslice: require('../../assets/games/fruitslice.png'),
   skyjump: require('../../assets/games/skyjump.png'),
-  ghostrun: require('../../assets/games/ghostrun.png'),
-  ghosthunt: require('../../assets/games/ghosthunt.png'),
-  pumpkintoss: require('../../assets/games/pumpkintoss.png'),
-  monstermatch: require('../../assets/games/monstermatch.png'),
+  streetrun: require('../../assets/games/streetrun.png'),
+  pigeonpanic: require('../../assets/games/pigeonpanic.png'),
+  canknock: require('../../assets/games/canknock.png'),
+  marblematch: require('../../assets/games/marblematch.png'),
   blockdrop: require('../../assets/games/blockdrop.png'),
+  binshot: require('../../assets/games/binshot.png'),
+  paperglider: require('../../assets/games/paperglider.png'),
+  dotsboxes: require('../../assets/games/dotsboxes.png'),
+  eraserflick: require('../../assets/games/eraserflick.png'),
+  mathsprint: require('../../assets/games/mathsprint.png'),
 };
 
 const DEFS: Omit<GameDef, 'art'>[] = [
@@ -107,12 +117,18 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'divesquadron', category: 'action', free: false, showLives: true, icon: '🛸', render: (api) => <DiveSquadronGame api={api} /> },
   { id: 'chopperrescue', category: 'action', free: false, showLives: true, icon: '🚁', render: (api) => <ChopperRescueGame api={api} /> },
   { id: 'skyjump', category: 'action', free: false, icon: '🦘', render: (api) => <SkyJumpGame api={api} /> },
-  // Spooky
-  { id: 'ghostrun', category: 'spooky', free: false, showLives: true, icon: '🎃', render: (api) => <GhostRunGame api={api} /> },
-  { id: 'ghosthunt', category: 'spooky', free: false, showLives: true, icon: '👻', render: (api) => <GhostHuntGame api={api} /> },
-  { id: 'vampirehunt', category: 'spooky', free: false, showLives: true, icon: '🧛', render: (api) => <VampireHuntGame api={api} /> },
-  { id: 'monstermatch', category: 'spooky', free: false, icon: '😈', render: (api) => <MonsterMatchGame api={api} /> },
-  { id: 'pumpkintoss', category: 'spooky', free: false, icon: '🏰', render: (api) => <PumpkinTossGame api={api} /> },
+  // Street Games
+  { id: 'streetrun', category: 'street', free: false, showLives: true, icon: '🛹', render: (api) => <StreetRunGame api={api} /> },
+  { id: 'pigeonpanic', category: 'street', free: false, showLives: true, icon: '🕊️', render: (api) => <PigeonPanicGame api={api} /> },
+  { id: 'balloonfight', category: 'street', free: false, showLives: true, icon: '🎈', render: (api) => <BalloonFightGame api={api} /> },
+  { id: 'marblematch', category: 'street', free: false, icon: '🔮', render: (api) => <MarbleMatchGame api={api} /> },
+  { id: 'canknock', category: 'street', free: false, icon: '🥫', render: (api) => <CanKnockGame api={api} /> },
+  // School Days
+  { id: 'binshot', category: 'school', free: false, showLives: true, icon: '🗑️', render: (api) => <BinShotGame api={api} /> },
+  { id: 'paperglider', category: 'school', free: false, icon: '✈️', render: (api) => <PaperGliderGame api={api} /> },
+  { id: 'dotsboxes', category: 'school', free: false, icon: '🔲', render: (api) => <DotsBoxesGame api={api} /> },
+  { id: 'eraserflick', category: 'school', free: false, icon: '🏫', render: (api) => <EraserFlickGame api={api} /> },
+  { id: 'mathsprint', category: 'school', free: false, showLives: true, icon: '🧮', render: (api) => <MathSprintGame api={api} /> },
   // Brain
   { id: 'memorymatch', category: 'brain', free: true, icon: '🃏', render: (api) => <MemoryMatchGame api={api} /> },
   { id: 'cratepush', category: 'brain', free: false, icon: '📦', render: (api) => <CratePushGame api={api} /> },
@@ -124,7 +140,7 @@ const DEFS: Omit<GameDef, 'art'>[] = [
 
 export const GAMES: GameDef[] = DEFS.map((def) => ({ ...def, art: ART[def.id] }));
 
-export const CATEGORIES: Category[] = ['classics', 'action', 'spooky', 'brain'];
+export const CATEGORIES: Category[] = ['classics', 'action', 'street', 'school', 'brain'];
 
 export function gameById(id: string): GameDef | undefined {
   return GAMES.find((g) => g.id === id);

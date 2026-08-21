@@ -27,8 +27,9 @@
     "categories": {
       "classics": "Klassiker",
       "action": "Action",
-      "spooky": "Gruselig",
-      "brain": "Denksport"
+      "brain": "Denksport",
+      "street": "Straßenspiele",
+      "school": "Schulzeit"
     }
   },
   "purchase": {
@@ -194,11 +195,6 @@
       "desc": "Alle kommen heim",
       "howto": "Fliege mit dem Kreuz. Schwebe tief über den Gestrandeten, um sie an Bord zu holen (3 Plätze), und lande auf dem türkisen Pad zum Absetzen. Vorsicht vor der Flak!"
     },
-    "vampirehunt": {
-      "name": "Vampirjagd",
-      "desc": "Überlebe die Nacht",
-      "howto": "Laufe mit ◀ ▶ und wirf Dolche mit ◎ — einer fliegt tief, einer hoch. Zombies schlurfen am Boden, Fledermäuse stoßen von oben herab. Fülle die Leiste, um die Nacht zu überstehen!"
-    },
     "cratepush": {
       "name": "Kistenschieber",
       "desc": "Jede Kiste ans Ziel",
@@ -224,30 +220,60 @@
       "desc": "Hüpf zu den Sternen",
       "howto": "Dein Hüpfer springt von allein — wische oder nutze ◀ ▶, um ihn auf Plattformen zu lenken. Weiße bröckeln nach einem Sprung, Federn schleudern dich hoch, die Ränder gehen ineinander über. Nicht fallen!"
     },
-    "ghostrun": {
-      "name": "Geisterlauf",
-      "desc": "Sprint durch den Friedhof",
-      "howto": "Wechsle Spuren mit ◀ ▶ (oder wische) und spring mit ↥ über Grabsteine. Geister lassen sich nicht überspringen — weich ihnen aus! Sammle goldene Irrlichter für Bonuspunkte. Die Nacht wird immer schneller."
-    },
-    "ghosthunt": {
-      "name": "Geisterjagd",
-      "desc": "Tipp sie an, eh sie entkommen",
-      "howto": "Geister schweben über den Friedhof — tippe sie an, bevor sie entkommen! 3 Patronen pro Paar; Fledermäuse sind schnell und zählen dreifach. Jeder entkommene Geist kostet ein Leben."
-    },
-    "pumpkintoss": {
-      "name": "Kürbisschleuder",
-      "desc": "Stürm die Knochenfestungen",
-      "howto": "Zieh den Kürbis zurück, lass los und sieh ihn fliegen! Zertrümmere Knochenblöcke und wirf alle Skelette um, um zur nächsten Burg zu stürmen. Fünf Kürbisse pro Burg — übrige bringen Bonuspunkte."
-    },
-    "monstermatch": {
-      "name": "Monster-Kombi",
-      "desc": "Drei verbinden, Ketten bauen",
-      "howto": "Tippe ein Monster und dann einen Nachbarn, um sie zu tauschen und 3 Gleiche zu verbinden — sie platzen und alles rutscht nach. Ketten vervielfachen deine Punkte! Du hast 30 Züge. Nutze sie gut."
-    },
     "blockdrop": {
       "name": "Blockfall",
       "desc": "Reihen räumen im Flow",
       "howto": "Steuere den fallenden Stein mit ◀ ▶, drehe mit ↻, schmettere mit ▼ (Wischen geht auch). Volle Reihen verschwinden — vier auf einmal für den Riesenbonus! Alle 10 Reihen wird es schneller."
+    },
+    "streetrun": {
+      "name": "Straßenlauf",
+      "desc": "Sprinte den Block",
+      "howto": "Wechsle Spuren mit ◀ ▶ (oder wische) und spring mit ↥ über Holzkisten. Mülltonnen sind zu hoch zum Springen — weich ihnen aus! Sammle Münzen für Bonuspunkte. Die Straße wird immer schneller."
+    },
+    "pigeonpanic": {
+      "name": "Taubenpanik",
+      "desc": "Tipp sie an, eh sie fliegen",
+      "howto": "Tauben flattern über die Dächer — tippe sie an, bevor sie entkommen! 3 Kiesel pro Paar; Papierflieger sind schnell und zählen dreifach. Jeder entkommene Vogel kostet ein Leben."
+    },
+    "canknock": {
+      "name": "Dosenwerfen",
+      "desc": "Der Jahrmarkt-Klassiker",
+      "howto": "Zieh den Stein zurück, lass los und wirf die Blechdosen von den Kisten! Räum alle Dosen ab für einen höheren, kniffligeren Aufbau. Fünf Steine pro Runde — übrige bringen Bonuspunkte."
+    },
+    "marblematch": {
+      "name": "Murmel-Kombi",
+      "desc": "Drei verbinden, Ketten bauen",
+      "howto": "Tippe eine Murmel und dann eine Nachbarin, um sie zu tauschen und 3 gleiche Farben zu verbinden — sie platzen und alles rutscht nach. Ketten vervielfachen deine Punkte! Du hast 30 Züge."
+    },
+    "balloonfight": {
+      "name": "Wasserschlacht",
+      "desc": "Nassmachen oder nass werden",
+      "howto": "Laufe mit ◀ ▶ und wirf Wasserballons mit ◎ — einer fliegt tief, einer hoch. Rivalen stürmen am Boden, Papierflieger stoßen von oben herab. Fülle die Leiste und gewinn die Runde!"
+    },
+    "binshot": {
+      "name": "Papierkorb-Wurf",
+      "desc": "Der Klassenzimmer-Klassiker",
+      "howto": "Zieh die Papierkugel zurück und lass los, um sie in den Korb zu werfen. Achte auf den Windpfeil an der Tafel — er schiebt deine Kugel im Flug! Serien bringen Bonus; drei Fehlwürfe beenden es."
+    },
+    "paperglider": {
+      "name": "Papierflieger",
+      "desc": "Flieg den Flur entlang",
+      "howto": "Halte irgendwo gedrückt, um die Nase zu heben, lass los zum Sturzflug. Gleite zwischen Tischstapeln und Hängelampen hindurch und schnapp dir goldene Sterne. Ein Crash beendet den Flug!"
+    },
+    "dotsboxes": {
+      "name": "Käsekästchen",
+      "desc": "Das Heft-Duell",
+      "howto": "Zeichnet abwechselnd Wände zwischen die Punkte. Schließe die vierte Wand eines Kästchens, um es zu gewinnen — und bist gleich nochmal dran! Cyan bist du, Rot der Computer. Die meisten Kästchen gewinnen."
+    },
+    "eraserflick": {
+      "name": "Radiergummi-Sumo",
+      "desc": "Showdown auf dem Pult",
+      "howto": "Zieh an deinem cyanfarbenen Radiergummi und lass los, um ihn zu schnippen. Schubs den roten vom Pult, ohne selbst runterzurutschen! Jede Runde schrumpft das Pult. Fällst du, ist Schluss."
+    },
+    "mathsprint": {
+      "name": "Kopfrechnen-Sprint",
+      "desc": "Schlag die Tafel-Uhr",
+      "howto": "Eine Aufgabe erscheint an der Tafel mit vier Antworten — tippe die richtige, bevor die Kreidelinie abläuft! Schnelle Antworten zählen mehr, Serien vervielfachen. Drei Fehler und die Stunde ist vorbei."
     }
   },
   "username": {

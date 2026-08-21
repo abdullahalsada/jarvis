@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Image, PanResponder, View } from 'react-native';
+import { PanResponder, View } from 'react-native';
 import { colors } from '../../theme';
-import { ACTORS } from '../engine/actors';
 import { PixelText } from '../../components/PixelText';
 import { type GameApi } from '../engine/GameShell';
 import { useGameLoop } from '../engine/useGameLoop';
@@ -9,10 +8,10 @@ import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
 /**
- * Slingshot siege: drag the pumpkin back, release, and watch it arc into
- * the skeletons' bone forts. Bone blocks shatter and slow the pumpkin;
- * hit every skeleton to storm the next, tougher castle. Five pumpkins per
- * castle — spares carry bonus points.
+ * Tin-can slingshot: drag the stone back, release, and watch it arc into
+ * the can pyramids on their crates. Crates splinter and slow the stone;
+ * topple every can to move to the next, taller setup. Five stones per
+ * round — spares carry bonus points.
  */
 interface Block {
   id: number;
@@ -23,22 +22,22 @@ interface Block {
   broken: boolean;
 }
 
-interface Skeleton {
+interface Can {
   id: number;
   x: number;
   y: number;
   down: boolean;
 }
 
-export function PumpkinTossGame({ api }: { api: GameApi }) {
+export function CanKnockGame({ api }: { api: GameApi }) {
   const W = api.width;
   const H = api.height;
   const GROUND = H - 60;
   const SLING = { x: W * 0.18, y: GROUND - 90 };
-  const PR = 20; // pumpkin radius
+  const PR = 16; // stone radius
 
   const blocks = useRef<Block[]>([]);
-  const skeletons = useRef<Skeleton[]>([]);
+  const skeletons = useRef<Can[]>([]);
   const nextId = useRef(1);
   const pumpkin = useRef({ x: SLING.x, y: SLING.y, vx: 0, vy: 0, flying: false });
   const drag = useRef<{ x: number; y: number } | null>(null);
@@ -221,47 +220,56 @@ export function PumpkinTossGame({ api }: { api: GameApi }) {
                 top: b.y - b.h / 2,
                 width: b.w,
                 height: b.h,
-                backgroundColor: '#e8e8f0',
+                backgroundColor: '#8a5a2b',
                 borderWidth: 2,
-                borderColor: '#9a9ab5',
+                borderColor: '#5e3d1c',
                 borderRadius: 4,
               }}
             />
           )
         )}
         {skeletons.current.map((s) => (
-          <Image
+          <View
             key={s.id}
-            source={ACTORS.skeleton}
             style={{
               position: 'absolute',
-              left: s.x - 22,
-              top: s.y - 40,
-              width: 44,
-              height: 44,
+              left: s.x - 14,
+              top: s.y - 36,
+              width: 28,
+              height: 38,
+              borderRadius: 5,
+              backgroundColor: '#c0c0d2',
+              borderWidth: 2,
+              borderColor: '#9a9ab5',
               opacity: s.down ? 0.15 : 1,
               transform: [{ rotate: s.down ? '90deg' : '0deg' }],
-            }}
-          />
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <View style={{ width: 22, height: 10, backgroundColor: '#ff3b3b', borderRadius: 2 }} />
+          </View>
         ))}
-        {/* The pumpkin */}
-        <Image
-          source={ACTORS.pumpkin}
+        {/* The stone */}
+        <View
           style={{
             position: 'absolute',
             left: pumpkin.current.x - PR,
             top: pumpkin.current.y - PR,
             width: PR * 2,
             height: PR * 2,
+            borderRadius: PR,
+            backgroundColor: '#8a8aa0',
+            borderWidth: 2,
+            borderColor: '#5f5f75',
           }}
         />
         {/* Ammo */}
         <View style={{ position: 'absolute', bottom: 14, left: 14, flexDirection: 'row', gap: 6 }}>
           {Array.from({ length: Math.max(0, pumpkinsLeft.current) }, (_, i) => (
-            <Image key={i} source={ACTORS.pumpkin} style={{ width: 18, height: 18 }} />
+            <View key={i} style={{ width: 16, height: 16, borderRadius: 8, backgroundColor: '#8a8aa0', borderWidth: 2, borderColor: '#5f5f75' }} />
           ))}
           <PixelText size={11} color={colors.textDim} style={{ marginLeft: 10, alignSelf: 'center' }}>
-            {`🏰 ${castle.current}`}
+            {`🥫 ${castle.current}`}
           </PixelText>
         </View>
       </View>

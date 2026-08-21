@@ -30,12 +30,18 @@ export const LEVEL_STEPS: Record<string, number> = {
   divesquadron: 800,
   chopperrescue: 400,
   skyjump: 250,
-  // Spooky
-  ghostrun: 300,
-  ghosthunt: 200,
-  vampirehunt: 350,
-  monstermatch: 500,
-  pumpkintoss: 400,
+  // Street Games
+  streetrun: 300,
+  pigeonpanic: 200,
+  balloonfight: 350,
+  marblematch: 500,
+  canknock: 300,
+  // School Days
+  binshot: 100,
+  paperglider: 200,
+  dotsboxes: 150,
+  eraserflick: 200,
+  mathsprint: 250,
   // Brain
   memorymatch: 60,
   cratepush: 120,

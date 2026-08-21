@@ -27,8 +27,9 @@
     "categories": {
       "classics": "Clássicos",
       "action": "Ação",
-      "spooky": "Assombrados",
-      "brain": "Raciocínio"
+      "brain": "Raciocínio",
+      "street": "Jogos de Rua",
+      "school": "Dias de Escola"
     }
   },
   "purchase": {
@@ -194,11 +195,6 @@
       "desc": "Todos voltam para casa",
       "howto": "Voe com o direcional. Paire baixo sobre os encalhados para içá-los a bordo (3 assentos) e pouse na plataforma ciano para deixá-los. Cuidado com a torre de tiro!"
     },
-    "vampirehunt": {
-      "name": "Caça aos Vampiros",
-      "desc": "Sobreviva à noite",
-      "howto": "Ande com ◀ ▶ e arremesse adagas com ◎ — uma voa baixa, outra alta. Zumbis se arrastam pelo chão, morcegos mergulham do alto. Encha a barra para vencer a noite!"
-    },
     "cratepush": {
       "name": "Empurra Caixotes",
       "desc": "Cada caixote no alvo",
@@ -224,30 +220,60 @@
       "desc": "Quique até as estrelas",
       "howto": "Seu bichinho quica sozinho — deslize ou use ◀ ▶ para guiá-lo às plataformas. As brancas desmoronam após um quique, as molas lançam você lá em cima e as bordas se conectam. Não caia!"
     },
-    "ghostrun": {
-      "name": "Corrida Fantasma",
-      "desc": "Dispare pelo cemitério",
-      "howto": "Troque de pista com ◀ ▶ (ou deslize) e pule as lápides com ↥. Fantasmas não se pulam — desvie! Pegue os fogos-fátuos dourados para pontos extras. A noite fica cada vez mais rápida."
-    },
-    "ghosthunt": {
-      "name": "Caça Fantasmas",
-      "desc": "Toque antes que escapem",
-      "howto": "Os espíritos cruzam o cemitério — toque neles para atirar antes que escapem! São 3 cartuchos por dupla; morcegos são rápidos e valem o triplo. Cada espírito que escapa custa uma vida."
-    },
-    "pumpkintoss": {
-      "name": "Arremesso de Abóbora",
-      "desc": "Invada os fortes de osso",
-      "howto": "Puxe a abóbora para trás, solte e veja-a voar! Esmague os blocos de osso e derrube todos os esqueletos para invadir o próximo castelo. Cinco abóboras por castelo — as sobras valem bônus."
-    },
-    "monstermatch": {
-      "name": "Combina Monstros",
-      "desc": "Junte três, encadeie mais",
-      "howto": "Toque num monstro e depois num vizinho para trocá-los e alinhar 3 iguais — eles estouram e tudo desaba. Cadeias multiplicam sua pontuação! Você tem 30 jogadas. Faça valer."
-    },
     "blockdrop": {
       "name": "Queda de Blocos",
       "desc": "Limpe linhas no ritmo",
       "howto": "Guie a peça com ◀ ▶, gire com ↻ e desça de vez com ▼ (gestos também funcionam). Complete uma linha para limpá-la — quatro de uma vez para o grande bônus! O poço acelera a cada 10 linhas."
+    },
+    "streetrun": {
+      "name": "Corrida de Rua",
+      "desc": "Dispare pelo quarteirão",
+      "howto": "Troque de pista com ◀ ▶ (ou deslize) e pule os caixotes de madeira com ↥. As lixeiras são altas demais — desvie! Pegue moedas para pontos extras. A rua fica cada vez mais rápida."
+    },
+    "pigeonpanic": {
+      "name": "Pânico dos Pombos",
+      "desc": "Toque antes que voem",
+      "howto": "Os pombos cruzam os telhados — toque neles antes que escapem! São 3 pedrinhas por dupla; aviões de papel são rápidos e valem o triplo. Cada ave que escapa custa uma vida."
+    },
+    "canknock": {
+      "name": "Derruba Latas",
+      "desc": "O clássico do parque",
+      "howto": "Puxe a pedra para trás, solte e derrube as latas dos caixotes! Derrube todas para uma pilha mais alta e difícil. Cinco pedras por rodada — as sobras valem bônus."
+    },
+    "marblematch": {
+      "name": "Combina Bolinhas",
+      "desc": "Junte três, encadeie mais",
+      "howto": "Toque numa bolinha de gude e depois numa vizinha para trocá-las e alinhar 3 da mesma cor — elas estouram e tudo desaba. Cadeias multiplicam a pontuação! São 30 jogadas. Faça valer."
+    },
+    "balloonfight": {
+      "name": "Guerra de Balões",
+      "desc": "Molhe ou seja molhado",
+      "howto": "Ande com ◀ ▶ e arremesse balões d’água com ◎ — um voa baixo, outro alto. Rivais avançam pelo chão, aviões de papel mergulham do alto. Encha a barra e vença a rodada!"
+    },
+    "binshot": {
+      "name": "Cesta de Papel",
+      "desc": "O clássico da sala de aula",
+      "howto": "Puxe a bolinha de papel para trás e solte para acertar a lixeira. Observe a seta do vento no quadro — ela empurra sua bolinha no ar! Sequências dão bônus; três erros encerram."
+    },
+    "paperglider": {
+      "name": "Planador de Papel",
+      "desc": "Voe pelo corredor",
+      "howto": "Segure em qualquer lugar para subir o bico, solte para mergulhar. Plane entre pilhas de carteiras e luminárias penduradas e agarre estrelas douradas. Uma batida encerra o voo!"
+    },
+    "dotsboxes": {
+      "name": "Pontinhos",
+      "desc": "O duelo do caderno",
+      "howto": "Revezem-se desenhando paredes entre os pontos. Feche a quarta parede de uma caixa para conquistá-la — e jogue de novo! Ciano é você, vermelho é o computador. Mais caixas vence."
+    },
+    "eraserflick": {
+      "name": "Borracha Sumô",
+      "desc": "Duelo na carteira",
+      "howto": "Arraste sua borracha ciano e solte para petelecá-la. Empurre a borracha vermelha para fora da carteira sem cair você também! A cada rodada a carteira encolhe. Caiu, acabou."
+    },
+    "mathsprint": {
+      "name": "Sprint de Contas",
+      "desc": "Vença o relógio do quadro",
+      "howto": "Uma conta aparece no quadro com quatro respostas — toque na certa antes da linha de giz acabar! Respostas rápidas valem mais, sequências multiplicam. Três erros e a aula termina."
     }
   },
   "username": {

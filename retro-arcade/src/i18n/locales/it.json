@@ -27,8 +27,9 @@
     "categories": {
       "classics": "Classici",
       "action": "Azione",
-      "spooky": "Spettrali",
-      "brain": "Cervello"
+      "brain": "Cervello",
+      "street": "Giochi di Strada",
+      "school": "Giorni di Scuola"
     }
   },
   "purchase": {
@@ -194,11 +195,6 @@
       "desc": "Tutti tornano a casa",
       "howto": "Vola con la croce. Resta basso sopra i dispersi per issarli a bordo (3 posti), poi atterra sulla piazzola ciano per farli scendere. Occhio alla torretta!"
     },
-    "vampirehunt": {
-      "name": "Caccia ai Vampiri",
-      "desc": "Sopravvivi alla notte",
-      "howto": "Cammina con ◀ ▶ e lancia pugnali con ◎ — uno vola basso, uno alto. Gli zombi strisciano a terra, i pipistrelli piombano dall’alto. Riempi la barra per superare la notte!"
-    },
     "cratepush": {
       "name": "Spingi Casse",
       "desc": "Ogni cassa al suo posto",
@@ -224,30 +220,60 @@
       "desc": "Rimbalza fino alle stelle",
       "howto": "La tua creatura rimbalza da sola: scorri o usa ◀ ▶ per guidarla sulle piattaforme. Quelle bianche si sbriciolano dopo un balzo, le molle ti sparano in alto e i bordi si ricongiungono. Non cadere!"
     },
-    "ghostrun": {
-      "name": "Corsa Spettrale",
-      "desc": "Sfreccia nel cimitero",
-      "howto": "Cambia corsia con ◀ ▶ (o scorri) e scavalca le lapidi con ↥. I fantasmi non si saltano: schivali! Prendi i fuochi fatui dorati per punti bonus. La notte accelera sempre di più."
-    },
-    "ghosthunt": {
-      "name": "Caccia ai Fantasmi",
-      "desc": "Toccali prima che scappino",
-      "howto": "Gli spiriti attraversano il cimitero: toccali per colpirli prima che fuggano! Hai 3 colpi per coppia; i pipistrelli sono veloci e valgono il triplo. Ogni spirito fuggito costa una vita."
-    },
-    "pumpkintoss": {
-      "name": "Lancio di Zucche",
-      "desc": "Espugna i forti d’ossa",
-      "howto": "Tira indietro la zucca, lascia andare e guardala volare! Sfonda i blocchi d’osso e abbatti tutti gli scheletri per espugnare il castello successivo. Cinque zucche a castello — quelle avanzate valgono bonus."
-    },
-    "monstermatch": {
-      "name": "Mostri a Tris",
-      "desc": "Allinea tre, concatena di più",
-      "howto": "Tocca un mostro e poi un vicino per scambiarli e allineare 3 uguali: scoppiano e tutto crolla giù. Le catene moltiplicano il punteggio! Hai 30 mosse. Falle contare."
-    },
     "blockdrop": {
       "name": "Cascata di Blocchi",
       "desc": "Righe piene, pura scorrevolezza",
       "howto": "Guida il pezzo con ◀ ▶, ruotalo con ↻, schiantalo con ▼ (funzionano anche i gesti). Riempi una riga per cancellarla — quattro in un colpo per il maxi bonus! Il pozzo accelera ogni 10 righe."
+    },
+    "streetrun": {
+      "name": "Corsa di Strada",
+      "desc": "Sfreccia nell’isolato",
+      "howto": "Cambia corsia con ◀ ▶ (o scorri) e scavalca le casse di legno con ↥. I bidoni sono troppo alti da saltare: schivali! Raccogli monete per punti bonus. La strada accelera sempre di più."
+    },
+    "pigeonpanic": {
+      "name": "Panico Piccioni",
+      "desc": "Toccali prima che volino via",
+      "howto": "I piccioni attraversano i tetti: toccali prima che scappino! Hai 3 sassolini per coppia; gli aeroplanini di carta sono veloci e valgono il triplo. Ogni uccello fuggito costa una vita."
+    },
+    "canknock": {
+      "name": "Abbatti Lattine",
+      "desc": "Il classico del luna park",
+      "howto": "Tira indietro il sasso, lascia andare e butta giù le lattine dalle casse! Abbattile tutte per una piramide più alta e difficile. Cinque sassi a manche — quelli avanzati valgono bonus."
+    },
+    "marblematch": {
+      "name": "Biglie a Tris",
+      "desc": "Allinea tre, concatena di più",
+      "howto": "Tocca una biglia e poi una vicina per scambiarle e allineare 3 dello stesso colore: scoppiano e tutto crolla giù. Le catene moltiplicano il punteggio! Hai 30 mosse. Falle contare."
+    },
+    "balloonfight": {
+      "name": "Gavettoni",
+      "desc": "Bagna o vieni bagnato",
+      "howto": "Cammina con ◀ ▶ e lancia gavettoni con ◎ — uno vola basso, uno alto. I rivali caricano a terra, gli aeroplanini piombano dall’alto. Riempi la barra e vinci il round!"
+    },
+    "binshot": {
+      "name": "Canestro di Carta",
+      "desc": "Il classico dell’aula",
+      "howto": "Trascina indietro la palla di carta e rilascia per centrare il cestino. Occhio alla freccia del vento sulla lavagna: spinge la palla in volo! Le serie danno bonus; tre errori e finisce."
+    },
+    "paperglider": {
+      "name": "Aliante di Carta",
+      "desc": "Plana nel corridoio",
+      "howto": "Tieni premuto ovunque per cabrare, rilascia per picchiare. Plana tra pile di banchi e lampade sospese e afferra le stelle dorate per grandi bonus. Un urto chiude il volo!"
+    },
+    "dotsboxes": {
+      "name": "Punti e Scatole",
+      "desc": "Il duello del quaderno",
+      "howto": "A turno tracciate muri tra i punti. Chiudi il quarto muro di una casella per conquistarla — e giochi di nuovo! Il ciano sei tu, il rosso il computer. Vince chi ha più caselle."
+    },
+    "eraserflick": {
+      "name": "Gomma Sumo",
+      "desc": "Sfida sul banco",
+      "howto": "Trascina la tua gomma ciano e rilascia per farla schizzare. Spingi la gomma rossa giù dal banco senza scivolare anche tu! Ogni round il banco si restringe. Se cadi, è finita."
+    },
+    "mathsprint": {
+      "name": "Sprint di Calcolo",
+      "desc": "Batti l’orologio della lavagna",
+      "howto": "Un’operazione appare alla lavagna con quattro risposte: tocca quella giusta prima che la linea di gesso si esaurisca! Risposte rapide valgono di più, le serie moltiplicano. Tre errori e la lezione finisce."
     }
   },
   "username": {

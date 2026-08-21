@@ -66,15 +66,15 @@ export const GAME_JINGLES: Record<string, Tone[]> = {
 
   // ─── Spooky ───
   // Chromatic wobble from the crypt.
-  ghostrun: [note(57, 0.1, 'triangle'), note(60, 0.1, 'triangle'), note(64, 0.1, 'triangle'), note(69, 0.2, 'triangle')],
+  streetrun: [note(57, 0.1, 'triangle'), note(60, 0.1, 'triangle'), note(64, 0.1, 'triangle'), note(69, 0.2, 'triangle')],
   // A hesitant minor-second question mark.
-  ghosthunt: [note(55, 0.12, 'triangle'), note(62, 0.12, 'triangle'), note(55, 0.08, 'triangle'), note(67, 0.2, 'triangle')],
+  pigeonpanic: [note(55, 0.12, 'triangle'), note(62, 0.12, 'triangle'), note(55, 0.08, 'triangle'), note(67, 0.2, 'triangle')],
   // A groan rising from below.
-  vampirehunt: [note(50, 0.14, 'triangle'), note(53, 0.14, 'triangle'), note(56, 0.14, 'triangle'), note(62, 0.24, 'triangle')],
+  balloonfight: [note(50, 0.14, 'triangle'), note(53, 0.14, 'triangle'), note(56, 0.14, 'triangle'), note(62, 0.24, 'triangle')],
   // Fast skittering legs.
-  monstermatch: [note(64, 0.08), note(68, 0.08), note(71, 0.08), note(76, 0.16)],
+  marblematch: [note(64, 0.08), note(68, 0.08), note(71, 0.08), note(76, 0.16)],
   // Carnival shooting-gallery flourish.
-  pumpkintoss: [slide(160, 640, 0.24), note(76, 0.1), note(72, 0.1), note(79, 0.18)],
+  canknock: [slide(160, 640, 0.24), note(76, 0.1), note(72, 0.1), note(79, 0.18)],
 
   // ─── Brain ───
   // Flip… flip… match!
@@ -87,6 +87,11 @@ export const GAME_JINGLES: Record<string, Tone[]> = {
   pixellogic: [note(72, 0.08, 'triangle'), note(76, 0.08, 'triangle'), note(79, 0.08, 'triangle'), note(83, 0.16, 'triangle')],
   // Switches clicking on, one by one.
   blockdrop: [note(52, 0.1, 'square', 0.5), note(59, 0.1, 'square', 0.5), note(64, 0.1, 'square', 0.5), note(71, 0.2, 'square', 0.5)],
+  binshot: [note(67, 0.08), note(64, 0.08), note(72, 0.16)],
+  paperglider: [slide(300, 600, 0.2, 'triangle'), slide(600, 450, 0.16, 'triangle'), note(76, 0.14, 'triangle')],
+  dotsboxes: [note(60, 0.09), note(64, 0.09), note(60, 0.09), note(67, 0.16)],
+  eraserflick: [note(55, 0.09, 'square', 0.5), note(62, 0.09, 'square', 0.5), note(67, 0.16, 'square', 0.5)],
+  mathsprint: [note(72, 0.07), note(74, 0.07), note(76, 0.07), note(77, 0.07), note(79, 0.14)],
   // Sparkling falling thirds.
   fourstack: [note(64, 0.09), note(67, 0.09), note(71, 0.09), note(76, 0.18)],
 };
