@@ -27,8 +27,9 @@
     "categories": {
       "classics": "Classiques",
       "action": "Action",
-      "spooky": "Frissons",
-      "brain": "Cerveau"
+      "brain": "Cerveau",
+      "street": "Jeux de Rue",
+      "school": "Jours d’École"
     }
   },
   "purchase": {
@@ -194,11 +195,6 @@
       "desc": "Tout le monde rentre",
       "howto": "Vole avec la croix. Reste en vol bas au-dessus des naufragés pour les treuiller à bord (3 places), puis pose-toi sur la plateforme cyan pour les déposer. Gare à la tourelle !"
     },
-    "vampirehunt": {
-      "name": "Chasse aux Vampires",
-      "desc": "Survis à la nuit",
-      "howto": "Marche avec ◀ ▶ et lance des dagues avec ◎ — une vole bas, l’autre haut. Les zombies rampent au sol, les chauves-souris piquent d’en haut. Remplis la jauge pour finir la nuit !"
-    },
     "cratepush": {
       "name": "Pousse-Caisses",
       "desc": "Chaque caisse à sa place",
@@ -224,30 +220,60 @@
       "desc": "Rebondis vers les étoiles",
       "howto": "Ta créature rebondit toute seule : glisse ou utilise ◀ ▶ pour viser les plateformes. Les blanches s’effritent après un rebond, les ressorts t’expédient très haut, et les bords se rejoignent. Ne tombe pas !"
     },
-    "ghostrun": {
-      "name": "Course Fantôme",
-      "desc": "Sprint dans le cimetière",
-      "howto": "Change de couloir avec ◀ ▶ (ou glisse) et franchis les pierres tombales avec ↥. Les fantômes ne se sautent pas : évite-les ! Attrape les feux follets dorés pour des points bonus. La nuit accélère sans cesse."
-    },
-    "ghosthunt": {
-      "name": "Chasse aux Fantômes",
-      "desc": "Touche-les avant qu’ils filent",
-      "howto": "Les esprits traversent le cimetière : touche-les pour tirer avant qu’ils s’échappent ! 3 cartouches par duo ; les chauves-souris sont rapides et valent triple. Chaque esprit échappé coûte une vie."
-    },
-    "pumpkintoss": {
-      "name": "Lance-Citrouilles",
-      "desc": "Prends d’assaut les forts d’os",
-      "howto": "Tire la citrouille en arrière, relâche et regarde-la voler ! Fracasse les blocs d’os et renverse tous les squelettes pour passer au château suivant. Cinq citrouilles par château — celles qui restent donnent un bonus."
-    },
-    "monstermatch": {
-      "name": "Match de Monstres",
-      "desc": "Aligne trois, enchaîne plus",
-      "howto": "Touche un monstre puis un voisin pour les échanger et aligner 3 pareils : ils éclatent et tout dégringole. Les chaînes multiplient ton score ! Tu as 30 coups. Fais-les compter."
-    },
     "blockdrop": {
       "name": "Chute de Blocs",
       "desc": "Efface des lignes, trouve le rythme",
       "howto": "Dirige la pièce avec ◀ ▶, fais-la pivoter avec ↻, écrase-la avec ▼ (les gestes marchent aussi). Remplis une ligne pour l’effacer — quatre d’un coup pour le gros bonus ! Le puits accélère toutes les 10 lignes."
+    },
+    "streetrun": {
+      "name": "Course de Rue",
+      "desc": "Sprinte le quartier",
+      "howto": "Change de couloir avec ◀ ▶ (ou glisse) et franchis les caisses en bois avec ↥. Les poubelles sont trop hautes : évite-les ! Ramasse les pièces pour des points bonus. La rue accélère sans cesse."
+    },
+    "pigeonpanic": {
+      "name": "Panique aux Pigeons",
+      "desc": "Touche-les avant l’envol",
+      "howto": "Les pigeons traversent les toits : touche-les avant qu’ils s’échappent ! 3 cailloux par duo ; les avions en papier sont rapides et valent triple. Chaque oiseau échappé coûte une vie."
+    },
+    "canknock": {
+      "name": "Chamboule-Tout",
+      "desc": "Le classique de la fête foraine",
+      "howto": "Tire la pierre en arrière, relâche et renverse les boîtes de conserve ! Fais tomber toutes les boîtes pour un montage plus haut et plus dur. Cinq pierres par manche — celles qui restent donnent un bonus."
+    },
+    "marblematch": {
+      "name": "Billes Alignées",
+      "desc": "Aligne trois, enchaîne plus",
+      "howto": "Touche une bille puis une voisine pour les échanger et aligner 3 couleurs identiques : elles éclatent et tout dégringole. Les chaînes multiplient ton score ! Tu as 30 coups. Fais-les compter."
+    },
+    "balloonfight": {
+      "name": "Bataille d’Eau",
+      "desc": "Trempe ou sois trempé",
+      "howto": "Marche avec ◀ ▶ et lance des ballons d’eau avec ◎ — un vole bas, l’autre haut. Les rivaux chargent au sol, les avions en papier piquent d’en haut. Remplis la jauge pour gagner la manche !"
+    },
+    "binshot": {
+      "name": "Panier de Papier",
+      "desc": "Le classique de la classe",
+      "howto": "Tire la boule de papier en arrière et relâche pour viser la corbeille. Surveille la flèche du vent au tableau — elle dévie ta boule en plein vol ! Les séries donnent un bonus ; trois ratés et c’est fini."
+    },
+    "paperglider": {
+      "name": "Planeur de Papier",
+      "desc": "Traverse le couloir",
+      "howto": "Appuie n’importe où pour cabrer, relâche pour piquer. Glisse entre les piles de bureaux et les lampes suspendues, et attrape les étoiles dorées pour de gros bonus. Un crash et le vol s’arrête !"
+    },
+    "dotsboxes": {
+      "name": "La Pipopipette",
+      "desc": "Le duel du cahier",
+      "howto": "À tour de rôle, tracez des murs entre les points. Ferme le quatrième mur d’une case pour la gagner — et rejoue ! Le cyan c’est toi, le rouge l’ordinateur. Le plus de cases gagne la manche."
+    },
+    "eraserflick": {
+      "name": "Gomme Sumo",
+      "desc": "Duel sur le bureau",
+      "howto": "Fais glisser ta gomme cyan et relâche pour la propulser. Pousse la gomme rouge hors du bureau sans glisser toi-même ! Le bureau rétrécit à chaque manche. Si tu tombes, c’est fini."
+    },
+    "mathsprint": {
+      "name": "Sprint de Calcul",
+      "desc": "Bats l’horloge du tableau",
+      "howto": "Une opération s’affiche au tableau avec quatre réponses : touche la bonne avant que la ligne de craie s’efface ! Répondre vite rapporte plus, les séries multiplient. Trois erreurs et le cours est fini."
     }
   },
   "username": {

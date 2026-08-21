@@ -27,8 +27,9 @@
     "categories": {
       "classics": "Clásicos",
       "action": "Acción",
-      "spooky": "Terror",
-      "brain": "Mente"
+      "brain": "Mente",
+      "street": "Juegos de Calle",
+      "school": "Días de Escuela"
     }
   },
   "purchase": {
@@ -194,11 +195,6 @@
       "desc": "Todos vuelven a casa",
       "howto": "Vuela con la cruceta. Planea bajo sobre los atrapados para subirlos a bordo (3 asientos) y aterriza en la plataforma cian para dejarlos. ¡Cuidado con la torreta!"
     },
-    "vampirehunt": {
-      "name": "Caza de Vampiros",
-      "desc": "Sobrevive a la noche",
-      "howto": "Camina con ◀ ▶ y lanza dagas con ◎: una vuela baja y otra alta. Los zombis avanzan por el suelo, los murciélagos caen en picado. ¡Llena la barra para superar la noche!"
-    },
     "cratepush": {
       "name": "Empuja Cajas",
       "desc": "Cada caja a su destino",
@@ -224,30 +220,60 @@
       "desc": "Rebota hasta las estrellas",
       "howto": "Tu bicho rebota solo: desliza o usa ◀ ▶ para guiarlo a las plataformas. Las blancas se desmoronan tras un bote, los muelles te lanzan altísimo y los bordes conectan. ¡No caigas!"
     },
-    "ghostrun": {
-      "name": "Carrera Fantasma",
-      "desc": "Esprinta el cementerio",
-      "howto": "Cambia de carril con ◀ ▶ (o desliza) y salta lápidas con ↥. Los fantasmas no se saltan: ¡esquívalos! Atrapa las luces doradas para puntos extra. La noche va cada vez más rápida."
-    },
-    "ghosthunt": {
-      "name": "Caza Fantasmas",
-      "desc": "Tócalos antes de que escapen",
-      "howto": "Los espíritus cruzan el cementerio: ¡tócalos para dispararles antes de que escapen! Tienes 3 cartuchos por pareja; los murciélagos son rápidos y valen triple. Cada espíritu que escapa cuesta una vida."
-    },
-    "pumpkintoss": {
-      "name": "Lanza Calabazas",
-      "desc": "Asalta los fuertes de hueso",
-      "howto": "Tira de la calabaza hacia atrás, suéltala ¡y mírala volar! Destroza los bloques de hueso y derriba a todos los esqueletos para asaltar el siguiente castillo. Cinco calabazas por castillo: las sobrantes dan bonus."
-    },
-    "monstermatch": {
-      "name": "Combina Monstruos",
-      "desc": "Junta tres, encadena más",
-      "howto": "Toca un monstruo y luego a un vecino para intercambiarlos y alinear 3 iguales: explotan y todo cae. ¡Las cadenas multiplican tu puntuación! Tienes 30 movimientos. Aprovéchalos."
-    },
     "blockdrop": {
       "name": "Caída de Bloques",
       "desc": "Limpia líneas, siente el ritmo",
       "howto": "Dirige la pieza con ◀ ▶, gírala con ↻ y estréllala con ▼ (también con gestos). Completa una fila para limpiarla, ¡cuatro a la vez para el gran bonus! El pozo se acelera cada 10 líneas."
+    },
+    "streetrun": {
+      "name": "Carrera Callejera",
+      "desc": "Esprinta la manzana",
+      "howto": "Cambia de carril con ◀ ▶ (o desliza) y salta las cajas de madera con ↥. Los contenedores son muy altos para saltarlos: ¡esquívalos! Recoge monedas para puntos extra. La calle acelera sin parar."
+    },
+    "pigeonpanic": {
+      "name": "Pánico de Palomas",
+      "desc": "Tócalas antes de que vuelen",
+      "howto": "Las palomas cruzan los tejados: ¡tócalas antes de que escapen! Tienes 3 piedritas por pareja; los aviones de papel son rápidos y valen triple. Cada ave que escapa cuesta una vida."
+    },
+    "canknock": {
+      "name": "Derriba Latas",
+      "desc": "El clásico de la feria",
+      "howto": "Tira de la piedra hacia atrás, suéltala ¡y tumba las latas de sus cajas! Derriba todas para un montaje más alto y difícil. Cinco piedras por ronda: las sobrantes dan bonus."
+    },
+    "marblematch": {
+      "name": "Combina Canicas",
+      "desc": "Junta tres, encadena más",
+      "howto": "Toca una canica y luego una vecina para intercambiarlas y alinear 3 del mismo color: explotan y todo cae. ¡Las cadenas multiplican tu puntuación! Tienes 30 movimientos. Aprovéchalos."
+    },
+    "balloonfight": {
+      "name": "Guerra de Globos",
+      "desc": "Empapa o sé empapado",
+      "howto": "Camina con ◀ ▶ y lanza globos de agua con ◎: uno vuela bajo y otro alto. Los rivales cargan por el suelo, los aviones de papel caen en picado. ¡Llena la barra para ganar la ronda!"
+    },
+    "binshot": {
+      "name": "Tiro a la Papelera",
+      "desc": "El clásico del aula",
+      "howto": "Arrastra la bola de papel hacia atrás y suéltala para encestarla en la papelera. Observa la flecha del viento en la pizarra: ¡empuja tu bola en el aire! Las rachas dan bonus; tres fallos y se acabó."
+    },
+    "paperglider": {
+      "name": "Planeador de Papel",
+      "desc": "Vuela el pasillo",
+      "howto": "Mantén pulsado para levantar el morro, suelta para picar. Planea entre pupitres apilados y lámparas colgantes, y atrapa estrellas doradas para grandes bonus. ¡Un choque acaba el vuelo!"
+    },
+    "dotsboxes": {
+      "name": "Puntos y Cajas",
+      "desc": "El duelo del cuaderno",
+      "howto": "Por turnos, dibujad muros entre los puntos. Cierra el cuarto muro de una caja para reclamarla, ¡y repites turno! El cian eres tú, el rojo la máquina. Gana quien tenga más cajas."
+    },
+    "eraserflick": {
+      "name": "Gomas de Sumo",
+      "desc": "Duelo sobre el pupitre",
+      "howto": "Arrastra sobre tu goma cian y suelta para lanzarla. ¡Empuja la goma roja fuera del pupitre sin caerte tú! Cada ronda el pupitre encoge. Si caes, se acabó."
+    },
+    "mathsprint": {
+      "name": "Sprint de Cálculo",
+      "desc": "Gana al reloj de la pizarra",
+      "howto": "Una operación aparece en la pizarra con cuatro respuestas: ¡toca la correcta antes de que se agote la línea de tiza! Responder rápido da más puntos y las rachas multiplican. Tres fallos y se acabó la clase."
     }
   },
   "username": {

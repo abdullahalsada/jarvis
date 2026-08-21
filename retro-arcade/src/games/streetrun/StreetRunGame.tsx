@@ -10,10 +10,10 @@ import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
 /**
- * Endless graveyard runner: three lanes rush toward you — hop lanes with
- * ◀ ▶ (or swipe) and vault tombstones with ↥. Ghosts can't be jumped;
- * dodge them. Grab the golden wisps for bonus points. The night gets
- * faster the longer you survive. 3 lives, brief mercy after a hit.
+ * Endless street runner: three lanes rush toward you — hop lanes with
+ * ◀ ▶ (or swipe) and vault wooden crates with ↥. Trash bins are too tall
+ * to jump; dodge them. Grab the coins for bonus points. The street gets
+ * faster the longer you run. 3 lives, brief mercy after a hit.
  */
 const LANES = 3;
 
@@ -21,10 +21,10 @@ interface Thing {
   id: number;
   lane: number;
   y: number; // 0 at horizon, grows toward the player
-  kind: 'stone' | 'ghost' | 'wisp';
+  kind: 'crate' | 'bin' | 'coin';
 }
 
-export function GhostRunGame({ api }: { api: GameApi }) {
+export function StreetRunGame({ api }: { api: GameApi }) {
   const W = api.width;
   const H = api.height - PAD_BAR;
   const ROAD_W = Math.min(W * 0.86, 380);
@@ -101,7 +101,7 @@ export function GhostRunGame({ api }: { api: GameApi }) {
           id: nextId.current++,
           lane: lanes[i],
           y: -40,
-          kind: r < 0.18 ? 'wisp' : r < 0.55 ? 'ghost' : 'stone',
+          kind: r < 0.18 ? 'coin' : r < 0.55 ? 'bin' : 'crate',
         });
       }
       spawnCd.current = Math.max(0.5, 1.25 - distance.current / 4000);
@@ -115,12 +115,12 @@ export function GhostRunGame({ api }: { api: GameApi }) {
       if (t.lane !== lane.current) continue;
       const hit = t.y > PLAYER_Y - PSIZE * 0.4 && t.y < PLAYER_Y + PSIZE * 0.7;
       if (!hit) continue;
-      if (t.kind === 'wisp') {
+      if (t.kind === 'coin') {
         t.y = H + 999;
         wispBonus.current += 25;
         playSfx('coin');
         haptic.light();
-      } else if (t.kind === 'stone' && airborne) {
+      } else if (t.kind === 'crate' && airborne) {
         // vaulted it
       } else if (mercy.current <= 0) {
         t.y = H + 999;
@@ -149,9 +149,9 @@ export function GhostRunGame({ api }: { api: GameApi }) {
     <View style={{ flex: 1 }}>
       <View style={{ flex: 1 }} {...pan.panHandlers}>
         <View pointerEvents="none" style={{ flex: 1 }}>
-          {/* Night sky + moon */}
-          <View style={{ position: 'absolute', right: 22, top: 16, width: 38, height: 38, borderRadius: 19, backgroundColor: '#e8e8f0', opacity: 0.85 }} />
-          {/* Graveyard path */}
+          {/* Afternoon sun */}
+          <View style={{ position: 'absolute', right: 22, top: 16, width: 38, height: 38, borderRadius: 19, backgroundColor: '#ffe600', opacity: 0.75 }} />
+          {/* Asphalt */}
           <View
             style={{
               position: 'absolute',
@@ -159,17 +159,17 @@ export function GhostRunGame({ api }: { api: GameApi }) {
               top: 0,
               width: ROAD_W,
               height: H,
-              backgroundColor: '#141024',
+              backgroundColor: '#1d1d26',
               borderLeftWidth: 3,
               borderRightWidth: 3,
-              borderColor: '#2a2a45',
+              borderColor: '#3a3a4a',
             }}
           />
           {[1, 2].map((l) => (
-            <View key={l} style={{ position: 'absolute', left: roadX + l * LANE_W - 1, top: 0, width: 2, height: H, backgroundColor: '#252043' }} />
+            <View key={l} style={{ position: 'absolute', left: roadX + l * LANE_W - 1, top: 0, width: 2, height: H, backgroundColor: '#34343f' }} />
           ))}
           {things.current.map((t) => {
-            if (t.kind === 'stone') {
+            if (t.kind === 'crate') {
               return (
                 <View
                   key={t.id}
@@ -179,22 +179,19 @@ export function GhostRunGame({ api }: { api: GameApi }) {
                     top: t.y - 20,
                     width: 44,
                     height: 36,
-                    borderTopLeftRadius: 18,
-                    borderTopRightRadius: 18,
-                    backgroundColor: '#3a3a55',
-                    borderWidth: 2,
-                    borderColor: '#4a4a6a',
+                    backgroundColor: '#8a5a2b',
+                    borderWidth: 3,
+                    borderColor: '#5e3d1c',
                   }}
                 />
               );
             }
-            if (t.kind === 'ghost') {
+            if (t.kind === 'bin') {
               return (
-                <Image
-                  key={t.id}
-                  source={ACTORS.ghost_cyan}
-                  style={{ position: 'absolute', left: laneX(t.lane) - 24, top: t.y - 24, width: 48, height: 48 }}
-                />
+                <View key={t.id} style={{ position: 'absolute', left: laneX(t.lane) - 20, top: t.y - 28 }}>
+                  <View style={{ width: 40, height: 8, borderRadius: 4, backgroundColor: '#9a9ab5' }} />
+                  <View style={{ width: 34, height: 42, marginLeft: 3, backgroundColor: '#6a6a85', borderWidth: 2, borderColor: '#9a9ab5' }} />
+                </View>
               );
             }
             return (
@@ -215,9 +212,9 @@ export function GhostRunGame({ api }: { api: GameApi }) {
               />
             );
           })}
-          {/* The runner (glows dim while mercy is active) */}
+          {/* The runner (dims briefly after a hit) */}
           <Image
-            source={ACTORS.pumpkin}
+            source={ACTORS.climber}
             style={{
               position: 'absolute',
               left: laneX(lane.current) - PSIZE / 2,

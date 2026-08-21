@@ -9,30 +9,31 @@ import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
 /**
- * Ghosts'n Goblins-style graveyard stand: zombies shamble in from both
- * sides, bats swoop in sine waves overhead. Face them and throw daggers
- * (◎) — zombies 50, bats 100 (they're harder to hit). Clear the wave
- * quota to advance; each night is thicker and faster. 3 lives.
+ * Backyard water-balloon battle: rival kids charge in from both sides,
+ * paper planes swoop in sine waves overhead. Face them and throw water
+ * balloons (◎) — kids 50, planes 100 (they're harder to hit). Fill the
+ * splash quota to win the round; each round is thicker and faster. Get
+ * splashed three times and you're out.
  */
-interface Zombie {
+interface Rival {
   x: number;
   dir: 1 | -1;
 }
 
-interface Bat {
+interface Plane {
   x: number;
   baseY: number;
   phase: number;
   dir: 1 | -1;
 }
 
-interface Dagger {
+interface Balloon {
   x: number;
   y: number;
   dir: 1 | -1;
 }
 
-export function VampireHuntGame({ api }: { api: GameApi }) {
+export function BalloonFightGame({ api }: { api: GameApi }) {
   const W = api.width;
   const H = api.height - PAD_BAR;
   const GROUND = H - 60;
@@ -41,9 +42,9 @@ export function VampireHuntGame({ api }: { api: GameApi }) {
   const px = useRef(W / 2);
   const facing = useRef<1 | -1>(1);
   const held = useRef({ left: false, right: false });
-  const zombies = useRef<Zombie[]>([]);
-  const bats = useRef<Bat[]>([]);
-  const daggers = useRef<Dagger[]>([]);
+  const zombies = useRef<Rival[]>([]);
+  const bats = useRef<Plane[]>([]);
+  const daggers = useRef<Balloon[]>([]);
   const spawnCd = useRef(1);
   const fireCd = useRef(0);
   const kills = useRef(0);
@@ -70,10 +71,10 @@ export function VampireHuntGame({ api }: { api: GameApi }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api.resetToken]);
 
-  const throwDagger = () => {
+  const throwBalloon = () => {
     if (!api.running || fireCd.current > 0 || daggers.current.length >= 3) return;
     daggers.current.push({ x: px.current + facing.current * SIZE * 0.5, y: GROUND - SIZE * 0.55, dir: facing.current });
-    // A high second dagger for the bats.
+    // A high second balloon for the planes.
     daggers.current.push({ x: px.current + facing.current * SIZE * 0.5, y: GROUND - SIZE * 1.4, dir: facing.current });
     fireCd.current = 0.35;
     playSfx('shoot');
@@ -192,24 +193,24 @@ export function VampireHuntGame({ api }: { api: GameApi }) {
     <View style={{ flex: 1 }}>
       <View style={{ flex: 1 }}>
         <View pointerEvents="none" style={{ flex: 1 }}>
-          {/* Graveyard ground + moon */}
-          <View style={{ position: 'absolute', right: 24, top: 18, width: 44, height: 44, borderRadius: 22, backgroundColor: '#e8e8f0', opacity: 0.9 }} />
-          <View style={{ position: 'absolute', top: GROUND, width: W, height: H - GROUND, backgroundColor: '#161228', borderTopWidth: 2, borderColor: '#2a2a45' }} />
-          {/* Tombstones (decor) */}
+          {/* Backyard grass + sun */}
+          <View style={{ position: 'absolute', right: 24, top: 18, width: 44, height: 44, borderRadius: 22, backgroundColor: '#ffe600', opacity: 0.8 }} />
+          <View style={{ position: 'absolute', top: GROUND, width: W, height: H - GROUND, backgroundColor: '#1c3315', borderTopWidth: 2, borderColor: '#3f7d2c' }} />
+          {/* Bushes (decor) */}
           {[0.12, 0.35, 0.68, 0.88].map((f, i) => (
-            <View key={i} style={{ position: 'absolute', left: W * f - 12, top: GROUND - 20, width: 24, height: 20, borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: '#3a3a55' }} />
+            <View key={i} style={{ position: 'absolute', left: W * f - 14, top: GROUND - 16, width: 28, height: 16, borderTopLeftRadius: 14, borderTopRightRadius: 14, backgroundColor: '#2b7d2c' }} />
           ))}
-          {/* Kill quota */}
+          {/* Splash quota */}
           <View style={{ position: 'absolute', top: 8, left: 12 }}>
-            <View style={{ width: 110, height: 8, borderWidth: 1, borderColor: colors.neonMagenta, borderRadius: 4 }}>
-              <View style={{ width: `${Math.min(100, (kills.current / quota()) * 100)}%`, height: '100%', backgroundColor: colors.neonMagenta, borderRadius: 3 }} />
+            <View style={{ width: 110, height: 8, borderWidth: 1, borderColor: colors.neonCyan, borderRadius: 4 }}>
+              <View style={{ width: `${Math.min(100, (kills.current / quota()) * 100)}%`, height: '100%', backgroundColor: colors.neonCyan, borderRadius: 3 }} />
             </View>
           </View>
-          {/* Zombies */}
+          {/* Rival kids */}
           {zombies.current.map((z, i) => (
             <Image
               key={i}
-              source={ACTORS.zombie}
+              source={ACTORS.kid_rival}
               style={{
                 position: 'absolute',
                 left: z.x - SIZE / 2,
@@ -220,11 +221,11 @@ export function VampireHuntGame({ api }: { api: GameApi }) {
               }}
             />
           ))}
-          {/* Bats */}
+          {/* Paper planes */}
           {bats.current.map((b, i) => (
             <Image
               key={i}
-              source={ACTORS.bat}
+              source={ACTORS.paper_plane}
               style={{
                 position: 'absolute',
                 left: b.x - SIZE / 2,
@@ -234,24 +235,26 @@ export function VampireHuntGame({ api }: { api: GameApi }) {
               }}
             />
           ))}
-          {/* Daggers */}
+          {/* Water balloons */}
           {daggers.current.map((d, i) => (
             <View
               key={i}
               style={{
                 position: 'absolute',
-                left: d.x - 8,
-                top: d.y - 2,
-                width: 16,
-                height: 4,
-                backgroundColor: '#c0c0d2',
-                borderRadius: 2,
+                left: d.x - 7,
+                top: d.y - 7,
+                width: 14,
+                height: 14,
+                borderRadius: 7,
+                backgroundColor: '#4ab8ff',
+                borderWidth: 1,
+                borderColor: '#a0dcff',
               }}
             />
           ))}
-          {/* The hunter */}
+          {/* You */}
           <Image
-            source={ACTORS.hunter}
+            source={ACTORS.climber}
             style={{
               position: 'absolute',
               left: px.current - SIZE / 2,
@@ -270,7 +273,7 @@ export function VampireHuntGame({ api }: { api: GameApi }) {
           { key: 'right', label: '▶', wide: true },
         ]}
         onDown={(k) => {
-          if (k === 'fire') throwDagger();
+          if (k === 'fire') throwBalloon();
           else held.current[k as 'left' | 'right'] = true;
         }}
         onUp={(k) => {

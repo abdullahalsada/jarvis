@@ -7,24 +7,24 @@ import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
 /**
- * Monster match-3: swap two neighboring monsters to line up three or more
- * of a kind — they pop, the grid tumbles down, and chain reactions rack up
- * multipliers. You have 30 moves; big cascades and 4+ matches earn extra.
- * Tap one monster, then a neighbor (or tap the same one to cancel).
+ * Glass-marble match-3: swap two neighboring marbles to line up three or
+ * more of a color — they pop, the grid tumbles down, and chain reactions
+ * rack up multipliers. You have 30 moves; big cascades and 4+ matches earn
+ * extra. Tap one marble, then a neighbor (or tap the same one to cancel).
  */
 const COLS = 7;
 const ROWS = 8;
 const KINDS = 5;
 
-const MONSTER_COLORS = [
-  { body: '#b14aed', eye: '#ffffff' }, // grape ghoul
-  { body: '#39ff14', eye: '#101018' }, // slime
-  { body: '#ff9f1c', eye: '#101018' }, // pumpkin imp
-  { body: '#00fff7', eye: '#101018' }, // frost sprite
-  { body: '#ff3b3b', eye: '#ffffff' }, // lava bat
+const MARBLE_COLORS = [
+  { body: '#b14aed', swirl: '#d79af7' }, // amethyst
+  { body: '#39ff14', swirl: '#a8ffa0' }, // cat's eye green
+  { body: '#ff9f1c', swirl: '#ffd98a' }, // amber
+  { body: '#00fff7', swirl: '#a0fffb' }, // sea glass
+  { body: '#ff3b3b', swirl: '#ff9d9d' }, // cherry
 ];
 
-export function MonsterMatchGame({ api }: { api: GameApi }) {
+export function MarbleMatchGame({ api }: { api: GameApi }) {
   const [grid, setGrid] = useState<number[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
   const [popping, setPopping] = useState<Set<number>>(new Set());
@@ -164,7 +164,7 @@ export function MonsterMatchGame({ api }: { api: GameApi }) {
           if (v < 0) return null;
           const r = Math.floor(i / COLS);
           const c = i % COLS;
-          const m = MONSTER_COLORS[v];
+          const m = MARBLE_COLORS[v];
           const pop = popping.has(i);
           const sel = selected === i;
           const size = cell - 6;
@@ -183,37 +183,16 @@ export function MonsterMatchGame({ api }: { api: GameApi }) {
                 style={{
                   width: size,
                   height: size,
-                  borderRadius: size * 0.3,
+                  borderRadius: size / 2,
                   backgroundColor: m.body,
                   opacity: pop ? 0.25 : 1,
-                  borderWidth: sel ? 3 : 0,
-                  borderColor: colors.neonYellow,
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  borderWidth: sel ? 3 : 2,
+                  borderColor: sel ? colors.neonYellow : 'rgba(0,0,0,0.25)',
                   transform: [{ scale: pop ? 1.15 : sel ? 1.05 : 1 }],
                 }}>
-                {/* Simple monster face: two eyes + jagged mouth */}
-                <View style={{ flexDirection: 'row', gap: size * 0.16, marginBottom: size * 0.08 }}>
-                  <View style={{ width: size * 0.18, height: size * 0.22, borderRadius: size * 0.09, backgroundColor: m.eye }} />
-                  <View style={{ width: size * 0.18, height: size * 0.22, borderRadius: size * 0.09, backgroundColor: m.eye }} />
-                </View>
-                <View style={{ flexDirection: 'row' }}>
-                  {[0, 1, 2].map((t) => (
-                    <View
-                      key={t}
-                      style={{
-                        width: 0,
-                        height: 0,
-                        borderLeftWidth: size * 0.09,
-                        borderRightWidth: size * 0.09,
-                        borderTopWidth: size * 0.14,
-                        borderLeftColor: 'transparent',
-                        borderRightColor: 'transparent',
-                        borderTopColor: m.eye,
-                      }}
-                    />
-                  ))}
-                </View>
+                {/* Glass shine + color swirl */}
+                <View style={{ position: 'absolute', left: size * 0.16, top: size * 0.12, width: size * 0.28, height: size * 0.18, borderRadius: size * 0.14, backgroundColor: 'rgba(255,255,255,0.75)', transform: [{ rotate: '-25deg' }] }} />
+                <View style={{ position: 'absolute', left: size * 0.28, top: size * 0.42, width: size * 0.44, height: size * 0.2, borderRadius: size * 0.12, backgroundColor: m.swirl, opacity: 0.8, transform: [{ rotate: '20deg' }] }} />
               </View>
             </Pressable>
           );

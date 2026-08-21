@@ -10,10 +10,10 @@ import { playSfx } from '../../audio/sfx';
 import { haptic } from '../../haptics';
 
 /**
- * Duck Hunt-style ghost shooting: spirits drift across the graveyard in
+ * Duck Hunt-style rooftop round-up: pigeons flap across the skyline in
  * wobbly flight — tap them before they escape off the far side! Each round
- * releases a pair and gives you limited shells. Ghosts that escape cost a
- * life; bats are fast and worth triple. Rounds get quicker and quicker.
+ * releases a pair and gives you limited pebbles. Pigeons that escape cost
+ * a life; paper planes are fast and worth triple. Rounds keep quickening.
  */
 interface Spirit {
   id: number;
@@ -21,14 +21,14 @@ interface Spirit {
   y: number;
   vx: number;
   wobble: number;
-  kind: 'ghost' | 'bat';
+  kind: 'pigeon' | 'plane';
   hit: boolean;
   fade: number;
 }
 
 const SIZE = 54;
 
-export function GhostHuntGame({ api }: { api: GameApi }) {
+export function PigeonPanicGame({ api }: { api: GameApi }) {
   const W = api.width;
   const H = api.height;
   const GROUND = H - 70;
@@ -50,14 +50,14 @@ export function GhostHuntGame({ api }: { api: GameApi }) {
     const n = round.current >= 4 ? 2 : 2;
     for (let i = 0; i < n; i++) {
       const fromLeft = Math.random() < 0.5;
-      const isBat = Math.random() < 0.2;
+      const isPlane = Math.random() < 0.2;
       spirits.current.push({
         id: nextId.current++,
         x: fromLeft ? -SIZE : W + SIZE,
         y: 80 + Math.random() * (GROUND - 200),
-        vx: (fromLeft ? 1 : -1) * speed * (isBat ? 1.6 : 1) * (0.85 + Math.random() * 0.3),
+        vx: (fromLeft ? 1 : -1) * speed * (isPlane ? 1.6 : 1) * (0.85 + Math.random() * 0.3),
         wobble: Math.random() * Math.PI * 2,
-        kind: isBat ? 'bat' : 'ghost',
+        kind: isPlane ? 'plane' : 'pigeon',
         hit: false,
         fade: 0,
       });
@@ -96,7 +96,7 @@ export function GhostHuntGame({ api }: { api: GameApi }) {
         s.hit = true;
         s.fade = 0.5;
         hitAny = true;
-        score.current += (s.kind === 'bat' ? 30 : 10) * Math.max(1, Math.ceil(round.current / 3));
+        score.current += (s.kind === 'plane' ? 30 : 10) * Math.max(1, Math.ceil(round.current / 3));
         api.setScore(score.current);
         playSfx('explode');
         haptic.medium();
@@ -155,17 +155,17 @@ export function GhostHuntGame({ api }: { api: GameApi }) {
   return (
     <View style={{ flex: 1 }} {...pan.panHandlers}>
       <View pointerEvents="none" style={{ flex: 1 }}>
-        {/* Moonlit graveyard */}
-        <View style={{ position: 'absolute', right: 24, top: 18, width: 44, height: 44, borderRadius: 22, backgroundColor: '#e8e8f0', opacity: 0.9 }} />
-        <View style={{ position: 'absolute', top: GROUND, width: W, height: H - GROUND, backgroundColor: '#161228', borderTopWidth: 2, borderColor: '#2a2a45' }} />
+        {/* Sunny rooftops */}
+        <View style={{ position: 'absolute', right: 24, top: 18, width: 44, height: 44, borderRadius: 22, backgroundColor: '#ffe600', opacity: 0.8 }} />
+        <View style={{ position: 'absolute', top: GROUND, width: W, height: H - GROUND, backgroundColor: '#2b2330', borderTopWidth: 2, borderColor: '#4a3a50' }} />
         {[0.15, 0.45, 0.8].map((f, i) => (
-          <View key={i} style={{ position: 'absolute', left: W * f - 14, top: GROUND - 24, width: 28, height: 24, borderTopLeftRadius: 12, borderTopRightRadius: 12, backgroundColor: '#3a3a55' }} />
+          <View key={i} style={{ position: 'absolute', left: W * f - 14, top: GROUND - 24, width: 28, height: 24, backgroundColor: '#5a3a2b', borderWidth: 2, borderColor: '#7a4a35' }} />
         ))}
-        {/* Spirits */}
+        {/* Birds */}
         {spirits.current.map((s) => (
           <Image
             key={s.id}
-            source={s.kind === 'bat' ? ACTORS.bat : ACTORS.ghost_magenta}
+            source={s.kind === 'plane' ? ACTORS.paper_plane : ACTORS.pigeon}
             style={{
               position: 'absolute',
               left: s.x - SIZE / 2,

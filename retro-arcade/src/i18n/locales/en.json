@@ -27,8 +27,9 @@
     "categories": {
       "classics": "Classics",
       "action": "Action",
-      "spooky": "Spooky",
-      "brain": "Brain"
+      "brain": "Brain",
+      "street": "Street Games",
+      "school": "School Days"
     }
   },
   "purchase": {
@@ -194,11 +195,6 @@
       "desc": "Everyone comes home",
       "howto": "Fly with the pad. Hover low over the stranded to winch them aboard (3 seats), then land on the cyan pad to drop them off. Watch the turret’s flak!"
     },
-    "vampirehunt": {
-      "name": "Vampire Hunt",
-      "desc": "Survive the night",
-      "howto": "Walk with ◀ ▶ and throw daggers with ◎ — one flies low, one high. Zombies shamble on the ground, bats swoop overhead. Fill the bar to clear the night!"
-    },
     "cratepush": {
       "name": "Crate Push",
       "desc": "Every crate on target",
@@ -224,30 +220,60 @@
       "desc": "Bounce to the stars",
       "howto": "Your critter bounces on its own — slide or use ◀ ▶ to steer it onto platforms. White ones crumble after one bounce, springs launch you high, and the screen edges wrap. Don’t fall!"
     },
-    "ghostrun": {
-      "name": "Ghost Run",
-      "desc": "Sprint the graveyard",
-      "howto": "Hop lanes with ◀ ▶ (or swipe) and vault tombstones with ↥. Ghosts can’t be jumped — dodge them! Grab golden wisps for bonus points. The night gets faster and faster."
-    },
-    "ghosthunt": {
-      "name": "Ghost Hunt",
-      "desc": "Tap ’em before they escape",
-      "howto": "Spirits drift across the graveyard — tap them to shoot before they escape! You get 3 shells per pair; bats are fast and worth triple. Every spirit that escapes costs a life."
-    },
-    "pumpkintoss": {
-      "name": "Pumpkin Toss",
-      "desc": "Storm the bone forts",
-      "howto": "Drag the pumpkin back, release, and watch it fly! Smash the bone blocks and knock down every skeleton to storm the next castle. Five pumpkins per castle — spares earn bonus points."
-    },
-    "monstermatch": {
-      "name": "Monster Match",
-      "desc": "Match three, chain more",
-      "howto": "Tap a monster, then a neighbor, to swap them and line up 3 of a kind — they pop and everything tumbles down. Chains multiply your score! You have 30 moves. Make them count."
-    },
     "blockdrop": {
       "name": "Block Drop",
       "desc": "Clear lines, feel the flow",
       "howto": "Steer the falling shape with ◀ ▶, spin it with ↻, slam it with ▼ (swipes work too). Fill a row to clear it — four at once for the big bonus! The well speeds up every 10 lines."
+    },
+    "streetrun": {
+      "name": "Street Run",
+      "desc": "Sprint the block",
+      "howto": "Hop lanes with ◀ ▶ (or swipe) and vault the wooden crates with ↥. Trash bins are too tall to jump — dodge them! Grab coins for bonus points. The street gets faster and faster."
+    },
+    "pigeonpanic": {
+      "name": "Pigeon Panic",
+      "desc": "Tap ’em before they fly off",
+      "howto": "Pigeons flap across the rooftops — tap them before they escape! You get 3 pebbles per pair; paper planes are fast and worth triple. Every bird that escapes costs a life."
+    },
+    "canknock": {
+      "name": "Can Knockdown",
+      "desc": "The fair-ground classic",
+      "howto": "Drag the stone back, release, and knock the tin cans off their crates! Topple every can to get a taller, trickier setup. Five stones per round — spares earn bonus points."
+    },
+    "marblematch": {
+      "name": "Marble Match",
+      "desc": "Match three, chain more",
+      "howto": "Tap a marble, then a neighbor, to swap them and line up 3 of a color — they pop and everything tumbles down. Chains multiply your score! You have 30 moves. Make them count."
+    },
+    "balloonfight": {
+      "name": "Balloon Fight",
+      "desc": "Soak or get soaked",
+      "howto": "Walk with ◀ ▶ and throw water balloons with ◎ — one flies low, one high. Rival kids charge on the ground, paper planes swoop overhead. Fill the splash bar to win the round!"
+    },
+    "binshot": {
+      "name": "Bin Shot",
+      "desc": "The classroom classic",
+      "howto": "Drag the paper ball back and release to toss it into the bin. Watch the wind arrow on the chalkboard — it pushes your ball mid-air! Streaks earn bonus points; three misses end it."
+    },
+    "paperglider": {
+      "name": "Paper Glider",
+      "desc": "Fly the hallway",
+      "howto": "Hold anywhere to pull the nose up, let go to dive. Glide between the desk stacks and hanging lights, and snatch gold stars for big bonus points. One crash ends the flight!"
+    },
+    "dotsboxes": {
+      "name": "Dots & Boxes",
+      "desc": "The notebook duel",
+      "howto": "Take turns drawing walls between dots. Close the fourth wall of a box to claim it — and go again! Cyan is you, red is the computer. Most boxes wins the round."
+    },
+    "eraserflick": {
+      "name": "Eraser Flick",
+      "desc": "Desk sumo showdown",
+      "howto": "Drag on your cyan eraser and release to flick it. Shove the red eraser off the desk without sliding off yourself! Each round the desk shrinks. Fall off and it’s over."
+    },
+    "mathsprint": {
+      "name": "Math Sprint",
+      "desc": "Beat the chalkboard clock",
+      "howto": "A sum flashes on the board with four answers — tap the right one before the chalk line runs out! Fast answers score more, streaks multiply. Three strikes and class is dismissed."
     }
   },
   "username": {

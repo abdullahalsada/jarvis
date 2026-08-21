@@ -27,8 +27,9 @@
     "categories": {
       "classics": "Klasikler",
       "action": "Aksiyon",
-      "spooky": "Korku",
-      "brain": "Zekâ"
+      "brain": "Zekâ",
+      "street": "Sokak Oyunları",
+      "school": "Okul Günleri"
     }
   },
   "purchase": {
@@ -194,11 +195,6 @@
       "desc": "Herkes eve dönecek",
       "howto": "Yön tuşlarıyla uç. Mahsur kalanların üzerinde alçaktan süzülerek onları al (3 koltuk), sonra bırakmak için camgöbeği pistine in. Taretin ateşine dikkat!"
     },
-    "vampirehunt": {
-      "name": "Vampir Avı",
-      "desc": "Geceyi atlat",
-      "howto": "◀ ▶ ile yürü, ◎ ile hançer fırlat — biri alçaktan, biri yüksekten uçar. Zombiler yerde sürünür, yarasalar tepeden dalar. Geceyi bitirmek için çubuğu doldur!"
-    },
     "cratepush": {
       "name": "Sandık İtme",
       "desc": "Her sandık hedefe",
@@ -224,30 +220,60 @@
       "desc": "Yıldızlara sıçra",
       "howto": "Yaratığın kendi kendine zıplar — platformlara yönlendirmek için kaydır veya ◀ ▶ kullan. Beyazlar tek sıçrayışta ufalanır, yaylar seni yükseğe fırlatır, kenarlar birbirine bağlıdır. Düşme!"
     },
-    "ghostrun": {
-      "name": "Hayalet Koşusu",
-      "desc": "Mezarlıkta sprint",
-      "howto": "◀ ▶ ile (veya kaydırarak) şerit değiştir, ↥ ile mezar taşlarının üstünden atla. Hayaletlerin üstünden atlanmaz — onlardan kaç! Altın ışıkları topla, bonus puan kazan. Gece giderek hızlanıyor."
-    },
-    "ghosthunt": {
-      "name": "Hayalet Avı",
-      "desc": "Kaçmadan dokun",
-      "howto": "Ruhlar mezarlığın üzerinden süzülür — kaçmadan önce dokunup vur! Her çift için 3 fişeğin var; yarasalar hızlıdır ve üç kat puan getirir. Kaçan her ruh bir cana mal olur."
-    },
-    "pumpkintoss": {
-      "name": "Balkabağı Fırlat",
-      "desc": "Kemik kalelerini fethet",
-      "howto": "Balkabağını geri çek, bırak ve uçuşunu izle! Kemik blokları parçala, tüm iskeletleri devir ve sıradaki kaleye geç. Kale başına beş balkabağı — artanlar bonus puan."
-    },
-    "monstermatch": {
-      "name": "Canavar Eşleştir",
-      "desc": "Üçlü eşleştir, zincir kur",
-      "howto": "Bir canavara, sonra komşusuna dokunarak yerlerini değiştir ve 3 aynıyı hizala — patlarlar ve her şey aşağı dökülür. Zincirler puanını katlar! 30 hamlen var. İyi kullan."
-    },
     "blockdrop": {
       "name": "Blok Düşüşü",
       "desc": "Satırları temizle, akışı yakala",
       "howto": "Düşen parçayı ◀ ▶ ile yönlendir, ↻ ile döndür, ▼ ile çak (kaydırma da çalışır). Bir satırı doldur ve temizle — büyük bonus için aynı anda dört satır! Kuyu her 10 satırda hızlanır."
+    },
+    "streetrun": {
+      "name": "Sokak Koşusu",
+      "desc": "Mahallede sprint",
+      "howto": "◀ ▶ ile (veya kaydırarak) şerit değiştir, ↥ ile tahta sandıkların üstünden atla. Çöp bidonları atlanamayacak kadar yüksek — onlardan kaç! Bonus için paraları topla. Sokak gitgide hızlanıyor."
+    },
+    "pigeonpanic": {
+      "name": "Güvercin Paniği",
+      "desc": "Uçup gitmeden dokun",
+      "howto": "Güvercinler çatıların üzerinden geçiyor — kaçmadan önce dokun! Her çift için 3 çakıl taşın var; kâğıt uçaklar hızlı ama üç kat puan. Kaçan her kuş bir cana mal olur."
+    },
+    "canknock": {
+      "name": "Teneke Devirme",
+      "desc": "Panayır klasiği",
+      "howto": "Taşı geri çek, bırak ve teneke kutuları sandıklardan devir! Hepsini devirince daha yüksek, daha zor bir düzen gelir. Tur başına beş taş — artanlar bonus puan."
+    },
+    "marblematch": {
+      "name": "Misket Eşleştir",
+      "desc": "Üçlü eşleştir, zincir kur",
+      "howto": "Bir miskete, sonra komşusuna dokunarak yerlerini değiştir ve aynı renkten 3 tane hizala — patlar ve her şey aşağı dökülür. Zincirler puanı katlar! 30 hamlen var. İyi kullan."
+    },
+    "balloonfight": {
+      "name": "Su Balonu Savaşı",
+      "desc": "Islat ya da ıslan",
+      "howto": "◀ ▶ ile yürü, ◎ ile su balonu fırlat — biri alçaktan, biri yüksekten uçar. Rakip çocuklar yerden saldırır, kâğıt uçaklar tepeden dalar. Su çubuğunu doldur, turu kazan!"
+    },
+    "binshot": {
+      "name": "Çöp Sepeti Atışı",
+      "desc": "Sınıf klasiği",
+      "howto": "Kâğıt topu geri çek ve sepete atmak için bırak. Tahtadaki rüzgâr okuna dikkat — topunu havada iter! Seriler bonus kazandırır; üç kaçırma oyunu bitirir."
+    },
+    "paperglider": {
+      "name": "Kâğıt Planör",
+      "desc": "Koridorda süzül",
+      "howto": "Burnu kaldırmak için basılı tut, dalmak için bırak. Sıra yığınları ile asılı lambaların arasından süzül, altın yıldızları kap. Tek çarpışma uçuşu bitirir!"
+    },
+    "dotsboxes": {
+      "name": "Nokta Kutu",
+      "desc": "Defter düellosu",
+      "howto": "Sırayla noktalar arasına duvar çizin. Bir kutunun dördüncü duvarını kapatan onu alır — ve bir tur daha oynar! Camgöbeği sensin, kırmızı bilgisayar. En çok kutu kazanır."
+    },
+    "eraserflick": {
+      "name": "Silgi Fiskesi",
+      "desc": "Sırada sumo",
+      "howto": "Camgöbeği silgini sürükleyip bırakarak fiskele. Kendin düşmeden kırmızı silgiyi sıradan dışarı it! Her turda sıra küçülür. Düşersen oyun biter."
+    },
+    "mathsprint": {
+      "name": "Matematik Sprinti",
+      "desc": "Tahta saatini yen",
+      "howto": "Tahtada dört cevaplı bir işlem belirir — tebeşir çizgisi bitmeden doğrusuna dokun! Hızlı cevaplar daha çok puan, seriler katlar. Üç hata ve ders biter."
     }
   },
   "username": {

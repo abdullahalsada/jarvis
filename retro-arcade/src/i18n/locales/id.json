@@ -27,8 +27,9 @@
     "categories": {
       "classics": "Klasik",
       "action": "Aksi",
-      "spooky": "Seram",
-      "brain": "Asah Otak"
+      "brain": "Asah Otak",
+      "street": "Permainan Jalanan",
+      "school": "Masa Sekolah"
     }
   },
   "purchase": {
@@ -194,11 +195,6 @@
       "desc": "Semua pulang ke rumah",
       "howto": "Terbang dengan pad. Melayang rendah di atas korban untuk mengangkut mereka (3 kursi), lalu mendarat di landasan sian untuk menurunkan. Awas tembakan menara!"
     },
-    "vampirehunt": {
-      "name": "Perburuan Vampir",
-      "desc": "Bertahanlah semalaman",
-      "howto": "Berjalan dengan ◀ ▶ dan lempar belati dengan ◎ — satu terbang rendah, satu tinggi. Zombi merayap di tanah, kelelawar menukik dari atas. Penuhi bilah untuk menuntaskan malam!"
-    },
     "cratepush": {
       "name": "Dorong Peti",
       "desc": "Semua peti ke sasaran",
@@ -224,30 +220,60 @@
       "desc": "Melambung ke bintang",
       "howto": "Makhlukmu memantul sendiri — usap atau pakai ◀ ▶ untuk mengarahkannya ke platform. Yang putih hancur setelah sekali pantul, pegas melontarkanmu tinggi, dan tepi layar tersambung. Jangan jatuh!"
     },
-    "ghostrun": {
-      "name": "Lari Hantu",
-      "desc": "Sprint di pemakaman",
-      "howto": "Pindah jalur dengan ◀ ▶ (atau usap) dan lompati nisan dengan ↥. Hantu tak bisa dilompati — hindari! Ambil cahaya emas untuk poin bonus. Malam makin lama makin cepat!"
-    },
-    "ghosthunt": {
-      "name": "Buru Hantu",
-      "desc": "Ketuk sebelum kabur",
-      "howto": "Arwah melayang melintasi pemakaman — ketuk untuk menembak sebelum kabur! Ada 3 peluru tiap pasangan; kelelawar cepat tapi bernilai tiga kali lipat. Tiap arwah yang lolos mengurangi nyawa."
-    },
-    "pumpkintoss": {
-      "name": "Lempar Labu",
-      "desc": "Serbu benteng tulang",
-      "howto": "Tarik labu ke belakang, lepaskan, dan lihat ia terbang! Hancurkan balok tulang dan robohkan semua tengkorak untuk menyerbu kastel berikutnya. Lima labu per kastel — sisanya jadi poin bonus."
-    },
-    "monstermatch": {
-      "name": "Cocokkan Monster",
-      "desc": "Samakan tiga, rangkai lebih",
-      "howto": "Ketuk satu monster lalu tetangganya untuk bertukar tempat dan menjajarkan 3 yang sama — mereka meletus dan semuanya runtuh. Rantai melipatgandakan skor! Kamu punya 30 langkah. Manfaatkan!"
-    },
     "blockdrop": {
       "name": "Jatuhkan Balok",
       "desc": "Bersihkan baris, rasakan alurnya",
       "howto": "Arahkan balok jatuh dengan ◀ ▶, putar dengan ↻, hempaskan dengan ▼ (usapan juga bisa). Penuhi satu baris untuk menghapusnya — empat sekaligus untuk bonus besar! Sumur makin cepat tiap 10 baris."
+    },
+    "streetrun": {
+      "name": "Lari Jalanan",
+      "desc": "Sprint keliling blok",
+      "howto": "Pindah jalur dengan ◀ ▶ (atau usap) dan lompati peti kayu dengan ↥. Tong sampah terlalu tinggi untuk dilompati — hindari! Ambil koin untuk poin bonus. Jalanan makin lama makin cepat!"
+    },
+    "pigeonpanic": {
+      "name": "Panik Merpati",
+      "desc": "Ketuk sebelum terbang",
+      "howto": "Merpati melintasi atap-atap — ketuk sebelum mereka kabur! Ada 3 kerikil tiap pasangan; pesawat kertas cepat tapi bernilai tiga kali lipat. Tiap burung yang lolos mengurangi nyawa."
+    },
+    "canknock": {
+      "name": "Robohkan Kaleng",
+      "desc": "Klasik pasar malam",
+      "howto": "Tarik batu ke belakang, lepaskan, dan robohkan kaleng-kaleng dari petinya! Robohkan semua untuk susunan yang lebih tinggi dan sulit. Lima batu per ronde — sisanya jadi poin bonus."
+    },
+    "marblematch": {
+      "name": "Cocokkan Kelereng",
+      "desc": "Samakan tiga, rangkai lebih",
+      "howto": "Ketuk satu kelereng lalu tetangganya untuk bertukar tempat dan menjajarkan 3 warna yang sama — mereka meletus dan semuanya runtuh. Rantai melipatgandakan skor! Kamu punya 30 langkah."
+    },
+    "balloonfight": {
+      "name": "Perang Balon Air",
+      "desc": "Basahi atau dibasahi",
+      "howto": "Berjalan dengan ◀ ▶ dan lempar balon air dengan ◎ — satu terbang rendah, satu tinggi. Anak-anak rival menyerbu di tanah, pesawat kertas menukik dari atas. Penuhi bilah cipratan dan menangkan ronde!"
+    },
+    "binshot": {
+      "name": "Lempar Keranjang",
+      "desc": "Klasik ruang kelas",
+      "howto": "Tarik bola kertas ke belakang dan lepaskan untuk melemparnya ke keranjang sampah. Perhatikan panah angin di papan tulis — ia mendorong bolamu di udara! Beruntun dapat bonus; tiga kali luput, selesai."
+    },
+    "paperglider": {
+      "name": "Pesawat Kertas",
+      "desc": "Melayang di koridor",
+      "howto": "Tahan di mana saja untuk mengangkat hidung pesawat, lepaskan untuk menukik. Melayanglah di antara tumpukan meja dan lampu gantung, dan raih bintang emas. Sekali tabrak, penerbangan usai!"
+    },
+    "dotsboxes": {
+      "name": "Titik dan Kotak",
+      "desc": "Duel buku catatan",
+      "howto": "Bergiliran menggambar dinding di antara titik-titik. Tutup dinding keempat sebuah kotak untuk merebutnya — dan jalan lagi! Sian adalah kamu, merah komputer. Kotak terbanyak menang."
+    },
+    "eraserflick": {
+      "name": "Sentil Penghapus",
+      "desc": "Sumo di atas meja",
+      "howto": "Seret penghapus sianmu lalu lepaskan untuk menyentilnya. Dorong penghapus merah keluar meja tanpa ikut tergelincir! Tiap ronde mejanya menyusut. Jatuh berarti tamat."
+    },
+    "mathsprint": {
+      "name": "Sprint Matematika",
+      "desc": "Kalahkan jam papan tulis",
+      "howto": "Soal hitungan muncul di papan dengan empat jawaban — ketuk yang benar sebelum garis kapur habis! Jawaban cepat bernilai lebih, beruntun melipatgandakan. Tiga kesalahan, kelas bubar."
     }
   },
   "username": {

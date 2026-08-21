@@ -422,6 +422,65 @@ const SPRITES = {
     '................',
   ],
 
+  // ─── Street Games ───
+  // City pigeon, side view facing right.
+  pigeon: [
+    '................',
+    '................',
+    '......ww........',
+    '.....wWWw.......',
+    '....wWWWWwOO....',
+    '....WWKWWW......',
+    '..wWWWWWWWw.....',
+    '.wWWwwWWWWw.....',
+    '.wWWwwWWWWw.....',
+    '..wWWWWWWw......',
+    '...wwWWWw.......',
+    '.....WW.........',
+    '....OO.OO.......',
+    '................',
+    '................',
+    '................',
+  ],
+  // Folded paper plane, side view facing right.
+  paper_plane: [
+    '................',
+    '................',
+    '................',
+    '..F.............',
+    '..FFFF..........',
+    '..FFFFFFF.......',
+    '..FwFFFFFFFF....',
+    '..FwwFFFFFFFFFF.',
+    '..FwFFFFFFFF....',
+    '..FFFFFFF.......',
+    '..FFFF..........',
+    '..F.............',
+    '................',
+    '................',
+    '................',
+    '................',
+  ],
+  // Rival kid in a red cap with a water gun, facing left.
+  kid_rival: [
+    '................',
+    '......RRRR......',
+    '.....RRRRRR.....',
+    '.....FFwFFw.....',
+    '.....FFFFFF.....',
+    '......FFFF......',
+    '..CC.YYYYYY.....',
+    '..CCYYYYYYYF....',
+    '...CYYyYYyYF....',
+    '.....YYYYYY.....',
+    '.....yy..yy.....',
+    '.....YY..YY.....',
+    '....KK....KK....',
+    '................',
+    '................',
+    '................',
+  ],
+
   // ─── Pumpkin Toss ───
   // Rattling skeleton guard.
   skeleton: [

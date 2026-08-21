@@ -27,7 +27,7 @@ Paste-ready copy for App Store Connect and Play Console. Keep the no-ads promise
 >
 > **Try before you buy.** Snake and Memory Match are free, with no ads in the free games either.
 >
-> **30 games across four rooms of the arcade:**
+> **35 games across five rooms of the arcade:**
 > 🕹️ *Classics* — Snake, Brick Breaker, Paddle Duel, Neon Stack, Solitaire, Road Hopper, Retro Racer, Moon Lander, Egg Catch, Alley Bowl
 > 🚀 *Action* — Space Defenders, Meteor Dodge, Astro Shards, Pixel Wings, Gem Digger, Sky Shield, Dive Squadron, Pyramid Hop, Moon Buggy
 > 👻 *Spooky* — Haunted Maze, Ghost Sweeper, Zombie Bop, Creepy Crawler, Spook Shoot
@@ -79,7 +79,7 @@ Paste-ready copy for App Store Connect and Play Console. Keep the no-ads promise
 
 ## Screenshot plan (6-8 per platform)
 
-1. Catalog (hero shot: neon grid of 30 games)
+1. Catalog (hero shot: neon grid of 35 games)
 2. Snake gameplay with scanlines
 3. Brick Breaker mid-volley
 4. Haunted Maze chase
