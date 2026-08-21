@@ -117,7 +117,7 @@
     "spacedefenders": {
       "name": "Pembela Angkasa",
       "desc": "Hentikan invasi",
-      "howto": "Geser jarimu untuk menggerakkan pesawat — tembakannya otomatis. Musnahkan semua penyerbu sebelum mereka sampai padamu. Makin sedikit, makin cepat mereka bergerak!"
+      "howto": "Usap jarimu untuk menggerakkan pesawat — tembakan otomatis. Skor tinggi meningkatkan pesawatmu dengan meriam lebih kuat. Tuntaskan tiga gelombang lalu kalahkan kapal induk untuk menang!"
     },
     "meteordodge": {
       "name": "Hindar Meteor",
@@ -134,11 +134,6 @@
       "desc": "Temukan semua pasangan",
       "howto": "Ketuk kartu untuk membaliknya, lalu cari pasangannya. Cocokkan semua pasangan untuk menang. Makin sedikit langkah, makin tinggi skor. Santai saja — tidak ada waktu."
     },
-    "simonecho": {
-      "name": "Gema Simon",
-      "desc": "Ulangi polanya",
-      "howto": "Lihat dan dengar warna yang menyala, lalu ketuk dengan urutan yang sama. Tiap ronde menambah satu langkah. Seberapa panjang pola yang bisa kamu ingat?"
-    },
     "neonstack": {
       "name": "Tumpukan Neon",
       "desc": "Susun balok yang jatuh",
@@ -154,35 +149,15 @@
       "desc": "Seberangi jalan dan sungai",
       "howto": "Usap untuk melompat selangkah demi selangkah. Hindari mobil di jalan, lalu seberangi sungai dengan menaiki batang kayu — jangan sentuh airnya! Isi kelima sarang di atas untuk lanjut. Awas: semuanya makin cepat tiap ronde."
     },
-    "astroshards": {
-      "name": "Serpihan Astro",
-      "desc": "Ledakkan batu angkasa",
-      "howto": "Tahan ↺ dan ↻ untuk memutar pesawat dan ▲ untuk mendorong — tembakannya otomatis. Batu besar pecah jadi batu kecil yang lebih cepat. Batu kecil nilainya paling besar. Keluar dari satu sisi, muncul di sisi lain!"
-    },
     "pixelwings": {
       "name": "Sayap Piksel",
       "desc": "Terbang melewati menara",
       "howto": "Ketuk di mana saja untuk mengepakkan sayap dan tetap terbang. Melajulah lewat celah di antara menara — satu poin tiap menara. Sekali tabrak, selesai. Seberapa jauh kamu bisa terbang?"
     },
-    "gemdigger": {
-      "name": "Penggali Permata",
-      "desc": "Gali dalam, raih permata",
-      "howto": "Usap untuk menggali terowongan dan kumpulkan semua permata. Dua makhluk gua memburumu — tapi mereka hanya bisa lewat terowonganmu, jadi galilah dengan cerdik! Kumpulkan semua permata untuk menang."
-    },
-    "skyshield": {
-      "name": "Perisai Langit",
-      "desc": "Lindungi kotamu",
-      "howto": "Rudal berjatuhan ke arah enam kotamu! Ketuk langit untuk meluncurkan pencegat — ledakannya menghancurkan semua di dekatnya. Amunisi tiap gelombang terbatas, bidik di depan rudal. Sisa amunisi dan kota yang selamat memberi bonus besar."
-    },
     "ghostsweeper": {
       "name": "Penyapu Hantu",
       "desc": "Temukan hantu tersembunyi",
       "howto": "Ketuk petak untuk membukanya. Angka menunjukkan berapa hantu bersembunyi di petak tetangga — pakai logika untuk menebak posisinya. Tekan lama untuk menaruh jimat di petak yang dicurigai. Buka semua petak aman untuk menang. Tanpa waktu, murni berpikir."
-    },
-    "zombiebop": {
-      "name": "Pukul Zombi",
-      "desc": "Pukul mereka kembali",
-      "howto": "Zombi bermunculan dari kuburan! Ketuk mereka sebelum tenggelam lagi. Tengkorak emas bernilai 5×. Waktumu 60 detik — menjelang akhir mereka makin cepat!"
     },
     "alleybowl": {
       "name": "Arena Boling",
@@ -194,60 +169,85 @@
       "desc": "Lompati kawah, tembak batu",
       "howto": "Mobilmu jalan sendiri, makin lama makin cepat. Ketuk sisi KANAN layar untuk melompati kawah, sisi KIRI untuk menembak batu di depan. Pos pemeriksaan tiap 500 m. Tiga nyawa — semoga beruntung, sopir!"
     },
-    "spookshoot": {
-      "name": "Tembak Hantu",
-      "desc": "Tangan tenang yang menang",
-      "howto": "Hantu meluncur di tiga baris — ketuk untuk menembak! Kena atau tidak, tiap tembakan menghabiskan satu peluru, dan kamu punya 25. Baris belakang nilainya paling besar; hantu emas bernilai 100. Kena 5 beruntun dapat 3 peluru bonus!"
-    },
-    "pyramidhop": {
-      "name": "Lompat Piramida",
-      "desc": "Warnai semua kubus",
-      "howto": "Usap DIAGONAL untuk melompat antar kubus — kiri-bawah, kanan-bawah, kiri-atas, kanan-atas. Kubus yang kamu injak akan menyala; nyalakan semua untuk lolos. Hindari bola merah yang menggelinding, dan jangan lompat keluar tepi!"
-    },
-    "gemcolumns": {
-      "name": "Kolom Permata",
-      "desc": "Sejajarkan tiga permata",
-      "howto": "Kolom berisi tiga permata jatuh ke sumur. Seret ke samping untuk mengarahkan, ketuk untuk menukar urutan, seret ke bawah agar cepat jatuh. Sejajarkan tiga atau lebih warna yang sama — mendatar, menurun, atau diagonal. Rentetan memberi skor besar!"
-    },
     "tilefusion": {
       "name": "Fusi Ubin",
       "desc": "Gabungkan sampai 2048",
       "howto": "Usap untuk menggeser semua ubin. Dua angka yang sama akan melebur jadi angka lebih besar saat bertabrakan. Capai ubin 2048 yang bersinar! Permainan berakhir saat papan penuh dan tak ada yang bisa digabung. Tanpa waktu — rencanakan tiap langkah."
-    },
-    "slidefifteen": {
-      "name": "Geser Lima Belas",
-      "desc": "Urutkan ubin geser",
-      "howto": "Ketuk ubin yang sebaris atau sekolom dengan petak kosong untuk menggesernya. Susun ubin dari 1 sampai 15. Semua susunan pasti bisa diselesaikan — makin sedikit langkah makin tinggi skor, dan tidak ada waktu."
-    },
-    "neonlights": {
-      "name": "Lampu Neon",
-      "desc": "Matikan semua lampu",
-      "howto": "Mengetuk satu lampu membalik lampu itu dan empat tetangganya. Gelapkan seluruh papan untuk menuntaskan ronde — tiga ronde, makin lama makin teracak. Makin sedikit ketukan, makin banyak poin. Logika murni, tanpa waktu."
     },
     "retroracer": {
       "name": "Pembalap Retro",
       "desc": "Selap-selip di lalu lintas",
       "howto": "Usap kiri atau kanan untuk berpindah di antara tiga lajur. Lewati mobil-mobil dari arah berlawanan — makin jauh, jalan makin cepat dan ramai. Sekali tabrakan, selesai. Seberapa jauh kamu bisa melaju?"
     },
-    "moonlander": {
-      "name": "Pendarat Bulan",
-      "desc": "Mendarat dengan lembut",
-      "howto": "Tahan ▲ untuk menyalakan mesin melawan gravitasi, dan ◀ ▶ untuk bergeser ke samping. Mendaratlah pelan di landasan hijau — pesawatmu menyala biru saat cukup pelan. Bahan bakar terbatas! Tiap pendaratan, landasannya mengecil dan gravitasi menguat."
-    },
     "creepycrawler": {
       "name": "Perayap Seram",
       "desc": "Belah teror yang merayap",
-      "howto": "Geser untuk menggerakkan pemburu — tembakannya otomatis. Tembak perayap yang meliuk turun di antara nisan: kena bagian tengahnya, ia terbelah dua! Tiap ruas yang hancur jadi nisan baru. Jangan biarkan ia mencapaimu."
+      "howto": "Usap atau tahan ◀ ▶ untuk bergerak dan ketuk ◎ untuk menembak. Kena bagian tengah ulat untuk membelahnya jadi dua! Tiap ruas yang mati menjadi nisan. Jangan biarkan ia mencapaimu."
     },
     "divesquadron": {
       "name": "Skuadron Terjun",
       "desc": "Selamat dari pengebom terjun",
-      "howto": "Geser untuk mengemudikan pesawat — tembakannya otomatis. Musuh keluar dari formasi dan menukik langsung ke arahmu. Musuh yang menukik bernilai dua kali lipat — tembakan berani berbuah! Habiskan seluruh skuadron untuk menghadapi gelombang yang lebih cepat."
+      "howto": "Usap untuk bergerak; pesawat menembak otomatis. Musuh yang menukik bernilai ganda. Skor tinggi meningkatkan pesawatmu — lewati tiga gelombang dan jatuhkan kapal induk untuk menang!"
     },
     "eggcatch": {
       "name": "Tangkap Telur",
       "desc": "Tangkap tiap telur yang jatuh",
       "howto": "Telur menggelinding di empat jalur miring lalu jatuh dari ujungnya. Geser jarimu di mana saja — keranjang mengikutinya. Tangkap tiap telur sebelum menyentuh lantai; pecah tiga, permainan usai. Datangnya makin cepat!"
+    },
+    "tankbattle": {
+      "name": "Pertempuran Tank",
+      "desc": "Kuasai arena",
+      "howto": "Tahan satu arah untuk mengemudikan tank dan ketuk ◎ untuk menembak. Tembok bata hancur, baja tidak. Musnahkan seluruh patroli musuh untuk memanggil gelombang berikutnya yang lebih cepat!"
+    },
+    "towerclimb": {
+      "name": "Panjat Menara",
+      "desc": "Hindari tong-tong itu",
+      "howto": "Berjalan dengan ◀ ▶, naiki tangga dengan ▲ ▼, dan lompati tong dengan ↥. Capai gorila di puncak untuk skor besar — tiap penyelamatan membuat tong makin cepat!"
+    },
+    "jungledash": {
+      "name": "Lari Rimba",
+      "desc": "Lari, lompat, harta!",
+      "howto": "Ketuk di mana saja untuk melompat. Lompati lubang, batang kayu, dan ular, lalu raih harta melayang saat melompat. Rimba makin cepat sejauh kamu berlari!"
+    },
+    "blastmaze": {
+      "name": "Labirin Ledakan",
+      "desc": "Ledakkan jalanmu",
+      "howto": "Bergerak dengan pad dan taruh bom dengan ◎. Ledakannya berbentuk silang — menghancurkan peti dan penjaga, dan juga melukaimu, jadi cepat menjauh! Habisi semua penjaga untuk lanjut."
+    },
+    "chopperrescue": {
+      "name": "Penyelamatan Helikopter",
+      "desc": "Semua pulang ke rumah",
+      "howto": "Terbang dengan pad. Melayang rendah di atas korban untuk mengangkut mereka (3 kursi), lalu mendarat di landasan sian untuk menurunkan. Awas tembakan menara!"
+    },
+    "vampirehunt": {
+      "name": "Perburuan Vampir",
+      "desc": "Bertahanlah semalaman",
+      "howto": "Berjalan dengan ◀ ▶ dan lempar belati dengan ◎ — satu terbang rendah, satu tinggi. Zombi merayap di tanah, kelelawar menukik dari atas. Penuhi bilah untuk menuntaskan malam!"
+    },
+    "mummytomb": {
+      "name": "Makam Mumi",
+      "desc": "Ambil emas lalu kabur",
+      "howto": "Bergerak dengan pad atau usapan untuk mengumpulkan semua harta selagi mumi memburumu. Ketuk ⚡ untuk menyetrum mumi pertama di hadapanmu — jatahnya cuma sedikit tiap makam!"
+    },
+    "cratepush": {
+      "name": "Dorong Peti",
+      "desc": "Semua peti ke sasaran",
+      "howto": "Usap atau pakai pad untuk berjalan dan mendorong peti ke sasaran yang menyala. Peti hanya bisa didorong, tak bisa ditarik — rencanakan dulu dan pakai ↩ untuk membatalkan."
+    },
+    "pixellogic": {
+      "name": "Logika Piksel",
+      "desc": "Angka menyembunyikan gambar",
+      "howto": "Angka menunjukkan deret sel terisi di tiap baris dan kolom. Ketuk untuk mengisi dalam mode ■, atau beralih ke ✗ untuk menandai sel kosong. Tiga kesalahan mengakhiri permainan!"
+    },
+    "navalduel": {
+      "name": "Duel Laut",
+      "desc": "Tenggelamkan armada musuh",
+      "howto": "Ketuk kisi atas untuk menembak perairan musuh. Merah berarti kena — tenggelamkan kelima kapal sebelum musuh menenggelamkan milikmu di kisi bawah. Tiap kemenangan bernilai lebih!"
+    },
+    "fourstack": {
+      "name": "Empat Sebaris",
+      "desc": "Empat sebaris menang",
+      "howto": "Ketuk kolom untuk menjatuhkan cakram. Susun empat — mendatar, menurun, atau diagonal — sebelum komputer. Ia makin pintar tiap ronde yang kamu menangkan!"
     }
   },
   "username": {

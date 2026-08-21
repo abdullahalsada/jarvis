@@ -117,7 +117,7 @@
     "spacedefenders": {
       "name": "Défenseurs de l'Espace",
       "desc": "Stoppe l'invasion",
-      "howto": "Fais glisser ton doigt pour déplacer ton vaisseau — il tire tout seul. Détruis tous les envahisseurs avant qu'ils ne t'atteignent. Ils accélèrent quand leurs rangs s'éclaircissent !"
+      "howto": "Glisse le doigt pour déplacer ton vaisseau — il tire tout seul. Les gros scores améliorent ton chasseur avec des canons plus puissants. Nettoie les trois vagues puis abats le vaisseau-mère pour gagner !"
     },
     "meteordodge": {
       "name": "Esquive Météores",
@@ -134,11 +134,6 @@
       "desc": "Trouve toutes les paires",
       "howto": "Touche une carte pour la retourner, puis trouve sa jumelle. Associe toutes les paires pour gagner. Moins de coups, plus de points. Prends ton temps — il n'y a pas de chrono."
     },
-    "simonecho": {
-      "name": "Écho de Simon",
-      "desc": "Répète la séquence",
-      "howto": "Regarde et écoute les couleurs s'allumer, puis touche-les dans le même ordre. Chaque manche ajoute une étape. Jusqu'où ira ta mémoire ?"
-    },
     "neonstack": {
       "name": "Tour de Néon",
       "desc": "Empile les blocs qui tombent",
@@ -154,40 +149,20 @@
       "desc": "Traverse la route et la rivière",
       "howto": "Glisse pour sauter d'une case à la fois. Évite les voitures sur la route, puis traverse la rivière en montant sur les troncs — ne touche jamais l'eau ! Remplis les cinq nids en haut pour passer au niveau suivant. Attention : tout accélère à chaque manche."
     },
-    "astroshards": {
-      "name": "Éclats d'Astéroïdes",
-      "desc": "Pulvérise les rochers spatiaux",
-      "howto": "Maintiens ↺ et ↻ pour faire pivoter ton vaisseau et ▲ pour accélérer — il tire tout seul. Les gros rochers se brisent en morceaux plus petits et plus rapides. Les petits rapportent le plus de points. Sors d'un bord de l'écran et tu réapparais de l'autre côté !"
-    },
     "pixelwings": {
       "name": "Ailes de Pixel",
       "desc": "Vole entre les tours",
       "howto": "Touche n'importe où pour battre des ailes et rester en l'air. Faufile-toi dans l'ouverture entre les tours — un point par tour franchie. Un seul choc et c'est fini. Jusqu'où voleras-tu ?"
     },
-    "gemdigger": {
-      "name": "Chercheur de Gemmes",
-      "desc": "Creuse profond, ramasse tout",
-      "howto": "Glisse pour creuser des tunnels et ramasse toutes les gemmes. Deux créatures des cavernes te traquent — mais elles ne se déplacent que dans tes tunnels, alors creuse malin ! Ramasse toutes les gemmes pour gagner."
-    },
-    "skyshield": {
-      "name": "Bouclier Céleste",
-      "desc": "Défends tes villes",
-      "howto": "Des missiles pleuvent sur tes six villes ! Touche le ciel pour lancer un intercepteur — son explosion détruit tout autour. Les munitions sont limitées à chaque vague, vise donc devant les missiles. Munitions restantes et villes sauvées rapportent de gros bonus."
-    },
     "divesquadron": {
       "name": "Escadron Piqué",
       "desc": "Survis aux piqués ennemis",
-      "howto": "Glisse pour piloter ton vaisseau — il tire tout seul. Les ennemis quittent la formation et piquent droit sur toi. Un ennemi en piqué vaut double — le tir audacieux paie ! Élimine tout l'escadron pour affronter une vague plus rapide."
+      "howto": "Glisse pour bouger ; ton vaisseau tire tout seul. Les ennemis en piqué valent double. Les gros scores améliorent ton chasseur — nettoie trois vagues et abats le vaisseau-mère pour gagner !"
     },
     "ghostsweeper": {
       "name": "Chasse-Fantômes",
       "desc": "Trouve les fantômes cachés",
       "howto": "Touche une case pour la révéler. Les chiffres indiquent combien de fantômes se cachent dans les cases voisines — déduis leur position. Appuie longuement pour poser un sceau sur un fantôme suspect. Révèle toutes les cases sûres pour gagner. Pas de chrono, que de la logique."
-    },
-    "zombiebop": {
-      "name": "Tape-Zombie",
-      "desc": "Renvoie-les sous terre",
-      "howto": "Les zombies surgissent des tombes ! Touche-les avant qu'ils ne replongent. Le squelette doré vaut 5 fois plus. Tu as 60 secondes — ils accélèrent vers la fin !"
     },
     "alleybowl": {
       "name": "Bowling",
@@ -199,45 +174,15 @@
       "desc": "Saute les cratères, tire les rochers",
       "howto": "Ton buggy roule tout seul, de plus en plus vite. Touche le côté DROIT de l'écran pour sauter les cratères, le côté GAUCHE pour tirer sur les rochers. Un point de passage tous les 500 m. Trois vies — bonne route, pilote !"
     },
-    "spookshoot": {
-      "name": "Tir aux Spectres",
-      "desc": "La main sûre l'emporte",
-      "howto": "Les spectres glissent sur trois rangées — touche-les pour tirer ! Chaque tir coûte une cartouche, touché ou non, et tu en as 25. La rangée du fond rapporte le plus ; le fantôme doré vaut 100. Touche 5 cibles d'affilée pour gagner 3 cartouches bonus !"
-    },
-    "pyramidhop": {
-      "name": "Saut Pyramide",
-      "desc": "Colore chaque cube",
-      "howto": "Glisse en DIAGONALE pour sauter de cube en cube — bas-gauche, bas-droite, haut-gauche, haut-droite. Chaque cube où tu atterris s'illumine ; illumine-les tous pour finir le niveau. Évite les orbes rouges qui dégringolent, et ne saute pas dans le vide !"
-    },
-    "gemcolumns": {
-      "name": "Colonnes de Gemmes",
-      "desc": "Aligne trois gemmes",
-      "howto": "Une colonne de trois gemmes tombe dans le puits. Glisse sur les côtés pour la diriger, touche pour réordonner les gemmes, glisse vers le bas pour accélérer la chute. Aligne trois gemmes ou plus d'une couleur — en ligne, en colonne ou en diagonale — pour les briser. Les enchaînements rapportent gros !"
-    },
     "tilefusion": {
       "name": "Fusion de Tuiles",
       "desc": "Fusionne jusqu'à 2048",
       "howto": "Glisse pour faire glisser toutes les tuiles. Quand deux nombres identiques se rencontrent, ils fusionnent en un plus grand. Atteins la tuile lumineuse 2048 ! La partie s'arrête quand le plateau est plein et que rien ne peut fusionner. Pas de chrono — réfléchis à chaque coup."
     },
-    "slidefifteen": {
-      "name": "Taquin Quinze",
-      "desc": "Remets les tuiles en ordre",
-      "howto": "Touche une tuile dans la ligne ou la colonne de la case vide pour la faire glisser. Range les tuiles de 1 à 15. Chaque grille a une solution — moins de coups, plus de points, et pas de chrono."
-    },
-    "neonlights": {
-      "name": "Néons",
-      "desc": "Éteins toutes les lumières",
-      "howto": "Toucher une lampe l'inverse ainsi que ses quatre voisines. Plonge tout le plateau dans le noir pour finir la manche — trois manches, de plus en plus emmêlées. Moins de touches, plus de points. Pure logique, sans chrono."
-    },
     "retroracer": {
       "name": "Pilote Rétro",
       "desc": "Slalome dans le trafic",
       "howto": "Glisse à gauche ou à droite pour sauter entre les trois voies. Faufile-toi entre les voitures — la route devient plus rapide et plus dense au fil des kilomètres. Un seul accrochage et c'est terminé. Jusqu'où iras-tu ?"
-    },
-    "moonlander": {
-      "name": "Alunisseur",
-      "desc": "Pose-toi en douceur",
-      "howto": "Maintiens ▲ pour allumer le moteur contre la gravité et ◀ ▶ pour dériver sur les côtés. Pose-toi lentement sur la plateforme verte — ton vaisseau brille en bleu quand tu es assez lent pour atterrir. Le carburant est limité ! Chaque alunissage réussit amène une plateforme plus petite et une gravité plus forte."
     },
     "eggcatch": {
       "name": "Attrape-Œufs",
@@ -247,7 +192,62 @@
     "creepycrawler": {
       "name": "Rampant Sinistre",
       "desc": "Coupe le rampant en deux",
-      "howto": "Glisse pour déplacer ton chasseur — il tire tout seul. Tire sur le rampant qui serpente entre les pierres tombales : touche-le au milieu et il se scinde en deux ! Chaque segment détruit devient une nouvelle pierre tombale. Ne le laisse pas t'atteindre."
+      "howto": "Glisse ou maintiens ◀ ▶ pour bouger et touche ◎ pour tirer. Touche le milieu du rampant pour le couper en deux ! Chaque segment détruit devient une pierre tombale. Ne le laisse pas t’atteindre."
+    },
+    "tankbattle": {
+      "name": "Bataille de Chars",
+      "desc": "Tiens l’arène",
+      "howto": "Maintiens une direction pour conduire ton char et touche ◎ pour tirer. Les murs de briques s’effondrent, pas l’acier. Détruis toute la patrouille ennemie pour déclencher une vague plus rapide !"
+    },
+    "towerclimb": {
+      "name": "Grimpe-Tour",
+      "desc": "Évite les tonneaux",
+      "howto": "Marche avec ◀ ▶, grimpe aux échelles avec ▲ ▼ et saute les tonneaux avec ↥. Rejoins le singe au sommet pour marquer gros — chaque sauvetage accélère les tonneaux !"
+    },
+    "jungledash": {
+      "name": "Sprint de la Jungle",
+      "desc": "Cours, saute, trésor !",
+      "howto": "Touche n’importe où pour sauter. Franchis fosses, troncs et serpents, et attrape le trésor flottant en plein saut. La jungle accélère au fil de ta course !"
+    },
+    "blastmaze": {
+      "name": "Labyrinthe Explosif",
+      "desc": "Fraye-toi un chemin à la bombe",
+      "howto": "Dirige-toi avec la croix et pose des bombes avec ◎. L’explosion est en croix : elle détruit caisses et rôdeurs — et toi aussi, alors écarte-toi vite ! Élimine tous les rôdeurs pour avancer."
+    },
+    "chopperrescue": {
+      "name": "Sauvetage en Hélico",
+      "desc": "Tout le monde rentre",
+      "howto": "Vole avec la croix. Reste en vol bas au-dessus des naufragés pour les treuiller à bord (3 places), puis pose-toi sur la plateforme cyan pour les déposer. Gare à la tourelle !"
+    },
+    "vampirehunt": {
+      "name": "Chasse aux Vampires",
+      "desc": "Survis à la nuit",
+      "howto": "Marche avec ◀ ▶ et lance des dagues avec ◎ — une vole bas, l’autre haut. Les zombies rampent au sol, les chauves-souris piquent d’en haut. Remplis la jauge pour finir la nuit !"
+    },
+    "mummytomb": {
+      "name": "Tombeau de la Momie",
+      "desc": "Prends l’or et file",
+      "howto": "Déplace-toi avec la croix ou en glissant pour ramasser tous les trésors pendant que les momies te traquent. Touche ⚡ pour foudroyer la première momie face à toi — les charges sont rares !"
+    },
+    "cratepush": {
+      "name": "Pousse-Caisses",
+      "desc": "Chaque caisse à sa place",
+      "howto": "Glisse ou utilise la croix pour marcher et pousser les caisses sur les cibles lumineuses. Les caisses se poussent, jamais ne se tirent : anticipe et utilise ↩ pour annuler."
+    },
+    "pixellogic": {
+      "name": "Logique Pixel",
+      "desc": "Les nombres cachent une image",
+      "howto": "Les nombres indiquent les blocs de cases remplies de chaque ligne et colonne. Touche pour remplir en mode ■, ou passe en ✗ pour marquer les vides. Trois erreurs et c’est fini !"
+    },
+    "navalduel": {
+      "name": "Duel Naval",
+      "desc": "Coule la flotte ennemie",
+      "howto": "Touche la grille du haut pour tirer dans les eaux ennemies. Rouge = touché ! Coule les cinq navires avant que l’ennemi ne coule les tiens en bas. Chaque bataille gagnée vaut plus !"
+    },
+    "fourstack": {
+      "name": "Puissance Quatre",
+      "desc": "Quatre alignés, gagné",
+      "howto": "Touche une colonne pour lâcher ton jeton. Aligne quatre pions — en ligne, colonne ou diagonale — avant l’ordinateur. Il devient plus malin à chaque manche gagnée !"
     }
   },
   "username": {

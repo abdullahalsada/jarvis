@@ -117,7 +117,7 @@
     "spacedefenders": {
       "name": "Uzay Savunucuları",
       "desc": "İstilayı durdur",
-      "howto": "Gemini hareket ettirmek için parmağını kaydır — kendiliğinden ateş eder. İstilacılar sana ulaşmadan hepsini yok et. Sayıları azaldıkça hızlanırlar!"
+      "howto": "Gemini hareket ettirmek için parmağını kaydır — otomatik ateş eder. Yüksek puanlar avcına daha güçlü toplar kazandırır. Üç dalgayı da temizle, sonra ana gemiyi yen ve kazan!"
     },
     "meteordodge": {
       "name": "Meteor Kaçışı",
@@ -134,11 +134,6 @@
       "desc": "Tüm çiftleri bul",
       "howto": "Bir kartı çevirmek için dokun, sonra eşini bul. Kazanmak için tüm çiftleri eşleştir. Az hamle, yüksek skor demek. Acele etme — saat yok."
     },
-    "simonecho": {
-      "name": "Simon Yankısı",
-      "desc": "Deseni tekrarla",
-      "howto": "Renklerin yanışını izle ve dinle, sonra aynı sırayla dokun. Her turda bir adım eklenir. Ne kadar uzun bir deseni hatırlayabilirsin?"
-    },
     "neonstack": {
       "name": "Neon Yığını",
       "desc": "Düşen blokları diz",
@@ -154,35 +149,15 @@
       "desc": "Yolu ve nehri geç",
       "howto": "Adım adım zıplamak için kaydır. Yoldaki arabalardan kaç, sonra kütüklerin üstünde nehri geç — suya sakın değme! İlerlemek için tepedeki beş yuvayı doldur. Dikkat: her turda her şey hızlanır."
     },
-    "astroshards": {
-      "name": "Astro Kırıkları",
-      "desc": "Uzay kayalarını patlat",
-      "howto": "Gemiyi döndürmek için ↺ ve ↻ tuşlarını, itmek için ▲ tuşunu basılı tut — kendiliğinden ateş eder. Büyük kayalar daha küçük ve hızlı parçalara bölünür. Küçükler en çok puanı verir. Bir kenardan çık, karşıdan geri gir!"
-    },
     "pixelwings": {
       "name": "Piksel Kanatlar",
       "desc": "Kulelerin arasından süzül",
       "howto": "Kanat çırpmak ve havada kalmak için herhangi bir yere dokun. Kuleler arasındaki boşluktan süzül — geçtiğin her kule bir puan. Bir çarpma, her şey biter. Ne kadar uzağa uçabilirsin?"
     },
-    "gemdigger": {
-      "name": "Mücevher Kazıcısı",
-      "desc": "Derine kaz, taşları kap",
-      "howto": "Tünel kazmak ve tüm mücevherleri toplamak için kaydır. İki mağara yaratığı seni avlıyor — ama yalnızca senin tünellerinden gidebilirler, akıllıca kaz! Kazanmak için tüm mücevherleri topla."
-    },
-    "skyshield": {
-      "name": "Gök Kalkanı",
-      "desc": "Şehirlerini savun",
-      "howto": "Altı şehrine füzeler yağıyor! Önleyici fırlatmak için gökyüzüne dokun — patlaması çevredeki her şeyi yok eder. Her dalgada cephane sınırlı, füzelerin önünü hedefle. Artan cephane ve kurtulan şehirler büyük bonus getirir."
-    },
     "ghostsweeper": {
       "name": "Hayalet Avcısı",
       "desc": "Gizli hayaletleri bul",
       "howto": "Bir kareyi açmak için dokun. Sayılar, komşu karelerde kaç hayalet saklandığını söyler — yerlerini mantıkla çöz. Şüpheli kareye tılsım koymak için basılı tut. Tüm güvenli kareleri açarak kazan. Süre yok, sadece düşünmek var."
-    },
-    "zombiebop": {
-      "name": "Zombi Tokatı",
-      "desc": "Onları geri göm",
-      "howto": "Zombiler mezarlardan fırlıyor! Geri batmadan önce üstlerine dokun. Altın iskelet 5 kat puan verir. 60 saniyen var — sona doğru hızlanırlar!"
     },
     "alleybowl": {
       "name": "Bovling Salonu",
@@ -194,60 +169,85 @@
       "desc": "Kraterlerden atla, kayaları vur",
       "howto": "Aracın kendi kendine gider, gittikçe hızlanır. Kraterlerden atlamak için ekranın SAĞINA, yoldaki kayaları vurmak için SOLUNA dokun. Her 500 metrede kontrol noktası. Üç can — iyi şanslar sürücü!"
     },
-    "spookshoot": {
-      "name": "Hortlak Avı",
-      "desc": "Sakin el kazanır",
-      "howto": "Hortlaklar üç sırada süzülüyor — vurmak için dokun! Vursan da vurmasan da her atış bir fişek harcar; 25 fişeğin var. Arka sıra en çok puanı verir; altın hayalet 100 eder. Üst üste 5 isabetle 3 bonus fişek kazan!"
-    },
-    "pyramidhop": {
-      "name": "Piramit Zıplayanı",
-      "desc": "Her küpü boya",
-      "howto": "Küpler arasında zıplamak için ÇAPRAZ kaydır — aşağı-sol, aşağı-sağ, yukarı-sol, yukarı-sağ. Bastığın her küp yanar; hepsini yakınca bölüm biter. Yuvarlanan kırmızı kürelerden kaç ve kenardan düşme!"
-    },
-    "gemcolumns": {
-      "name": "Mücevher Sütunları",
-      "desc": "Üç taşı hizala",
-      "howto": "Üç taşlık bir sütun kuyuya düşer. Yönlendirmek için yana sürükle, sırayı değiştirmek için dokun, hızlandırmak için aşağı sürükle. Aynı renkten üç veya daha fazlasını hizala — yatay, dikey ya da çapraz. Zincirler büyük puan getirir!"
-    },
     "tilefusion": {
       "name": "Karo Birleştirme",
       "desc": "2048'e kadar birleştir",
       "howto": "Tüm karoları kaydırmak için ekranı kaydır. Aynı iki sayı çarpışınca daha büyük bir sayıya birleşir. Parlayan 2048 karosuna ulaş! Tahta dolup hiçbir şey birleşmeyince oyun biter. Saat yok — her hamleyi planla."
-    },
-    "slidefifteen": {
-      "name": "On Beş Taşı",
-      "desc": "Kayan taşları sırala",
-      "howto": "Boş kareyle aynı satır veya sütundaki bir taşa dokun; taş oraya kayar. Taşları 1'den 15'e sırala. Her diziliş çözülebilir — az hamle çok puan demek ve saat yok."
-    },
-    "neonlights": {
-      "name": "Neon Işıklar",
-      "desc": "Bütün ışıkları söndür",
-      "howto": "Bir lambaya dokununca kendisi ve dört komşusu tersine döner. Turu geçmek için tüm tahtayı karart — üç tur, her biri daha karışık. Az dokunuş çok puan getirir. Saf mantık, süre yok."
     },
     "retroracer": {
       "name": "Retro Yarışçı",
       "desc": "Trafikte slalom yap",
       "howto": "Üç şerit arasında geçmek için sağa veya sola kaydır. Karşıdan gelen araçların yanından sıyrıl — ilerledikçe yol hızlanır ve kalabalıklaşır. Tek kaza yarışı bitirir. Ne kadar uzağa gidebilirsin?"
     },
-    "moonlander": {
-      "name": "Ay'a İniş",
-      "desc": "Yumuşak iniş yap",
-      "howto": "Yerçekimine karşı motoru ateşlemek için ▲ tuşunu, yana kaymak için ◀ ▶ tuşlarını basılı tut. Yeşil pede yavaşça in — yeterince yavaşsan gemin mavi parlar. Yakıt sınırlı! Her inişte ped küçülür, yerçekimi güçlenir."
-    },
     "creepycrawler": {
       "name": "Ürkünç Sürüngen",
       "desc": "Sürünen dehşeti böl",
-      "howto": "Avcını hareket ettirmek için kaydır — kendiliğinden ateş eder. Mezar taşları arasında kıvrılarak inen yaratığa ateş et: ortasından vurursan ikiye bölünür! Yok ettiğin her parça yeni bir mezar taşı olur. Sana ulaşmasına izin verme."
+      "howto": "Hareket için kaydır veya ◀ ▶ basılı tut, ateş için ◎ dokun. Sürüngenin ortasını vur ve onu ikiye böl! Öldürülen her parça mezar taşına dönüşür. Sana ulaşmasına izin verme."
     },
     "divesquadron": {
       "name": "Dalış Filosu",
       "desc": "Pike bombacılarından kurtul",
-      "howto": "Gemini sürmek için kaydır — kendiliğinden ateş eder. Düşmanlar düzenden çıkıp üstüne pike yapar. Dalıştaki düşman iki kat puan verir — cesur atış kazandırır! Daha hızlı bir dalgayla yüzleşmek için bütün filoyu temizle."
+      "howto": "Hareket için kaydır; gemin otomatik ateş eder. Dalış yapan düşmanlar çift puan. Yüksek puanlar avcını geliştirir — üç dalgayı temizle ve ana gemiyi düşürerek kazan!"
     },
     "eggcatch": {
       "name": "Yumurta Kapmaca",
       "desc": "Düşen her yumurtayı yakala",
       "howto": "Yumurtalar dört rampadan yuvarlanıp kenardan düşer. Parmağını herhangi bir yerde kaydır — sepet onu izler. Her yumurtayı yere düşmeden yakala; üçü kırılırsa oyun biter. Gittikçe hızlanırlar!"
+    },
+    "tankbattle": {
+      "name": "Tank Savaşı",
+      "desc": "Arenayı elinde tut",
+      "howto": "Tankını sürmek için bir yöne basılı tut, ateş etmek için ◎ dokun. Tuğla duvarlar yıkılır, çelik yıkılmaz. Daha hızlı yeni dalga için tüm düşman devriyesini yok et!"
+    },
+    "towerclimb": {
+      "name": "Kule Tırmanışı",
+      "desc": "Fıçılardan kaç",
+      "howto": "◀ ▶ ile yürü, ▲ ▼ ile merdiven tırman, ↥ ile fıçıların üstünden atla. Büyük puan için tepedeki goril’e ulaş — her kurtarma fıçıları hızlandırır!"
+    },
+    "jungledash": {
+      "name": "Orman Koşusu",
+      "desc": "Koş, zıpla, hazine!",
+      "howto": "Zıplamak için herhangi bir yere dokun. Çukurların, kütüklerin ve yılanların üstünden atla, havadaki hazineyi zıplarken kap. Ne kadar koşarsan orman o kadar hızlanır!"
+    },
+    "blastmaze": {
+      "name": "Bomba Labirenti",
+      "desc": "Yolunu patlatarak aç",
+      "howto": "Yön tuşlarıyla ilerle, ◎ ile bomba bırak. Patlama çapraz şeklindedir — sandıkları ve düşmanları temizler ama sana da zarar verir, hemen uzaklaş! İlerlemek için tüm düşmanları temizle."
+    },
+    "chopperrescue": {
+      "name": "Helikopter Kurtarma",
+      "desc": "Herkes eve dönecek",
+      "howto": "Yön tuşlarıyla uç. Mahsur kalanların üzerinde alçaktan süzülerek onları al (3 koltuk), sonra bırakmak için camgöbeği pistine in. Taretin ateşine dikkat!"
+    },
+    "vampirehunt": {
+      "name": "Vampir Avı",
+      "desc": "Geceyi atlat",
+      "howto": "◀ ▶ ile yürü, ◎ ile hançer fırlat — biri alçaktan, biri yüksekten uçar. Zombiler yerde sürünür, yarasalar tepeden dalar. Geceyi bitirmek için çubuğu doldur!"
+    },
+    "mummytomb": {
+      "name": "Mumyanın Mezarı",
+      "desc": "Altını kap ve kaç",
+      "howto": "Mumyalar seni kovalarken tüm hazineleri toplamak için yön tuşlarını veya kaydırmayı kullan. Baktığın yöndeki ilk mumyayı çarpmak için ⚡ dokun — her mezarda sadece birkaç hakkın var!"
+    },
+    "cratepush": {
+      "name": "Sandık İtme",
+      "desc": "Her sandık hedefe",
+      "howto": "Kaydır veya yön tuşlarıyla yürüyerek sandıkları parlayan hedeflere it. Sandıklar sadece itilir, asla çekilmez — önceden planla ve hatalı hamleyi ↩ ile geri al."
+    },
+    "pixellogic": {
+      "name": "Piksel Mantığı",
+      "desc": "Sayılar bir resim saklıyor",
+      "howto": "Sayılar her satır ve sütundaki dolu hücre bloklarını gösterir. ■ modunda doldurmak için dokun, boşları işaretlemek için ✗ moduna geç. Üç hata oyunu bitirir!"
+    },
+    "navalduel": {
+      "name": "Deniz Düellosu",
+      "desc": "Düşman filosunu batır",
+      "howto": "Düşman sularına ateş etmek için üstteki ızgaraya dokun. Kırmızı isabettir — düşman alttaki gemilerini batırmadan beş gemisini de batır. Kazanılan her savaş daha çok puan!"
+    },
+    "fourstack": {
+      "name": "Dörtlü Dizi",
+      "desc": "Dördü dizen kazanır",
+      "howto": "Diskini bırakmak için bir sütuna dokun. Bilgisayardan önce dördünü hizala — yatay, dikey veya çapraz. Kazandığın her turda daha akıllı olur!"
     }
   },
   "username": {

@@ -129,23 +129,28 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
   const reportScore = useCallback(
     (s: number) => {
       scoreRef.current = s;
-      checkLevel(s);
-      const now = Date.now();
-      if (now - lastFlush.current >= SCORE_FLUSH_MS) {
-        lastFlush.current = now;
-        setScore(s);
-      } else if (!flushTimer.current) {
-        flushTimer.current = setTimeout(() => {
-          flushTimer.current = null;
-          lastFlush.current = Date.now();
-          setScore(scoreRef.current);
-        }, SCORE_FLUSH_MS);
-      }
+      // Deferred: games may report from inside their own setState updaters,
+      // which React runs during render — updating the shell there triggers
+      // "Cannot update a component while rendering a different component".
+      queueMicrotask(() => {
+        checkLevel(s);
+        const now = Date.now();
+        if (now - lastFlush.current >= SCORE_FLUSH_MS) {
+          lastFlush.current = now;
+          setScore(s);
+        } else if (!flushTimer.current) {
+          flushTimer.current = setTimeout(() => {
+            flushTimer.current = null;
+            lastFlush.current = Date.now();
+            setScore(scoreRef.current);
+          }, SCORE_FLUSH_MS);
+        }
+      });
     },
     [checkLevel]
   );
 
-  const end = useCallback(
+  const endNow = useCallback(
     ({ score: finalScore, won: didWin }: { score: number; won?: boolean }) => {
       scoreRef.current = finalScore;
       checkLevel(finalScore);
@@ -178,6 +183,18 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
     [gameId, checkLevel]
   );
 
+  // Same render-safety contract as reportScore.
+  const end = useCallback(
+    (opts: { score: number; won?: boolean }) => {
+      queueMicrotask(() => endNow(opts));
+    },
+    [endNow]
+  );
+
+  const reportLives = useCallback((n: number) => {
+    queueMicrotask(() => setLives(n));
+  }, []);
+
   const start = () => {
     setScore(0);
     scoreRef.current = 0;
@@ -196,7 +213,7 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
     running: phase === 'playing',
     resetToken,
     setScore: reportScore,
-    setLives,
+    setLives: reportLives,
     end,
     width: area.width,
     height: area.height,

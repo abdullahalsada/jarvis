@@ -89,6 +89,18 @@ export function CreepyCrawlerGame({ api }: { api: GameApi }) {
 
   const held = useRef({ left: false, right: false });
 
+  /** Player-controlled fire: one tap, one shot (more in flight on later waves). */
+  const fire = () => {
+    if (!api.running) return;
+    const maxShots = wave.current >= 3 ? 3 : 2;
+    if (fireCooldown.current <= 0 && shots.current.length < maxShots) {
+      shots.current.push({ x: player.current, y: PLAYER_ROW * cell });
+      fireCooldown.current = 0.18;
+      playSfx('shoot');
+      haptic.light();
+    }
+  };
+
   useGameLoop(api.running, (dt) => {
     if (held.current.left || held.current.right) {
       const dx = (held.current.right ? 1 : 0) - (held.current.left ? 1 : 0);
@@ -113,14 +125,8 @@ export function CreepyCrawlerGame({ api }: { api: GameApi }) {
       }
     }
 
-    // Player auto-fire, one shot at a time until wave 3 doubles the rate.
+    // Firing is manual (◎ button) — the cooldown just ticks down here.
     fireCooldown.current -= dt;
-    const maxShots = wave.current >= 3 ? 2 : 1;
-    if (fireCooldown.current <= 0 && shots.current.length < maxShots) {
-      shots.current.push({ x: player.current, y: PLAYER_ROW * cell });
-      fireCooldown.current = 0.3;
-      playSfx('shoot');
-    }
     for (const shot of shots.current) shot.y -= H * 1.1 * dt;
     shots.current = shots.current.filter((s) => s.y > -20);
 
@@ -275,13 +281,15 @@ export function CreepyCrawlerGame({ api }: { api: GameApi }) {
       <PadBar
         buttons={[
           { key: 'left', label: '◀', wide: true },
+          { key: 'fire', label: '◎', wide: true },
           { key: 'right', label: '▶', wide: true },
         ]}
         onDown={(k) => {
-          held.current[k as 'left' | 'right'] = true;
+          if (k === 'fire') fire();
+          else held.current[k as 'left' | 'right'] = true;
         }}
         onUp={(k) => {
-          held.current[k as 'left' | 'right'] = false;
+          if (k !== 'fire') held.current[k as 'left' | 'right'] = false;
         }}
       />
     </View>

@@ -35,7 +35,7 @@ const MAZE = [
 ];
 const COLS = MAZE[0].length;
 const ROWS = MAZE.length;
-const TICK_MS = 220;
+const TICK_MS = 170;
 const FRIGHT_TICKS = 30;
 
 type Cell = { x: number; y: number };
@@ -109,9 +109,15 @@ export function HauntedMazeGame({ api }: { api: GameApi }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [api.resetToken]);
 
-  // Buffered until a junction allows the turn; fed by D-pad and swipes alike.
+  // Instant when the turn is legal right now (no waiting for the next tick),
+  // buffered until a junction allows it otherwise; fed by D-pad and swipes.
   const steer = (d: Dir) => {
-    wanted.current = d;
+    if (tryMove(player.current, d)) {
+      dir.current = d;
+      wanted.current = null;
+    } else {
+      wanted.current = d;
+    }
   };
   const pan = useSwipe(steer);
 
@@ -286,7 +292,9 @@ export function HauntedMazeGame({ api }: { api: GameApi }) {
               width: cell,
               height: cell,
               opacity: g.eaten ? 0 : fright.current > 0 ? 0.45 : 1,
-              transform: fright.current > 0 ? [{ rotate: '8deg' }] : undefined,
+              // Always an array: toggling transform to undefined crashes RN on
+              // device ("forEach of null") when the style diff removes it.
+              transform: [{ rotate: fright.current > 0 ? '8deg' : '0deg' }],
             }}
           />
         ))}
