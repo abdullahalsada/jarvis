@@ -422,6 +422,27 @@ const SPRITES = {
     '................',
   ],
 
+  // ─── Pumpkin Toss ───
+  // Rattling skeleton guard.
+  skeleton: [
+    '................',
+    '.....FFFF.......',
+    '....FFFFFF......',
+    '....FKFFKF......',
+    '....FFFFFF......',
+    '.....FwwF.......',
+    '......FF........',
+    '...FFFFFFFF.....',
+    '....wFFFFw......',
+    '....F.FF.F......',
+    '...FF.FF.FF.....',
+    '......FF........',
+    '.....F..F.......',
+    '.....F..F.......',
+    '....FF..FF......',
+    '................',
+  ],
+
   // ─── Shooter upgrades (Space Defenders / Dive Squadron) ───
   // Mk2 fighter: winged interceptor with twin cannons.
   ship_mk2: [

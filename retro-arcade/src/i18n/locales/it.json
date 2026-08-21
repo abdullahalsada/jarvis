@@ -119,16 +119,6 @@
       "desc": "Ferma l'invasione",
       "howto": "Scorri il dito per muovere la nave: spara da sola. I punteggi alti potenziano il tuo caccia con cannoni più forti. Supera le tre ondate e sconfiggi la nave madre per vincere!"
     },
-    "meteordodge": {
-      "name": "Schiva Meteore",
-      "desc": "Sopravvivi alla tempesta",
-      "howto": "Fai scorrere il dito per guidare la nave a destra e a sinistra. Schiva le meteore che cadono il più a lungo possibile. Cadono sempre più veloci — quanto resisti?"
-    },
-    "hauntedmaze": {
-      "name": "Labirinto Stregato",
-      "desc": "Sfuggi ai fantasmi",
-      "howto": "Scorri per muoverti nel labirinto. Raccogli tutte le sfere luminose mentre i fantasmi ti danno la caccia. Prendi una stella del potere e ribalta la situazione: caccia tu loro!"
-    },
     "memorymatch": {
       "name": "Memory",
       "desc": "Trova tutte le coppie",
@@ -154,20 +144,10 @@
       "desc": "Svolazza tra le torri",
       "howto": "Tocca ovunque per sbattere le ali e restare in volo. Passa nel varco tra le torri — un punto per ogni torre superata. Un urto e finisce tutto. Quanto lontano voli?"
     },
-    "ghostsweeper": {
-      "name": "Scova-Fantasmi",
-      "desc": "Trova i fantasmi nascosti",
-      "howto": "Tocca una casella per scoprirla. I numeri dicono quanti fantasmi si nascondono nelle caselle vicine — usa la logica per capire dove sono. Tieni premuto per piazzare un sigillo su un sospetto. Scopri tutte le caselle sicure per vincere. Niente timer, solo ragionamento."
-    },
     "alleybowl": {
       "name": "Bowling",
       "desc": "Punta al 300 perfetto",
       "howto": "Trascina di lato per allineare la boccia, poi lanciala in SU con un colpo secco — l'angolo del gesto dà l'effetto. Abbatti tutti e dieci i birilli! Strike e spare danno punti bonus, come nel bowling vero. Dieci tiri; la partita perfetta è 300."
-    },
-    "moonbuggy": {
-      "name": "Buggy Lunare",
-      "desc": "Salta i crateri, spara alle rocce",
-      "howto": "Il tuo buggy guida da solo, sempre più veloce. Tocca il lato DESTRO dello schermo per saltare i crateri, il SINISTRO per sparare alle rocce. Checkpoint ogni 500 m. Tre vite — buona fortuna, pilota!"
     },
     "tilefusion": {
       "name": "Fusione di Tessere",
@@ -178,11 +158,6 @@
       "name": "Corsa Retrò",
       "desc": "Sguscia nel traffico",
       "howto": "Scorri a destra o a sinistra per cambiare corsia. Schiva le auto che arrivano — la strada diventa più veloce e affollata più vai avanti. Un incidente e la corsa finisce. Quanto lontano arrivi?"
-    },
-    "creepycrawler": {
-      "name": "Strisciante Sinistro",
-      "desc": "Spezza l'orrore strisciante",
-      "howto": "Scorri o tieni ◀ ▶ per muoverti e tocca ◎ per sparare. Colpisci il centro del millepiedi per dividerlo in due! Ogni segmento abbattuto diventa una lapide. Non lasciarlo arrivare a te."
     },
     "divesquadron": {
       "name": "Squadrone in Picchiata",
@@ -224,11 +199,6 @@
       "desc": "Sopravvivi alla notte",
       "howto": "Cammina con ◀ ▶ e lancia pugnali con ◎ — uno vola basso, uno alto. Gli zombi strisciano a terra, i pipistrelli piombano dall’alto. Riempi la barra per superare la notte!"
     },
-    "mummytomb": {
-      "name": "Tomba della Mummia",
-      "desc": "Prendi l’oro e scappa",
-      "howto": "Muoviti con la croce o gli swipe per raccogliere tutti i tesori mentre le mummie ti danno la caccia. Tocca ⚡ per folgorare la prima mummia di fronte a te — le cariche sono poche!"
-    },
     "cratepush": {
       "name": "Spingi Casse",
       "desc": "Ogni cassa al suo posto",
@@ -239,15 +209,45 @@
       "desc": "I numeri nascondono un disegno",
       "howto": "I numeri indicano i blocchi di celle piene di ogni riga e colonna. Tocca per riempire in modalità ■ o passa a ✗ per segnare i vuoti. Tre errori chiudono la partita!"
     },
-    "navalduel": {
-      "name": "Duello Navale",
-      "desc": "Affonda la flotta nemica",
-      "howto": "Tocca la griglia in alto per sparare nelle acque nemiche. Rosso è un colpo a segno — affonda le cinque navi prima che il nemico affondi le tue in basso. Ogni battaglia vinta vale di più!"
-    },
     "fourstack": {
       "name": "Quattro in Fila",
       "desc": "Quattro in fila vincono",
       "howto": "Tocca una colonna per far cadere il tuo disco. Allineane quattro — in orizzontale, verticale o diagonale — prima del computer. Diventa più furbo a ogni round vinto!"
+    },
+    "fruitslice": {
+      "name": "Taglia Frutta",
+      "desc": "Scorri, affetta, combo!",
+      "howto": "La frutta vola in alto: passaci sopra il dito per affettarla! Concatenane diverse in un solo gesto per i bonus combo. Non affettare le bombe e non far cadere la frutta: tre errori chiudono la partita."
+    },
+    "skyjump": {
+      "name": "Salto nel Cielo",
+      "desc": "Rimbalza fino alle stelle",
+      "howto": "La tua creatura rimbalza da sola: scorri o usa ◀ ▶ per guidarla sulle piattaforme. Quelle bianche si sbriciolano dopo un balzo, le molle ti sparano in alto e i bordi si ricongiungono. Non cadere!"
+    },
+    "ghostrun": {
+      "name": "Corsa Spettrale",
+      "desc": "Sfreccia nel cimitero",
+      "howto": "Cambia corsia con ◀ ▶ (o scorri) e scavalca le lapidi con ↥. I fantasmi non si saltano: schivali! Prendi i fuochi fatui dorati per punti bonus. La notte accelera sempre di più."
+    },
+    "ghosthunt": {
+      "name": "Caccia ai Fantasmi",
+      "desc": "Toccali prima che scappino",
+      "howto": "Gli spiriti attraversano il cimitero: toccali per colpirli prima che fuggano! Hai 3 colpi per coppia; i pipistrelli sono veloci e valgono il triplo. Ogni spirito fuggito costa una vita."
+    },
+    "pumpkintoss": {
+      "name": "Lancio di Zucche",
+      "desc": "Espugna i forti d’ossa",
+      "howto": "Tira indietro la zucca, lascia andare e guardala volare! Sfonda i blocchi d’osso e abbatti tutti gli scheletri per espugnare il castello successivo. Cinque zucche a castello — quelle avanzate valgono bonus."
+    },
+    "monstermatch": {
+      "name": "Mostri a Tris",
+      "desc": "Allinea tre, concatena di più",
+      "howto": "Tocca un mostro e poi un vicino per scambiarli e allineare 3 uguali: scoppiano e tutto crolla giù. Le catene moltiplicano il punteggio! Hai 30 mosse. Falle contare."
+    },
+    "blockdrop": {
+      "name": "Cascata di Blocchi",
+      "desc": "Righe piene, pura scorrevolezza",
+      "howto": "Guida il pezzo con ◀ ▶, ruotalo con ↻, schiantalo con ▼ (funzionano anche i gesti). Riempi una riga per cancellarla — quattro in un colpo per il maxi bonus! Il pozzo accelera ogni 10 righe."
     }
   },
   "username": {

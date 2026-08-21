@@ -35,6 +35,10 @@ interface Bomb {
   c: number;
   r: number;
   fuse: number;
+  /** Passable for the player until they've fully stepped off it once —
+   * a distance-based exemption left a window where the trailing edge of
+   * the player still overlapped the bomb cell and they got stuck. */
+  walkThrough: boolean;
 }
 
 interface Flame {
@@ -121,7 +125,7 @@ export function BlastMazeGame({ api }: { api: GameApi }) {
     bombs.current.some((b) => b.c === c && b.r === r);
 
   /** Circle-ish movement with wall sliding on the grid. */
-  const tryMove = (obj: { x: number; y: number }, dir: Dir, sp: number, dt: number) => {
+  const tryMove = (obj: { x: number; y: number }, dir: Dir, sp: number, dt: number, isPlayer = false) => {
     const nx = obj.x + DELTA[dir].x * sp * dt;
     const ny = obj.y + DELTA[dir].y * sp * dt;
     const h = SIZE / 2 - 2;
@@ -134,11 +138,10 @@ export function BlastMazeGame({ api }: { api: GameApi }) {
     const hit = corners.some(([x, y]) => {
       const c = Math.floor((x - ox) / cell);
       const r = Math.floor(y / cell);
-      // A bomb you're standing on doesn't block you until you leave it.
-      const onOwn = bombs.current.some(
-        (b) => b.c === c && b.r === r && Math.abs(obj.x - (ox + b.c * cell + cell / 2)) < cell * 0.6 && Math.abs(obj.y - (b.r * cell + cell / 2)) < cell * 0.6
-      );
-      return !onOwn && solid(c, r);
+      // A freshly-dropped bomb stays passable for the player until they've
+      // fully stepped off it (the walkThrough flag, cleared in the loop).
+      const passable = isPlayer && bombs.current.some((b) => b.c === c && b.r === r && b.walkThrough);
+      return !passable && solid(c, r);
     });
     if (!hit) {
       obj.x = nx;
@@ -152,7 +155,7 @@ export function BlastMazeGame({ api }: { api: GameApi }) {
     if (!api.running || bombs.current.length >= 1 + Math.floor(round.current / 3)) return;
     const { c, r } = cellOf(player.current.x, player.current.y);
     if (bombs.current.some((b) => b.c === c && b.r === r)) return;
-    bombs.current.push({ c, r, fuse: 2 });
+    bombs.current.push({ c, r, fuse: 2, walkThrough: true });
     playSfx('select');
     haptic.light();
   };
@@ -178,7 +181,18 @@ export function BlastMazeGame({ api }: { api: GameApi }) {
 
   useGameLoop(api.running, (dt) => {
     const p = player.current;
-    if (held.current) tryMove(p, held.current, cell * 3.6, dt);
+    if (held.current) tryMove(p, held.current, cell * 3.6, dt, true);
+
+    // Once the player has fully left a bomb's cell, it becomes solid.
+    const half = SIZE / 2;
+    for (const b of bombs.current) {
+      if (!b.walkThrough) continue;
+      const cx = ox + b.c * cell + cell / 2;
+      const cy = b.r * cell + cell / 2;
+      if (Math.abs(p.x - cx) > cell / 2 + half || Math.abs(p.y - cy) > cell / 2 + half) {
+        b.walkThrough = false;
+      }
+    }
 
     // Bombs tick down; chained flames detonate other bombs instantly.
     for (const b of bombs.current) b.fuse -= dt;

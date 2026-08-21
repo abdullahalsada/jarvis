@@ -119,16 +119,6 @@
       "desc": "Stoppe l'invasion",
       "howto": "Glisse le doigt pour déplacer ton vaisseau — il tire tout seul. Les gros scores améliorent ton chasseur avec des canons plus puissants. Nettoie les trois vagues puis abats le vaisseau-mère pour gagner !"
     },
-    "meteordodge": {
-      "name": "Esquive Météores",
-      "desc": "Survis à la tempête",
-      "howto": "Fais glisser ton doigt pour diriger ton vaisseau à gauche et à droite. Esquive les météores le plus longtemps possible. Ils tombent de plus en plus vite — combien de temps tiendras-tu ?"
-    },
-    "hauntedmaze": {
-      "name": "Labyrinthe Hanté",
-      "desc": "Échappe aux fantômes",
-      "howto": "Glisse pour te déplacer dans le labyrinthe. Ramasse toutes les orbes lumineuses pendant que les fantômes te traquent. Attrape une étoile de pouvoir pour inverser les rôles et les chasser à ton tour !"
-    },
     "memorymatch": {
       "name": "Mémoire",
       "desc": "Trouve toutes les paires",
@@ -159,20 +149,10 @@
       "desc": "Survis aux piqués ennemis",
       "howto": "Glisse pour bouger ; ton vaisseau tire tout seul. Les ennemis en piqué valent double. Les gros scores améliorent ton chasseur — nettoie trois vagues et abats le vaisseau-mère pour gagner !"
     },
-    "ghostsweeper": {
-      "name": "Chasse-Fantômes",
-      "desc": "Trouve les fantômes cachés",
-      "howto": "Touche une case pour la révéler. Les chiffres indiquent combien de fantômes se cachent dans les cases voisines — déduis leur position. Appuie longuement pour poser un sceau sur un fantôme suspect. Révèle toutes les cases sûres pour gagner. Pas de chrono, que de la logique."
-    },
     "alleybowl": {
       "name": "Bowling",
       "desc": "Vise le 300 parfait",
       "howto": "Glisse sur les côtés pour placer ta boule, puis lance-la vers le HAUT — l'angle du geste courbe le tir. Renverse les dix quilles ! Strikes et spares rapportent des bonus, comme au vrai bowling. Dix manches ; la partie parfaite vaut 300."
-    },
-    "moonbuggy": {
-      "name": "Buggy Lunaire",
-      "desc": "Saute les cratères, tire les rochers",
-      "howto": "Ton buggy roule tout seul, de plus en plus vite. Touche le côté DROIT de l'écran pour sauter les cratères, le côté GAUCHE pour tirer sur les rochers. Un point de passage tous les 500 m. Trois vies — bonne route, pilote !"
     },
     "tilefusion": {
       "name": "Fusion de Tuiles",
@@ -188,11 +168,6 @@
       "name": "Attrape-Œufs",
       "desc": "Attrape chaque œuf qui tombe",
       "howto": "Les œufs dévalent quatre rampes et basculent dans le vide. Glisse ton doigt n'importe où : le panier le suit. Attrape chaque œuf avant qu'il ne touche le sol ; trois œufs cassés et la partie s'arrête. Ils tombent plus vite à mesure que ton score grimpe !"
-    },
-    "creepycrawler": {
-      "name": "Rampant Sinistre",
-      "desc": "Coupe le rampant en deux",
-      "howto": "Glisse ou maintiens ◀ ▶ pour bouger et touche ◎ pour tirer. Touche le milieu du rampant pour le couper en deux ! Chaque segment détruit devient une pierre tombale. Ne le laisse pas t’atteindre."
     },
     "tankbattle": {
       "name": "Bataille de Chars",
@@ -224,11 +199,6 @@
       "desc": "Survis à la nuit",
       "howto": "Marche avec ◀ ▶ et lance des dagues avec ◎ — une vole bas, l’autre haut. Les zombies rampent au sol, les chauves-souris piquent d’en haut. Remplis la jauge pour finir la nuit !"
     },
-    "mummytomb": {
-      "name": "Tombeau de la Momie",
-      "desc": "Prends l’or et file",
-      "howto": "Déplace-toi avec la croix ou en glissant pour ramasser tous les trésors pendant que les momies te traquent. Touche ⚡ pour foudroyer la première momie face à toi — les charges sont rares !"
-    },
     "cratepush": {
       "name": "Pousse-Caisses",
       "desc": "Chaque caisse à sa place",
@@ -239,15 +209,45 @@
       "desc": "Les nombres cachent une image",
       "howto": "Les nombres indiquent les blocs de cases remplies de chaque ligne et colonne. Touche pour remplir en mode ■, ou passe en ✗ pour marquer les vides. Trois erreurs et c’est fini !"
     },
-    "navalduel": {
-      "name": "Duel Naval",
-      "desc": "Coule la flotte ennemie",
-      "howto": "Touche la grille du haut pour tirer dans les eaux ennemies. Rouge = touché ! Coule les cinq navires avant que l’ennemi ne coule les tiens en bas. Chaque bataille gagnée vaut plus !"
-    },
     "fourstack": {
       "name": "Puissance Quatre",
       "desc": "Quatre alignés, gagné",
       "howto": "Touche une colonne pour lâcher ton jeton. Aligne quatre pions — en ligne, colonne ou diagonale — avant l’ordinateur. Il devient plus malin à chaque manche gagnée !"
+    },
+    "fruitslice": {
+      "name": "Tranche-Fruits",
+      "desc": "Glisse, tranche, combo !",
+      "howto": "Les fruits jaillissent : passe le doigt à travers pour les trancher ! Enchaîne-en plusieurs d’un seul geste pour les bonus combo. Ne tranche pas les bombes et ne laisse rien tomber : trois ratés et c’est fini."
+    },
+    "skyjump": {
+      "name": "Saut Céleste",
+      "desc": "Rebondis vers les étoiles",
+      "howto": "Ta créature rebondit toute seule : glisse ou utilise ◀ ▶ pour viser les plateformes. Les blanches s’effritent après un rebond, les ressorts t’expédient très haut, et les bords se rejoignent. Ne tombe pas !"
+    },
+    "ghostrun": {
+      "name": "Course Fantôme",
+      "desc": "Sprint dans le cimetière",
+      "howto": "Change de couloir avec ◀ ▶ (ou glisse) et franchis les pierres tombales avec ↥. Les fantômes ne se sautent pas : évite-les ! Attrape les feux follets dorés pour des points bonus. La nuit accélère sans cesse."
+    },
+    "ghosthunt": {
+      "name": "Chasse aux Fantômes",
+      "desc": "Touche-les avant qu’ils filent",
+      "howto": "Les esprits traversent le cimetière : touche-les pour tirer avant qu’ils s’échappent ! 3 cartouches par duo ; les chauves-souris sont rapides et valent triple. Chaque esprit échappé coûte une vie."
+    },
+    "pumpkintoss": {
+      "name": "Lance-Citrouilles",
+      "desc": "Prends d’assaut les forts d’os",
+      "howto": "Tire la citrouille en arrière, relâche et regarde-la voler ! Fracasse les blocs d’os et renverse tous les squelettes pour passer au château suivant. Cinq citrouilles par château — celles qui restent donnent un bonus."
+    },
+    "monstermatch": {
+      "name": "Match de Monstres",
+      "desc": "Aligne trois, enchaîne plus",
+      "howto": "Touche un monstre puis un voisin pour les échanger et aligner 3 pareils : ils éclatent et tout dégringole. Les chaînes multiplient ton score ! Tu as 30 coups. Fais-les compter."
+    },
+    "blockdrop": {
+      "name": "Chute de Blocs",
+      "desc": "Efface des lignes, trouve le rythme",
+      "howto": "Dirige la pièce avec ◀ ▶, fais-la pivoter avec ↻, écrase-la avec ▼ (les gestes marchent aussi). Remplis une ligne pour l’effacer — quatre d’un coup pour le gros bonus ! Le puits accélère toutes les 10 lignes."
     }
   },
   "username": {

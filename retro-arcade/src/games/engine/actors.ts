@@ -43,6 +43,7 @@ export const ACTORS = {
   chopper: require('../../../assets/actors/chopper.png'),
   hunter: require('../../../assets/actors/hunter.png'),
   mummy: require('../../../assets/actors/mummy.png'),
+  skeleton: require('../../../assets/actors/skeleton.png'),
   rocket: require('../../../assets/actors/rocket.png'),
   meteor: require('../../../assets/actors/meteor.png'),
   bird: require('../../../assets/actors/bird.png'),

@@ -119,16 +119,6 @@
       "desc": "Detén la invasión",
       "howto": "Desliza el dedo para mover tu nave: dispara sola. Las puntuaciones altas mejoran tu caza con cañones más potentes. ¡Supera las tres oleadas y derrota a la nave nodriza para ganar!"
     },
-    "meteordodge": {
-      "name": "Esquiva Meteoros",
-      "desc": "Sobrevive a la tormenta",
-      "howto": "Desliza el dedo para mover tu nave a izquierda y derecha. Esquiva los meteoros que caen todo el tiempo que puedas. Caen cada vez más rápido — ¿cuánto aguantarás?"
-    },
-    "hauntedmaze": {
-      "name": "Laberinto Encantado",
-      "desc": "Escapa de los fantasmas",
-      "howto": "Desliza para moverte por el laberinto. Recoge todas las esferas brillantes mientras los fantasmas te persiguen. ¡Coge una estrella de poder para darle la vuelta y perseguirlos tú!"
-    },
     "memorymatch": {
       "name": "Memoria",
       "desc": "Encuentra todas las parejas",
@@ -159,20 +149,10 @@
       "desc": "Sobrevive a los bombarderos",
       "howto": "Desliza para moverte; tu nave dispara sola. Los enemigos en picado valen doble. Las puntuaciones altas mejoran tu caza: ¡supera tres oleadas y derriba a la nave nodriza para ganar!"
     },
-    "ghostsweeper": {
-      "name": "Caza Fantasmas",
-      "desc": "Encuentra los fantasmas ocultos",
-      "howto": "Toca una casilla para revelarla. Los números indican cuántos fantasmas se esconden en las casillas vecinas — usa la lógica para localizarlos. Mantén pulsado para marcar un fantasma sospechoso. Revela todas las casillas seguras para ganar. Sin reloj, solo pensar."
-    },
     "alleybowl": {
       "name": "Bolera",
       "desc": "Busca el 300 perfecto",
       "howto": "Arrastra a los lados para colocar la bola y lánzala hacia ARRIBA para tirar — el ángulo del lanzamiento curva el tiro. ¡Derriba los diez bolos! Plenos y semiplenos dan puntos extra, como en los bolos de verdad. Diez turnos; la partida perfecta es 300."
-    },
-    "moonbuggy": {
-      "name": "Buggy Lunar",
-      "desc": "Salta cráteres, vuela rocas",
-      "howto": "Tu buggy conduce solo, cada vez más rápido. Toca el lado DERECHO de la pantalla para saltar los cráteres y el lado IZQUIERDO para disparar a las rocas del camino. Puntos de control cada 500 m. Tres vidas — ¡suerte, piloto!"
     },
     "tilefusion": {
       "name": "Fusión de Fichas",
@@ -188,11 +168,6 @@
       "name": "Atrapa Huevos",
       "desc": "Atrapa cada huevo que cae",
       "howto": "Los huevos ruedan por cuatro rampas y caen por el borde. Desliza el dedo por cualquier parte: la cesta lo sigue. Atrapa cada huevo antes de que toque el suelo; con tres rotos se acaba. ¡Llegan más rápido cuanto más puntúas!"
-    },
-    "creepycrawler": {
-      "name": "Reptador Siniestro",
-      "desc": "Divide al reptador",
-      "howto": "Desliza o mantén ◀ ▶ para moverte y toca ◎ para disparar. ¡Acierta en el centro de la oruga para partirla en dos! Cada segmento abatido se convierte en lápida. No dejes que te alcance."
     },
     "tankbattle": {
       "name": "Batalla de Tanques",
@@ -224,11 +199,6 @@
       "desc": "Sobrevive a la noche",
       "howto": "Camina con ◀ ▶ y lanza dagas con ◎: una vuela baja y otra alta. Los zombis avanzan por el suelo, los murciélagos caen en picado. ¡Llena la barra para superar la noche!"
     },
-    "mummytomb": {
-      "name": "Tumba de la Momia",
-      "desc": "Coge el oro y corre",
-      "howto": "Muévete con la cruceta o deslizando para reunir todos los tesoros mientras las momias te persiguen. Toca ⚡ para fulminar a la primera momia frente a ti. ¡Solo llevas unas pocas cargas por tumba!"
-    },
     "cratepush": {
       "name": "Empuja Cajas",
       "desc": "Cada caja a su destino",
@@ -239,15 +209,45 @@
       "desc": "Los números esconden un dibujo",
       "howto": "Los números indican los grupos de celdas rellenas de cada fila y columna. Toca para rellenar en modo ■ o cambia a ✗ para marcar vacíos. ¡Tres errores acaban la partida!"
     },
-    "navalduel": {
-      "name": "Duelo Naval",
-      "desc": "Hunde la flota enemiga",
-      "howto": "Toca la cuadrícula superior para disparar a aguas enemigas. Rojo es impacto: hunde los cinco barcos antes de que el enemigo hunda los tuyos abajo. ¡Cada batalla ganada vale más!"
-    },
     "fourstack": {
       "name": "Cuatro en Línea",
       "desc": "Cuatro seguidas ganan",
       "howto": "Toca una columna para soltar tu ficha. Alinea cuatro — en horizontal, vertical o diagonal — antes que la máquina. ¡Se vuelve más lista con cada ronda que ganas!"
+    },
+    "fruitslice": {
+      "name": "Corta Frutas",
+      "desc": "¡Desliza, corta, combos!",
+      "howto": "La fruta vuela hacia arriba: ¡pasa el dedo para cortarla! Encadena varias en un solo gesto para bonus de combo. No cortes las bombas ni dejes caer la fruta: tres fallos acaban la partida."
+    },
+    "skyjump": {
+      "name": "Salto al Cielo",
+      "desc": "Rebota hasta las estrellas",
+      "howto": "Tu bicho rebota solo: desliza o usa ◀ ▶ para guiarlo a las plataformas. Las blancas se desmoronan tras un bote, los muelles te lanzan altísimo y los bordes conectan. ¡No caigas!"
+    },
+    "ghostrun": {
+      "name": "Carrera Fantasma",
+      "desc": "Esprinta el cementerio",
+      "howto": "Cambia de carril con ◀ ▶ (o desliza) y salta lápidas con ↥. Los fantasmas no se saltan: ¡esquívalos! Atrapa las luces doradas para puntos extra. La noche va cada vez más rápida."
+    },
+    "ghosthunt": {
+      "name": "Caza Fantasmas",
+      "desc": "Tócalos antes de que escapen",
+      "howto": "Los espíritus cruzan el cementerio: ¡tócalos para dispararles antes de que escapen! Tienes 3 cartuchos por pareja; los murciélagos son rápidos y valen triple. Cada espíritu que escapa cuesta una vida."
+    },
+    "pumpkintoss": {
+      "name": "Lanza Calabazas",
+      "desc": "Asalta los fuertes de hueso",
+      "howto": "Tira de la calabaza hacia atrás, suéltala ¡y mírala volar! Destroza los bloques de hueso y derriba a todos los esqueletos para asaltar el siguiente castillo. Cinco calabazas por castillo: las sobrantes dan bonus."
+    },
+    "monstermatch": {
+      "name": "Combina Monstruos",
+      "desc": "Junta tres, encadena más",
+      "howto": "Toca un monstruo y luego a un vecino para intercambiarlos y alinear 3 iguales: explotan y todo cae. ¡Las cadenas multiplican tu puntuación! Tienes 30 movimientos. Aprovéchalos."
+    },
+    "blockdrop": {
+      "name": "Caída de Bloques",
+      "desc": "Limpia líneas, siente el ritmo",
+      "howto": "Dirige la pieza con ◀ ▶, gírala con ↻ y estréllala con ▼ (también con gestos). Completa una fila para limpiarla, ¡cuatro a la vez para el gran bonus! El pozo se acelera cada 10 líneas."
     }
   },
   "username": {

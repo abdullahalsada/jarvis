@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Image, PanResponder, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { colors } from '../../theme';
 import { ACTORS } from '../engine/actors';
 import { type GameApi } from '../engine/GameShell';
@@ -60,14 +60,9 @@ export function JungleDashGame({ api }: { api: GameApi }) {
     haptic.light();
   };
 
-  const tap = useRef(
-    PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onPanResponderGrant: () => tapRef.current(),
-    })
-  );
-  const tapRef = useRef(jump);
-  tapRef.current = jump;
+  // Pressable onPressIn is the tap path proven single-tap-reliable on
+  // device (same as the pad buttons) — the PanResponder grant needed a
+  // second tap on some phones.
 
   useGameLoop(api.running, (dt) => {
     const speed = W * (0.42 + Math.min(0.5, camera.current / (W * 40)));
@@ -127,7 +122,7 @@ export function JungleDashGame({ api }: { api: GameApi }) {
   });
 
   return (
-    <View style={{ flex: 1 }} {...tap.current.panHandlers}>
+    <Pressable style={{ flex: 1 }} onPressIn={jump}>
       <View pointerEvents="none" style={{ flex: 1 }}>
         {/* Jungle backdrop: layered canopy stripes */}
         <View style={{ position: 'absolute', top: 0, width: W, height: H * 0.24, backgroundColor: '#0c1f10' }} />
@@ -213,6 +208,6 @@ export function JungleDashGame({ api }: { api: GameApi }) {
           }}
         />
       </View>
-    </View>
+    </Pressable>
   );
 }

@@ -119,16 +119,6 @@
       "desc": "Stoppe die Invasion",
       "howto": "Wische, um dein Schiff zu bewegen — es feuert automatisch. Hohe Punktzahlen rüsten deinen Jäger mit stärkeren Kanonen auf. Schaffe alle drei Wellen und besiege dann das Mutterschiff!"
     },
-    "meteordodge": {
-      "name": "Meteor-Ausweichen",
-      "desc": "Überlebe den Sturm",
-      "howto": "Steuere dein Schiff mit dem Finger nach links und rechts. Weiche den fallenden Meteoren so lange wie möglich aus. Sie fallen immer schneller — wie lange hältst du durch?"
-    },
-    "hauntedmaze": {
-      "name": "Geisterlabyrinth",
-      "desc": "Entkomme den Geistern",
-      "howto": "Wische, um durchs Labyrinth zu laufen. Sammle alle leuchtenden Kugeln, während die Geister dich jagen. Schnapp dir einen Kraftstern und jage sie stattdessen!"
-    },
     "memorymatch": {
       "name": "Memory",
       "desc": "Finde alle Paare",
@@ -154,20 +144,10 @@
       "desc": "Flattere durch die Türme",
       "howto": "Tippe irgendwo, um zu flattern und in der Luft zu bleiben. Gleite durch die Lücken zwischen den Türmen — ein Punkt pro Turm. Eine Berührung und es ist vorbei. Wie weit fliegst du?"
     },
-    "ghostsweeper": {
-      "name": "Geisterfeger",
-      "desc": "Finde die versteckten Geister",
-      "howto": "Tippe ein Feld an, um es aufzudecken. Die Zahlen verraten, wie viele Geister in den Nachbarfeldern stecken — kombiniere logisch. Halte gedrückt, um einen Bannzauber zu setzen. Decke alle sicheren Felder auf, um zu gewinnen. Kein Timer, nur Köpfchen."
-    },
     "alleybowl": {
       "name": "Bowlingbahn",
       "desc": "Wirf die perfekte 300",
       "howto": "Ziehe seitwärts, um die Kugel auszurichten, und schnippe nach OBEN zum Werfen — der Winkel deines Schwungs macht Effet. Räum alle zehn Pins ab! Strikes und Spares geben Bonuspunkte wie beim echten Bowling. Zehn Durchgänge; das perfekte Spiel ist 300."
-    },
-    "moonbuggy": {
-      "name": "Mond-Buggy",
-      "desc": "Spring über Krater, sprenge Felsen",
-      "howto": "Dein Buggy fährt von allein, immer schneller. Tippe RECHTS, um über Krater zu springen, und LINKS, um Felsen wegzuschießen. Checkpoints alle 500 m. Drei Leben — gute Fahrt!"
     },
     "tilefusion": {
       "name": "Kachel-Fusion",
@@ -178,11 +158,6 @@
       "name": "Retro-Raser",
       "desc": "Schlängle dich durch den Verkehr",
       "howto": "Wische links oder rechts, um die Spur zu wechseln. Zieh am Gegenverkehr vorbei — je weiter du fährst, desto schneller und voller wird die Straße. Ein Crash beendet die Fahrt. Wie weit kommst du?"
-    },
-    "creepycrawler": {
-      "name": "Gruselkrabbler",
-      "desc": "Teile das Krabbelmonster",
-      "howto": "Wische oder halte ◀ ▶ zum Bewegen und tippe ◎ zum Feuern. Triff die Mitte des Kriechers, um ihn zu teilen! Jedes erledigte Segment wird zum Grabstein. Lass ihn nicht zu dir durch."
     },
     "divesquadron": {
       "name": "Sturzflug-Staffel",
@@ -224,11 +199,6 @@
       "desc": "Überlebe die Nacht",
       "howto": "Laufe mit ◀ ▶ und wirf Dolche mit ◎ — einer fliegt tief, einer hoch. Zombies schlurfen am Boden, Fledermäuse stoßen von oben herab. Fülle die Leiste, um die Nacht zu überstehen!"
     },
-    "mummytomb": {
-      "name": "Grab der Mumie",
-      "desc": "Schnapp das Gold und lauf",
-      "howto": "Steuere mit Kreuz oder Wischen und sammle alle Schätze, während Mumien dich jagen. Tippe ⚡, um die erste Mumie vor dir zu blitzen — pro Grab nur wenige Ladungen!"
-    },
     "cratepush": {
       "name": "Kistenschieber",
       "desc": "Jede Kiste ans Ziel",
@@ -239,15 +209,45 @@
       "desc": "Zahlen verbergen ein Bild",
       "howto": "Die Zahlen zeigen die Blöcke gefüllter Felder je Zeile und Spalte. Tippe im ■-Modus zum Füllen oder wechsle zu ✗, um Leerfelder zu markieren. Drei Fehler beenden den Lauf!"
     },
-    "navalduel": {
-      "name": "Seeschlacht",
-      "desc": "Versenk die Feindflotte",
-      "howto": "Tippe auf das obere Gitter, um in Feindgewässer zu feuern. Rot ist ein Treffer — versenke alle fünf Schiffe, bevor der Feind unten deine versenkt. Jede gewonnene Schlacht zählt mehr!"
-    },
     "fourstack": {
       "name": "Viererreihe",
       "desc": "Vier in einer Reihe gewinnt",
       "howto": "Tippe eine Spalte, um deinen Stein fallen zu lassen. Bilde eine Viererreihe — quer, senkrecht oder diagonal — bevor der Computer es tut. Er wird mit jeder gewonnenen Runde schlauer!"
+    },
+    "fruitslice": {
+      "name": "Frucht-Schnitzer",
+      "desc": "Wischen, schneiden, Combo!",
+      "howto": "Früchte fliegen hoch — wisch hindurch, um sie zu zerschneiden! Erwische mehrere mit einem Wisch für Combo-Boni. Schneide keine Bomben und lass kein Obst fallen: Drei Fehler beenden das Spiel."
+    },
+    "skyjump": {
+      "name": "Himmelssprung",
+      "desc": "Hüpf zu den Sternen",
+      "howto": "Dein Hüpfer springt von allein — wische oder nutze ◀ ▶, um ihn auf Plattformen zu lenken. Weiße bröckeln nach einem Sprung, Federn schleudern dich hoch, die Ränder gehen ineinander über. Nicht fallen!"
+    },
+    "ghostrun": {
+      "name": "Geisterlauf",
+      "desc": "Sprint durch den Friedhof",
+      "howto": "Wechsle Spuren mit ◀ ▶ (oder wische) und spring mit ↥ über Grabsteine. Geister lassen sich nicht überspringen — weich ihnen aus! Sammle goldene Irrlichter für Bonuspunkte. Die Nacht wird immer schneller."
+    },
+    "ghosthunt": {
+      "name": "Geisterjagd",
+      "desc": "Tipp sie an, eh sie entkommen",
+      "howto": "Geister schweben über den Friedhof — tippe sie an, bevor sie entkommen! 3 Patronen pro Paar; Fledermäuse sind schnell und zählen dreifach. Jeder entkommene Geist kostet ein Leben."
+    },
+    "pumpkintoss": {
+      "name": "Kürbisschleuder",
+      "desc": "Stürm die Knochenfestungen",
+      "howto": "Zieh den Kürbis zurück, lass los und sieh ihn fliegen! Zertrümmere Knochenblöcke und wirf alle Skelette um, um zur nächsten Burg zu stürmen. Fünf Kürbisse pro Burg — übrige bringen Bonuspunkte."
+    },
+    "monstermatch": {
+      "name": "Monster-Kombi",
+      "desc": "Drei verbinden, Ketten bauen",
+      "howto": "Tippe ein Monster und dann einen Nachbarn, um sie zu tauschen und 3 Gleiche zu verbinden — sie platzen und alles rutscht nach. Ketten vervielfachen deine Punkte! Du hast 30 Züge. Nutze sie gut."
+    },
+    "blockdrop": {
+      "name": "Blockfall",
+      "desc": "Reihen räumen im Flow",
+      "howto": "Steuere den fallenden Stein mit ◀ ▶, drehe mit ↻, schmettere mit ▼ (Wischen geht auch). Volle Reihen verschwinden — vier auf einmal für den Riesenbonus! Alle 10 Reihen wird es schneller."
     }
   },
   "username": {

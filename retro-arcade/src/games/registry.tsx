@@ -6,21 +6,16 @@ import { SnakeGame } from './snake/SnakeGame';
 import { BrickBreakerGame } from './brickbreaker/BrickBreakerGame';
 import { PaddleDuelGame } from './paddleduel/PaddleDuelGame';
 import { SpaceDefendersGame } from './spacedefenders/SpaceDefendersGame';
-import { MeteorDodgeGame } from './meteordodge/MeteorDodgeGame';
-import { HauntedMazeGame } from './hauntedmaze/HauntedMazeGame';
 import { MemoryMatchGame } from './memorymatch/MemoryMatchGame';
 import { NeonStackGame } from './neonstack/NeonStackGame';
 import { SolitaireGame } from './solitaire/SolitaireGame';
 import { RoadHopperGame } from './roadhopper/RoadHopperGame';
 import { PixelWingsGame } from './pixelwings/PixelWingsGame';
-import { GhostSweeperGame } from './ghostsweeper/GhostSweeperGame';
 import { TileFusionGame } from './tilefusion/TileFusionGame';
 import { RetroRacerGame } from './retroracer/RetroRacerGame';
-import { CreepyCrawlerGame } from './creepycrawler/CreepyCrawlerGame';
 import { DiveSquadronGame } from './divesquadron/DiveSquadronGame';
 import { EggCatchGame } from './eggcatch/EggCatchGame';
 import { AlleyBowlGame } from './alleybowl/AlleyBowlGame';
-import { MoonBuggyGame } from './moonbuggy/MoonBuggyGame';
 
 import { TankBattleGame } from './tankbattle/TankBattleGame';
 import { TowerClimbGame } from './towerclimb/TowerClimbGame';
@@ -28,11 +23,17 @@ import { JungleDashGame } from './jungledash/JungleDashGame';
 import { BlastMazeGame } from './blastmaze/BlastMazeGame';
 import { ChopperRescueGame } from './chopperrescue/ChopperRescueGame';
 import { VampireHuntGame } from './vampirehunt/VampireHuntGame';
-import { MummyTombGame } from './mummytomb/MummyTombGame';
 import { CratePushGame } from './cratepush/CratePushGame';
 import { PixelLogicGame } from './pixellogic/PixelLogicGame';
-import { NavalDuelGame } from './navalduel/NavalDuelGame';
 import { FourStackGame } from './fourstack/FourStackGame';
+
+import { FruitSliceGame } from './fruitslice/FruitSliceGame';
+import { SkyJumpGame } from './skyjump/SkyJumpGame';
+import { GhostRunGame } from './ghostrun/GhostRunGame';
+import { GhostHuntGame } from './ghosthunt/GhostHuntGame';
+import { PumpkinTossGame } from './pumpkintoss/PumpkinTossGame';
+import { MonsterMatchGame } from './monstermatch/MonsterMatchGame';
+import { BlockDropGame } from './blockdrop/BlockDropGame';
 
 export type Category = 'classics' | 'action' | 'spooky' | 'brain';
 
@@ -61,27 +62,27 @@ const ART: Record<string, ImageSourcePropType> = {
   retroracer: require('../../assets/games/retroracer.png'),
   eggcatch: require('../../assets/games/eggcatch.png'),
   spacedefenders: require('../../assets/games/spacedefenders.png'),
-  meteordodge: require('../../assets/games/meteordodge.png'),
   pixelwings: require('../../assets/games/pixelwings.png'),
   divesquadron: require('../../assets/games/divesquadron.png'),
-  hauntedmaze: require('../../assets/games/hauntedmaze.png'),
-  ghostsweeper: require('../../assets/games/ghostsweeper.png'),
-  creepycrawler: require('../../assets/games/creepycrawler.png'),
   memorymatch: require('../../assets/games/memorymatch.png'),
   tilefusion: require('../../assets/games/tilefusion.png'),
   alleybowl: require('../../assets/games/alleybowl.png'),
-  moonbuggy: require('../../assets/games/moonbuggy.png'),
   tankbattle: require('../../assets/games/tankbattle.png'),
   towerclimb: require('../../assets/games/towerclimb.png'),
   jungledash: require('../../assets/games/jungledash.png'),
   blastmaze: require('../../assets/games/blastmaze.png'),
   chopperrescue: require('../../assets/games/chopperrescue.png'),
   vampirehunt: require('../../assets/games/vampirehunt.png'),
-  mummytomb: require('../../assets/games/mummytomb.png'),
   cratepush: require('../../assets/games/cratepush.png'),
   pixellogic: require('../../assets/games/pixellogic.png'),
-  navalduel: require('../../assets/games/navalduel.png'),
   fourstack: require('../../assets/games/fourstack.png'),
+  fruitslice: require('../../assets/games/fruitslice.png'),
+  skyjump: require('../../assets/games/skyjump.png'),
+  ghostrun: require('../../assets/games/ghostrun.png'),
+  ghosthunt: require('../../assets/games/ghosthunt.png'),
+  pumpkintoss: require('../../assets/games/pumpkintoss.png'),
+  monstermatch: require('../../assets/games/monstermatch.png'),
+  blockdrop: require('../../assets/games/blockdrop.png'),
 };
 
 const DEFS: Omit<GameDef, 'art'>[] = [
@@ -98,26 +99,26 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'alleybowl', category: 'classics', free: false, icon: '🎳', render: (api) => <AlleyBowlGame api={api} /> },
   // Action
   { id: 'spacedefenders', category: 'action', free: false, showLives: true, icon: '👾', render: (api) => <SpaceDefendersGame api={api} /> },
-  { id: 'meteordodge', category: 'action', free: false, icon: '☄️', render: (api) => <MeteorDodgeGame api={api} /> },
+  { id: 'fruitslice', category: 'action', free: false, showLives: true, icon: '🍉', render: (api) => <FruitSliceGame api={api} /> },
   { id: 'towerclimb', category: 'action', free: false, showLives: true, icon: '🦍', render: (api) => <TowerClimbGame api={api} /> },
   { id: 'pixelwings', category: 'action', free: false, icon: '🐦', render: (api) => <PixelWingsGame api={api} /> },
   { id: 'jungledash', category: 'action', free: false, icon: '🌴', render: (api) => <JungleDashGame api={api} /> },
   { id: 'blastmaze', category: 'action', free: false, showLives: true, icon: '💣', render: (api) => <BlastMazeGame api={api} /> },
   { id: 'divesquadron', category: 'action', free: false, showLives: true, icon: '🛸', render: (api) => <DiveSquadronGame api={api} /> },
   { id: 'chopperrescue', category: 'action', free: false, showLives: true, icon: '🚁', render: (api) => <ChopperRescueGame api={api} /> },
-  { id: 'moonbuggy', category: 'action', free: false, showLives: true, icon: '🚙', render: (api) => <MoonBuggyGame api={api} /> },
+  { id: 'skyjump', category: 'action', free: false, icon: '🦘', render: (api) => <SkyJumpGame api={api} /> },
   // Spooky
-  { id: 'hauntedmaze', category: 'spooky', free: false, showLives: true, icon: '👻', render: (api) => <HauntedMazeGame api={api} /> },
-  { id: 'ghostsweeper', category: 'spooky', free: false, icon: '🔮', render: (api) => <GhostSweeperGame api={api} /> },
+  { id: 'ghostrun', category: 'spooky', free: false, showLives: true, icon: '🎃', render: (api) => <GhostRunGame api={api} /> },
+  { id: 'ghosthunt', category: 'spooky', free: false, showLives: true, icon: '👻', render: (api) => <GhostHuntGame api={api} /> },
   { id: 'vampirehunt', category: 'spooky', free: false, showLives: true, icon: '🧛', render: (api) => <VampireHuntGame api={api} /> },
-  { id: 'creepycrawler', category: 'spooky', free: false, showLives: true, icon: '🐛', render: (api) => <CreepyCrawlerGame api={api} /> },
-  { id: 'mummytomb', category: 'spooky', free: false, showLives: true, icon: '⚰️', render: (api) => <MummyTombGame api={api} /> },
+  { id: 'monstermatch', category: 'spooky', free: false, icon: '😈', render: (api) => <MonsterMatchGame api={api} /> },
+  { id: 'pumpkintoss', category: 'spooky', free: false, icon: '🏰', render: (api) => <PumpkinTossGame api={api} /> },
   // Brain
   { id: 'memorymatch', category: 'brain', free: true, icon: '🃏', render: (api) => <MemoryMatchGame api={api} /> },
   { id: 'cratepush', category: 'brain', free: false, icon: '📦', render: (api) => <CratePushGame api={api} /> },
   { id: 'tilefusion', category: 'brain', free: false, icon: '🔢', render: (api) => <TileFusionGame api={api} /> },
   { id: 'pixellogic', category: 'brain', free: false, showLives: true, icon: '🧩', render: (api) => <PixelLogicGame api={api} /> },
-  { id: 'navalduel', category: 'brain', free: false, icon: '⚓', render: (api) => <NavalDuelGame api={api} /> },
+  { id: 'blockdrop', category: 'brain', free: false, icon: '🟪', render: (api) => <BlockDropGame api={api} /> },
   { id: 'fourstack', category: 'brain', free: false, icon: '🔴', render: (api) => <FourStackGame api={api} /> },
 ];
 

@@ -119,16 +119,6 @@
       "desc": "Stop the invasion",
       "howto": "Slide your finger to move your ship — it fires automatically. Big scores upgrade your fighter with stronger cannons. Clear all three waves, then defeat the mothership to win!"
     },
-    "meteordodge": {
-      "name": "Meteor Dodge",
-      "desc": "Survive the storm",
-      "howto": "Slide your finger to steer your ship left and right. Dodge the falling meteors as long as you can. They fall faster and faster — how long can you last?"
-    },
-    "hauntedmaze": {
-      "name": "Haunted Maze",
-      "desc": "Escape the ghosts",
-      "howto": "Swipe to move through the maze. Collect every glowing orb while the ghosts hunt you. Grab a power star to turn the tables and chase them instead!"
-    },
     "memorymatch": {
       "name": "Memory Match",
       "desc": "Find all the pairs",
@@ -154,20 +144,10 @@
       "desc": "Flap through the towers",
       "howto": "Tap anywhere to flap your wings and stay in the air. Glide through the gap between the towers — one point for each tower you pass. One bump and it's over. How far can you fly?"
     },
-    "ghostsweeper": {
-      "name": "Ghost Sweeper",
-      "desc": "Find the hidden ghosts",
-      "howto": "Tap a tile to reveal it. The numbers tell you how many ghosts hide in the neighboring tiles — use logic to work out where they are. Press and hold to place a ward on a suspected ghost. Reveal every safe tile to win. No timer, just thinking."
-    },
     "alleybowl": {
       "name": "Alley Bowl",
       "desc": "Roll for the perfect 300",
       "howto": "Drag sideways to line up your ball, then flick UP to roll — the angle of your flick curves the shot. Knock down all ten pins! Strikes and spares score bonus points, just like real bowling. Ten frames; a perfect game is 300."
-    },
-    "moonbuggy": {
-      "name": "Moon Buggy",
-      "desc": "Jump craters, blast rocks",
-      "howto": "Your buggy drives itself, faster and faster. Tap the RIGHT side of the screen to jump over craters, tap the LEFT side to shoot the rocks in your path. Checkpoints every 500m. Three lives — good luck, driver!"
     },
     "tilefusion": {
       "name": "Tile Fusion",
@@ -178,11 +158,6 @@
       "name": "Retro Racer",
       "desc": "Weave through traffic",
       "howto": "Swipe left or right to hop between the three lanes. Slip past the oncoming cars — the road gets faster and busier the farther you drive. One crash ends the run. How far can you go?"
-    },
-    "creepycrawler": {
-      "name": "Creepy Crawler",
-      "desc": "Split the crawling horror",
-      "howto": "Slide or hold ◀ ▶ to move and tap ◎ to fire. Hit the crawler’s middle to split it in two! Every killed segment becomes a tombstone. Don’t let it reach you."
     },
     "divesquadron": {
       "name": "Dive Squadron",
@@ -224,11 +199,6 @@
       "desc": "Survive the night",
       "howto": "Walk with ◀ ▶ and throw daggers with ◎ — one flies low, one high. Zombies shamble on the ground, bats swoop overhead. Fill the bar to clear the night!"
     },
-    "mummytomb": {
-      "name": "Mummy’s Tomb",
-      "desc": "Grab the gold and go",
-      "howto": "Steer with the pad or swipes to collect every treasure while mummies hunt you. Tap ⚡ to zap the first mummy you’re facing — you only carry a few per tomb!"
-    },
     "cratepush": {
       "name": "Crate Push",
       "desc": "Every crate on target",
@@ -239,15 +209,45 @@
       "desc": "Numbers hide a picture",
       "howto": "The numbers show the runs of filled cells in each row and column. Tap to fill in ■ mode, or switch to ✗ to mark empties. Three wrong fills end the run!"
     },
-    "navalduel": {
-      "name": "Naval Duel",
-      "desc": "Sink the enemy fleet",
-      "howto": "Tap the top grid to fire into enemy waters. Red is a hit — sink all five ships before the enemy sinks yours on the bottom grid. Each battle won is worth more!"
-    },
     "fourstack": {
       "name": "Four Stack",
       "desc": "Four in a row wins",
       "howto": "Tap a column to drop your disc. Line up four — across, down or diagonally — before the computer does. It gets smarter every round you win!"
+    },
+    "fruitslice": {
+      "name": "Fruit Slice",
+      "desc": "Swipe, slice, combo!",
+      "howto": "Fruit flies up — swipe through it to slice! Chain several in one swipe for combo bonuses. Don’t slice the bombs, and don’t let fruit drop: three misses end the game."
+    },
+    "skyjump": {
+      "name": "Sky Jump",
+      "desc": "Bounce to the stars",
+      "howto": "Your critter bounces on its own — slide or use ◀ ▶ to steer it onto platforms. White ones crumble after one bounce, springs launch you high, and the screen edges wrap. Don’t fall!"
+    },
+    "ghostrun": {
+      "name": "Ghost Run",
+      "desc": "Sprint the graveyard",
+      "howto": "Hop lanes with ◀ ▶ (or swipe) and vault tombstones with ↥. Ghosts can’t be jumped — dodge them! Grab golden wisps for bonus points. The night gets faster and faster."
+    },
+    "ghosthunt": {
+      "name": "Ghost Hunt",
+      "desc": "Tap ’em before they escape",
+      "howto": "Spirits drift across the graveyard — tap them to shoot before they escape! You get 3 shells per pair; bats are fast and worth triple. Every spirit that escapes costs a life."
+    },
+    "pumpkintoss": {
+      "name": "Pumpkin Toss",
+      "desc": "Storm the bone forts",
+      "howto": "Drag the pumpkin back, release, and watch it fly! Smash the bone blocks and knock down every skeleton to storm the next castle. Five pumpkins per castle — spares earn bonus points."
+    },
+    "monstermatch": {
+      "name": "Monster Match",
+      "desc": "Match three, chain more",
+      "howto": "Tap a monster, then a neighbor, to swap them and line up 3 of a kind — they pop and everything tumbles down. Chains multiply your score! You have 30 moves. Make them count."
+    },
+    "blockdrop": {
+      "name": "Block Drop",
+      "desc": "Clear lines, feel the flow",
+      "howto": "Steer the falling shape with ◀ ▶, spin it with ↻, slam it with ▼ (swipes work too). Fill a row to clear it — four at once for the big bonus! The well speeds up every 10 lines."
     }
   },
   "username": {
