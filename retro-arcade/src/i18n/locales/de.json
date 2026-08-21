@@ -28,8 +28,8 @@
       "classics": "Klassiker",
       "action": "Action",
       "brain": "Denksport",
-      "street": "Straßenspiele",
-      "school": "Schulzeit"
+      "school": "Schulzeit",
+      "arcade": "Arcade-Ecke"
     }
   },
   "purchase": {
@@ -225,31 +225,6 @@
       "desc": "Reihen räumen im Flow",
       "howto": "Steuere den fallenden Stein mit ◀ ▶, drehe mit ↻, schmettere mit ▼ (Wischen geht auch). Volle Reihen verschwinden — vier auf einmal für den Riesenbonus! Alle 10 Reihen wird es schneller."
     },
-    "streetrun": {
-      "name": "Straßenlauf",
-      "desc": "Sprinte den Block",
-      "howto": "Wechsle Spuren mit ◀ ▶ (oder wische) und spring mit ↥ über Holzkisten. Mülltonnen sind zu hoch zum Springen — weich ihnen aus! Sammle Münzen für Bonuspunkte. Die Straße wird immer schneller."
-    },
-    "pigeonpanic": {
-      "name": "Taubenpanik",
-      "desc": "Tipp sie an, eh sie fliegen",
-      "howto": "Tauben flattern über die Dächer — tippe sie an, bevor sie entkommen! 3 Kiesel pro Paar; Papierflieger sind schnell und zählen dreifach. Jeder entkommene Vogel kostet ein Leben."
-    },
-    "canknock": {
-      "name": "Dosenwerfen",
-      "desc": "Der Jahrmarkt-Klassiker",
-      "howto": "Zieh den Stein zurück, lass los und wirf die Blechdosen von den Kisten! Räum alle Dosen ab für einen höheren, kniffligeren Aufbau. Fünf Steine pro Runde — übrige bringen Bonuspunkte."
-    },
-    "marblematch": {
-      "name": "Murmel-Kombi",
-      "desc": "Drei verbinden, Ketten bauen",
-      "howto": "Tippe eine Murmel und dann eine Nachbarin, um sie zu tauschen und 3 gleiche Farben zu verbinden — sie platzen und alles rutscht nach. Ketten vervielfachen deine Punkte! Du hast 30 Züge."
-    },
-    "balloonfight": {
-      "name": "Wasserschlacht",
-      "desc": "Nassmachen oder nass werden",
-      "howto": "Laufe mit ◀ ▶ und wirf Wasserballons mit ◎ — einer fliegt tief, einer hoch. Rivalen stürmen am Boden, Papierflieger stoßen von oben herab. Fülle die Leiste und gewinn die Runde!"
-    },
     "binshot": {
       "name": "Papierkorb-Wurf",
       "desc": "Der Klassenzimmer-Klassiker",
@@ -274,6 +249,31 @@
       "name": "Kopfrechnen-Sprint",
       "desc": "Schlag die Tafel-Uhr",
       "howto": "Eine Aufgabe erscheint an der Tafel mit vier Antworten — tippe die richtige, bevor die Kreidelinie abläuft! Schnelle Antworten zählen mehr, Serien vervielfachen. Drei Fehler und die Stunde ist vorbei."
+    },
+    "pinball": {
+      "name": "Flipper",
+      "desc": "Halt sie im Spiel!",
+      "howto": "Tippe die LINKE oder RECHTE Bildschirmhälfte für die Flipperhebel. Bumper geben 50, die obere Bahn 200; alle 2000 Punkte zündet ein Multiplikator. Lass die Kugel nicht durch die Mitte fallen — drei Kugeln pro Spiel!"
+    },
+    "bubblepop": {
+      "name": "Blasen-Knaller",
+      "desc": "Zielen, abprallen, platzen!",
+      "howto": "Ziehe zum Zielen — die Punktlinie prallt von den Wänden ab — und lass los zum Schießen. Verbinde 3+ gleiche Farben, damit sie platzen; hängende Blasen fallen für doppelte Punkte. Alle 6 Schüsse rückt das Feld nach unten!"
+    },
+    "airhockey": {
+      "name": "Airhockey",
+      "desc": "Wer zuerst sieben hat",
+      "howto": "Wische mit dem Finger, um den grünen Schläger zu führen — schieß den Puck ins rote Tor oben. Die Maschine verteidigt und kontert! Wer zuerst 7 Tore hat, gewinnt das Match; jedes Match wird schneller."
+    },
+    "clawmachine": {
+      "name": "Greifautomat",
+      "desc": "Ausrichten… fallen lassen!",
+      "howto": "Der Greifer pendelt hin und her — tippe den Knopf, wenn er genau über einem Preis steht. Ein mittiger Griff hält; ein schiefer kann beim Hochziehen abrutschen! Goldene Preise zählen dreifach, jeder Gewinn erstattet eine Münze."
+    },
+    "poolball": {
+      "name": "8-Ball Billard",
+      "desc": "Räum den Tisch ab",
+      "howto": "Ziehe irgendwo zum Zielen — die Punkte zeigen den Stoß — und lass los. Versenke die farbigen Kugeln (je 50), dann die 8 für den Rack-Bonus. Die Weiße oder die 8 zu früh zu versenken kostet ein Queue!"
     }
   },
   "username": {

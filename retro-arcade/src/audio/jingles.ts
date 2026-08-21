@@ -66,15 +66,15 @@ export const GAME_JINGLES: Record<string, Tone[]> = {
 
   // ─── Spooky ───
   // Chromatic wobble from the crypt.
-  streetrun: [note(57, 0.1, 'triangle'), note(60, 0.1, 'triangle'), note(64, 0.1, 'triangle'), note(69, 0.2, 'triangle')],
+  pinball: [note(72, 0.06), note(76, 0.06), note(79, 0.06), note(84, 0.06), note(88, 0.14)],
   // A hesitant minor-second question mark.
-  pigeonpanic: [note(55, 0.12, 'triangle'), note(62, 0.12, 'triangle'), note(55, 0.08, 'triangle'), note(67, 0.2, 'triangle')],
+  bubblepop: [note(76, 0.07, 'triangle'), note(79, 0.07, 'triangle'), note(83, 0.07, 'triangle'), note(88, 0.14, 'triangle')],
   // A groan rising from below.
-  balloonfight: [note(50, 0.14, 'triangle'), note(53, 0.14, 'triangle'), note(56, 0.14, 'triangle'), note(62, 0.24, 'triangle')],
+  poolball: [note(55, 0.09, 'square', 0.5), note(59, 0.09, 'square', 0.5), note(62, 0.09, 'square', 0.5), note(67, 0.18, 'square', 0.5)],
   // Fast skittering legs.
-  marblematch: [note(64, 0.08), note(68, 0.08), note(71, 0.08), note(76, 0.16)],
+  clawmachine: [note(64, 0.1, 'triangle'), note(69, 0.1, 'triangle'), note(72, 0.1, 'triangle'), note(76, 0.2, 'triangle')],
   // Carnival shooting-gallery flourish.
-  canknock: [slide(160, 640, 0.24), note(76, 0.1), note(72, 0.1), note(79, 0.18)],
+  airhockey: [slide(400, 800, 0.12), slide(800, 500, 0.12), note(76, 0.14)],
 
   // ─── Brain ───
   // Flip… flip… match!

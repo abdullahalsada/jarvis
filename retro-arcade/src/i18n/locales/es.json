@@ -28,8 +28,8 @@
       "classics": "Clásicos",
       "action": "Acción",
       "brain": "Mente",
-      "street": "Juegos de Calle",
-      "school": "Días de Escuela"
+      "school": "Días de Escuela",
+      "arcade": "Rincón Arcade"
     }
   },
   "purchase": {
@@ -225,31 +225,6 @@
       "desc": "Limpia líneas, siente el ritmo",
       "howto": "Dirige la pieza con ◀ ▶, gírala con ↻ y estréllala con ▼ (también con gestos). Completa una fila para limpiarla, ¡cuatro a la vez para el gran bonus! El pozo se acelera cada 10 líneas."
     },
-    "streetrun": {
-      "name": "Carrera Callejera",
-      "desc": "Esprinta la manzana",
-      "howto": "Cambia de carril con ◀ ▶ (o desliza) y salta las cajas de madera con ↥. Los contenedores son muy altos para saltarlos: ¡esquívalos! Recoge monedas para puntos extra. La calle acelera sin parar."
-    },
-    "pigeonpanic": {
-      "name": "Pánico de Palomas",
-      "desc": "Tócalas antes de que vuelen",
-      "howto": "Las palomas cruzan los tejados: ¡tócalas antes de que escapen! Tienes 3 piedritas por pareja; los aviones de papel son rápidos y valen triple. Cada ave que escapa cuesta una vida."
-    },
-    "canknock": {
-      "name": "Derriba Latas",
-      "desc": "El clásico de la feria",
-      "howto": "Tira de la piedra hacia atrás, suéltala ¡y tumba las latas de sus cajas! Derriba todas para un montaje más alto y difícil. Cinco piedras por ronda: las sobrantes dan bonus."
-    },
-    "marblematch": {
-      "name": "Combina Canicas",
-      "desc": "Junta tres, encadena más",
-      "howto": "Toca una canica y luego una vecina para intercambiarlas y alinear 3 del mismo color: explotan y todo cae. ¡Las cadenas multiplican tu puntuación! Tienes 30 movimientos. Aprovéchalos."
-    },
-    "balloonfight": {
-      "name": "Guerra de Globos",
-      "desc": "Empapa o sé empapado",
-      "howto": "Camina con ◀ ▶ y lanza globos de agua con ◎: uno vuela bajo y otro alto. Los rivales cargan por el suelo, los aviones de papel caen en picado. ¡Llena la barra para ganar la ronda!"
-    },
     "binshot": {
       "name": "Tiro a la Papelera",
       "desc": "El clásico del aula",
@@ -274,6 +249,31 @@
       "name": "Sprint de Cálculo",
       "desc": "Gana al reloj de la pizarra",
       "howto": "Una operación aparece en la pizarra con cuatro respuestas: ¡toca la correcta antes de que se agote la línea de tiza! Responder rápido da más puntos y las rachas multiplican. Tres fallos y se acabó la clase."
+    },
+    "pinball": {
+      "name": "Pinball",
+      "desc": "¡Mantenla viva!",
+      "howto": "Toca la mitad IZQUIERDA o DERECHA de la pantalla para accionar los flippers. Los bumpers dan 50 y el carril superior 200; cada 2000 puntos enciende un multiplicador. ¡No dejes caer la bola por el centro — tres bolas por partida!"
+    },
+    "bubblepop": {
+      "name": "Revienta Burbujas",
+      "desc": "¡Apunta, rebota, explota!",
+      "howto": "Arrastra para apuntar — la línea de puntos rebota en las paredes — y suelta para disparar. Junta 3+ del mismo color para reventarlas; las que queden colgando caen con puntos dobles. ¡El campo baja cada 6 tiros!"
+    },
+    "airhockey": {
+      "name": "Air Hockey",
+      "desc": "El primero a siete",
+      "howto": "Desliza el dedo para mover el mazo verde y estrella el disco en la portería roja de arriba. ¡La máquina defiende y contraataca! El primero en marcar 7 gana el partido; cada partido es más rápido."
+    },
+    "clawmachine": {
+      "name": "Máquina de Garra",
+      "desc": "Alinéala… ¡y suelta!",
+      "howto": "La garra barre de lado a lado: toca el botón cuando esté justo sobre un premio. Un agarre centrado aguanta; uno torcido puede resbalar al subir. Los premios dorados valen triple y cada victoria devuelve una ficha."
+    },
+    "poolball": {
+      "name": "Billar 8",
+      "desc": "Limpia la mesa",
+      "howto": "Arrastra en cualquier parte para apuntar — los puntos muestran el tiro — y suelta para golpear. Mete las bolas de color (50 cada una) y luego la bola 8 para cerrar la mesa con gran bonus. ¡Meter la blanca o la 8 antes de tiempo cuesta un taco!"
     }
   },
   "username": {

@@ -26,7 +26,7 @@ export function HomeScreen({ navigation }: Props) {
   const [open, setOpen] = useState<Record<Category, boolean>>({
     classics: false,
     action: false,
-    street: false,
+    arcade: false,
     school: false,
     brain: false,
   });
