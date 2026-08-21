@@ -117,7 +117,7 @@
     "spacedefenders": {
       "name": "Defensores Espaciais",
       "desc": "Detenha a invasão",
-      "howto": "Deslize o dedo para mover sua nave — ela atira sozinha. Destrua todos os invasores antes que cheguem até você. Quanto menos sobram, mais rápidos ficam!"
+      "howto": "Deslize o dedo para mover sua nave — ela atira sozinha. Pontuações altas melhoram seu caça com canhões mais fortes. Vença as três ondas e derrote a nave-mãe para ganhar!"
     },
     "meteordodge": {
       "name": "Desvio de Meteoros",
@@ -134,11 +134,6 @@
       "desc": "Encontre todos os pares",
       "howto": "Toque numa carta para virá-la e encontre seu par. Combine todos os pares para vencer. Menos jogadas valem mais pontos. Sem pressa — não há relógio."
     },
-    "simonecho": {
-      "name": "Eco do Simon",
-      "desc": "Repita a sequência",
-      "howto": "Observe e ouça as cores acenderem, depois toque na mesma ordem. Cada rodada adiciona um passo. Que tamanho de sequência você consegue memorizar?"
-    },
     "neonstack": {
       "name": "Pilha Neon",
       "desc": "Empilhe os blocos que caem",
@@ -154,35 +149,15 @@
       "desc": "Cruze a estrada e o rio",
       "howto": "Deslize para pular um passo de cada vez. Desvie dos carros na estrada e cruze o rio pulando nos troncos — nunca toque na água! Preencha os cinco ninhos no topo para avançar. Cuidado: tudo acelera a cada rodada."
     },
-    "astroshards": {
-      "name": "Cacos Astrais",
-      "desc": "Exploda as rochas espaciais",
-      "howto": "Segure ↺ e ↻ para girar a nave e ▲ para acelerar — ela atira sozinha. Rochas grandes se quebram em menores e mais rápidas. As pequenas valem mais pontos. Saia por uma borda e apareça na outra!"
-    },
     "pixelwings": {
       "name": "Asas de Pixel",
       "desc": "Voe entre as torres",
       "howto": "Toque em qualquer lugar para bater as asas e ficar no ar. Passe pelo vão entre as torres — um ponto por torre. Um toque e acabou. Até onde você voa?"
     },
-    "gemdigger": {
-      "name": "Escavador de Gemas",
-      "desc": "Cave fundo, pegue as gemas",
-      "howto": "Deslize para cavar túneis e coletar todas as gemas. Duas criaturas da caverna caçam você — mas só conseguem seguir seus túneis, então cave com esperteza! Colete todas as gemas para vencer."
-    },
-    "skyshield": {
-      "name": "Escudo Celeste",
-      "desc": "Defenda suas cidades",
-      "howto": "Mísseis estão caindo sobre suas seis cidades! Toque no céu para lançar um interceptador — a explosão destrói tudo por perto. A munição de cada onda é limitada, então mire à frente dos mísseis. Munição sobrando e cidades salvas rendem bônus."
-    },
     "ghostsweeper": {
       "name": "Caça-Fantasmas",
       "desc": "Ache os fantasmas escondidos",
       "howto": "Toque num quadrado para revelá-lo. Os números dizem quantos fantasmas há nos quadrados vizinhos — use a lógica para deduzir onde estão. Segure para marcar um fantasma suspeito. Revele todos os quadrados seguros para vencer. Sem timer, só raciocínio."
-    },
-    "zombiebop": {
-      "name": "Bate-Zumbi",
-      "desc": "Mande-os de volta",
-      "howto": "Zumbis estão saindo das covas! Toque neles antes que afundem de novo. O esqueleto dourado vale 5×. Você tem 60 segundos — eles ficam mais rápidos no final!"
     },
     "alleybowl": {
       "name": "Boliche",
@@ -194,60 +169,85 @@
       "desc": "Pule crateras, exploda rochas",
       "howto": "Seu jipe anda sozinho, cada vez mais rápido. Toque no lado DIREITO da tela para pular as crateras e no ESQUERDO para atirar nas rochas. Checkpoints a cada 500 m. Três vidas — boa sorte, piloto!"
     },
-    "spookshoot": {
-      "name": "Tiro Fantasma",
-      "desc": "Mão firme vence",
-      "howto": "Assombrações deslizam em três fileiras — toque para atirar! Cada tiro gasta um cartucho, acerte ou erre, e você tem 25. A fileira do fundo vale mais; o fantasma dourado vale 100. Acerte 5 seguidos e ganhe 3 cartuchos extras!"
-    },
-    "pyramidhop": {
-      "name": "Pula-Pirâmide",
-      "desc": "Pinte todos os cubos",
-      "howto": "Deslize na DIAGONAL para pular entre os cubos — baixo-esquerda, baixo-direita, cima-esquerda, cima-direita. Cada cubo em que você pousa acende; acenda todos para vencer a fase. Desvie das esferas vermelhas e não pule para fora da borda!"
-    },
-    "gemcolumns": {
-      "name": "Colunas de Gemas",
-      "desc": "Alinhe três gemas",
-      "howto": "Uma coluna de três gemas cai no poço. Arraste para os lados para guiá-la, toque para reordenar as gemas, arraste para baixo para acelerar. Alinhe três ou mais da mesma cor — na horizontal, vertical ou diagonal. Combos valem muito!"
-    },
     "tilefusion": {
       "name": "Fusão de Peças",
       "desc": "Some até 2048",
       "howto": "Deslize para mover todas as peças. Quando dois números iguais se encontram, eles se fundem num número maior. Alcance a peça 2048 brilhante! O jogo acaba quando o tabuleiro enche e nada mais se funde. Sem relógio — planeje cada jogada."
-    },
-    "slidefifteen": {
-      "name": "Quebra-Cabeça 15",
-      "desc": "Ordene as peças deslizantes",
-      "howto": "Toque em qualquer peça na mesma linha ou coluna do espaço vazio para deslizá-la. Organize as peças de 1 a 15. Todo embaralhamento tem solução — menos jogadas valem mais pontos, e não há relógio."
-    },
-    "neonlights": {
-      "name": "Luzes Neon",
-      "desc": "Apague todas as luzes",
-      "howto": "Tocar numa lâmpada inverte ela e suas quatro vizinhas. Deixe o tabuleiro todo escuro para vencer a rodada — três rodadas, cada vez mais embaralhadas. Menos toques valem mais pontos. Lógica pura, sem timer."
     },
     "retroracer": {
       "name": "Corrida Retrô",
       "desc": "Costure pelo trânsito",
       "howto": "Deslize para a esquerda ou direita para trocar de pista. Escape dos carros que vêm na contramão — a estrada fica mais rápida e cheia quanto mais longe você vai. Uma batida encerra a corrida. Até onde você chega?"
     },
-    "moonlander": {
-      "name": "Pouso Lunar",
-      "desc": "Pouse com suavidade",
-      "howto": "Segure ▲ para acionar o motor contra a gravidade e ◀ ▶ para derivar de lado. Pouse devagar na plataforma verde — sua nave brilha azul quando está lenta o bastante. O combustível é limitado! Cada pouso traz uma plataforma menor e gravidade mais forte."
-    },
     "creepycrawler": {
       "name": "Rastejante Sinistro",
       "desc": "Divida o monstro rastejante",
-      "howto": "Deslize para mover o caçador — ele atira sozinho. Atire na criatura que serpenteia entre as lápides: acerte o meio e ela se divide em duas! Cada pedaço destruído vira uma nova lápide. Não deixe que ela chegue até você."
+      "howto": "Deslize ou segure ◀ ▶ para mover e toque ◎ para atirar. Acerte o meio da lagarta para parti-la em duas! Cada segmento abatido vira lápide. Não deixe que ela chegue até você."
     },
     "divesquadron": {
       "name": "Esquadrão de Mergulho",
       "desc": "Sobreviva aos bombardeiros",
-      "howto": "Deslize para pilotar a nave — ela atira sozinha. Inimigos saem da formação e mergulham direto em você. Um inimigo em mergulho vale o dobro — o tiro corajoso compensa! Elimine o esquadrão inteiro para enfrentar uma onda mais rápida."
+      "howto": "Deslize para mover; sua nave atira sozinha. Inimigos em mergulho valem o dobro. Pontuações altas melhoram seu caça — vença três ondas e derrube a nave-mãe para ganhar!"
     },
     "eggcatch": {
       "name": "Pega-Ovos",
       "desc": "Pegue cada ovo que cai",
       "howto": "Os ovos rolam por quatro rampas e despencam da borda. Deslize o dedo em qualquer lugar — a cesta o acompanha. Pegue cada ovo antes que atinja o chão; quebre três e o jogo acaba. Eles vêm cada vez mais rápido!"
+    },
+    "tankbattle": {
+      "name": "Batalha de Tanques",
+      "desc": "Domine a arena",
+      "howto": "Segure uma direção para dirigir seu tanque e toque ◎ para atirar. Muros de tijolo desmoronam, o aço não. Destrua toda a patrulha inimiga para chamar uma onda mais rápida!"
+    },
+    "towerclimb": {
+      "name": "Escalada da Torre",
+      "desc": "Desvie dos barris",
+      "howto": "Ande com ◀ ▶, suba escadas com ▲ ▼ e pule barris com ↥. Chegue ao macaco no topo para pontuar alto — cada resgate deixa os barris mais rápidos!"
+    },
+    "jungledash": {
+      "name": "Corrida na Selva",
+      "desc": "Corra, pule, tesouro!",
+      "howto": "Toque em qualquer lugar para pular. Salte fossos, troncos e cobras e pegue o tesouro flutuante no meio do pulo. A selva acelera quanto mais você corre!"
+    },
+    "blastmaze": {
+      "name": "Labirinto Explosivo",
+      "desc": "Abra caminho com bombas",
+      "howto": "Mova-se com o direcional e solte bombas com ◎. A explosão é em cruz — destrói caixotes e rondadores, e machuca você também, então se afaste rápido! Elimine todos para avançar."
+    },
+    "chopperrescue": {
+      "name": "Resgate de Helicóptero",
+      "desc": "Todos voltam para casa",
+      "howto": "Voe com o direcional. Paire baixo sobre os encalhados para içá-los a bordo (3 assentos) e pouse na plataforma ciano para deixá-los. Cuidado com a torre de tiro!"
+    },
+    "vampirehunt": {
+      "name": "Caça aos Vampiros",
+      "desc": "Sobreviva à noite",
+      "howto": "Ande com ◀ ▶ e arremesse adagas com ◎ — uma voa baixa, outra alta. Zumbis se arrastam pelo chão, morcegos mergulham do alto. Encha a barra para vencer a noite!"
+    },
+    "mummytomb": {
+      "name": "Tumba da Múmia",
+      "desc": "Pegue o ouro e fuja",
+      "howto": "Mova-se com o direcional ou deslizando para juntar todos os tesouros enquanto as múmias caçam você. Toque ⚡ para eletrocutar a primeira múmia à sua frente — as cargas são poucas!"
+    },
+    "cratepush": {
+      "name": "Empurra Caixotes",
+      "desc": "Cada caixote no alvo",
+      "howto": "Deslize ou use o direcional para andar e empurrar caixotes até os alvos brilhantes. Caixotes só empurram, nunca puxam — planeje e use ↩ para desfazer."
+    },
+    "pixellogic": {
+      "name": "Lógica Pixel",
+      "desc": "Os números escondem um desenho",
+      "howto": "Os números mostram os grupos de células preenchidas de cada linha e coluna. Toque para preencher no modo ■ ou mude para ✗ e marque os vazios. Três erros encerram a rodada!"
+    },
+    "navalduel": {
+      "name": "Duelo Naval",
+      "desc": "Afunde a frota inimiga",
+      "howto": "Toque na grade de cima para atirar nas águas inimigas. Vermelho é acerto — afunde os cinco navios antes que o inimigo afunde os seus embaixo. Cada batalha vencida vale mais!"
+    },
+    "fourstack": {
+      "name": "Quatro em Linha",
+      "desc": "Quatro seguidas vencem",
+      "howto": "Toque numa coluna para soltar seu disco. Alinhe quatro — na horizontal, vertical ou diagonal — antes do computador. Ele fica mais esperto a cada rodada que você vence!"
     }
   },
   "username": {

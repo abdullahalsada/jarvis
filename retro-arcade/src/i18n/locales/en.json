@@ -117,7 +117,7 @@
     "spacedefenders": {
       "name": "Space Defenders",
       "desc": "Stop the invasion",
-      "howto": "Slide your finger to move your ship — it fires automatically. Destroy all the invaders before they reach you. They speed up as their numbers shrink!"
+      "howto": "Slide your finger to move your ship — it fires automatically. Big scores upgrade your fighter with stronger cannons. Clear all three waves, then defeat the mothership to win!"
     },
     "meteordodge": {
       "name": "Meteor Dodge",
@@ -134,11 +134,6 @@
       "desc": "Find all the pairs",
       "howto": "Tap a card to flip it, then find its matching partner. Match every pair to win. Fewer moves means a higher score. Take your time — there's no clock."
     },
-    "simonecho": {
-      "name": "Simon Echo",
-      "desc": "Repeat the pattern",
-      "howto": "Watch and listen as the colors light up, then tap them back in the same order. Each round adds one more step. How long a pattern can you remember?"
-    },
     "neonstack": {
       "name": "Neon Stack",
       "desc": "Stack the falling blocks",
@@ -154,35 +149,15 @@
       "desc": "Cross the road and river",
       "howto": "Swipe to hop one step at a time. Dodge the cars on the road, then cross the river by riding the logs — never touch the water! Fill all five nests at the top to advance. Watch out: everything moves faster each round."
     },
-    "astroshards": {
-      "name": "Astro Shards",
-      "desc": "Blast the space rocks",
-      "howto": "Hold the ↺ and ↻ buttons to turn your ship and ▲ to thrust — it fires by itself. Big rocks break into smaller, faster ones. Small rocks are worth the most points. Fly off one edge and you appear on the other!"
-    },
     "pixelwings": {
       "name": "Pixel Wings",
       "desc": "Flap through the towers",
       "howto": "Tap anywhere to flap your wings and stay in the air. Glide through the gap between the towers — one point for each tower you pass. One bump and it's over. How far can you fly?"
     },
-    "gemdigger": {
-      "name": "Gem Digger",
-      "desc": "Dig deep, grab the gems",
-      "howto": "Swipe to dig tunnels through the earth and collect every gem. Two cave creatures are hunting you — but they can only follow your tunnels, so dig wisely! Collect all the gems to win."
-    },
-    "skyshield": {
-      "name": "Sky Shield",
-      "desc": "Defend your cities",
-      "howto": "Missiles are falling toward your six cities! Tap the sky to launch an interceptor — its blast destroys everything nearby. Your ammo is limited each wave, so aim ahead of the missiles. Spare ammo and surviving cities earn big bonuses."
-    },
     "ghostsweeper": {
       "name": "Ghost Sweeper",
       "desc": "Find the hidden ghosts",
       "howto": "Tap a tile to reveal it. The numbers tell you how many ghosts hide in the neighboring tiles — use logic to work out where they are. Press and hold to place a ward on a suspected ghost. Reveal every safe tile to win. No timer, just thinking."
-    },
-    "zombiebop": {
-      "name": "Zombie Bop",
-      "desc": "Bop them back down",
-      "howto": "Zombies are popping out of the graves! Tap them before they sink back down. The golden skeleton is worth 5× points. You have 60 seconds — they get faster near the end!"
     },
     "alleybowl": {
       "name": "Alley Bowl",
@@ -194,60 +169,85 @@
       "desc": "Jump craters, blast rocks",
       "howto": "Your buggy drives itself, faster and faster. Tap the RIGHT side of the screen to jump over craters, tap the LEFT side to shoot the rocks in your path. Checkpoints every 500m. Three lives — good luck, driver!"
     },
-    "spookshoot": {
-      "name": "Spook Shoot",
-      "desc": "A steady hand wins",
-      "howto": "Spooks glide across three rows — tap to shoot them! Every shot costs a shell, hit or miss, and you have 25. The back row scores most; the golden phantom is worth 100. Hit 5 in a row to earn 3 bonus shells!"
-    },
-    "pyramidhop": {
-      "name": "Pyramid Hop",
-      "desc": "Paint every cube",
-      "howto": "Swipe DIAGONALLY to hop between the cubes — down-left, down-right, up-left, up-right. Every cube you land on lights up; light them all to clear the level. Dodge the tumbling red orbs, and don't hop off the edge!"
-    },
-    "gemcolumns": {
-      "name": "Gem Columns",
-      "desc": "Line up three gems",
-      "howto": "A stack of three gems falls into the well. Drag sideways to steer it, tap to reshuffle the gem order, drag down to drop faster. Line up three or more of a color — across, down, or diagonally — to shatter them. Chains score big!"
-    },
     "tilefusion": {
       "name": "Tile Fusion",
       "desc": "Merge to 2048",
       "howto": "Swipe to slide all the tiles. When two matching numbers collide they fuse into one bigger number. Reach the glowing 2048 tile! The game ends when the board is full and nothing can merge. No clock — plan every move."
-    },
-    "slidefifteen": {
-      "name": "Slide Fifteen",
-      "desc": "Order the sliding tiles",
-      "howto": "Tap any tile in the same row or column as the empty space to slide it over. Arrange the tiles from 1 to 15. Every puzzle is solvable — fewer moves means a higher score, and there's no clock."
-    },
-    "neonlights": {
-      "name": "Neon Lights",
-      "desc": "Turn every light off",
-      "howto": "Tapping a lamp flips it and its four neighbors. Turn the whole board dark to clear the round — three rounds, each scrambled deeper. Fewer taps earn more points. Pure logic, no timer."
     },
     "retroracer": {
       "name": "Retro Racer",
       "desc": "Weave through traffic",
       "howto": "Swipe left or right to hop between the three lanes. Slip past the oncoming cars — the road gets faster and busier the farther you drive. One crash ends the run. How far can you go?"
     },
-    "moonlander": {
-      "name": "Moon Lander",
-      "desc": "Touch down gently",
-      "howto": "Hold ▲ to fire your engine against gravity, and ◀ ▶ to drift sideways. Land slowly on the green pad — your ship glows blue when you're slow enough to land safely. Fuel is limited! Each landing brings a smaller pad and stronger gravity."
-    },
     "creepycrawler": {
       "name": "Creepy Crawler",
       "desc": "Split the crawling horror",
-      "howto": "Slide to move your hunter — it fires by itself. Shoot the crawler weaving down through the tombstones: hit its middle and it splits in two! Every piece you destroy becomes a new tombstone. Don't let it reach you."
+      "howto": "Slide or hold ◀ ▶ to move and tap ◎ to fire. Hit the crawler’s middle to split it in two! Every killed segment becomes a tombstone. Don’t let it reach you."
     },
     "divesquadron": {
       "name": "Dive Squadron",
       "desc": "Survive the dive bombers",
-      "howto": "Slide to steer your ship — it fires by itself. Enemies swoop out of formation and dive straight at you. A diving enemy is worth double points — the brave shot pays! Clear the whole squadron to face a faster wave."
+      "howto": "Slide to move; your ship fires automatically. Diving enemies are worth double. Big scores upgrade your fighter — clear three waves and take down the mothership to win!"
     },
     "eggcatch": {
       "name": "Egg Catch",
       "desc": "Catch every falling egg",
       "howto": "Eggs roll down four ramps and tumble off the edge. Slide your finger anywhere — the basket follows it. Catch every egg before it hits the floor; crack three and the game is over. They come faster as your score grows!"
+    },
+    "tankbattle": {
+      "name": "Tank Battle",
+      "desc": "Hold the arena",
+      "howto": "Hold a direction to drive your tank and tap ◎ to fire. Brick walls crumble, steel doesn’t. Destroy the whole enemy patrol to bring in the next, faster wave!"
+    },
+    "towerclimb": {
+      "name": "Tower Climb",
+      "desc": "Dodge the barrels",
+      "howto": "Walk with ◀ ▶, climb ladders with ▲ ▼, and jump barrels with ↥. Reach the ape at the top to score big — each rescue makes the barrels faster!"
+    },
+    "jungledash": {
+      "name": "Jungle Dash",
+      "desc": "Run, jump, treasure!",
+      "howto": "Tap anywhere to jump. Leap over pits, logs and snakes, and grab the floating treasure mid-jump. The jungle speeds up the farther you run!"
+    },
+    "blastmaze": {
+      "name": "Blast Maze",
+      "desc": "Bomb your way through",
+      "howto": "Steer with the pad and drop bombs with ◎. The blast is a cross — it clears crates and prowlers, and it hurts you too, so step away fast! Clear every prowler to advance."
+    },
+    "chopperrescue": {
+      "name": "Chopper Rescue",
+      "desc": "Everyone comes home",
+      "howto": "Fly with the pad. Hover low over the stranded to winch them aboard (3 seats), then land on the cyan pad to drop them off. Watch the turret’s flak!"
+    },
+    "vampirehunt": {
+      "name": "Vampire Hunt",
+      "desc": "Survive the night",
+      "howto": "Walk with ◀ ▶ and throw daggers with ◎ — one flies low, one high. Zombies shamble on the ground, bats swoop overhead. Fill the bar to clear the night!"
+    },
+    "mummytomb": {
+      "name": "Mummy’s Tomb",
+      "desc": "Grab the gold and go",
+      "howto": "Steer with the pad or swipes to collect every treasure while mummies hunt you. Tap ⚡ to zap the first mummy you’re facing — you only carry a few per tomb!"
+    },
+    "cratepush": {
+      "name": "Crate Push",
+      "desc": "Every crate on target",
+      "howto": "Swipe or use the pad to walk and push crates onto the glowing targets. Crates only push — never pull — so plan ahead and use ↩ to undo a bad shove."
+    },
+    "pixellogic": {
+      "name": "Pixel Logic",
+      "desc": "Numbers hide a picture",
+      "howto": "The numbers show the runs of filled cells in each row and column. Tap to fill in ■ mode, or switch to ✗ to mark empties. Three wrong fills end the run!"
+    },
+    "navalduel": {
+      "name": "Naval Duel",
+      "desc": "Sink the enemy fleet",
+      "howto": "Tap the top grid to fire into enemy waters. Red is a hit — sink all five ships before the enemy sinks yours on the bottom grid. Each battle won is worth more!"
+    },
+    "fourstack": {
+      "name": "Four Stack",
+      "desc": "Four in a row wins",
+      "howto": "Tap a column to drop your disc. Line up four — across, down or diagonally — before the computer does. It gets smarter every round you win!"
     }
   },
   "username": {

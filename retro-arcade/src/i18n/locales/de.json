@@ -117,7 +117,7 @@
     "spacedefenders": {
       "name": "Weltraum-Verteidiger",
       "desc": "Stoppe die Invasion",
-      "howto": "Bewege dein Schiff mit dem Finger — es feuert automatisch. Zerstöre alle Invasoren, bevor sie dich erreichen. Je weniger übrig sind, desto schneller werden sie!"
+      "howto": "Wische, um dein Schiff zu bewegen — es feuert automatisch. Hohe Punktzahlen rüsten deinen Jäger mit stärkeren Kanonen auf. Schaffe alle drei Wellen und besiege dann das Mutterschiff!"
     },
     "meteordodge": {
       "name": "Meteor-Ausweichen",
@@ -134,11 +134,6 @@
       "desc": "Finde alle Paare",
       "howto": "Tippe eine Karte an, um sie umzudrehen, und finde ihren Partner. Finde alle Paare, um zu gewinnen. Weniger Züge bedeuten mehr Punkte. Lass dir Zeit — es gibt keine Uhr."
     },
-    "simonecho": {
-      "name": "Simon Echo",
-      "desc": "Wiederhole das Muster",
-      "howto": "Schau und höre zu, wie die Farben aufleuchten, und tippe sie in derselben Reihenfolge nach. Jede Runde kommt ein Schritt dazu. Wie lange kannst du dir das Muster merken?"
-    },
     "neonstack": {
       "name": "Neon-Stapel",
       "desc": "Staple die fallenden Blöcke",
@@ -154,35 +149,15 @@
       "desc": "Über Straße und Fluss",
       "howto": "Wische, um Schritt für Schritt zu hüpfen. Weiche den Autos aus und überquere den Fluss auf den Baumstämmen — nie das Wasser berühren! Fülle alle fünf Nester oben, um weiterzukommen. Achtung: Jede Runde wird alles schneller."
     },
-    "astroshards": {
-      "name": "Astro-Splitter",
-      "desc": "Sprenge die Weltraumfelsen",
-      "howto": "Halte ↺ und ↻, um dein Schiff zu drehen, und ▲ für Schub — gefeuert wird automatisch. Große Felsen zerbrechen in kleinere, schnellere. Kleine Felsen bringen die meisten Punkte. Fliegst du über den Rand, erscheinst du gegenüber!"
-    },
     "pixelwings": {
       "name": "Pixel-Flügel",
       "desc": "Flattere durch die Türme",
       "howto": "Tippe irgendwo, um zu flattern und in der Luft zu bleiben. Gleite durch die Lücken zwischen den Türmen — ein Punkt pro Turm. Eine Berührung und es ist vorbei. Wie weit fliegst du?"
     },
-    "gemdigger": {
-      "name": "Edelstein-Gräber",
-      "desc": "Grab tief, hol die Steine",
-      "howto": "Wische, um Tunnel zu graben und alle Edelsteine zu sammeln. Zwei Höhlenwesen jagen dich — aber sie können nur deinen Tunneln folgen, also grabe schlau! Sammle alle Edelsteine, um zu gewinnen."
-    },
-    "skyshield": {
-      "name": "Himmelsschild",
-      "desc": "Verteidige deine Städte",
-      "howto": "Raketen fallen auf deine sechs Städte! Tippe in den Himmel, um einen Abfangjäger zu starten — seine Explosion zerstört alles in der Nähe. Die Munition pro Welle ist begrenzt, also ziele vorausschauend. Übrige Munition und gerettete Städte bringen Bonuspunkte."
-    },
     "ghostsweeper": {
       "name": "Geisterfeger",
       "desc": "Finde die versteckten Geister",
       "howto": "Tippe ein Feld an, um es aufzudecken. Die Zahlen verraten, wie viele Geister in den Nachbarfeldern stecken — kombiniere logisch. Halte gedrückt, um einen Bannzauber zu setzen. Decke alle sicheren Felder auf, um zu gewinnen. Kein Timer, nur Köpfchen."
-    },
-    "zombiebop": {
-      "name": "Zombie-Klopfer",
-      "desc": "Klopf sie zurück",
-      "howto": "Zombies steigen aus den Gräbern! Tippe sie an, bevor sie wieder versinken. Das goldene Skelett zählt 5-fach. Du hast 60 Sekunden — am Ende werden sie schneller!"
     },
     "alleybowl": {
       "name": "Bowlingbahn",
@@ -194,60 +169,85 @@
       "desc": "Spring über Krater, sprenge Felsen",
       "howto": "Dein Buggy fährt von allein, immer schneller. Tippe RECHTS, um über Krater zu springen, und LINKS, um Felsen wegzuschießen. Checkpoints alle 500 m. Drei Leben — gute Fahrt!"
     },
-    "spookshoot": {
-      "name": "Geisterschießen",
-      "desc": "Ruhige Hand gewinnt",
-      "howto": "Gespenster gleiten über drei Reihen — tippe, um zu schießen! Jeder Schuss kostet eine Patrone, Treffer oder nicht, und du hast 25. Die hintere Reihe zählt am meisten; das goldene Phantom bringt 100. Triff 5 in Folge für 3 Bonuspatronen!"
-    },
-    "pyramidhop": {
-      "name": "Pyramidenhüpfer",
-      "desc": "Färbe jeden Würfel",
-      "howto": "Wische DIAGONAL, um zwischen den Würfeln zu hüpfen — runter-links, runter-rechts, hoch-links, hoch-rechts. Jeder Würfel leuchtet auf, wenn du landest; bring alle zum Leuchten. Weiche den roten Kugeln aus und hüpf nicht über den Rand!"
-    },
-    "gemcolumns": {
-      "name": "Edelstein-Säulen",
-      "desc": "Drei Steine in Reihe",
-      "howto": "Ein Turm aus drei Edelsteinen fällt in den Schacht. Ziehe seitwärts zum Lenken, tippe zum Umsortieren, ziehe nach unten für schnelles Fallen. Bringe drei gleiche Farben in Reihe — quer, senkrecht oder diagonal. Ketten geben fette Punkte!"
-    },
     "tilefusion": {
       "name": "Kachel-Fusion",
       "desc": "Verschmelze bis 2048",
       "howto": "Wische, um alle Kacheln zu schieben. Treffen zwei gleiche Zahlen aufeinander, verschmelzen sie zu einer größeren. Erreiche die leuchtende 2048! Das Spiel endet, wenn das Brett voll ist und nichts mehr geht. Keine Uhr — plane jeden Zug."
-    },
-    "slidefifteen": {
-      "name": "Fünfzehner-Schieber",
-      "desc": "Ordne die Schiebekacheln",
-      "howto": "Tippe eine Kachel in der Reihe oder Spalte des leeren Felds an, um sie zu verschieben. Ordne die Kacheln von 1 bis 15. Jedes Rätsel ist lösbar — weniger Züge geben mehr Punkte, und es gibt keine Uhr."
-    },
-    "neonlights": {
-      "name": "Neonlichter",
-      "desc": "Schalte jedes Licht aus",
-      "howto": "Ein Tipp auf eine Lampe schaltet sie und ihre vier Nachbarn um. Mach das ganze Brett dunkel, um die Runde zu schaffen — drei Runden, immer stärker verwürfelt. Weniger Tipps bringen mehr Punkte. Pure Logik, kein Timer."
     },
     "retroracer": {
       "name": "Retro-Raser",
       "desc": "Schlängle dich durch den Verkehr",
       "howto": "Wische links oder rechts, um die Spur zu wechseln. Zieh am Gegenverkehr vorbei — je weiter du fährst, desto schneller und voller wird die Straße. Ein Crash beendet die Fahrt. Wie weit kommst du?"
     },
-    "moonlander": {
-      "name": "Mondlander",
-      "desc": "Sanft aufsetzen",
-      "howto": "Halte ▲, um gegen die Schwerkraft zu feuern, und ◀ ▶ zum seitlichen Driften. Lande langsam auf dem grünen Pad — dein Schiff leuchtet blau, wenn du langsam genug bist. Der Treibstoff ist knapp! Jede Landung bringt ein kleineres Pad und stärkere Schwerkraft."
-    },
     "creepycrawler": {
       "name": "Gruselkrabbler",
       "desc": "Teile das Krabbelmonster",
-      "howto": "Bewege deinen Jäger mit dem Finger — er feuert von allein. Schieß auf den Krabbler, der sich durch die Grabsteine schlängelt: Triffst du die Mitte, teilt er sich! Jedes zerstörte Stück wird zum neuen Grabstein. Lass ihn nicht zu dir durch."
+      "howto": "Wische oder halte ◀ ▶ zum Bewegen und tippe ◎ zum Feuern. Triff die Mitte des Kriechers, um ihn zu teilen! Jedes erledigte Segment wird zum Grabstein. Lass ihn nicht zu dir durch."
     },
     "divesquadron": {
       "name": "Sturzflug-Staffel",
       "desc": "Überlebe die Sturzbomber",
-      "howto": "Steuere dein Schiff mit dem Finger — es feuert von allein. Feinde scheren aus der Formation aus und stürzen direkt auf dich. Ein stürzender Feind zählt doppelt — der mutige Schuss lohnt sich! Räume die ganze Staffel für eine schnellere Welle."
+      "howto": "Wische zum Bewegen; dein Schiff feuert automatisch. Sturzflieger zählen doppelt. Hohe Punktzahlen rüsten deinen Jäger auf — schaffe drei Wellen und hol das Mutterschiff vom Himmel!"
     },
     "eggcatch": {
       "name": "Eierfangen",
       "desc": "Fang jedes fallende Ei",
       "howto": "Eier rollen vier Rampen hinunter und kippen über die Kante. Wische mit dem Finger — der Korb folgt ihm. Fang jedes Ei, bevor es den Boden trifft; drei zerbrochene Eier und das Spiel ist aus. Sie kommen immer schneller!"
+    },
+    "tankbattle": {
+      "name": "Panzerschlacht",
+      "desc": "Halte die Arena",
+      "howto": "Halte eine Richtung, um deinen Panzer zu fahren, und tippe ◎ zum Feuern. Ziegelwände zerbröseln, Stahl nicht. Zerstöre die ganze Feindpatrouille für die nächste, schnellere Welle!"
+    },
+    "towerclimb": {
+      "name": "Turmkletterer",
+      "desc": "Weich den Fässern aus",
+      "howto": "Laufe mit ◀ ▶, klettere Leitern mit ▲ ▼ und springe mit ↥ über Fässer. Erreiche den Affen ganz oben für dicke Punkte — jede Rettung macht die Fässer schneller!"
+    },
+    "jungledash": {
+      "name": "Dschungellauf",
+      "desc": "Renn, spring, Schatz!",
+      "howto": "Tippe irgendwo, um zu springen. Überspringe Gruben, Stämme und Schlangen und schnapp dir den schwebenden Schatz mitten im Sprung. Der Dschungel wird immer schneller!"
+    },
+    "blastmaze": {
+      "name": "Bombenlabyrinth",
+      "desc": "Spreng dich durch",
+      "howto": "Steuere mit dem Kreuz und lege Bomben mit ◎. Die Explosion ist ein Kreuz — sie räumt Kisten und Streuner weg und trifft auch dich, also schnell weg! Räume alle Streuner ab, um weiterzukommen."
+    },
+    "chopperrescue": {
+      "name": "Hubschrauber-Rettung",
+      "desc": "Alle kommen heim",
+      "howto": "Fliege mit dem Kreuz. Schwebe tief über den Gestrandeten, um sie an Bord zu holen (3 Plätze), und lande auf dem türkisen Pad zum Absetzen. Vorsicht vor der Flak!"
+    },
+    "vampirehunt": {
+      "name": "Vampirjagd",
+      "desc": "Überlebe die Nacht",
+      "howto": "Laufe mit ◀ ▶ und wirf Dolche mit ◎ — einer fliegt tief, einer hoch. Zombies schlurfen am Boden, Fledermäuse stoßen von oben herab. Fülle die Leiste, um die Nacht zu überstehen!"
+    },
+    "mummytomb": {
+      "name": "Grab der Mumie",
+      "desc": "Schnapp das Gold und lauf",
+      "howto": "Steuere mit Kreuz oder Wischen und sammle alle Schätze, während Mumien dich jagen. Tippe ⚡, um die erste Mumie vor dir zu blitzen — pro Grab nur wenige Ladungen!"
+    },
+    "cratepush": {
+      "name": "Kistenschieber",
+      "desc": "Jede Kiste ans Ziel",
+      "howto": "Wische oder nutze das Kreuz, um Kisten auf die leuchtenden Ziele zu schieben. Kisten lassen sich nur schieben, nie ziehen — plane voraus und nutze ↩ zum Zurücknehmen."
+    },
+    "pixellogic": {
+      "name": "Pixel-Logik",
+      "desc": "Zahlen verbergen ein Bild",
+      "howto": "Die Zahlen zeigen die Blöcke gefüllter Felder je Zeile und Spalte. Tippe im ■-Modus zum Füllen oder wechsle zu ✗, um Leerfelder zu markieren. Drei Fehler beenden den Lauf!"
+    },
+    "navalduel": {
+      "name": "Seeschlacht",
+      "desc": "Versenk die Feindflotte",
+      "howto": "Tippe auf das obere Gitter, um in Feindgewässer zu feuern. Rot ist ein Treffer — versenke alle fünf Schiffe, bevor der Feind unten deine versenkt. Jede gewonnene Schlacht zählt mehr!"
+    },
+    "fourstack": {
+      "name": "Viererreihe",
+      "desc": "Vier in einer Reihe gewinnt",
+      "howto": "Tippe eine Spalte, um deinen Stein fallen zu lassen. Bilde eine Viererreihe — quer, senkrecht oder diagonal — bevor der Computer es tut. Er wird mit jeder gewonnenen Runde schlauer!"
     }
   },
   "username": {
