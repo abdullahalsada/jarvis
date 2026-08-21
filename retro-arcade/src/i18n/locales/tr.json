@@ -28,8 +28,8 @@
       "classics": "Klasikler",
       "action": "Aksiyon",
       "brain": "Zekâ",
-      "street": "Sokak Oyunları",
-      "school": "Okul Günleri"
+      "school": "Okul Günleri",
+      "arcade": "Atari Köşesi"
     }
   },
   "purchase": {
@@ -225,31 +225,6 @@
       "desc": "Satırları temizle, akışı yakala",
       "howto": "Düşen parçayı ◀ ▶ ile yönlendir, ↻ ile döndür, ▼ ile çak (kaydırma da çalışır). Bir satırı doldur ve temizle — büyük bonus için aynı anda dört satır! Kuyu her 10 satırda hızlanır."
     },
-    "streetrun": {
-      "name": "Sokak Koşusu",
-      "desc": "Mahallede sprint",
-      "howto": "◀ ▶ ile (veya kaydırarak) şerit değiştir, ↥ ile tahta sandıkların üstünden atla. Çöp bidonları atlanamayacak kadar yüksek — onlardan kaç! Bonus için paraları topla. Sokak gitgide hızlanıyor."
-    },
-    "pigeonpanic": {
-      "name": "Güvercin Paniği",
-      "desc": "Uçup gitmeden dokun",
-      "howto": "Güvercinler çatıların üzerinden geçiyor — kaçmadan önce dokun! Her çift için 3 çakıl taşın var; kâğıt uçaklar hızlı ama üç kat puan. Kaçan her kuş bir cana mal olur."
-    },
-    "canknock": {
-      "name": "Teneke Devirme",
-      "desc": "Panayır klasiği",
-      "howto": "Taşı geri çek, bırak ve teneke kutuları sandıklardan devir! Hepsini devirince daha yüksek, daha zor bir düzen gelir. Tur başına beş taş — artanlar bonus puan."
-    },
-    "marblematch": {
-      "name": "Misket Eşleştir",
-      "desc": "Üçlü eşleştir, zincir kur",
-      "howto": "Bir miskete, sonra komşusuna dokunarak yerlerini değiştir ve aynı renkten 3 tane hizala — patlar ve her şey aşağı dökülür. Zincirler puanı katlar! 30 hamlen var. İyi kullan."
-    },
-    "balloonfight": {
-      "name": "Su Balonu Savaşı",
-      "desc": "Islat ya da ıslan",
-      "howto": "◀ ▶ ile yürü, ◎ ile su balonu fırlat — biri alçaktan, biri yüksekten uçar. Rakip çocuklar yerden saldırır, kâğıt uçaklar tepeden dalar. Su çubuğunu doldur, turu kazan!"
-    },
     "binshot": {
       "name": "Çöp Sepeti Atışı",
       "desc": "Sınıf klasiği",
@@ -274,6 +249,31 @@
       "name": "Matematik Sprinti",
       "desc": "Tahta saatini yen",
       "howto": "Tahtada dört cevaplı bir işlem belirir — tebeşir çizgisi bitmeden doğrusuna dokun! Hızlı cevaplar daha çok puan, seriler katlar. Üç hata ve ders biter."
+    },
+    "pinball": {
+      "name": "Tilt",
+      "desc": "Topu hayatta tut!",
+      "howto": "Kolları çalıştırmak için ekranın SOL veya SAĞ yarısına dokun. Tamponlar 50, üst şerit 200 puan; her 2000 puanda bir çarpan yanar. Topu ortadan düşürme — oyun başına üç top!"
+    },
+    "bubblepop": {
+      "name": "Baloncuk Patlat",
+      "desc": "Nişan al, sektir, patlat!",
+      "howto": "Nişan almak için sürükle — noktalı çizgi duvarlardan seker — ve bırakınca ateşlenir. Aynı renkten 3+ birleştir, patlasınlar; askıda kalanlar iki kat puanla düşer. Saha her 6 atışta bir aşağı iner!"
+    },
+    "airhockey": {
+      "name": "Hava Hokeyi",
+      "desc": "Yediyi ilk bulan",
+      "howto": "Yeşil tokmağı parmağınla kaydır — diski üstteki kırmızı kaleye çak. Makine savunur ve karşılık verir! 7 golü ilk atan maçı kazanır; her maç daha hızlıdır."
+    },
+    "clawmachine": {
+      "name": "Pençe Makinesi",
+      "desc": "Hizala… bırak!",
+      "howto": "Pençe bir sağa bir sola süpürür — tam ödülün üzerindeyken düğmeye bas. Merkezden tutuş sağlamdır; yamuk tutuş yukarı çıkarken kayabilir! Altın ödüller üç kat, her kazanç bir jeton iade eder."
+    },
+    "poolball": {
+      "name": "8 Top Bilardo",
+      "desc": "Masayı temizle",
+      "howto": "Nişan için herhangi bir yerden sürükle — noktalar vuruşu gösterir — ve bırakınca vurursun. Renkli topları düşür (her biri 50), sonra 8 topunu batırıp masayı büyük bonusla kapat. Beyazı ya da 8’i erken batırmak bir isteka kaybettirir!"
     }
   },
   "username": {

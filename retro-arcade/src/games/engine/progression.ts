@@ -30,12 +30,12 @@ export const LEVEL_STEPS: Record<string, number> = {
   divesquadron: 800,
   chopperrescue: 400,
   skyjump: 250,
-  // Street Games
-  streetrun: 300,
-  pigeonpanic: 200,
-  balloonfight: 350,
-  marblematch: 500,
-  canknock: 300,
+  // Arcade Corner
+  pinball: 1500,
+  bubblepop: 300,
+  poolball: 400,
+  clawmachine: 300,
+  airhockey: 400,
   // School Days
   binshot: 100,
   paperglider: 200,

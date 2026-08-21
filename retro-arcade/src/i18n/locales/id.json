@@ -28,8 +28,8 @@
       "classics": "Klasik",
       "action": "Aksi",
       "brain": "Asah Otak",
-      "street": "Permainan Jalanan",
-      "school": "Masa Sekolah"
+      "school": "Masa Sekolah",
+      "arcade": "Pojok Arkade"
     }
   },
   "purchase": {
@@ -225,31 +225,6 @@
       "desc": "Bersihkan baris, rasakan alurnya",
       "howto": "Arahkan balok jatuh dengan ◀ ▶, putar dengan ↻, hempaskan dengan ▼ (usapan juga bisa). Penuhi satu baris untuk menghapusnya — empat sekaligus untuk bonus besar! Sumur makin cepat tiap 10 baris."
     },
-    "streetrun": {
-      "name": "Lari Jalanan",
-      "desc": "Sprint keliling blok",
-      "howto": "Pindah jalur dengan ◀ ▶ (atau usap) dan lompati peti kayu dengan ↥. Tong sampah terlalu tinggi untuk dilompati — hindari! Ambil koin untuk poin bonus. Jalanan makin lama makin cepat!"
-    },
-    "pigeonpanic": {
-      "name": "Panik Merpati",
-      "desc": "Ketuk sebelum terbang",
-      "howto": "Merpati melintasi atap-atap — ketuk sebelum mereka kabur! Ada 3 kerikil tiap pasangan; pesawat kertas cepat tapi bernilai tiga kali lipat. Tiap burung yang lolos mengurangi nyawa."
-    },
-    "canknock": {
-      "name": "Robohkan Kaleng",
-      "desc": "Klasik pasar malam",
-      "howto": "Tarik batu ke belakang, lepaskan, dan robohkan kaleng-kaleng dari petinya! Robohkan semua untuk susunan yang lebih tinggi dan sulit. Lima batu per ronde — sisanya jadi poin bonus."
-    },
-    "marblematch": {
-      "name": "Cocokkan Kelereng",
-      "desc": "Samakan tiga, rangkai lebih",
-      "howto": "Ketuk satu kelereng lalu tetangganya untuk bertukar tempat dan menjajarkan 3 warna yang sama — mereka meletus dan semuanya runtuh. Rantai melipatgandakan skor! Kamu punya 30 langkah."
-    },
-    "balloonfight": {
-      "name": "Perang Balon Air",
-      "desc": "Basahi atau dibasahi",
-      "howto": "Berjalan dengan ◀ ▶ dan lempar balon air dengan ◎ — satu terbang rendah, satu tinggi. Anak-anak rival menyerbu di tanah, pesawat kertas menukik dari atas. Penuhi bilah cipratan dan menangkan ronde!"
-    },
     "binshot": {
       "name": "Lempar Keranjang",
       "desc": "Klasik ruang kelas",
@@ -274,6 +249,31 @@
       "name": "Sprint Matematika",
       "desc": "Kalahkan jam papan tulis",
       "howto": "Soal hitungan muncul di papan dengan empat jawaban — ketuk yang benar sebelum garis kapur habis! Jawaban cepat bernilai lebih, beruntun melipatgandakan. Tiga kesalahan, kelas bubar."
+    },
+    "pinball": {
+      "name": "Pinball",
+      "desc": "Jaga bolanya tetap hidup!",
+      "howto": "Ketuk separuh KIRI atau KANAN layar untuk menggerakkan flipper. Bumper bernilai 50 dan jalur atas 200; tiap 2000 poin menyalakan pengganda. Jangan biarkan bola jatuh lewat tengah — tiga bola per permainan!"
+    },
+    "bubblepop": {
+      "name": "Letuskan Gelembung",
+      "desc": "Bidik, pantul, letus!",
+      "howto": "Seret untuk membidik — garis putus-putus memantul di dinding — lalu lepaskan untuk menembak. Satukan 3+ warna sama agar meletus; gelembung yang menggantung jatuh dengan poin ganda. Arena turun tiap 6 tembakan!"
+    },
+    "airhockey": {
+      "name": "Air Hockey",
+      "desc": "Duluan sampai tujuh",
+      "howto": "Geser jarimu untuk menggerakkan pemukul hijau — hantam keping ke gawang merah di atas. Mesin bertahan dan membalas! Yang duluan mencetak 7 gol memenangkan pertandingan; tiap pertandingan makin cepat."
+    },
+    "clawmachine": {
+      "name": "Mesin Capit",
+      "desc": "Luruskan… jatuhkan!",
+      "howto": "Capit menyapu kiri-kanan — ketuk tombol saat tepat di atas hadiah. Capitan pas tengah kuat; capitan meleset bisa terlepas saat naik! Hadiah emas bernilai tiga kali, dan tiap kemenangan mengembalikan satu koin."
+    },
+    "poolball": {
+      "name": "Biliar Bola 8",
+      "desc": "Bersihkan mejanya",
+      "howto": "Seret di mana saja untuk membidik — titik-titik menunjukkan arah pukulan — lalu lepaskan. Masukkan bola warna (50 tiap bola), lalu bola 8 untuk menutup rak dengan bonus besar. Memasukkan bola putih atau bola 8 terlalu cepat kehilangan satu stik!"
     }
   },
   "username": {

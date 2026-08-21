@@ -28,8 +28,8 @@
       "classics": "Classiques",
       "action": "Action",
       "brain": "Cerveau",
-      "street": "Jeux de Rue",
-      "school": "Jours d’École"
+      "school": "Jours d’École",
+      "arcade": "Coin Arcade"
     }
   },
   "purchase": {
@@ -225,31 +225,6 @@
       "desc": "Efface des lignes, trouve le rythme",
       "howto": "Dirige la pièce avec ◀ ▶, fais-la pivoter avec ↻, écrase-la avec ▼ (les gestes marchent aussi). Remplis une ligne pour l’effacer — quatre d’un coup pour le gros bonus ! Le puits accélère toutes les 10 lignes."
     },
-    "streetrun": {
-      "name": "Course de Rue",
-      "desc": "Sprinte le quartier",
-      "howto": "Change de couloir avec ◀ ▶ (ou glisse) et franchis les caisses en bois avec ↥. Les poubelles sont trop hautes : évite-les ! Ramasse les pièces pour des points bonus. La rue accélère sans cesse."
-    },
-    "pigeonpanic": {
-      "name": "Panique aux Pigeons",
-      "desc": "Touche-les avant l’envol",
-      "howto": "Les pigeons traversent les toits : touche-les avant qu’ils s’échappent ! 3 cailloux par duo ; les avions en papier sont rapides et valent triple. Chaque oiseau échappé coûte une vie."
-    },
-    "canknock": {
-      "name": "Chamboule-Tout",
-      "desc": "Le classique de la fête foraine",
-      "howto": "Tire la pierre en arrière, relâche et renverse les boîtes de conserve ! Fais tomber toutes les boîtes pour un montage plus haut et plus dur. Cinq pierres par manche — celles qui restent donnent un bonus."
-    },
-    "marblematch": {
-      "name": "Billes Alignées",
-      "desc": "Aligne trois, enchaîne plus",
-      "howto": "Touche une bille puis une voisine pour les échanger et aligner 3 couleurs identiques : elles éclatent et tout dégringole. Les chaînes multiplient ton score ! Tu as 30 coups. Fais-les compter."
-    },
-    "balloonfight": {
-      "name": "Bataille d’Eau",
-      "desc": "Trempe ou sois trempé",
-      "howto": "Marche avec ◀ ▶ et lance des ballons d’eau avec ◎ — un vole bas, l’autre haut. Les rivaux chargent au sol, les avions en papier piquent d’en haut. Remplis la jauge pour gagner la manche !"
-    },
     "binshot": {
       "name": "Panier de Papier",
       "desc": "Le classique de la classe",
@@ -274,6 +249,31 @@
       "name": "Sprint de Calcul",
       "desc": "Bats l’horloge du tableau",
       "howto": "Une opération s’affiche au tableau avec quatre réponses : touche la bonne avant que la ligne de craie s’efface ! Répondre vite rapporte plus, les séries multiplient. Trois erreurs et le cours est fini."
+    },
+    "pinball": {
+      "name": "Flipper",
+      "desc": "Garde-la en vie !",
+      "howto": "Touche la moitié GAUCHE ou DROITE de l’écran pour actionner les flippers. Les bumpers rapportent 50 et le couloir du haut 200 ; tous les 2000 points, un multiplicateur s’allume. Ne laisse pas la bille filer au centre — trois billes par partie !"
+    },
+    "bubblepop": {
+      "name": "Éclate-Bulles",
+      "desc": "Vise, rebondis, éclate !",
+      "howto": "Fais glisser pour viser — la ligne pointillée rebondit sur les murs — et relâche pour tirer. Colle 3+ bulles de la même couleur pour les éclater ; celles qui pendent tombent en points doubles. Le plafond descend tous les 6 tirs !"
+    },
+    "airhockey": {
+      "name": "Air Hockey",
+      "desc": "Premier à sept",
+      "howto": "Glisse ton doigt pour déplacer le maillet vert et propulse le palet dans le but rouge en haut. La machine défend et contre-attaque ! Le premier à 7 buts gagne le match ; chaque match est plus rapide."
+    },
+    "clawmachine": {
+      "name": "Machine à Pince",
+      "desc": "Aligne… et lâche !",
+      "howto": "La pince balaie de gauche à droite : touche le bouton quand elle est pile au-dessus d’un lot. Une prise bien centrée tient ; une prise de travers peut glisser en remontant ! Les lots dorés valent triple et chaque victoire rend un jeton."
+    },
+    "poolball": {
+      "name": "Billard 8",
+      "desc": "Vide la table",
+      "howto": "Fais glisser n’importe où pour viser — les points tracent le tir — et relâche pour frapper. Empoche les billes de couleur (50 chacune), puis la 8 pour finir la table avec un gros bonus. Empocher la blanche ou la 8 trop tôt coûte une queue !"
     }
   },
   "username": {

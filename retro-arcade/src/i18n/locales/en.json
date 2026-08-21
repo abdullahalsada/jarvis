@@ -28,8 +28,8 @@
       "classics": "Classics",
       "action": "Action",
       "brain": "Brain",
-      "street": "Street Games",
-      "school": "School Days"
+      "school": "School Days",
+      "arcade": "Arcade Corner"
     }
   },
   "purchase": {
@@ -225,31 +225,6 @@
       "desc": "Clear lines, feel the flow",
       "howto": "Steer the falling shape with ◀ ▶, spin it with ↻, slam it with ▼ (swipes work too). Fill a row to clear it — four at once for the big bonus! The well speeds up every 10 lines."
     },
-    "streetrun": {
-      "name": "Street Run",
-      "desc": "Sprint the block",
-      "howto": "Hop lanes with ◀ ▶ (or swipe) and vault the wooden crates with ↥. Trash bins are too tall to jump — dodge them! Grab coins for bonus points. The street gets faster and faster."
-    },
-    "pigeonpanic": {
-      "name": "Pigeon Panic",
-      "desc": "Tap ’em before they fly off",
-      "howto": "Pigeons flap across the rooftops — tap them before they escape! You get 3 pebbles per pair; paper planes are fast and worth triple. Every bird that escapes costs a life."
-    },
-    "canknock": {
-      "name": "Can Knockdown",
-      "desc": "The fair-ground classic",
-      "howto": "Drag the stone back, release, and knock the tin cans off their crates! Topple every can to get a taller, trickier setup. Five stones per round — spares earn bonus points."
-    },
-    "marblematch": {
-      "name": "Marble Match",
-      "desc": "Match three, chain more",
-      "howto": "Tap a marble, then a neighbor, to swap them and line up 3 of a color — they pop and everything tumbles down. Chains multiply your score! You have 30 moves. Make them count."
-    },
-    "balloonfight": {
-      "name": "Balloon Fight",
-      "desc": "Soak or get soaked",
-      "howto": "Walk with ◀ ▶ and throw water balloons with ◎ — one flies low, one high. Rival kids charge on the ground, paper planes swoop overhead. Fill the splash bar to win the round!"
-    },
     "binshot": {
       "name": "Bin Shot",
       "desc": "The classroom classic",
@@ -274,6 +249,31 @@
       "name": "Math Sprint",
       "desc": "Beat the chalkboard clock",
       "howto": "A sum flashes on the board with four answers — tap the right one before the chalk line runs out! Fast answers score more, streaks multiply. Three strikes and class is dismissed."
+    },
+    "pinball": {
+      "name": "Pinball",
+      "desc": "Keep it alive!",
+      "howto": "Tap the LEFT or RIGHT half of the screen to flip. Bumpers score 50 and the top lane 200; every 2000 points lights a multiplier. Don’t let the ball fall through the middle — three balls per game!"
+    },
+    "bubblepop": {
+      "name": "Bubble Pop",
+      "desc": "Aim, bounce, pop!",
+      "howto": "Drag to aim — the dotted line bounces off the walls — and release to fire. Stick 3+ of a color together to pop them; bubbles left hanging fall for double points. The field creeps down every 6 shots!"
+    },
+    "airhockey": {
+      "name": "Air Hockey",
+      "desc": "First to seven",
+      "howto": "Slide your finger to move the green mallet — smack the puck into the red goal at the top. The machine defends and strikes back! First to 7 goals wins the match; each match is faster."
+    },
+    "clawmachine": {
+      "name": "Claw Machine",
+      "desc": "Line it up… drop!",
+      "howto": "The claw sweeps side to side — tap DROP when it’s right above a prize. A perfect center grab holds; a sloppy one can slip on the way up! Golden prizes score triple, and every win refunds a token."
+    },
+    "poolball": {
+      "name": "8-Ball Pool",
+      "desc": "Clear the rack",
+      "howto": "Drag anywhere to aim — the dots show the shot — and release to strike. Pot the colored balls (50 each), then sink the 8-ball to clear the rack for a big bonus. Sinking the cue or the 8-ball early costs a cue!"
     }
   },
   "username": {

@@ -28,8 +28,8 @@
       "classics": "Classici",
       "action": "Azione",
       "brain": "Cervello",
-      "street": "Giochi di Strada",
-      "school": "Giorni di Scuola"
+      "school": "Giorni di Scuola",
+      "arcade": "Angolo Arcade"
     }
   },
   "purchase": {
@@ -225,31 +225,6 @@
       "desc": "Righe piene, pura scorrevolezza",
       "howto": "Guida il pezzo con ◀ ▶, ruotalo con ↻, schiantalo con ▼ (funzionano anche i gesti). Riempi una riga per cancellarla — quattro in un colpo per il maxi bonus! Il pozzo accelera ogni 10 righe."
     },
-    "streetrun": {
-      "name": "Corsa di Strada",
-      "desc": "Sfreccia nell’isolato",
-      "howto": "Cambia corsia con ◀ ▶ (o scorri) e scavalca le casse di legno con ↥. I bidoni sono troppo alti da saltare: schivali! Raccogli monete per punti bonus. La strada accelera sempre di più."
-    },
-    "pigeonpanic": {
-      "name": "Panico Piccioni",
-      "desc": "Toccali prima che volino via",
-      "howto": "I piccioni attraversano i tetti: toccali prima che scappino! Hai 3 sassolini per coppia; gli aeroplanini di carta sono veloci e valgono il triplo. Ogni uccello fuggito costa una vita."
-    },
-    "canknock": {
-      "name": "Abbatti Lattine",
-      "desc": "Il classico del luna park",
-      "howto": "Tira indietro il sasso, lascia andare e butta giù le lattine dalle casse! Abbattile tutte per una piramide più alta e difficile. Cinque sassi a manche — quelli avanzati valgono bonus."
-    },
-    "marblematch": {
-      "name": "Biglie a Tris",
-      "desc": "Allinea tre, concatena di più",
-      "howto": "Tocca una biglia e poi una vicina per scambiarle e allineare 3 dello stesso colore: scoppiano e tutto crolla giù. Le catene moltiplicano il punteggio! Hai 30 mosse. Falle contare."
-    },
-    "balloonfight": {
-      "name": "Gavettoni",
-      "desc": "Bagna o vieni bagnato",
-      "howto": "Cammina con ◀ ▶ e lancia gavettoni con ◎ — uno vola basso, uno alto. I rivali caricano a terra, gli aeroplanini piombano dall’alto. Riempi la barra e vinci il round!"
-    },
     "binshot": {
       "name": "Canestro di Carta",
       "desc": "Il classico dell’aula",
@@ -274,6 +249,31 @@
       "name": "Sprint di Calcolo",
       "desc": "Batti l’orologio della lavagna",
       "howto": "Un’operazione appare alla lavagna con quattro risposte: tocca quella giusta prima che la linea di gesso si esaurisca! Risposte rapide valgono di più, le serie moltiplicano. Tre errori e la lezione finisce."
+    },
+    "pinball": {
+      "name": "Flipper",
+      "desc": "Tienila in gioco!",
+      "howto": "Tocca la metà SINISTRA o DESTRA dello schermo per azionare le alette. I respingenti danno 50 e la corsia in alto 200; ogni 2000 punti si accende un moltiplicatore. Non far cadere la pallina al centro — tre palline a partita!"
+    },
+    "bubblepop": {
+      "name": "Scoppia Bolle",
+      "desc": "Mira, rimbalza, scoppia!",
+      "howto": "Trascina per mirare — la linea tratteggiata rimbalza sulle pareti — e rilascia per sparare. Unisci 3+ dello stesso colore per farle scoppiare; quelle rimaste appese cadono a punti doppi. Il campo scende ogni 6 tiri!"
+    },
+    "airhockey": {
+      "name": "Air Hockey",
+      "desc": "Chi arriva prima a sette",
+      "howto": "Fai scorrere il dito per muovere la mazza verde e spara il disco nella porta rossa in alto. La macchina difende e contrattacca! Il primo a 7 gol vince il match; ogni match è più veloce."
+    },
+    "clawmachine": {
+      "name": "Gru dei Premi",
+      "desc": "Allinea… e sgancia!",
+      "howto": "La pinza spazza avanti e indietro: tocca il pulsante quando è proprio sopra un premio. Una presa centrata regge; una storta può scivolare in salita! I premi dorati valgono il triplo e ogni vittoria restituisce un gettone."
+    },
+    "poolball": {
+      "name": "Biliardo 8",
+      "desc": "Svuota il tavolo",
+      "howto": "Trascina ovunque per mirare — i punti tracciano il tiro — e rilascia per colpire. Imbuca le bilie colorate (50 l’una), poi la 8 per chiudere il tavolo con un gran bonus. Imbucare la bianca o la 8 in anticipo costa una stecca!"
     }
   },
   "username": {
