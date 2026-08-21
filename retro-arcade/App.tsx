@@ -19,9 +19,18 @@ import { AssetWarmup } from './src/components/AssetWarmup';
  * No registration anywhere: the account is silent/anonymous, and the store
  * account (Game Center / Play Games) anchors it in store builds.
  */
+/**
+ * Brand-first splash: the loading screen holds for this minimum so the
+ * mascot waves and the progress bar completes one full 0→100% sweep —
+ * the arcade opens on the moment of completion instead of cutting the
+ * bar off mid-fill. Keep in sync with the bar timing in SplashScreen.
+ */
+const MIN_SPLASH_MS = 2200;
+
 function Gate() {
   const { ready, username } = useAuth();
   const [langReady, setLangReady] = useState(false);
+  const [splashShown, setSplashShown] = useState(false);
   // The branded welcome gate: every launch opens on RETRO ARCADE + the
   // language drop-down (pre-set to the saved/device language), per the
   // owner's direction — internationals see their language door first.
@@ -32,6 +41,7 @@ function Gate() {
   });
 
   useEffect(() => {
+    const timer = setTimeout(() => setSplashShown(true), MIN_SPLASH_MS);
     (async () => {
       const stored = await getStoredLanguage();
       await initI18n(stored ?? deviceLanguage());
@@ -41,9 +51,10 @@ function Gate() {
       // so the first sound of a session never stalls a frame.
       initSfx();
     })();
+    return () => clearTimeout(timer);
   }, []);
 
-  if (!langReady || !ready || (!fontsLoaded && !fontError)) return <SplashScreen />;
+  if (!langReady || !ready || (!fontsLoaded && !fontError) || !splashShown) return <SplashScreen />;
   if (!welcomed) return <LanguageScreen onDone={() => setWelcomed(true)} />;
   if (!username) return <UsernameScreen onDone={() => {}} />;
   return (

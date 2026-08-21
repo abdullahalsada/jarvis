@@ -8,22 +8,26 @@ import { PixelText } from '../components/PixelText';
  * the Retro Arcade mascot — the Gamer, the joystick from the app logo come
  * to life wearing a neon gaming headset, controller in one glove, waving
  * hello with the other — gently bobbing and rocking
- * above "Loading..." and a chunky segmented progress bar. The bar is
- * indeterminate (fills in a loop) since startup is fast and unmeasured.
+ * above "Loading..." and a chunky segmented progress bar. Brand-first
+ * pacing: the bar fills exactly once, 0→100%, timed so it completes just
+ * before the Gate's MIN_SPLASH_MS hold ends — the arcade opens on the
+ * moment of completion. If boot runs long the bar simply rests at full.
  * Text is plain "LOADING" because i18n isn't initialized yet on the first
  * frames.
  */
 const SEGMENTS = 10;
+/** One segment per tick; SEGMENTS × interval lands just under the Gate's hold. */
+const SEGMENT_MS = 200;
 
 export function SplashScreen() {
-  const [filled, setFilled] = useState(2);
+  const [filled, setFilled] = useState(1);
   const bob = useRef(new Animated.Value(0)).current;
   const rock = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setFilled((n) => (n >= SEGMENTS ? 2 : n + 1));
-    }, 160);
+      setFilled((n) => Math.min(SEGMENTS, n + 1));
+    }, SEGMENT_MS);
     const bobLoop = Animated.loop(
       Animated.sequence([
         Animated.timing(bob, { toValue: -10, duration: 520, useNativeDriver: true }),
