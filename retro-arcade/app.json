@@ -2,7 +2,7 @@
   "expo": {
     "name": "Retro Arcade",
     "slug": "retro-arcade",
-    "version": "1.12.0",
+    "version": "1.12.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",

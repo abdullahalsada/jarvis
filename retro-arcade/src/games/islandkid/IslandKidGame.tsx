@@ -16,7 +16,7 @@ import { haptic } from '../../haptics';
  * trip rocks, and throw axes at snails, cobras and dive-bombing birds.
  * Three lives; the island only gets faster.
  */
-const KID = 46;
+const KID = 52;
 
 type Kind = 'banana' | 'rock' | 'snail' | 'cobra' | 'bird';
 
@@ -222,14 +222,28 @@ export function IslandKidGame({ api }: { api: GameApi }) {
     redraw((n) => n + 1);
   });
 
-  // Deterministic parallax treeline: fixed world slots, pseudo-random sizes.
-  const treeShift = (camera.current * 0.55) % 240;
-  const treeBase = Math.floor((camera.current * 0.55) / 240);
-  const trees = Array.from({ length: Math.ceil(W / 240) + 2 }, (_, i) => {
-    const k = treeBase + i;
-    const size = 64 + ((k * 7919) % 5) * 9;
-    return { key: k, x: i * 240 - treeShift + ((k * 104729) % 60), size };
-  });
+  // Deterministic parallax layers: fixed world slots, pseudo-random sizes.
+  const layer = (factor: number, spacing: number, count: number) => {
+    const shift = (camera.current * factor) % spacing;
+    const base = Math.floor((camera.current * factor) / spacing);
+    return Array.from({ length: count }, (_, i) => ({ key: base + i, x: i * spacing - shift }));
+  };
+  const farTrees = layer(0.3, 190, Math.ceil(W / 190) + 2).map((t) => ({
+    ...t,
+    size: 56 + ((t.key * 7919) % 4) * 8,
+    x: t.x + ((t.key * 31) % 50),
+  }));
+  const nearTrees = layer(0.55, 250, Math.ceil(W / 250) + 2).map((t) => ({
+    ...t,
+    size: 104 + ((t.key * 7919) % 5) * 11,
+    x: t.x + ((t.key * 104729) % 70),
+  }));
+  const canopyTiles = layer(0.25, 96, Math.ceil(W / 96) + 2);
+  const groundDeco = layer(1, 130, Math.ceil(W / 130) + 2).map((t) => ({
+    ...t,
+    flower: (t.key * 7919) % 3 === 0,
+    x: t.x + ((t.key * 53) % 60),
+  }));
 
   const blink = invuln.current > 0 && Math.floor(invuln.current * 10) % 2 === 0;
   const energyPct = Math.max(0, energy.current) / MAX_ENERGY;
@@ -237,14 +251,38 @@ export function IslandKidGame({ api }: { api: GameApi }) {
   return (
     <View style={{ flex: 1 }}>
       <View pointerEvents="none" style={{ flex: 1, overflow: 'hidden' }}>
-        {/* Sky and jungle backdrop */}
-        <View style={{ position: 'absolute', left: 0, top: 0, width: W, height: H, backgroundColor: '#3f9bef' }} />
-        {trees.map((t) => (
-          <Image key={t.key} source={ACTORS.leaf_tree} style={{ position: 'absolute', left: t.x, top: GROUND - t.size + 6, width: t.size, height: t.size }} />
+        {/* Sky: banded gradient with a couple of clouds */}
+        <View style={{ position: 'absolute', left: 0, top: 0, width: W, height: H * 0.5, backgroundColor: '#3690e6' }} />
+        <View style={{ position: 'absolute', left: 0, top: H * 0.5, width: W, height: H * 0.5, backgroundColor: '#4aa8f0' }} />
+        <Image source={ACTORS.cloud_puff} style={{ position: 'absolute', left: W * 0.62, top: H * 0.16, width: 100, height: 100 }} />
+        <Image source={ACTORS.cloud_puff} style={{ position: 'absolute', left: W * 0.12, top: H * 0.26, width: 76, height: 76 }} />
+        {/* Far jungle wall */}
+        <View style={{ position: 'absolute', left: 0, top: GROUND - 44, width: W, height: 44, backgroundColor: '#0c6323' }} />
+        {farTrees.map((t) => (
+          <Image key={t.key} source={ACTORS.leaf_tree} style={{ position: 'absolute', left: t.x, top: GROUND - t.size + 4, width: t.size, height: t.size, opacity: 0.8 }} />
         ))}
-        {/* Ground: grass over soil */}
+        {/* Near trees */}
+        {nearTrees.map((t) => (
+          <Image key={t.key} source={ACTORS.leaf_tree} style={{ position: 'absolute', left: t.x, top: GROUND - t.size + 8, width: t.size, height: t.size }} />
+        ))}
+        {/* Hanging canopy across the top */}
+        {canopyTiles.map((t) => (
+          <Image key={t.key} source={ACTORS.canopy} style={{ position: 'absolute', left: t.x, top: -6, width: 98, height: 98 }} />
+        ))}
+        {/* Ground: grass over textured soil */}
         <View style={{ position: 'absolute', left: 0, top: GROUND, width: W, height: H - GROUND, backgroundColor: '#5e3d1c' }} />
+        <View style={{ position: 'absolute', left: 0, top: GROUND + 26, width: W, height: 5, backgroundColor: '#4a2f14' }} />
+        <View style={{ position: 'absolute', left: 0, top: GROUND + 44, width: W, height: 5, backgroundColor: '#4a2f14' }} />
         <View style={{ position: 'absolute', left: 0, top: GROUND, width: W, height: 14, backgroundColor: '#1e9e2a' }} />
+        <View style={{ position: 'absolute', left: 0, top: GROUND + 14, width: W, height: 4, backgroundColor: '#15913a' }} />
+        {/* Grass tufts and flowers rushing past */}
+        {groundDeco.map((t) => (
+          <Image
+            key={t.key}
+            source={t.flower ? ACTORS.flower_red : ACTORS.grass_tuft}
+            style={{ position: 'absolute', left: t.x, top: GROUND - 32, width: 40, height: 40 }}
+          />
+        ))}
         {/* Items */}
         {items.current.map((it) => {
           const sx = it.x - camera.current;
@@ -265,10 +303,10 @@ export function IslandKidGame({ api }: { api: GameApi }) {
               source={src}
               style={{
                 position: 'absolute',
-                left: sx - 20,
-                top: it.y,
-                width: 40,
-                height: 40,
+                left: sx - 22,
+                top: it.y - 4,
+                width: 44,
+                height: 44,
                 transform: [{ scaleX: it.kind === 'bird' || it.kind === 'snail' || it.kind === 'cobra' ? -1 : 1 }],
               }}
             />
@@ -302,7 +340,7 @@ export function IslandKidGame({ api }: { api: GameApi }) {
           }}
         />
         {/* Energy bar */}
-        <View style={{ position: 'absolute', left: 12, top: 10, flexDirection: 'row', alignItems: 'center' }}>
+        <View style={{ position: 'absolute', left: 12, top: 10, flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(10,10,18,0.55)', paddingHorizontal: 8, paddingVertical: 5, borderRadius: 6 }}>
           <PixelText size={9} color="#ffffff">
             FOOD
           </PixelText>
