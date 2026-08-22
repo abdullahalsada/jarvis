@@ -250,17 +250,16 @@ export function IslandKidGame({ api }: { api: GameApi }) {
     const base = Math.floor((camera.current * factor) / spacing);
     return Array.from({ length: count }, (_, i) => ({ key: base + i, x: i * spacing - shift }));
   };
-  const farTrees = layer(0.3, 170, Math.ceil(W / 170) + 2).map((t) => ({
-    ...t,
-    size: 60 + ((t.key * 7919) % 4) * 9,
-    x: t.x + ((t.key * 31) % 46),
+  // Painted jungle backdrop scrolls at half speed; alternate tiles are
+  // mirrored so the seam always lines up (ping-pong tiling).
+  const BG_W = Math.ceil(H * 1.72);
+  const bgShift = (camera.current * 0.5) % BG_W;
+  const bgBase = Math.floor((camera.current * 0.5) / BG_W);
+  const bgTiles = Array.from({ length: Math.ceil(W / BG_W) + 2 }, (_, i) => ({
+    key: bgBase + i,
+    x: i * BG_W - bgShift,
+    mirrored: (bgBase + i) % 2 === 1,
   }));
-  const trunks = layer(0.55, 270, Math.ceil(W / 270) + 2).map((t) => ({
-    ...t,
-    w: 52 + ((t.key * 7919) % 3) * 10,
-    x: t.x + ((t.key * 104729) % 80),
-  }));
-  const canopyTiles = layer(0.25, 96, Math.ceil(W / 96) + 3);
   const soilTiles = layer(1, 44, Math.ceil(W / 44) + 2);
   const groundDeco = layer(1, 140, Math.ceil(W / 140) + 2).map((t) => ({
     ...t,
@@ -274,29 +273,21 @@ export function IslandKidGame({ api }: { api: GameApi }) {
   return (
     <View style={{ flex: 1 }}>
       <View pointerEvents="none" style={{ flex: 1, overflow: 'hidden' }}>
-        {/* Bright sky glimpsed between the trunks */}
-        <View style={{ position: 'absolute', left: 0, top: 0, width: W, height: H, backgroundColor: '#4aa8f0' }} />
-        <Image source={ACTORS.cloud_puff} style={{ position: 'absolute', left: W * 0.6, top: H * 0.3, width: 92, height: 92 }} />
-        <Image source={ACTORS.cloud_puff} style={{ position: 'absolute', left: W * 0.1, top: H * 0.42, width: 70, height: 70 }} />
-        {/* Far jungle wall along the ground */}
-        <View style={{ position: 'absolute', left: 0, top: GROUND - 48, width: W, height: 48, backgroundColor: '#0c6323' }} />
-        {farTrees.map((t) => (
-          <Image key={t.key} source={ACTORS.leaf_tree} style={{ position: 'absolute', left: t.x, top: GROUND - t.size + 4, width: t.size, height: t.size, opacity: 0.8 }} />
-        ))}
-        {/* Thick trunks rising from the ground into the canopy */}
-        {trunks.map((t) => (
+        {/* Painted jungle backdrop: trunks + canopy + sky, scrolling at half speed */}
+        {bgTiles.map((t) => (
           <Image
             key={t.key}
-            source={ACTORS.jungle_trunk}
-            style={{ position: 'absolute', left: t.x, top: 26, width: t.w, height: GROUND - 18, opacity: 0.95 }}
+            source={ACTORS.islandkid_bg}
+            resizeMode="stretch"
+            style={{
+              position: 'absolute',
+              left: t.x,
+              top: 0,
+              width: BG_W,
+              height: GROUND + 8,
+              transform: [{ scaleX: t.mirrored ? -1 : 1 }],
+            }}
           />
-        ))}
-        {/* Dense hanging canopy: two offset rows */}
-        {canopyTiles.map((t) => (
-          <Image key={`a${t.key}`} source={ACTORS.canopy} style={{ position: 'absolute', left: t.x - 48, top: -34, width: 98, height: 98 }} />
-        ))}
-        {canopyTiles.map((t) => (
-          <Image key={`b${t.key}`} source={ACTORS.canopy} style={{ position: 'absolute', left: t.x, top: -8, width: 98, height: 98 }} />
         ))}
         {/* Ground platform: grass lip over chunky tiled soil */}
         <View style={{ position: 'absolute', left: 0, top: GROUND, width: W, height: H - GROUND, backgroundColor: '#5e3d1c' }} />
@@ -348,7 +339,7 @@ export function IslandKidGame({ api }: { api: GameApi }) {
                 top: it.y - 4,
                 width: 44,
                 height: 44,
-                transform: [{ scaleX: it.kind === 'bird' || it.kind === 'snail' || it.kind === 'cobra' ? -1 : 1 }],
+                transform: [{ scaleX: it.kind === 'bird' ? -1 : 1 }],
               }}
             />
           );

@@ -43,7 +43,8 @@ export function DuckBlastGame({ api }: { api: GameApi }) {
   const W = api.width;
   const H = api.height;
   const HUD_H = 58;
-  const GRASS_Y = H - 168;
+  /** Horizon line, matched to the painted background's grass line. */
+  const GRASS_Y = Math.round(H * 0.77);
 
   const phase = useRef<Phase>('intro');
   const phaseT = useRef(0);
@@ -289,24 +290,12 @@ export function DuckBlastGame({ api }: { api: GameApi }) {
       style={{ flex: 1 }}
       onPressIn={(e) => shoot(e.nativeEvent.locationX, e.nativeEvent.locationY)}>
       <View pointerEvents="none" style={{ flex: 1, overflow: 'hidden' }}>
-        {/* Flat NES-blue sky */}
-        <View style={{ position: 'absolute', left: 0, top: 0, width: W, height: H, backgroundColor: '#5db9ff' }} />
-        {/* The big tree, rooted on the field */}
-        <Image source={ACTORS.hunt_tree} style={{ position: 'absolute', left: 2, top: GRASS_Y - 224, width: 168, height: 252 }} />
-        {/* Field */}
-        <View style={{ position: 'absolute', left: 0, top: GRASS_Y, width: W, height: H - GRASS_Y, backgroundColor: '#3fae2f' }} />
-        <View style={{ position: 'absolute', left: 0, top: GRASS_Y + 54, width: W, height: 5, backgroundColor: '#2f9422' }} />
-        {/* Bushes on the right, rooted at the horizon */}
-        <Image source={ACTORS.bush_round} style={{ position: 'absolute', right: 0, top: GRASS_Y - 104, width: 132, height: 132 }} />
-        <Image source={ACTORS.bush_round} style={{ position: 'absolute', right: 88, top: GRASS_Y - 74, width: 94, height: 94 }} />
-        {/* Field dressing */}
-        {[0.3, 0.52, 0.72].map((f, i) => (
-          <Image
-            key={i}
-            source={i === 1 ? ACTORS.flower_red : ACTORS.grass_tuft}
-            style={{ position: 'absolute', left: W * f - 20, top: GRASS_Y + 34 + i * 12, width: 44, height: 44 }}
-          />
-        ))}
+        {/* Painted NES field scene: sky, tree, bushes, grass — one image */}
+        <Image
+          source={ACTORS.duckblast_bg}
+          style={{ position: 'absolute', left: 0, top: 0, width: W, height: H }}
+          resizeMode="cover"
+        />
         {/* Ducks */}
         {ducks.current.map((d) => (
           <Image
@@ -336,17 +325,20 @@ export function DuckBlastGame({ api }: { api: GameApi }) {
         ))}
         {/* The dog: sniffing in, then verdict after each wave (behind the tall grass) */}
         {phase.current === 'intro' && (
-          <Image source={ACTORS.dog_sniff} style={{ position: 'absolute', left: dogX.current, top: GRASS_Y - 74, width: 88, height: 88 }} />
+          <Image
+            source={ACTORS.dog_sniff}
+            style={{ position: 'absolute', left: dogX.current, top: GRASS_Y - 78, width: 96, height: 96, transform: [{ scaleX: -1 }] }}
+          />
         )}
         {phase.current === 'result' && (
           <Image
             source={waveHit.current > 0 ? ACTORS.dog_duck : ACTORS.dog_laugh}
             style={{
               position: 'absolute',
-              left: W / 2 - 44,
-              top: GRASS_Y - 74 + Math.max(0, 20 - phaseT.current * 80),
-              width: 88,
-              height: 88,
+              left: W / 2 - 48,
+              top: GRASS_Y - 82 + Math.max(0, 20 - phaseT.current * 80),
+              width: 96,
+              height: 96,
             }}
           />
         )}

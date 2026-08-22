@@ -42,6 +42,8 @@ export const ACTORS = {
   axe_gold: require('../../../assets/actors/axe_gold.png'),
   banana: require('../../../assets/actors/banana.png'),
   rock_red: require('../../../assets/actors/rock_red.png'),
+  duckblast_bg: require('../../../assets/actors/duckblast_bg.png'),
+  islandkid_bg: require('../../../assets/actors/islandkid_bg.png'),
   hunt_tree: require('../../../assets/actors/hunt_tree.png'),
   tall_grass: require('../../../assets/actors/tall_grass.png'),
   jungle_trunk: require('../../../assets/actors/jungle_trunk.png'),
