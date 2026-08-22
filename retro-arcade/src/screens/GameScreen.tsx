@@ -29,7 +29,8 @@ export function GameScreen({ route, navigation }: Props) {
       color={gameColor(game)}
       showLives={game.showLives}
       art={game.art}
-      onQuit={() => navigation.goBack()}>
+      onQuit={() => navigation.goBack()}
+      onUpsell={unlocked ? undefined : () => navigation.navigate('Purchase')}>
       {(api) => game.render(api)}
     </GameShell>
   );

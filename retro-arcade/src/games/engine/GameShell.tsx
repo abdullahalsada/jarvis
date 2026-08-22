@@ -45,6 +45,9 @@ interface Props {
   /** Pixel-art sprite shown on the pre-game screen. */
   art?: ImageSourcePropType;
   onQuit: () => void;
+  /** Free-tier upsell: when set, the game-over overlay adds a small
+   * tappable unlock line (invitation, never an interrupting pop-up). */
+  onUpsell?: () => void;
   children: (api: GameApi) => React.ReactNode;
 }
 
@@ -59,7 +62,7 @@ const SCORE_FLUSH_MS = 120;
  * game-over overlay with best-score handling, and the shared progression
  * layer (levels from score, bonus rounds, coin payouts, trophies).
  */
-export function GameShell({ gameId, color, showLives, art, onQuit, children }: Props) {
+export function GameShell({ gameId, color, showLives, art, onQuit, onUpsell, children }: Props) {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const [phase, setPhase] = useState<GamePhase>('howto');
@@ -392,6 +395,17 @@ export function GameShell({ gameId, color, showLives, art, onQuit, children }: P
               variant="outline"
               onPress={onQuit}
             />
+            {/* Free tier: a quiet invitation, part of the layout — never a pop-up. */}
+            {onUpsell && (
+              <Pressable onPress={onUpsell} style={{ marginTop: spacing.l, alignItems: 'center' }}>
+                <PixelText size={11} color={colors.neonYellow} glow style={{ textAlign: 'center' }}>
+                  🔓 {t('home.unlockCard')}
+                </PixelText>
+                <PixelText size={10} color={colors.textDim} style={{ textAlign: 'center', marginTop: 4 }}>
+                  {t('home.unlockCardSub')}
+                </PixelText>
+              </Pressable>
+            )}
           </Overlay>
         )}
       </View>

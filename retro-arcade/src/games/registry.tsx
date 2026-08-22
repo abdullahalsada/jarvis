@@ -40,7 +40,7 @@ export type Category = 'classics' | 'action' | 'arcade' | 'brain';
 export interface GameDef {
   id: string;
   category: Category;
-  /** Demo tier: Snake + Memory Match are free; everything else needs the unlock. */
+  /** Demo tier: one free game per room (Snake, Fruit Slice, Bubble Pop, Memory Match); the rest need the unlock. */
   free: boolean;
   /** Games with a lives counter in the header. */
   showLives?: boolean;
@@ -99,7 +99,7 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'alleybowl', category: 'classics', free: false, icon: '🎳', render: (api) => <AlleyBowlGame api={api} /> },
   // Action
   { id: 'spacedefenders', category: 'action', free: false, showLives: true, icon: '👾', render: (api) => <SpaceDefendersGame api={api} /> },
-  { id: 'fruitslice', category: 'action', free: false, showLives: true, icon: '🍉', render: (api) => <FruitSliceGame api={api} /> },
+  { id: 'fruitslice', category: 'action', free: true, showLives: true, icon: '🍉', render: (api) => <FruitSliceGame api={api} /> },
   { id: 'towerclimb', category: 'action', free: false, showLives: true, icon: '🦍', render: (api) => <TowerClimbGame api={api} /> },
   { id: 'pixelwings', category: 'action', free: false, icon: '🐦', render: (api) => <PixelWingsGame api={api} /> },
   { id: 'jungledash', category: 'action', free: false, icon: '🌴', render: (api) => <JungleDashGame api={api} /> },
@@ -109,7 +109,7 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'skyjump', category: 'action', free: false, icon: '🦘', render: (api) => <SkyJumpGame api={api} /> },
   // Arcade Corner
   { id: 'pinball', category: 'arcade', free: false, showLives: true, icon: '🪩', render: (api) => <PinballGame api={api} /> },
-  { id: 'bubblepop', category: 'arcade', free: false, icon: '🫧', render: (api) => <BubblePopGame api={api} /> },
+  { id: 'bubblepop', category: 'arcade', free: true, icon: '🫧', render: (api) => <BubblePopGame api={api} /> },
   { id: 'poolball', category: 'arcade', free: false, showLives: true, icon: '🎱', render: (api) => <PoolBallGame api={api} /> },
   { id: 'clawmachine', category: 'arcade', free: false, showLives: true, icon: '🧸', render: (api) => <ClawMachineGame api={api} /> },
   { id: 'airhockey', category: 'arcade', free: false, icon: '🏒', render: (api) => <AirHockeyGame api={api} /> },
