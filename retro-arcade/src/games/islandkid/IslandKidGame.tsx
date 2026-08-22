@@ -16,9 +16,9 @@ import { haptic } from '../../haptics';
  * trip rocks, and throw axes at snails, cobras and dive-bombing birds.
  * Three lives; the island only gets faster.
  */
-const KID = 52;
+const KID = 56;
 
-type Kind = 'banana' | 'rock' | 'snail' | 'cobra' | 'bird';
+type Kind = 'banana' | 'heart' | 'rock' | 'snail' | 'cobra' | 'bird';
 
 interface Item {
   id: number;
@@ -128,23 +128,33 @@ export function IslandKidGame({ api }: { api: GameApi }) {
     }
     if (invuln.current > 0) invuln.current -= dt;
 
-    // Spawn the trail ahead: fruit, hazards, critters.
+    // Spawn the trail ahead: fruit rows, hazards, critters, rare hearts.
     while (nextSpawn.current < camera.current + W * 1.4) {
       const r = Math.random();
-      const kind: Kind = r < 0.34 ? 'banana' : r < 0.53 ? 'rock' : r < 0.72 ? 'snail' : r < 0.86 ? 'cobra' : 'bird';
+      const kind: Kind =
+        r < 0.3 ? 'banana' : r < 0.37 ? 'heart' : r < 0.55 ? 'rock' : r < 0.71 ? 'snail' : r < 0.86 ? 'cobra' : 'bird';
+      const y =
+        kind === 'banana'
+          ? GROUND - (Math.random() < 0.5 ? 44 : 116)
+          : kind === 'heart'
+            ? GROUND - 116
+            : kind === 'bird'
+              ? GROUND - 124
+              : GROUND - 38;
       items.current.push({
         id: nextId.current++,
         kind,
         x: nextSpawn.current,
-        y:
-          kind === 'banana'
-            ? GROUND - (Math.random() < 0.5 ? 40 : 110)
-            : kind === 'bird'
-              ? GROUND - 120
-              : GROUND - 36,
+        y,
         vx: kind === 'snail' ? -W * 0.05 : kind === 'bird' ? -W * 0.22 : 0,
         wob: Math.random() * Math.PI * 2,
       });
+      // Bananas often come in little floating rows, arcade-style.
+      if (kind === 'banana' && Math.random() < 0.55) {
+        for (let j = 1; j <= 1 + Math.floor(Math.random() * 2); j++) {
+          items.current.push({ id: nextId.current++, kind, x: nextSpawn.current + j * 52, y, vx: 0, wob: 0 });
+        }
+      }
       nextSpawn.current += W * (0.42 + Math.random() * 0.35) * Math.max(0.62, 1 - dist / 12000);
     }
 
@@ -199,6 +209,18 @@ export function IslandKidGame({ api }: { api: GameApi }) {
         haptic.light();
         continue;
       }
+      if (it.kind === 'heart') {
+        items.current = items.current.filter((q) => q !== it);
+        energy.current = Math.min(MAX_ENERGY, energy.current + 40);
+        if (lives.current < 3) {
+          lives.current += 1;
+          api.setLives(lives.current);
+        }
+        bonus.current += 50;
+        playSfx('powerUp');
+        haptic.medium();
+        continue;
+      }
       if (invuln.current > 0) continue;
       // Tripped or bitten: lose a life, flash invulnerable.
       items.current = items.current.filter((q) => q !== it);
@@ -228,20 +250,21 @@ export function IslandKidGame({ api }: { api: GameApi }) {
     const base = Math.floor((camera.current * factor) / spacing);
     return Array.from({ length: count }, (_, i) => ({ key: base + i, x: i * spacing - shift }));
   };
-  const farTrees = layer(0.3, 190, Math.ceil(W / 190) + 2).map((t) => ({
+  const farTrees = layer(0.3, 170, Math.ceil(W / 170) + 2).map((t) => ({
     ...t,
-    size: 56 + ((t.key * 7919) % 4) * 8,
-    x: t.x + ((t.key * 31) % 50),
+    size: 60 + ((t.key * 7919) % 4) * 9,
+    x: t.x + ((t.key * 31) % 46),
   }));
-  const nearTrees = layer(0.55, 250, Math.ceil(W / 250) + 2).map((t) => ({
+  const trunks = layer(0.55, 270, Math.ceil(W / 270) + 2).map((t) => ({
     ...t,
-    size: 104 + ((t.key * 7919) % 5) * 11,
-    x: t.x + ((t.key * 104729) % 70),
+    w: 52 + ((t.key * 7919) % 3) * 10,
+    x: t.x + ((t.key * 104729) % 80),
   }));
-  const canopyTiles = layer(0.25, 96, Math.ceil(W / 96) + 2);
-  const groundDeco = layer(1, 130, Math.ceil(W / 130) + 2).map((t) => ({
+  const canopyTiles = layer(0.25, 96, Math.ceil(W / 96) + 3);
+  const soilTiles = layer(1, 44, Math.ceil(W / 44) + 2);
+  const groundDeco = layer(1, 140, Math.ceil(W / 140) + 2).map((t) => ({
     ...t,
-    flower: (t.key * 7919) % 3 === 0,
+    kind: (t.key * 7919) % 4,
     x: t.x + ((t.key * 53) % 60),
   }));
 
@@ -251,36 +274,52 @@ export function IslandKidGame({ api }: { api: GameApi }) {
   return (
     <View style={{ flex: 1 }}>
       <View pointerEvents="none" style={{ flex: 1, overflow: 'hidden' }}>
-        {/* Sky: banded gradient with a couple of clouds */}
-        <View style={{ position: 'absolute', left: 0, top: 0, width: W, height: H * 0.5, backgroundColor: '#3690e6' }} />
-        <View style={{ position: 'absolute', left: 0, top: H * 0.5, width: W, height: H * 0.5, backgroundColor: '#4aa8f0' }} />
-        <Image source={ACTORS.cloud_puff} style={{ position: 'absolute', left: W * 0.62, top: H * 0.16, width: 100, height: 100 }} />
-        <Image source={ACTORS.cloud_puff} style={{ position: 'absolute', left: W * 0.12, top: H * 0.26, width: 76, height: 76 }} />
-        {/* Far jungle wall */}
-        <View style={{ position: 'absolute', left: 0, top: GROUND - 44, width: W, height: 44, backgroundColor: '#0c6323' }} />
+        {/* Bright sky glimpsed between the trunks */}
+        <View style={{ position: 'absolute', left: 0, top: 0, width: W, height: H, backgroundColor: '#4aa8f0' }} />
+        <Image source={ACTORS.cloud_puff} style={{ position: 'absolute', left: W * 0.6, top: H * 0.3, width: 92, height: 92 }} />
+        <Image source={ACTORS.cloud_puff} style={{ position: 'absolute', left: W * 0.1, top: H * 0.42, width: 70, height: 70 }} />
+        {/* Far jungle wall along the ground */}
+        <View style={{ position: 'absolute', left: 0, top: GROUND - 48, width: W, height: 48, backgroundColor: '#0c6323' }} />
         {farTrees.map((t) => (
           <Image key={t.key} source={ACTORS.leaf_tree} style={{ position: 'absolute', left: t.x, top: GROUND - t.size + 4, width: t.size, height: t.size, opacity: 0.8 }} />
         ))}
-        {/* Near trees */}
-        {nearTrees.map((t) => (
-          <Image key={t.key} source={ACTORS.leaf_tree} style={{ position: 'absolute', left: t.x, top: GROUND - t.size + 8, width: t.size, height: t.size }} />
+        {/* Thick trunks rising from the ground into the canopy */}
+        {trunks.map((t) => (
+          <Image
+            key={t.key}
+            source={ACTORS.jungle_trunk}
+            style={{ position: 'absolute', left: t.x, top: 26, width: t.w, height: GROUND - 18, opacity: 0.95 }}
+          />
         ))}
-        {/* Hanging canopy across the top */}
+        {/* Dense hanging canopy: two offset rows */}
         {canopyTiles.map((t) => (
-          <Image key={t.key} source={ACTORS.canopy} style={{ position: 'absolute', left: t.x, top: -6, width: 98, height: 98 }} />
+          <Image key={`a${t.key}`} source={ACTORS.canopy} style={{ position: 'absolute', left: t.x - 48, top: -34, width: 98, height: 98 }} />
         ))}
-        {/* Ground: grass over textured soil */}
+        {canopyTiles.map((t) => (
+          <Image key={`b${t.key}`} source={ACTORS.canopy} style={{ position: 'absolute', left: t.x, top: -8, width: 98, height: 98 }} />
+        ))}
+        {/* Ground platform: grass lip over chunky tiled soil */}
         <View style={{ position: 'absolute', left: 0, top: GROUND, width: W, height: H - GROUND, backgroundColor: '#5e3d1c' }} />
-        <View style={{ position: 'absolute', left: 0, top: GROUND + 26, width: W, height: 5, backgroundColor: '#4a2f14' }} />
-        <View style={{ position: 'absolute', left: 0, top: GROUND + 44, width: W, height: 5, backgroundColor: '#4a2f14' }} />
+        {soilTiles.map((t) => (
+          <Image key={t.key} source={ACTORS.soil_block} style={{ position: 'absolute', left: t.x, top: GROUND + 12, width: 44, height: 44 }} />
+        ))}
+        {soilTiles.map((t) => (
+          <Image key={`s${t.key}`} source={ACTORS.soil_block} style={{ position: 'absolute', left: t.x + 22, top: GROUND + 52, width: 44, height: 44 }} />
+        ))}
         <View style={{ position: 'absolute', left: 0, top: GROUND, width: W, height: 14, backgroundColor: '#1e9e2a' }} />
-        <View style={{ position: 'absolute', left: 0, top: GROUND + 14, width: W, height: 4, backgroundColor: '#15913a' }} />
-        {/* Grass tufts and flowers rushing past */}
+        <View style={{ position: 'absolute', left: 0, top: GROUND + 12, width: W, height: 4, backgroundColor: '#15913a' }} />
+        {/* Grass tufts, flowers and little bushes rushing past */}
         {groundDeco.map((t) => (
           <Image
             key={t.key}
-            source={t.flower ? ACTORS.flower_red : ACTORS.grass_tuft}
-            style={{ position: 'absolute', left: t.x, top: GROUND - 32, width: 40, height: 40 }}
+            source={t.kind === 0 ? ACTORS.flower_red : t.kind === 1 ? ACTORS.bush_round : ACTORS.grass_tuft}
+            style={{
+              position: 'absolute',
+              left: t.x,
+              top: t.kind === 1 ? GROUND - 40 : GROUND - 32,
+              width: t.kind === 1 ? 46 : 40,
+              height: t.kind === 1 ? 46 : 40,
+            }}
           />
         ))}
         {/* Items */}
@@ -290,13 +329,15 @@ export function IslandKidGame({ api }: { api: GameApi }) {
           const src =
             it.kind === 'banana'
               ? ACTORS.banana
-              : it.kind === 'rock'
-                ? ACTORS.rock_red
-                : it.kind === 'snail'
-                  ? ACTORS.snail_bug
-                  : it.kind === 'cobra'
-                    ? ACTORS.cobra
-                    : ACTORS.bird;
+              : it.kind === 'heart'
+                ? ACTORS.heart_red
+                : it.kind === 'rock'
+                  ? ACTORS.rock_red
+                  : it.kind === 'snail'
+                    ? ACTORS.snail_bug
+                    : it.kind === 'cobra'
+                      ? ACTORS.cobra
+                      : ACTORS.bird;
           return (
             <Image
               key={it.id}
