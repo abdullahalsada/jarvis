@@ -26,7 +26,6 @@ export const categoryColors: Record<string, string> = {
   classics: colors.neonGreen,
   action: colors.neonCyan,
   arcade: colors.neonMagenta,
-  school: colors.neonOrange,
   brain: colors.neonYellow,
 };
 

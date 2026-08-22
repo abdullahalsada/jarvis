@@ -28,7 +28,6 @@
       "classics": "Classics",
       "action": "Action",
       "brain": "Brain",
-      "school": "School Days",
       "arcade": "Arcade Corner"
     }
   },
@@ -224,31 +223,6 @@
       "name": "Block Drop",
       "desc": "Clear lines, feel the flow",
       "howto": "Steer the falling shape with ◀ ▶, spin it with ↻, slam it with ▼ (swipes work too). Fill a row to clear it — four at once for the big bonus! The well speeds up every 10 lines."
-    },
-    "binshot": {
-      "name": "Bin Shot",
-      "desc": "The classroom classic",
-      "howto": "Drag the paper ball back and release to toss it into the bin. Watch the wind arrow on the chalkboard — it pushes your ball mid-air! Streaks earn bonus points; three misses end it."
-    },
-    "paperglider": {
-      "name": "Paper Glider",
-      "desc": "Fly the hallway",
-      "howto": "Hold anywhere to pull the nose up, let go to dive. Glide between the desk stacks and hanging lights, and snatch gold stars for big bonus points. One crash ends the flight!"
-    },
-    "dotsboxes": {
-      "name": "Dots & Boxes",
-      "desc": "The notebook duel",
-      "howto": "Take turns drawing walls between dots. Close the fourth wall of a box to claim it — and go again! Cyan is you, red is the computer. Most boxes wins the round."
-    },
-    "eraserflick": {
-      "name": "Eraser Flick",
-      "desc": "Desk sumo showdown",
-      "howto": "Drag on your cyan eraser and release to flick it. Shove the red eraser off the desk without sliding off yourself! Each round the desk shrinks. Fall off and it’s over."
-    },
-    "mathsprint": {
-      "name": "Math Sprint",
-      "desc": "Beat the chalkboard clock",
-      "howto": "A sum flashes on the board with four answers — tap the right one before the chalk line runs out! Fast answers score more, streaks multiply. Three strikes and class is dismissed."
     },
     "pinball": {
       "name": "Pinball",

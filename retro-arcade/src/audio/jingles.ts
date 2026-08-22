@@ -87,11 +87,6 @@ export const GAME_JINGLES: Record<string, Tone[]> = {
   pixellogic: [note(72, 0.08, 'triangle'), note(76, 0.08, 'triangle'), note(79, 0.08, 'triangle'), note(83, 0.16, 'triangle')],
   // Switches clicking on, one by one.
   blockdrop: [note(52, 0.1, 'square', 0.5), note(59, 0.1, 'square', 0.5), note(64, 0.1, 'square', 0.5), note(71, 0.2, 'square', 0.5)],
-  binshot: [note(67, 0.08), note(64, 0.08), note(72, 0.16)],
-  paperglider: [slide(300, 600, 0.2, 'triangle'), slide(600, 450, 0.16, 'triangle'), note(76, 0.14, 'triangle')],
-  dotsboxes: [note(60, 0.09), note(64, 0.09), note(60, 0.09), note(67, 0.16)],
-  eraserflick: [note(55, 0.09, 'square', 0.5), note(62, 0.09, 'square', 0.5), note(67, 0.16, 'square', 0.5)],
-  mathsprint: [note(72, 0.07), note(74, 0.07), note(76, 0.07), note(77, 0.07), note(79, 0.14)],
   // Sparkling falling thirds.
   fourstack: [note(64, 0.09), note(67, 0.09), note(71, 0.09), note(76, 0.18)],
 };

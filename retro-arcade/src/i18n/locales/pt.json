@@ -28,7 +28,6 @@
       "classics": "Clássicos",
       "action": "Ação",
       "brain": "Raciocínio",
-      "school": "Dias de Escola",
       "arcade": "Cantinho Arcade"
     }
   },
@@ -224,31 +223,6 @@
       "name": "Queda de Blocos",
       "desc": "Limpe linhas no ritmo",
       "howto": "Guie a peça com ◀ ▶, gire com ↻ e desça de vez com ▼ (gestos também funcionam). Complete uma linha para limpá-la — quatro de uma vez para o grande bônus! O poço acelera a cada 10 linhas."
-    },
-    "binshot": {
-      "name": "Cesta de Papel",
-      "desc": "O clássico da sala de aula",
-      "howto": "Puxe a bolinha de papel para trás e solte para acertar a lixeira. Observe a seta do vento no quadro — ela empurra sua bolinha no ar! Sequências dão bônus; três erros encerram."
-    },
-    "paperglider": {
-      "name": "Planador de Papel",
-      "desc": "Voe pelo corredor",
-      "howto": "Segure em qualquer lugar para subir o bico, solte para mergulhar. Plane entre pilhas de carteiras e luminárias penduradas e agarre estrelas douradas. Uma batida encerra o voo!"
-    },
-    "dotsboxes": {
-      "name": "Pontinhos",
-      "desc": "O duelo do caderno",
-      "howto": "Revezem-se desenhando paredes entre os pontos. Feche a quarta parede de uma caixa para conquistá-la — e jogue de novo! Ciano é você, vermelho é o computador. Mais caixas vence."
-    },
-    "eraserflick": {
-      "name": "Borracha Sumô",
-      "desc": "Duelo na carteira",
-      "howto": "Arraste sua borracha ciano e solte para petelecá-la. Empurre a borracha vermelha para fora da carteira sem cair você também! A cada rodada a carteira encolhe. Caiu, acabou."
-    },
-    "mathsprint": {
-      "name": "Sprint de Contas",
-      "desc": "Vença o relógio do quadro",
-      "howto": "Uma conta aparece no quadro com quatro respostas — toque na certa antes da linha de giz acabar! Respostas rápidas valem mais, sequências multiplicam. Três erros e a aula termina."
     },
     "pinball": {
       "name": "Pinball",

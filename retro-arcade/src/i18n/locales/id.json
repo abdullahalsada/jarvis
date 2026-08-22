@@ -28,7 +28,6 @@
       "classics": "Klasik",
       "action": "Aksi",
       "brain": "Asah Otak",
-      "school": "Masa Sekolah",
       "arcade": "Pojok Arkade"
     }
   },
@@ -224,31 +223,6 @@
       "name": "Jatuhkan Balok",
       "desc": "Bersihkan baris, rasakan alurnya",
       "howto": "Arahkan balok jatuh dengan ◀ ▶, putar dengan ↻, hempaskan dengan ▼ (usapan juga bisa). Penuhi satu baris untuk menghapusnya — empat sekaligus untuk bonus besar! Sumur makin cepat tiap 10 baris."
-    },
-    "binshot": {
-      "name": "Lempar Keranjang",
-      "desc": "Klasik ruang kelas",
-      "howto": "Tarik bola kertas ke belakang dan lepaskan untuk melemparnya ke keranjang sampah. Perhatikan panah angin di papan tulis — ia mendorong bolamu di udara! Beruntun dapat bonus; tiga kali luput, selesai."
-    },
-    "paperglider": {
-      "name": "Pesawat Kertas",
-      "desc": "Melayang di koridor",
-      "howto": "Tahan di mana saja untuk mengangkat hidung pesawat, lepaskan untuk menukik. Melayanglah di antara tumpukan meja dan lampu gantung, dan raih bintang emas. Sekali tabrak, penerbangan usai!"
-    },
-    "dotsboxes": {
-      "name": "Titik dan Kotak",
-      "desc": "Duel buku catatan",
-      "howto": "Bergiliran menggambar dinding di antara titik-titik. Tutup dinding keempat sebuah kotak untuk merebutnya — dan jalan lagi! Sian adalah kamu, merah komputer. Kotak terbanyak menang."
-    },
-    "eraserflick": {
-      "name": "Sentil Penghapus",
-      "desc": "Sumo di atas meja",
-      "howto": "Seret penghapus sianmu lalu lepaskan untuk menyentilnya. Dorong penghapus merah keluar meja tanpa ikut tergelincir! Tiap ronde mejanya menyusut. Jatuh berarti tamat."
-    },
-    "mathsprint": {
-      "name": "Sprint Matematika",
-      "desc": "Kalahkan jam papan tulis",
-      "howto": "Soal hitungan muncul di papan dengan empat jawaban — ketuk yang benar sebelum garis kapur habis! Jawaban cepat bernilai lebih, beruntun melipatgandakan. Tiga kesalahan, kelas bubar."
     },
     "pinball": {
       "name": "Pinball",

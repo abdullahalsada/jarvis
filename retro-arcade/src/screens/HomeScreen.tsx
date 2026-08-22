@@ -27,7 +27,6 @@ export function HomeScreen({ navigation }: Props) {
     classics: false,
     action: false,
     arcade: false,
-    school: false,
     brain: false,
   });
   const toggle = (cat: Category) => {

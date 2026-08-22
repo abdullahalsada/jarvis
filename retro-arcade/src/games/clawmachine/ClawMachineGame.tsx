@@ -15,7 +15,7 @@ import { haptic } from '../../haptics';
  * Golden prizes are worth triple. Five tokens per game; every grab
  * earns a bonus token, and the claw sweeps faster as you collect.
  */
-const PRIZE_SPRITES = [ACTORS.frog, ACTORS.hen, ACTORS.pumpkin, ACTORS.bird, ACTORS.pigeon] as const;
+const PRIZE_SPRITES = [ACTORS.frog, ACTORS.hen, ACTORS.pumpkin, ACTORS.bird, ACTORS.gemstone] as const;
 
 interface Prize {
   id: number;

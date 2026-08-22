@@ -28,7 +28,6 @@
       "classics": "Clásicos",
       "action": "Acción",
       "brain": "Mente",
-      "school": "Días de Escuela",
       "arcade": "Rincón Arcade"
     }
   },
@@ -224,31 +223,6 @@
       "name": "Caída de Bloques",
       "desc": "Limpia líneas, siente el ritmo",
       "howto": "Dirige la pieza con ◀ ▶, gírala con ↻ y estréllala con ▼ (también con gestos). Completa una fila para limpiarla, ¡cuatro a la vez para el gran bonus! El pozo se acelera cada 10 líneas."
-    },
-    "binshot": {
-      "name": "Tiro a la Papelera",
-      "desc": "El clásico del aula",
-      "howto": "Arrastra la bola de papel hacia atrás y suéltala para encestarla en la papelera. Observa la flecha del viento en la pizarra: ¡empuja tu bola en el aire! Las rachas dan bonus; tres fallos y se acabó."
-    },
-    "paperglider": {
-      "name": "Planeador de Papel",
-      "desc": "Vuela el pasillo",
-      "howto": "Mantén pulsado para levantar el morro, suelta para picar. Planea entre pupitres apilados y lámparas colgantes, y atrapa estrellas doradas para grandes bonus. ¡Un choque acaba el vuelo!"
-    },
-    "dotsboxes": {
-      "name": "Puntos y Cajas",
-      "desc": "El duelo del cuaderno",
-      "howto": "Por turnos, dibujad muros entre los puntos. Cierra el cuarto muro de una caja para reclamarla, ¡y repites turno! El cian eres tú, el rojo la máquina. Gana quien tenga más cajas."
-    },
-    "eraserflick": {
-      "name": "Gomas de Sumo",
-      "desc": "Duelo sobre el pupitre",
-      "howto": "Arrastra sobre tu goma cian y suelta para lanzarla. ¡Empuja la goma roja fuera del pupitre sin caerte tú! Cada ronda el pupitre encoge. Si caes, se acabó."
-    },
-    "mathsprint": {
-      "name": "Sprint de Cálculo",
-      "desc": "Gana al reloj de la pizarra",
-      "howto": "Una operación aparece en la pizarra con cuatro respuestas: ¡toca la correcta antes de que se agote la línea de tiza! Responder rápido da más puntos y las rachas multiplican. Tres fallos y se acabó la clase."
     },
     "pinball": {
       "name": "Pinball",

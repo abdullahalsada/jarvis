@@ -29,18 +29,13 @@ import { FourStackGame } from './fourstack/FourStackGame';
 import { FruitSliceGame } from './fruitslice/FruitSliceGame';
 import { SkyJumpGame } from './skyjump/SkyJumpGame';
 import { BlockDropGame } from './blockdrop/BlockDropGame';
-import { BinShotGame } from './binshot/BinShotGame';
-import { PaperGliderGame } from './paperglider/PaperGliderGame';
-import { DotsBoxesGame } from './dotsboxes/DotsBoxesGame';
-import { EraserFlickGame } from './eraserflick/EraserFlickGame';
-import { MathSprintGame } from './mathsprint/MathSprintGame';
 import { PinballGame } from './pinball/PinballGame';
 import { BubblePopGame } from './bubblepop/BubblePopGame';
 import { AirHockeyGame } from './airhockey/AirHockeyGame';
 import { ClawMachineGame } from './clawmachine/ClawMachineGame';
 import { PoolBallGame } from './poolball/PoolBallGame';
 
-export type Category = 'classics' | 'action' | 'arcade' | 'school' | 'brain';
+export type Category = 'classics' | 'action' | 'arcade' | 'brain';
 
 export interface GameDef {
   id: string;
@@ -83,11 +78,6 @@ const ART: Record<string, ImageSourcePropType> = {
   fruitslice: require('../../assets/games/fruitslice.png'),
   skyjump: require('../../assets/games/skyjump.png'),
   blockdrop: require('../../assets/games/blockdrop.png'),
-  binshot: require('../../assets/games/binshot.png'),
-  paperglider: require('../../assets/games/paperglider.png'),
-  dotsboxes: require('../../assets/games/dotsboxes.png'),
-  eraserflick: require('../../assets/games/eraserflick.png'),
-  mathsprint: require('../../assets/games/mathsprint.png'),
   pinball: require('../../assets/games/pinball.png'),
   bubblepop: require('../../assets/games/bubblepop.png'),
   airhockey: require('../../assets/games/airhockey.png'),
@@ -123,12 +113,6 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'poolball', category: 'arcade', free: false, showLives: true, icon: '🎱', render: (api) => <PoolBallGame api={api} /> },
   { id: 'clawmachine', category: 'arcade', free: false, showLives: true, icon: '🧸', render: (api) => <ClawMachineGame api={api} /> },
   { id: 'airhockey', category: 'arcade', free: false, icon: '🏒', render: (api) => <AirHockeyGame api={api} /> },
-  // School Days
-  { id: 'binshot', category: 'school', free: false, showLives: true, icon: '🗑️', render: (api) => <BinShotGame api={api} /> },
-  { id: 'paperglider', category: 'school', free: false, icon: '✈️', render: (api) => <PaperGliderGame api={api} /> },
-  { id: 'dotsboxes', category: 'school', free: false, icon: '🔲', render: (api) => <DotsBoxesGame api={api} /> },
-  { id: 'eraserflick', category: 'school', free: false, icon: '🏫', render: (api) => <EraserFlickGame api={api} /> },
-  { id: 'mathsprint', category: 'school', free: false, showLives: true, icon: '🧮', render: (api) => <MathSprintGame api={api} /> },
   // Brain
   { id: 'memorymatch', category: 'brain', free: true, icon: '🃏', render: (api) => <MemoryMatchGame api={api} /> },
   { id: 'cratepush', category: 'brain', free: false, icon: '📦', render: (api) => <CratePushGame api={api} /> },
@@ -140,7 +124,7 @@ const DEFS: Omit<GameDef, 'art'>[] = [
 
 export const GAMES: GameDef[] = DEFS.map((def) => ({ ...def, art: ART[def.id] }));
 
-export const CATEGORIES: Category[] = ['classics', 'action', 'arcade', 'school', 'brain'];
+export const CATEGORIES: Category[] = ['classics', 'action', 'arcade', 'brain'];
 
 export function gameById(id: string): GameDef | undefined {
   return GAMES.find((g) => g.id === id);

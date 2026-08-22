@@ -28,7 +28,6 @@
       "classics": "Classici",
       "action": "Azione",
       "brain": "Cervello",
-      "school": "Giorni di Scuola",
       "arcade": "Angolo Arcade"
     }
   },
@@ -224,31 +223,6 @@
       "name": "Cascata di Blocchi",
       "desc": "Righe piene, pura scorrevolezza",
       "howto": "Guida il pezzo con ◀ ▶, ruotalo con ↻, schiantalo con ▼ (funzionano anche i gesti). Riempi una riga per cancellarla — quattro in un colpo per il maxi bonus! Il pozzo accelera ogni 10 righe."
-    },
-    "binshot": {
-      "name": "Canestro di Carta",
-      "desc": "Il classico dell’aula",
-      "howto": "Trascina indietro la palla di carta e rilascia per centrare il cestino. Occhio alla freccia del vento sulla lavagna: spinge la palla in volo! Le serie danno bonus; tre errori e finisce."
-    },
-    "paperglider": {
-      "name": "Aliante di Carta",
-      "desc": "Plana nel corridoio",
-      "howto": "Tieni premuto ovunque per cabrare, rilascia per picchiare. Plana tra pile di banchi e lampade sospese e afferra le stelle dorate per grandi bonus. Un urto chiude il volo!"
-    },
-    "dotsboxes": {
-      "name": "Punti e Scatole",
-      "desc": "Il duello del quaderno",
-      "howto": "A turno tracciate muri tra i punti. Chiudi il quarto muro di una casella per conquistarla — e giochi di nuovo! Il ciano sei tu, il rosso il computer. Vince chi ha più caselle."
-    },
-    "eraserflick": {
-      "name": "Gomma Sumo",
-      "desc": "Sfida sul banco",
-      "howto": "Trascina la tua gomma ciano e rilascia per farla schizzare. Spingi la gomma rossa giù dal banco senza scivolare anche tu! Ogni round il banco si restringe. Se cadi, è finita."
-    },
-    "mathsprint": {
-      "name": "Sprint di Calcolo",
-      "desc": "Batti l’orologio della lavagna",
-      "howto": "Un’operazione appare alla lavagna con quattro risposte: tocca quella giusta prima che la linea di gesso si esaurisca! Risposte rapide valgono di più, le serie moltiplicano. Tre errori e la lezione finisce."
     },
     "pinball": {
       "name": "Flipper",

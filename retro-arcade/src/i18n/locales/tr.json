@@ -28,7 +28,6 @@
       "classics": "Klasikler",
       "action": "Aksiyon",
       "brain": "Zekâ",
-      "school": "Okul Günleri",
       "arcade": "Atari Köşesi"
     }
   },
@@ -224,31 +223,6 @@
       "name": "Blok Düşüşü",
       "desc": "Satırları temizle, akışı yakala",
       "howto": "Düşen parçayı ◀ ▶ ile yönlendir, ↻ ile döndür, ▼ ile çak (kaydırma da çalışır). Bir satırı doldur ve temizle — büyük bonus için aynı anda dört satır! Kuyu her 10 satırda hızlanır."
-    },
-    "binshot": {
-      "name": "Çöp Sepeti Atışı",
-      "desc": "Sınıf klasiği",
-      "howto": "Kâğıt topu geri çek ve sepete atmak için bırak. Tahtadaki rüzgâr okuna dikkat — topunu havada iter! Seriler bonus kazandırır; üç kaçırma oyunu bitirir."
-    },
-    "paperglider": {
-      "name": "Kâğıt Planör",
-      "desc": "Koridorda süzül",
-      "howto": "Burnu kaldırmak için basılı tut, dalmak için bırak. Sıra yığınları ile asılı lambaların arasından süzül, altın yıldızları kap. Tek çarpışma uçuşu bitirir!"
-    },
-    "dotsboxes": {
-      "name": "Nokta Kutu",
-      "desc": "Defter düellosu",
-      "howto": "Sırayla noktalar arasına duvar çizin. Bir kutunun dördüncü duvarını kapatan onu alır — ve bir tur daha oynar! Camgöbeği sensin, kırmızı bilgisayar. En çok kutu kazanır."
-    },
-    "eraserflick": {
-      "name": "Silgi Fiskesi",
-      "desc": "Sırada sumo",
-      "howto": "Camgöbeği silgini sürükleyip bırakarak fiskele. Kendin düşmeden kırmızı silgiyi sıradan dışarı it! Her turda sıra küçülür. Düşersen oyun biter."
-    },
-    "mathsprint": {
-      "name": "Matematik Sprinti",
-      "desc": "Tahta saatini yen",
-      "howto": "Tahtada dört cevaplı bir işlem belirir — tebeşir çizgisi bitmeden doğrusuna dokun! Hızlı cevaplar daha çok puan, seriler katlar. Üç hata ve ders biter."
     },
     "pinball": {
       "name": "Tilt",
