@@ -248,6 +248,16 @@
       "name": "Billard 8",
       "desc": "Vide la table",
       "howto": "Fais glisser n’importe où pour viser — les points tracent le tir — et relâche pour frapper. Empoche les billes de couleur (50 chacune), puis la 8 pour finir la table avec un gros bonus. Empocher la blanche ou la 8 trop tôt coûte une queue !"
+    },
+    "duckblast": {
+      "name": "Chasse aux Canards",
+      "desc": "Vise… tire !",
+      "howto": "Les canards jaillissent de l’herbe en zigzags : touche un canard pour tirer ! Tu as 3 cartouches par vague. Abats 6 canards sur 10 pour passer à la manche suivante, plus rapide… et évite de faire rire le chien."
+    },
+    "islandkid": {
+      "name": "P’tit Insulaire",
+      "desc": "Cours, croque, survis !",
+      "howto": "Le gamin ne s’arrête jamais de courir — ni d’avoir faim ! Attrape des bananes avant que la barre de NOURRITURE ne se vide. Saute les rochers rouges avec ▲ et lance des haches avec 🪓 sur les escargots, cobras et oiseaux. Trois vies ; l’île accélère sans cesse."
     }
   },
   "username": {

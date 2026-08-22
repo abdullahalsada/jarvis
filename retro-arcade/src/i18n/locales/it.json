@@ -248,6 +248,16 @@
       "name": "Biliardo 8",
       "desc": "Svuota il tavolo",
       "howto": "Trascina ovunque per mirare — i punti tracciano il tiro — e rilascia per colpire. Imbuca le bilie colorate (50 l’una), poi la 8 per chiudere il tavolo con un gran bonus. Imbucare la bianca o la 8 in anticipo costa una stecca!"
+    },
+    "duckblast": {
+      "name": "Caccia alle Anatre",
+      "desc": "Mira… fuoco!",
+      "howto": "Le anatre sbucano dall’erba volando a zig-zag: tocca un’anatra per sparare! Hai 3 cartucce per ondata. Colpisci 6 anatre su 10 per passare al round successivo, più veloce… e non far ridere il cane."
+    },
+    "islandkid": {
+      "name": "Ragazzo dell’Isola",
+      "desc": "Corri, sgranocchia, sopravvivi!",
+      "howto": "Il ragazzo non smette mai di correre — né di avere fame! Prendi le banane prima che la barra del CIBO si svuoti. Salta le rocce rosse con ▲ e lancia asce con 🪓 contro lumache, cobra e uccelli. Tre vite; l’isola accelera sempre."
     }
   },
   "username": {

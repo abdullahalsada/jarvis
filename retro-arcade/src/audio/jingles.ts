@@ -63,6 +63,8 @@ export const GAME_JINGLES: Record<string, Tone[]> = {
   chopperrescue: [slide(180, 360, 0.18, 'triangle'), slide(360, 180, 0.18, 'triangle'), note(69, 0.16)],
   // Low bouncy groove over the dunes.
   skyjump: [note(60, 0.08, 'triangle'), note(67, 0.08, 'triangle'), note(72, 0.08, 'triangle'), note(79, 0.16, 'triangle')],
+  // Tropical sprint: bright ukulele-ish bounce.
+  islandkid: [note(64, 0.07, 'triangle'), note(69, 0.07, 'triangle'), note(72, 0.07, 'triangle'), note(76, 0.07, 'triangle'), note(81, 0.16, 'triangle')],
 
   // ─── Spooky ───
   // Chromatic wobble from the crypt.
@@ -75,6 +77,8 @@ export const GAME_JINGLES: Record<string, Tone[]> = {
   clawmachine: [note(64, 0.1, 'triangle'), note(69, 0.1, 'triangle'), note(72, 0.1, 'triangle'), note(76, 0.2, 'triangle')],
   // Carnival shooting-gallery flourish.
   airhockey: [slide(400, 800, 0.12), slide(800, 500, 0.12), note(76, 0.14)],
+  // Two low barks, then the hunt is on.
+  duckblast: [note(50, 0.09), note(50, 0.09), slide(300, 900, 0.16), note(79, 0.14)],
 
   // ─── Brain ───
   // Flip… flip… match!

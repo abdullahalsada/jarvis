@@ -21,7 +21,7 @@ Backend setup (Supabase project with anonymous sign-ins, RevenueCat products): s
 ## What's here (milestones 1–4 of the brief)
 
 - **App flow**: Splash → language select (first run, EN/العربية with full RTL) → player name (no registration) → catalog
-- **30 games** on a shared engine, each with instructions overlay, pause, per-account best scores, synth SFX + haptics:
+- **32 games** on a shared engine, each with instructions overlay, pause, per-account best scores, synth SFX + haptics:
   - Classics: Snake 🐍, Brick Breaker 🧱, Paddle Duel 🏓, Neon Stack 🟦 (falling blocks), Solitaire ♠️ (Klondike, tap-to-move), Road Hopper 🐸 (road crosser), Retro Racer 🏎️ (lane racer), Moon Lander 🌙, Egg Catch 🥚 (LCD-style catcher), Alley Bowl 🎳 (ten-pin with real scoring)
   - Action: Space Defenders 👾, Meteor Dodge ☄️, Astro Shards 🚀 (rock blaster), Pixel Wings 🐦 (one-touch flyer), Gem Digger ⛏️ (tunneler), Sky Shield 🛡️ (missile defense), Dive Squadron 🛸 (formation dive-bombers), Pyramid Hop 🔺 (diagonal cube-hopper), Moon Buggy 🚙 (jump-and-shoot scroller)
   - Spooky: Haunted Maze 👻, Ghost Sweeper 🔮 (deduction), Zombie Bop 🧟 (whack-the-mole), Creepy Crawler 🐛 (splitting crawler), Spook Shoot 🎯 (shooting gallery)

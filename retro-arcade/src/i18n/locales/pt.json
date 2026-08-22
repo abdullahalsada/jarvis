@@ -248,6 +248,16 @@
       "name": "Sinuca 8",
       "desc": "Limpe a mesa",
       "howto": "Arraste em qualquer lugar para mirar — os pontos mostram a tacada — e solte para bater. Encaçape as bolas coloridas (50 cada) e depois a bola 8 para fechar a mesa com bônus. Encaçapar a branca ou a 8 cedo demais custa um taco!"
+    },
+    "duckblast": {
+      "name": "Caça aos Patos",
+      "desc": "Mire… fogo!",
+      "howto": "Os patos saltam da grama voando em zigue-zague — toque num pato para atirar! Você tem 3 cartuchos por leva. Acerte 6 de cada 10 patos para avançar à rodada seguinte, mais rápida… e não deixe o cachorro rir de você."
+    },
+    "islandkid": {
+      "name": "Garoto da Ilha",
+      "desc": "Corra, coma, sobreviva!",
+      "howto": "O garoto nunca para de correr — nem de sentir fome! Pegue bananas antes que a barra de COMIDA esvazie. Pule as pedras vermelhas com ▲ e arremesse machados com 🪓 em caracóis, cobras e pássaros. Três vidas; a ilha só acelera."
     }
   },
   "username": {

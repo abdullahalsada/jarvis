@@ -248,6 +248,16 @@
       "name": "8 Top Bilardo",
       "desc": "Masayı temizle",
       "howto": "Nişan için herhangi bir yerden sürükle — noktalar vuruşu gösterir — ve bırakınca vurursun. Renkli topları düşür (her biri 50), sonra 8 topunu batırıp masayı büyük bonusla kapat. Beyazı ya da 8’i erken batırmak bir isteka kaybettirir!"
+    },
+    "duckblast": {
+      "name": "Ördek Avı",
+      "desc": "Nişan al… ateş!",
+      "howto": "Ördekler çimenlerden fırlayıp zikzak uçar — vurmak için ördeğe dokun! Her dalgada 3 fişeğin var. Sonraki daha hızlı tura geçmek için her 10 ördekten 6’sını vur… ve köpeği kendine güldürme."
+    },
+    "islandkid": {
+      "name": "Ada Çocuğu",
+      "desc": "Koş, ye, hayatta kal!",
+      "howto": "Çocuk koşmayı hiç bırakmaz — acıkmayı da! YİYECEK çubuğu boşalmadan muzları topla. ▲ ile kırmızı taşların üzerinden atla, 🪓 ile salyangozlara, kobralara ve kuşlara balta fırlat. Üç can; ada gitgide hızlanır."
     }
   },
   "username": {

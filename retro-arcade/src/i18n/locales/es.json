@@ -248,6 +248,16 @@
       "name": "Billar 8",
       "desc": "Limpia la mesa",
       "howto": "Arrastra en cualquier parte para apuntar — los puntos muestran el tiro — y suelta para golpear. Mete las bolas de color (50 cada una) y luego la bola 8 para cerrar la mesa con gran bonus. ¡Meter la blanca o la 8 antes de tiempo cuesta un taco!"
+    },
+    "duckblast": {
+      "name": "Caza Patos",
+      "desc": "¡Apunta… fuego!",
+      "howto": "Los patos salen de la hierba volando en zigzag: ¡toca un pato para dispararle! Tienes 3 cartuchos por tanda. Caza 6 de cada 10 patos para pasar a una ronda más rápida… y no dejes que el perro se ría de ti."
+    },
+    "islandkid": {
+      "name": "Chico Isla",
+      "desc": "¡Corre, come, sobrevive!",
+      "howto": "¡El chico nunca deja de correr… ni de tener hambre! Coge plátanos antes de que se vacíe la barra de COMIDA. Salta las rocas rojas con ▲ y lanza hachas con 🪓 a caracoles, cobras y pájaros. Tres vidas; la isla solo se acelera."
     }
   },
   "username": {
