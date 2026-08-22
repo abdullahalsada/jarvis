@@ -1,13 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Animated, Image, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View } from 'react-native';
+import { Image } from 'expo-image';
 import { colors, spacing } from '../theme';
 import { PixelText } from '../components/PixelText';
 
 /**
  * In-app loading screen (shown while fonts/language/session initialize):
- * the Retro Arcade mascot — the Gamer, the joystick from the app logo come
- * to life wearing a neon gaming headset, controller in one glove, waving
- * hello with the other — gently bobbing and rocking
+ * the Retro Arcade mascot — the joystick from the app logo come to life,
+ * sitting cross-legged and happily playing his controller. The mascot is
+ * an animated WebP loop (expo-image plays it on iOS, Android, and web),
+ * so the character genuinely moves
  * above "Loading..." and a chunky segmented progress bar. Brand-first
  * pacing: the bar fills exactly once, 0→100%, timed so it completes just
  * before the Gate's MIN_SPLASH_MS hold ends — the arcade opens on the
@@ -21,36 +23,13 @@ const SEGMENT_MS = 200;
 
 export function SplashScreen() {
   const [filled, setFilled] = useState(1);
-  const bob = useRef(new Animated.Value(0)).current;
-  const rock = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     const timer = setInterval(() => {
       setFilled((n) => Math.min(SEGMENTS, n + 1));
     }, SEGMENT_MS);
-    const bobLoop = Animated.loop(
-      Animated.sequence([
-        Animated.timing(bob, { toValue: -10, duration: 520, useNativeDriver: true }),
-        Animated.timing(bob, { toValue: 0, duration: 520, useNativeDriver: true }),
-      ])
-    );
-    // Slightly different period than the bob so the motion feels organic
-    const rockLoop = Animated.loop(
-      Animated.sequence([
-        Animated.timing(rock, { toValue: 1, duration: 700, useNativeDriver: true }),
-        Animated.timing(rock, { toValue: -1, duration: 700, useNativeDriver: true }),
-      ])
-    );
-    bobLoop.start();
-    rockLoop.start();
-    return () => {
-      clearInterval(timer);
-      bobLoop.stop();
-      rockLoop.stop();
-    };
-  }, [bob, rock]);
-
-  const tilt = rock.interpolate({ inputRange: [-1, 1], outputRange: ['-3deg', '3deg'] });
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <View
@@ -60,14 +39,14 @@ export function SplashScreen() {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Animated.View style={{ transform: [{ translateY: bob }, { rotate: tilt }] }}>
-        <Image
-          source={require('../../assets/joystick-mascot.webp')}
-          style={{ width: 170, height: 240 }}
-          resizeMode="contain"
-          accessibilityIgnoresInvertColors
-        />
-      </Animated.View>
+      {/* The mascot's own animation loop plays inside the WebP — no extra
+          transforms needed. Rounded corners blend the clip into the screen. */}
+      <Image
+        source={require('../../assets/joystick-mascot.webp')}
+        style={{ width: 200, height: 266, borderRadius: 20 }}
+        contentFit="contain"
+        autoplay
+      />
 
       <PixelText size="heading" color={colors.neonGreen} glow style={{ marginTop: spacing.l }}>
         LOADING...
