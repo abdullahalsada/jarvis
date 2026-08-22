@@ -36,12 +36,6 @@ export const LEVEL_STEPS: Record<string, number> = {
   poolball: 400,
   clawmachine: 300,
   airhockey: 400,
-  // School Days
-  binshot: 100,
-  paperglider: 200,
-  dotsboxes: 150,
-  eraserflick: 200,
-  mathsprint: 250,
   // Brain
   memorymatch: 60,
   cratepush: 120,

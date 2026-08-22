@@ -28,7 +28,6 @@
       "classics": "Classiques",
       "action": "Action",
       "brain": "Cerveau",
-      "school": "Jours d’École",
       "arcade": "Coin Arcade"
     }
   },
@@ -224,31 +223,6 @@
       "name": "Chute de Blocs",
       "desc": "Efface des lignes, trouve le rythme",
       "howto": "Dirige la pièce avec ◀ ▶, fais-la pivoter avec ↻, écrase-la avec ▼ (les gestes marchent aussi). Remplis une ligne pour l’effacer — quatre d’un coup pour le gros bonus ! Le puits accélère toutes les 10 lignes."
-    },
-    "binshot": {
-      "name": "Panier de Papier",
-      "desc": "Le classique de la classe",
-      "howto": "Tire la boule de papier en arrière et relâche pour viser la corbeille. Surveille la flèche du vent au tableau — elle dévie ta boule en plein vol ! Les séries donnent un bonus ; trois ratés et c’est fini."
-    },
-    "paperglider": {
-      "name": "Planeur de Papier",
-      "desc": "Traverse le couloir",
-      "howto": "Appuie n’importe où pour cabrer, relâche pour piquer. Glisse entre les piles de bureaux et les lampes suspendues, et attrape les étoiles dorées pour de gros bonus. Un crash et le vol s’arrête !"
-    },
-    "dotsboxes": {
-      "name": "La Pipopipette",
-      "desc": "Le duel du cahier",
-      "howto": "À tour de rôle, tracez des murs entre les points. Ferme le quatrième mur d’une case pour la gagner — et rejoue ! Le cyan c’est toi, le rouge l’ordinateur. Le plus de cases gagne la manche."
-    },
-    "eraserflick": {
-      "name": "Gomme Sumo",
-      "desc": "Duel sur le bureau",
-      "howto": "Fais glisser ta gomme cyan et relâche pour la propulser. Pousse la gomme rouge hors du bureau sans glisser toi-même ! Le bureau rétrécit à chaque manche. Si tu tombes, c’est fini."
-    },
-    "mathsprint": {
-      "name": "Sprint de Calcul",
-      "desc": "Bats l’horloge du tableau",
-      "howto": "Une opération s’affiche au tableau avec quatre réponses : touche la bonne avant que la ligne de craie s’efface ! Répondre vite rapporte plus, les séries multiplient. Trois erreurs et le cours est fini."
     },
     "pinball": {
       "name": "Flipper",

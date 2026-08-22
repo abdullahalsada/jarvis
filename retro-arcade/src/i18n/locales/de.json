@@ -28,7 +28,6 @@
       "classics": "Klassiker",
       "action": "Action",
       "brain": "Denksport",
-      "school": "Schulzeit",
       "arcade": "Arcade-Ecke"
     }
   },
@@ -224,31 +223,6 @@
       "name": "Blockfall",
       "desc": "Reihen räumen im Flow",
       "howto": "Steuere den fallenden Stein mit ◀ ▶, drehe mit ↻, schmettere mit ▼ (Wischen geht auch). Volle Reihen verschwinden — vier auf einmal für den Riesenbonus! Alle 10 Reihen wird es schneller."
-    },
-    "binshot": {
-      "name": "Papierkorb-Wurf",
-      "desc": "Der Klassenzimmer-Klassiker",
-      "howto": "Zieh die Papierkugel zurück und lass los, um sie in den Korb zu werfen. Achte auf den Windpfeil an der Tafel — er schiebt deine Kugel im Flug! Serien bringen Bonus; drei Fehlwürfe beenden es."
-    },
-    "paperglider": {
-      "name": "Papierflieger",
-      "desc": "Flieg den Flur entlang",
-      "howto": "Halte irgendwo gedrückt, um die Nase zu heben, lass los zum Sturzflug. Gleite zwischen Tischstapeln und Hängelampen hindurch und schnapp dir goldene Sterne. Ein Crash beendet den Flug!"
-    },
-    "dotsboxes": {
-      "name": "Käsekästchen",
-      "desc": "Das Heft-Duell",
-      "howto": "Zeichnet abwechselnd Wände zwischen die Punkte. Schließe die vierte Wand eines Kästchens, um es zu gewinnen — und bist gleich nochmal dran! Cyan bist du, Rot der Computer. Die meisten Kästchen gewinnen."
-    },
-    "eraserflick": {
-      "name": "Radiergummi-Sumo",
-      "desc": "Showdown auf dem Pult",
-      "howto": "Zieh an deinem cyanfarbenen Radiergummi und lass los, um ihn zu schnippen. Schubs den roten vom Pult, ohne selbst runterzurutschen! Jede Runde schrumpft das Pult. Fällst du, ist Schluss."
-    },
-    "mathsprint": {
-      "name": "Kopfrechnen-Sprint",
-      "desc": "Schlag die Tafel-Uhr",
-      "howto": "Eine Aufgabe erscheint an der Tafel mit vier Antworten — tippe die richtige, bevor die Kreidelinie abläuft! Schnelle Antworten zählen mehr, Serien vervielfachen. Drei Fehler und die Stunde ist vorbei."
     },
     "pinball": {
       "name": "Flipper",
