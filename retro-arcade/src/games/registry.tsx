@@ -34,6 +34,8 @@ import { BubblePopGame } from './bubblepop/BubblePopGame';
 import { AirHockeyGame } from './airhockey/AirHockeyGame';
 import { ClawMachineGame } from './clawmachine/ClawMachineGame';
 import { PoolBallGame } from './poolball/PoolBallGame';
+import { DuckBlastGame } from './duckblast/DuckBlastGame';
+import { IslandKidGame } from './islandkid/IslandKidGame';
 
 export type Category = 'classics' | 'action' | 'arcade' | 'brain';
 
@@ -83,6 +85,8 @@ const ART: Record<string, ImageSourcePropType> = {
   airhockey: require('../../assets/games/airhockey.png'),
   clawmachine: require('../../assets/games/clawmachine.png'),
   poolball: require('../../assets/games/poolball.png'),
+  duckblast: require('../../assets/games/duckblast.png'),
+  islandkid: require('../../assets/games/islandkid.png'),
 };
 
 const DEFS: Omit<GameDef, 'art'>[] = [
@@ -107,12 +111,14 @@ const DEFS: Omit<GameDef, 'art'>[] = [
   { id: 'divesquadron', category: 'action', free: false, showLives: true, icon: '🛸', render: (api) => <DiveSquadronGame api={api} /> },
   { id: 'chopperrescue', category: 'action', free: false, showLives: true, icon: '🚁', render: (api) => <ChopperRescueGame api={api} /> },
   { id: 'skyjump', category: 'action', free: false, icon: '🦘', render: (api) => <SkyJumpGame api={api} /> },
+  { id: 'islandkid', category: 'action', free: false, showLives: true, icon: '🍌', render: (api) => <IslandKidGame api={api} /> },
   // Arcade Corner
   { id: 'pinball', category: 'arcade', free: false, showLives: true, icon: '🪩', render: (api) => <PinballGame api={api} /> },
   { id: 'bubblepop', category: 'arcade', free: true, icon: '🫧', render: (api) => <BubblePopGame api={api} /> },
   { id: 'poolball', category: 'arcade', free: false, showLives: true, icon: '🎱', render: (api) => <PoolBallGame api={api} /> },
   { id: 'clawmachine', category: 'arcade', free: false, showLives: true, icon: '🧸', render: (api) => <ClawMachineGame api={api} /> },
   { id: 'airhockey', category: 'arcade', free: false, icon: '🏒', render: (api) => <AirHockeyGame api={api} /> },
+  { id: 'duckblast', category: 'arcade', free: false, showLives: true, icon: '🦆', render: (api) => <DuckBlastGame api={api} /> },
   // Brain
   { id: 'memorymatch', category: 'brain', free: true, icon: '🃏', render: (api) => <MemoryMatchGame api={api} /> },
   { id: 'cratepush', category: 'brain', free: false, icon: '📦', render: (api) => <CratePushGame api={api} /> },

@@ -248,6 +248,16 @@
       "name": "Biliar Bola 8",
       "desc": "Bersihkan mejanya",
       "howto": "Seret di mana saja untuk membidik — titik-titik menunjukkan arah pukulan — lalu lepaskan. Masukkan bola warna (50 tiap bola), lalu bola 8 untuk menutup rak dengan bonus besar. Memasukkan bola putih atau bola 8 terlalu cepat kehilangan satu stik!"
+    },
+    "duckblast": {
+      "name": "Tembak Bebek",
+      "desc": "Bidik… tembak!",
+      "howto": "Bebek melesat dari rerumputan terbang zig-zag — ketuk bebek untuk menembak! Kamu punya 3 peluru per gelombang. Jatuhkan 6 dari setiap 10 bebek untuk lanjut ke ronde berikutnya yang lebih cepat… dan jangan sampai ditertawakan si anjing."
+    },
+    "islandkid": {
+      "name": "Bocah Pulau",
+      "desc": "Lari, makan, bertahan!",
+      "howto": "Bocah ini tak pernah berhenti berlari — dan tak pernah berhenti lapar! Ambil pisang sebelum bilah MAKANAN kosong. Lompati batu merah dengan ▲ dan lempar kapak dengan 🪓 ke siput, kobra, dan burung. Tiga nyawa; pulau makin lama makin cepat."
     }
   },
   "username": {

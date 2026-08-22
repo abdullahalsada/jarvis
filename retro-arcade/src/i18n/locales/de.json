@@ -248,6 +248,16 @@
       "name": "8-Ball Billard",
       "desc": "Räum den Tisch ab",
       "howto": "Ziehe irgendwo zum Zielen — die Punkte zeigen den Stoß — und lass los. Versenke die farbigen Kugeln (je 50), dann die 8 für den Rack-Bonus. Die Weiße oder die 8 zu früh zu versenken kostet ein Queue!"
+    },
+    "duckblast": {
+      "name": "Entenjagd",
+      "desc": "Zielen… Feuer!",
+      "howto": "Enten schießen im Zickzack aus dem Gras — tippe auf eine Ente, um zu schießen! Du hast 3 Patronen pro Welle. Triff 6 von 10 Enten, um die nächste, schnellere Runde zu erreichen… und bring den Hund nicht zum Lachen."
+    },
+    "islandkid": {
+      "name": "Inselkind",
+      "desc": "Renn, futter, überleb!",
+      "howto": "Der Junge hört nie auf zu rennen — und nie auf, hungrig zu werden! Sammle Bananen, bevor die ESSEN-Leiste leer ist. Spring mit ▲ über die roten Steine und wirf mit 🪓 Äxte auf Schnecken, Kobras und Vögel. Drei Leben; die Insel wird immer schneller."
     }
   },
   "username": {

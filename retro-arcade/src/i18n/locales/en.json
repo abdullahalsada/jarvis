@@ -248,6 +248,16 @@
       "name": "8-Ball Pool",
       "desc": "Clear the rack",
       "howto": "Drag anywhere to aim — the dots show the shot — and release to strike. Pot the colored balls (50 each), then sink the 8-ball to clear the rack for a big bonus. Sinking the cue or the 8-ball early costs a cue!"
+    },
+    "duckblast": {
+      "name": "Duck Blast",
+      "desc": "Take aim… fire!",
+      "howto": "Ducks burst from the grass flying wild zig-zags — tap a duck to shoot it! You get 3 shells per wave. Bag 6 of every 10 ducks to reach the next, faster round… and try not to make the dog laugh."
+    },
+    "islandkid": {
+      "name": "Island Kid",
+      "desc": "Run, chomp, survive!",
+      "howto": "The kid never stops running — or getting hungry! Grab bananas before the FOOD bar empties. Jump the red rocks with ▲ and throw axes with 🪓 at snails, cobras and birds. Three lives; the island only gets faster."
     }
   },
   "username": {
