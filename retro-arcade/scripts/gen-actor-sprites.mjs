@@ -29,6 +29,8 @@ const PAL = {
   K: [0x10, 0x10, 0x18, 255],
   S: [0xc0, 0xc0, 0xd2, 255], // silver
   F: [0xff, 0xff, 0xff, 255], // pure white
+  E: [0x0f, 0x77, 0x2b, 255], e: [0x0a, 0x4f, 0x1d, 255], // dark greens (trees)
+  L: [0x2f, 0x6f, 0xff, 255], l: [0x1e, 0x49, 0xb3, 255], // highway-sign blues
 };
 
 // Color-templated sprites: X = body color, x = shade. Literal maps keep the
@@ -279,6 +281,63 @@ const SPRITES = {
   bus_top: BUS_TOP,
   sedan_top_magenta: sedanTop('M', 'm'),
   sedan_top_white: sedanTop('W', 'w'),
+  // Roadside pine tree — dark green canopy on a stubby trunk.
+  pine_tree: [
+    '.......EE.......',
+    '......EEEE......',
+    '.....EEEEEE.....',
+    '....EeEEEEEe....',
+    '.....EEEEEE.....',
+    '....EEEEEEEE....',
+    '...EEeEEEEeEE...',
+    '..EEEEEEEEEEEE..',
+    '...EEEEEEEEEE...',
+    '..EEeEEEEEEeEE..',
+    '.EEEEEEEEEEEEEE.',
+    'EeEEEEEEEEEEEEeE',
+    '......bBBb......',
+    '......bBBb......',
+    '......bBBb......',
+    '................',
+  ],
+  // Circular blue highway sign (white ring + up arrow) on a gray post.
+  road_sign_blue: [
+    '................',
+    '....FFFFFFFF....',
+    '...FLLLLLLLLF...',
+    '..FLLLLFFLLLLF..',
+    '..FLLLFFFFLLLF..',
+    '..FLLFFLLFFLLF..',
+    '..FLLLLFFLLLLF..',
+    '..FLLLLFFLLLLF..',
+    '...FLLLFFLLLF...',
+    '....FFFFFFFF....',
+    '.......ww.......',
+    '.......ww.......',
+    '.......ww.......',
+    '.......ww.......',
+    '................',
+    '................',
+  ],
+  // Pixel explosion starburst — orange rim, yellow body, white-hot core.
+  explosion_burst: [
+    '................',
+    '.......O........',
+    '...O..OYO..O....',
+    '....O.OYO.O.....',
+    '.....OYYYO......',
+    '..O.OYYFYYO.O...',
+    '...OYYFFFYYO....',
+    '.O.OYFFFFFYO.O..',
+    '...OYYFFFYYO....',
+    '..O.OYYFYYO.O...',
+    '.....OYYYO......',
+    '....O.OYO.O.....',
+    '...O..OYO..O....',
+    '.......O........',
+    '................',
+    '................',
+  ],
 
   // ─── Tank Battle ───
   // Top-view tank (nose up), tintable per side.
@@ -423,84 +482,8 @@ const SPRITES = {
   ],
 
   // ─── Street Games ───
-  // City pigeon, side view facing right.
-  pigeon: [
-    '................',
-    '................',
-    '......ww........',
-    '.....wWWw.......',
-    '....wWWWWwOO....',
-    '....WWKWWW......',
-    '..wWWWWWWWw.....',
-    '.wWWwwWWWWw.....',
-    '.wWWwwWWWWw.....',
-    '..wWWWWWWw......',
-    '...wwWWWw.......',
-    '.....WW.........',
-    '....OO.OO.......',
-    '................',
-    '................',
-    '................',
-  ],
-  // Folded paper plane, side view facing right.
-  paper_plane: [
-    '................',
-    '................',
-    '................',
-    '..F.............',
-    '..FFFF..........',
-    '..FFFFFFF.......',
-    '..FwFFFFFFFF....',
-    '..FwwFFFFFFFFFF.',
-    '..FwFFFFFFFF....',
-    '..FFFFFFF.......',
-    '..FFFF..........',
-    '..F.............',
-    '................',
-    '................',
-    '................',
-    '................',
-  ],
-  // Rival kid in a red cap with a water gun, facing left.
-  kid_rival: [
-    '................',
-    '......RRRR......',
-    '.....RRRRRR.....',
-    '.....FFwFFw.....',
-    '.....FFFFFF.....',
-    '......FFFF......',
-    '..CC.YYYYYY.....',
-    '..CCYYYYYYYF....',
-    '...CYYyYYyYF....',
-    '.....YYYYYY.....',
-    '.....yy..yy.....',
-    '.....YY..YY.....',
-    '....KK....KK....',
-    '................',
-    '................',
-    '................',
-  ],
 
   // ─── Pumpkin Toss ───
-  // Rattling skeleton guard.
-  skeleton: [
-    '................',
-    '.....FFFF.......',
-    '....FFFFFF......',
-    '....FKFFKF......',
-    '....FFFFFF......',
-    '.....FwwF.......',
-    '......FF........',
-    '...FFFFFFFF.....',
-    '....wFFFFw......',
-    '....F.FF.F......',
-    '...FF.FF.FF.....',
-    '......FF........',
-    '.....F..F.......',
-    '.....F..F.......',
-    '....FF..FF......',
-    '................',
-  ],
 
   // ─── Shooter upgrades (Space Defenders / Dive Squadron) ───
   // Mk2 fighter: winged interceptor with twin cannons.

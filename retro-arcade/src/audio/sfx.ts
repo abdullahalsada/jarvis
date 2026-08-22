@@ -43,6 +43,18 @@ const BANK: Record<string, Tone[]> = {
     { freq: 1047, duration: 0.25 },
   ],
   powerUp: [{ freq: 220, freqEnd: 1760, duration: 0.25 }],
+  // Race grid countdown: four short high beeps, then a longer "GO" tone.
+  raceStart: [
+    { freq: 990, duration: 0.1 },
+    { freq: 990, duration: 0.4, volume: 0 },
+    { freq: 990, duration: 0.1 },
+    { freq: 990, duration: 0.4, volume: 0 },
+    { freq: 990, duration: 0.1 },
+    { freq: 990, duration: 0.4, volume: 0 },
+    { freq: 990, duration: 0.1 },
+    { freq: 990, duration: 0.4, volume: 0 },
+    { freq: 1480, duration: 0.6 },
+  ],
   flip: [{ freq: 550, duration: 0.05, wave: 'triangle' }],
   match: [
     { freq: 784, duration: 0.08 },
